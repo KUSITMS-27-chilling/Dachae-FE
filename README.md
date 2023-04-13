@@ -196,71 +196,70 @@
 <디자인 무드보드와 부연 설명>
 
 ### 💻 기술 스택
-**Front-End :** <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"> <p>
+
+**Front-End :** <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"/> <p>
 **Back-End :** <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white"/> <img src="https://img.shields.io/badge/Spring Security-6DB33F?style=flat-square&logo=Spring Security&logoColor=white"/> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=Swagger&logoColor=white"/> <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/> <p>
-**Infra :** <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"> <p>
-**CI/CD: ** <p>
-**DB: ** <p>
+**Infra :** <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=flat-square&logo=Amazon EC2&logoColor=white"/> <img src="https://img.shields.io/badge/Amazon S3-569A31?style=flat-square&logo=Amazon S3&logoColor=white"/> <img src="https://img.shields.io/badge/Amazon RDS-527FFF?style=flat-square&logo=Amazon RDS&logoColor=white"/> <p>
+**CI/CD :** <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=black"/> <img src="https://img.shields.io/badge/GitHub Actions-2088FF?style=flat-square&logo=GitHub Actions&logoColor=black"/> <p>
+**DB :** <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=black"/> <p>
 
-### 🎉 React 선정 이유
-1️⃣ **Hot Reload와 Live Reload를 지원하는 크로스 플랫폼**   
-코드를 수정했을 때 다시 빌드할 필요 없이 바로 기기에서 변경사항을 확인 할 수 있습니다.
+### 📍 React 선정 이유
+1️⃣ **Component 단위 개발**   
+기획자나 디자이너의 컨펌에 따라 효율적으로 구현을 변경하기 위해, 재사용성이 높은 컴포넌트 단위로 개발 가능한 React 를 선택했습니다.
 
-2️⃣ **웹 확장에 유리한 크로스 플랫폼**      
-React-Native로 개발하고 React로 넘어가기에 수월합니다. 또한 react-native-web을 이용하여 웹 앱을 한 번에 만들 수 있습니다.
+2️⃣ **virtual DOM을 통한 빠른 렌더링 가능**      
+본 프로젝트는 중장년층을 타겟으로 한 서비스이기 때문에, 웹 편의성과 접근성에 초점을 맞춰 개발되어야 합니다. 이러한 사람들이 사이트 접속에 불편함이 없도록 빠른 렌더링이 가능한 React 를 선택했습니다.
 
-3️⃣ **개발 툴이 필요 없는 크로스 플랫폼**      
-Xcode(ios simulator) 없이 IOS 개발이 가능하여, window 운영체제를 가진 개발 팀원도 IOS 개발에 참여 할 수 있습니다.
-
-4️⃣ **호환이 용이한 크로스 플랫폼**        
-android, ios 호환이 가능하여 유저의 사용성을 높여줄 수 있습니다. 
-
-5️⃣ **효율적인 크로스 플랫폼**       
-axios는 fetch와는 달리 response의 object를 json 메소드 없이도 바로 받을 수 있어 더 빠르고 효율적일 것입니다.
+3️⃣ **다른 라이브러리 및 프레임워크와 혼용 가능**      
+추후 서비스가 확장됨에 따라 현재 개발환경에 다른 라이브러리 및 프레임워크를 혼용하여 개발을 진행해야 할 가능성 또한 존재합니다. 그러므로 다른 기술과의 혼용이 쉬운 React 를 선택했습니다.
 
 
-### 🎉 Spring/ 선정 이유
+### 📍 Spring Boot 선정 이유
 
-1️⃣ **쉬운 개발환경을 제공하는 프레임워크**       
-스프링은 자바 및 JVM 환경의 대체언어들의 효율적이고 쉬운 엔터프라이즈 애플리케이션 개발 환경을 제공합니다.
+1️⃣ **다양한 모듈 제공**       
+데이터베이스 액세스, 캐싱, 보안 및 메시징과 같은 일반적인 작업을 단순화하는 데 사용할 수 있는 다양한 기타 기능 및 모듈이 제공되기 때문에, Spring Boot 를 선택했습니다.
 
-2️⃣ **구조 설계에 유용한 프레임워크**         
-기존의 웹, 또는 하드웨어, 데이터베이스등 전문적인 영역만 지원하는 프레임워크들과 다르게, 스프링은 전체를 설계하는 용도로 사용할 수 있습니다.
+2️⃣ **관점 지향 프로그래밍**         
+AOP(Aspect-Oriented Programming)을 사용하면 개발자는 애플리케이션의 기본 비즈니스 논리에서 교차 절단 문제(로깅, 보안, 트랜잭션 등)을 분리할 수 있습니다. 이를 통해 코드가 더 깨끗하고 모듈화되며 유지 관리 및 확장성이 향상되기 때문에, Spring Boot 를 선택했습니다.
 
-3️⃣ **트렌디한 개발 프레임워크**           
-Spring은 최근의 트렌드, 혹은 더 나은 프로그래밍 방법을 찾기 위해 트렌드에 맞추어 개발자들이 좀 더 능동적으로 개발할 수 있는 다양한 모듈들과 방법론을 적용시키고 있습니다.
+3️⃣ **크고 활발한 커뮤니티**           
+Spring Framework에는 개발자와 사용자로 구성된 크고 활발한 커뮤니티가 있습니다. 이 커뮤니티가 개발자로 하여금 프레임워크를 최대한 활용할 수 있도록 지원, 리소스 및 도구를 제공해 주기 때문에 Spring Boot 를 선택했습니다.
 
-4️⃣ **오픈소스의 호환성을 제공하는 프레임워크**              
-스프링은 오픈소스로써 지속적인 업데이트가 되고 있으며 이전 버전들에 대한 강력한 호환성을 지원합니다.
+### 🏷 네이밍룰
+- 클래스명/컴포넌트명 : PascalCase
+- 함수명/변수명 : CamelCase
+- 상수명 : UpperCase + SnakeCase
+- CSS 방법론 : BEM 모델
+  
+### 📑 커밋 컨벤션
+  
+> Commit Message : [Type][Subject][Body]
+  
+**📌 Type**
+  
+|Type|Description|
+|--|--|
+|**feat**|새로운 기능 추가|
+|**fix**|버그 수정|
+|**docs**|문서 수정|
+|**style**|코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우|
+|**refactor**|코드 리팩토링|
+|**test**|테스트 코드, 리팩토링 테스트 코드 추가|
+|**chore**|빌드 업무 수정, 패키지 매니저 수정|
 
-5️⃣ **직관적이고 유연한 프레임워크**                    
-스프링은 직관적인 API를 제공하며, 만들고자하는 애플리케이션의 요구사항과 목적에 따라 유연하게 적용시킬수 있습니다.
-
-## :pushpin: 네이밍룰
-- 파일 : PascalCase + CamelCase (ex.DeclarationPrecessor.kt)
-- 클래스명 : PascalCase + CamelCase (ex.SendMessage)
-- 함수/변수명 : CamelCase (ex.userCount)
-- 상수명 : UpperCase + SnakeCase (ex.MAX_COUNT)
-## 📑 커밋 컨벤션
-#### Commit Message : [Type][Subject][Body][Footer]
-### 📌 Type
-- [Feat] : 새로운 기능 추가
-- [Fix] : 버그 수정
-- [Docs] : 문서 수정
-- [Style] : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
-- [Refactor] : 코드 리펙토링
-- [Test] : 테스트 코드, 리펙토링 테스트 코드 추가
-- [Chore] : 빌드 업무 수정, 패키지 매니저 수정
-### 📌 Subject
+  
+**📌 Subject**
 - type과 함께 작성
-- 50자 이내, 첫 글자 대문자, 명령문 사용, 개조식 구문
-### 📌 Body
-- 72자 이내, '어떻게'보다 '무엇을','왜' 변경했는지에 대해 작성
-- 선택사항
-### 📌 Footer
-- 이슈를 추적하기 위한 ID를 추가할 시 사용
-- 해결/관련/참고
-- 선택사항
+- 명령문, 현재 시제 사용
+- 첫글자 대문자로 시작
+
+**📌 Body**
+- 명령문, 현재 시제 사용
+- 변경 이유와 과거 상태에 비해 어떻게 변화하였는지 서술
+- optional
 
   
 ### 🔍 소프트웨어 아키텍쳐
+
+![소프트웨어 아키텍쳐](https://user-images.githubusercontent.com/50830078/231820327-d4eca407-fd35-4b67-a19c-8d1503b5fb37.png)
+
