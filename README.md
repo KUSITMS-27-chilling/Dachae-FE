@@ -193,7 +193,7 @@
 
 ### 🎨 디자인 무드보드
 
-![로고 및 색상](https://user-images.githubusercontent.com/50830078/231932602-1a8d8e25-1f34-49a4-a59c-9c6d793bb1ed.png)
+![로고 및 색상](https://user-images.githubusercontent.com/50830078/231946403-52ddc1df-0b09-4af4-a1d6-3452b6b1a947.png)
 
 ![디자인 레퍼런스](https://user-images.githubusercontent.com/50830078/231932574-0972f9b7-ea1d-48f3-bc74-40af0ef2fdfb.png)
 
