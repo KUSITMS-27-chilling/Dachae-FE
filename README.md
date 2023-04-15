@@ -276,5 +276,5 @@ Spring Framework에는 개발자와 사용자로 구성된 크고 활발한 커�
   
 ### 🔍 소프트웨어 아키텍쳐
 
-![소프트웨어 아키텍쳐](https://user-images.githubusercontent.com/50830078/231820327-d4eca407-fd35-4b67-a19c-8d1503b5fb37.png)
+![소프트웨어 아키텍쳐](https://user-images.githubusercontent.com/97458548/232226747-7b237d65-2329-4912-a17f-e82b27e1ae7f.png)
 
