@@ -1,30 +1,32 @@
 import React, { useEffect,useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+//const navigate = useNavigate();
 
 
 function Login() {
 
-    const [inputId, handleInputId] = useState('');
-  const [inputPw, handleInputPw] = useState('');
-  // email, nickname 중복 -> 커스텀훅으로 제거
-  const [onClickLogin] = useState('');
+  const navigate = useNavigate();
+  const navigateJoin =()=>{
+    navigate("/join");
+  }
+    
   return (
-    <div>
       <div>
             <h2>Login</h2>
             <div>
                 <label htmlFor='input_id'>ID : </label>
-                <input type='text' name='input_id' value={inputId} onChange={handleInputId} />
+                <input type='text' name='input_id' />
             </div>
             <div>
                 <label htmlFor='input_pw'>PW : </label>
-                <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
+                <input type='password' name='input_pw' />
             </div>
             <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
+                <button type='button'>Login</button>
+            </div><div>
+                <button type='button' onClick={navigateJoin}>Join</button>
             </div>
         </div>
-    </div>
   )
 }
 
