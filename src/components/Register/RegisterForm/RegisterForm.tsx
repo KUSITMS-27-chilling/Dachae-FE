@@ -15,15 +15,17 @@ export default function Register() {
   const [name, setName] = useState<string>('');
   const [nickname, setNickname] = useState<string>('');
   const [gender, setGender] = useState<string>('');
-  const [year, setYear] = useState<number>(2023);
-  const [month, setMonth] = useState<number>(1);
-  const [day, setDay] = useState<number>(1);
+  const [year, setYear] = useState<number>(0);
+  const [month, setMonth] = useState<number>(0);
+  const [day, setDay] = useState<number>(0);
   const [id, setId] = useState<string>('');
   const [pwd, setPwd] = useState<string>('');
   const [pwd2, setPwd2] = useState<string>('');
   const [emailId, setEmailId] = useState<string>('');
   const [emailDomain, setEmailDomain] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
+
+  const reg = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
   const now = new Date();
   let currentYear = now.getFullYear();
@@ -75,7 +77,39 @@ export default function Register() {
     domainField!.value = domain;
   }
 
+  function checkPwdEqual(): boolean {
+    if(pwd == pwd2) return true;
+    return false;
+  }
+
+  function checkEmail(inputEmail: string): boolean {
+    if(reg.test(inputEmail) == true) return true;
+    return false;
+  }
+
+  function checkDuplicatedId() {
+    
+  }
+
+  function checkEmpty(): boolean {
+    if(name == '') return false;
+    if(nickname == '') return false;
+    if(gender == '') return false;
+    if(year == 0) return false;
+    if(month == 0) return false;
+    if(day == 0) return false;
+    if(id == '') return false;
+    if(pwd == '') return false;
+    if(phone == '') return false;
+
+    return true;
+  }
+
   function submitHandler() {
+    if(!(checkPwdEqual()
+        && checkEmail(`${emailId}@${emailDomain}`)
+        && checkEmpty())) return;
+    
     const sendData: RegisterData = {
       name: name,
       nickName: nickname,
@@ -154,9 +188,19 @@ export default function Register() {
         formChange={(e: React.ChangeEvent<HTMLInputElement>)=>{setPwd2(e.target!.value)}} ></InputForm>
       <RegisterEmailBox>
         <div id="select__email--text">이메일</div>
-        <input type="text" placeholder="아이디" id="input__email--id" className="input--register__form" />
+        <input 
+          type="text" 
+          placeholder="아이디" 
+          id="input__email--id" 
+          className="input--register__form"
+          onChange={(e) => setEmailId(e.target.value)} />
         <div id="select__email--at">@</div>
-        <input type="text" placeholder="도메인" id="input__email--domain" className="input--register__form" />
+        <input 
+          type="text" 
+          placeholder="도메인" 
+          id="input__email--domain" 
+          className="input--register__form"
+          onChange={(e) => setEmailDomain(e.target.value)} />
         <select
           name="도메인" 
           id="select__email--domain" 
