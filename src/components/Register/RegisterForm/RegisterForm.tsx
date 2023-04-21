@@ -88,7 +88,36 @@ export default function Register() {
   }
 
   function checkDuplicatedId() {
-    
+    axios.post(`${import.meta.env.VITE_APP_HOST}/user/checkIdDup`, 
+      null,
+      {
+        params: {
+          id: id
+        }
+      }).then((response) => console.log(response))
+      .catch((err) => console.log(err))
+  }
+
+  function checkDuplicatedNickname() {
+    axios.post(`${import.meta.env.VITE_APP_HOST}/user/checkNickDup`, 
+    null,
+    {
+      params: {
+        nickName: nickname
+      }
+    }).then((response) => console.log(response))
+    .catch((err) => console.log(err))
+  }
+
+  function emailAuth() {
+    axios.post(`${import.meta.env.VITE_APP_HOST}/user/sendMail`, 
+    null,
+    {
+      params: {
+        email: `${emailId}@${emailDomain}`
+      }
+    }).then((response) => console.log(response))
+    .catch((err) => console.log(err))
   }
 
   function checkEmpty(): boolean {
@@ -106,10 +135,14 @@ export default function Register() {
   }
 
   function submitHandler() {
+    checkDuplicatedId();
+    checkDuplicatedNickname();
+    emailAuth();
+
     if(!(checkPwdEqual()
         && checkEmail(`${emailId}@${emailDomain}`)
         && checkEmpty())) return;
-    
+        
     const sendData: RegisterData = {
       name: name,
       nickName: nickname,
