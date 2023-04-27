@@ -34,7 +34,7 @@ const onClickLogin = () => {
   console.log(res)
   if(res.data.data.accessToken) {
   
-  navigate('/')
+  navigate("/");
 }}
 )
 .catch((err) => console.log(err))

@@ -2,17 +2,15 @@ import { BrowserRouter,Routes,Route,Router,useNavigate,Link} from 'react-router-
 
 import Login from "./Login";
 import Join from "./Join";
-
+import Mainpage from './Mainpage';
 function App() {
   
 
   return (
     <div className='App'>
-      <div className='test'>
-        <Link to='/login'>로그인</Link>
-      </div>
       
         <Routes>
+          <Route path="/" element={<Mainpage />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/join" element={<Join />}/>
         </Routes>
