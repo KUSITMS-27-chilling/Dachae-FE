@@ -24,3 +24,5 @@ export const RegisterGenderBox = styled(InputFormContainer)``
 export const RegisterBirthBox = styled(InputFormContainer)``
 
 export const RegisterEmailBox = styled(InputFormContainer)``
+
+export const RegisterEmailAuthBox = styled(InputFormContainer)``

@@ -14,3 +14,5 @@ export type RegisterData = {
   email: string;
   phoneNumber: string;
 }
+
+export type EmailBtnType = "authenticate" | "confirm"

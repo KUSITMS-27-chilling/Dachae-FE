@@ -3,13 +3,14 @@ import {
   RegisterGenderBox,
   RegisterBirthBox,
   RegisterEmailBox,
+  RegisterEmailAuthBox,
   RegisterSubmitBtn
 } from "./RegisterForm.styled"
 import InputForm from "../InputForm"
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { RegisterData } from "../../../types/register";
+import { RegisterData, EmailBtnType } from "../../../types/register";
 
 export default function Register() {
   const [name, setName] = useState<string>('');
@@ -23,6 +24,7 @@ export default function Register() {
   const [pwd2, setPwd2] = useState<string>('');
   const [emailId, setEmailId] = useState<string>('');
   const [emailDomain, setEmailDomain] = useState<string>('');
+  const [emailAuthStr, setEmailAuthStr] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
 
   const reg = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -116,8 +118,59 @@ export default function Register() {
       params: {
         email: `${emailId}@${emailDomain}`
       }
-    }).then((response) => console.log(response))
+    }).then((response) => {
+      setEmailAuthStr(response.data);
+    })
     .catch((err) => console.log(err))
+  }
+
+  function confirmClick(): boolean {
+    const inputForm = (document.getElementById('input__email--auth')) as HTMLInputElement;
+    const inputStr = inputForm.value;
+
+    if(inputStr == emailAuthStr) return true;
+
+    return false;
+  }
+
+  function changeBtnType() {
+    const emailBtn = document.getElementById('button__email--auth') as HTMLButtonElement;
+
+    if(emailBtn.dataset.dataBtnType == "authenticate") {
+      emailBtn!.innerText = "인증번호 확인";
+      emailBtn!.dataset.dataBtnType = "confirm";
+      return;
+    }
+
+    // if(emailBtn.dataset.dataBtnType == "confirm") {
+    //   emailBtn!.innerText = "인증번호 요청";
+    //   emailBtn!.dataset.dataBtnType = "authenticate";
+    //   return;
+    // }
+  }
+
+  function emailBtnClickHandler(e: React.MouseEvent<HTMLButtonElement>) {
+    const emailBtn = e.target as HTMLButtonElement;
+
+    if(!checkEmail(`${emailId}@${emailDomain}`)) {
+      console.error('이메일이 비어 있어서 인증 요청 불가능!');
+      return;
+    }
+
+    if(emailBtn.dataset.dataBtnType == 'authenticate'){
+      changeBtnType();
+      emailAuth();
+      return;
+    }
+
+    if(emailBtn.dataset.dataBtnType == 'confirm'){
+      if(!confirmClick()){
+        console.error('이메일 인증 오류');
+      };
+      console.log('이메일 인증 성공');
+      return;
+    }
+    
   }
 
   function checkEmpty(): boolean {
@@ -135,14 +188,14 @@ export default function Register() {
   }
 
   function submitHandler() {
+    if(!(checkEmpty()
+        && checkPwdEqual()
+        && checkEmail(`${emailId}@${emailDomain}`)
+      )) return;
+        
     checkDuplicatedId();
     checkDuplicatedNickname();
-    emailAuth();
 
-    if(!(checkPwdEqual()
-        && checkEmail(`${emailId}@${emailDomain}`)
-        && checkEmpty())) return;
-        
     const sendData: RegisterData = {
       name: name,
       nickName: nickname,
@@ -154,8 +207,15 @@ export default function Register() {
       phoneNumber: phone
     };
 
-    // axios.post("url", sendData).then((response) => {})
-    navigate('/login');
+    axios.post(`${import.meta.env.VITE_APP_HOST}/user/signup`, sendData)
+    .then((response) => {
+      if(response.data.data){
+        navigate('/login');
+      }
+    })
+    .catch(() => {
+      console.error('회원가입 오류');
+    })
   }
 
   return(
@@ -246,6 +306,10 @@ export default function Register() {
           <option value="nate.com">nate.com</option>
         </select>
       </RegisterEmailBox>
+      <RegisterEmailAuthBox>
+        <input type="text" placeholder="인증번호" id="input__email--auth" />
+        <button id="button__email--auth" data-btn-type="authenticate" onClick={(e)=>{emailBtnClickHandler(e)}} >인증번호 요청</button>
+      </RegisterEmailAuthBox>
       <InputForm 
         formType="text" 
         formText="핸드폰 번호" 
