@@ -15,7 +15,7 @@ function Login() {
   const [inputPw, setInputPw] = useState('')
 
   const handleInputId = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputId(e.target!.value)
+    setInputId(e.target.value)
 }
 
 const handleInputPw = (e:React.ChangeEvent<HTMLInputElement> ) => {
@@ -24,14 +24,21 @@ const handleInputPw = (e:React.ChangeEvent<HTMLInputElement> ) => {
 
 // login 버튼 클릭 이벤트
 const onClickLogin = () => {
-  axios.post(`${import.meta.env.VITE_APP_HOST}/user/login`, null, {
-    params: {
+  axios.post(`${import.meta.env.VITE_APP_HOST}/user/login` ,
+    {
     id: inputId,
     password: inputPw
     }
-})
-.then(res => console.log(res))
-.catch()
+)
+.then((res)=>  {
+  console.log(res)
+  if(res.data.data.accessToken) {
+  
+  navigate('/')
+}}
+)
+.catch((err) => console.log(err))
+
 }
 
     
