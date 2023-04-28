@@ -119,7 +119,7 @@ export default function Register() {
         email: `${emailId}@${emailDomain}`
       }
     }).then((response) => {
-      setEmailAuthStr(response.data);
+      setEmailAuthStr(response.data.data);
     })
     .catch((err) => console.log(err))
   }
@@ -136,9 +136,9 @@ export default function Register() {
   function changeBtnType() {
     const emailBtn = document.getElementById('button__email--auth') as HTMLButtonElement;
 
-    if(emailBtn.dataset.dataBtnType == "authenticate") {
+    if(emailBtn.dataset.btnType == "authenticate") {
       emailBtn!.innerText = "인증번호 확인";
-      emailBtn!.dataset.dataBtnType = "confirm";
+      emailBtn!.dataset.btnType = "confirm";
       return;
     }
 
@@ -157,15 +157,16 @@ export default function Register() {
       return;
     }
 
-    if(emailBtn.dataset.dataBtnType == 'authenticate'){
+    if(emailBtn.dataset.btnType == 'authenticate'){
       changeBtnType();
       emailAuth();
       return;
     }
 
-    if(emailBtn.dataset.dataBtnType == 'confirm'){
+    if(emailBtn.dataset.btnType == 'confirm'){
       if(!confirmClick()){
         console.error('이메일 인증 오류');
+        return;
       };
       console.log('이메일 인증 성공');
       return;
@@ -199,7 +200,7 @@ export default function Register() {
     const sendData: RegisterData = {
       name: name,
       nickName: nickname,
-      gender: gender,
+      gender: gender == '남자' ? 'male' : 'female',
       age: currentYear - year,
       id: id,
       password: pwd,
@@ -207,15 +208,17 @@ export default function Register() {
       phoneNumber: phone
     };
 
-    axios.post(`${import.meta.env.VITE_APP_HOST}/user/signup`, sendData)
-    .then((response) => {
-      if(response.data.data){
-        navigate('/login');
-      }
-    })
-    .catch(() => {
-      console.error('회원가입 오류');
-    })
+    // axios.post(`${import.meta.env.VITE_APP_HOST}/user/signup`, sendData)
+    // .then((response) => {
+    //   if(response.data.data){
+    //     navigate('/login');
+    //   }
+    // })
+    // .catch(() => {
+    //   console.error('회원가입 오류');
+    // })
+
+    navigate('/login');
   }
 
   return(
