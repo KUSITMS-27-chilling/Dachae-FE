@@ -1,17 +1,21 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import RegisterPage from './pages/RegisterPage'
+import { BrowserRouter,Routes,Route,Router,useNavigate,Link} from 'react-router-dom';
+import Login from "./Login";
+import Join from "./Join";
+import Mainpage from './Main/MainPage';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
-    <div className="App">
-      <div>
+    <div className='App'>
         <Routes>
-          <Route path='/join' element={<RegisterPage />} />
+          <Route path="/" element={<Mainpage />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/join" element={<RegisterPage />}/>
         </Routes>
-      </div>
     </div>
-  )
+    
+  );
 }
 
-export default App
+export default App;
