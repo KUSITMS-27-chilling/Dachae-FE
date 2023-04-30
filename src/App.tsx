@@ -7,11 +7,14 @@ import RegisterPage from './pages/RegisterPage';
 import Mypage from './pages/Mypage/MypagePage';
 import SuggestPage from './pages/Suggest/SuggestPage';
 import CommunityPage from './pages/Commu/CommunityPage';
+import MainPageDetail from './pages/Main/MainPageDetail';
+import GlobalFonts from './fonts/fonts';
 
 function App() {
   return (
     <div className='App'>
       <GlobalStyle />
+      <GlobalFonts/>
         <Routes>
           <Route path="/" element={<Mainpage />}/>
           <Route path="/login" element={<Login />}/>
@@ -19,6 +22,7 @@ function App() {
           <Route path="/suggest" element={<SuggestPage />}/>
           <Route path="/commu" element={<CommunityPage />}/>
           <Route path="/mypage" element={<Mypage />}/>
+          <Route path="/mainDetail" element={<MainPageDetail />}/>
         </Routes>
     </div>
     

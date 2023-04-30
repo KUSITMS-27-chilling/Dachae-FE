@@ -11,7 +11,7 @@ import {
   MainBody_Today_In,
   MainBody_Today_New
 } from "./MainPage.styled"
-
+import MainBodyContent from '../../components/Main/MainBodyContent';
 
 function MainPage() {
     
@@ -54,12 +54,10 @@ function MainPage() {
       <button onClick={goCommu}>커뮤니티</button>
       <button onClick={goMypage}>마이페이지</button>
       </MainBody_Tapbar>
-      <MainBody_Select>
+      {/* <MainBody_Select>
         전체/배움터/일자리
-      </MainBody_Select>
-      <MainBody_Content>
-        찐내용
-      </MainBody_Content>
+      </MainBody_Select> */}
+      <MainBodyContent/>
       </>
     )
   }
