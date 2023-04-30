@@ -82,6 +82,7 @@ export const ProfileContainer = styled.div`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
   }
 
   #header__polygon {
@@ -91,5 +92,6 @@ export const ProfileContainer = styled.div`
     top: 50%;
     right: 0.1em;
     transform: translateY(-50%);
+    cursor: pointer;
   }
 `;
