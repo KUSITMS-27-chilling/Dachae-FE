@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import temp_program from "../../assets/temp_program.jpg";
 
-export const ProgramCardContainer = styled.div`
+export const ProgramCardContainer = styled.div<{ imgSrc: string }>`
   width: 19.75em;
   height: 20.25em;
   box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
@@ -11,7 +11,7 @@ export const ProgramCardContainer = styled.div`
   position: relative;
 
   #program-card__image {
-    background-image: url(${temp_program});
+    background-image: ${props => `url(${props.imgSrc})`};
     height: 11.8125em;
     background-size: cover;
   }
@@ -47,6 +47,7 @@ export const ProgramCardBottom = styled.div`
     border: 0;
     color: #39AFB0;
     font-weight: 600;
+    cursor: pointer;
   }
 
   #program-card__deadline {

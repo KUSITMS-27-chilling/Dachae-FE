@@ -13,7 +13,7 @@ import {
 
 import Header from '../../components/Header/Header';
 import ProgramCard from '../../components/ProgramCard';
-
+import temp_program from '../../assets/temp_program.jpg';
 
 function MainPage() {
     
@@ -33,7 +33,12 @@ function MainPage() {
   
         <MainBody_Today_In>
           <MainBody_Today_New>
-            <ProgramCard></ProgramCard>
+            <ProgramCard 
+              imgSrc={temp_program}
+              title="2023 한걸음에 닿는 동네 배움터 [성북 나래] 프로그램 접수"
+              btnClick={() => console.log('test')}
+              deadline="~05/24(수)"
+              ></ProgramCard>
           </MainBody_Today_New>
         </MainBody_Today_In>
         

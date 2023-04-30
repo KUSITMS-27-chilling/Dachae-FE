@@ -2,17 +2,19 @@ import {
   ProgramCardContainer,
   ProgramCardBottom
 } from './ProgramCard.styled';
+import { ProgramCardInfo } from '../../types/programCard';
 
-function ProgramCard() {
+function ProgramCard({ imgSrc, title, btnClick, deadline }: ProgramCardInfo) {
+
   return (
-    <ProgramCardContainer>
+    <ProgramCardContainer imgSrc={imgSrc}>
       <div id="program-card__image"></div>
       <div id="program-card__title">
-        2023 한걸음에 닿는 동네 배움터 &#91;성북 나래&#93; 프로그램 접수
+        {title}
       </div>
       <ProgramCardBottom>
-        <button id="program-card__btn">신청하기</button>
-        <div id="program-card__deadline">~05/24&#40;수&#41;</div>
+        <button id="program-card__btn" onClick={btnClick}>신청하기</button>
+        <div id="program-card__deadline">{deadline}</div>
       </ProgramCardBottom>
     </ProgramCardContainer>
   )
