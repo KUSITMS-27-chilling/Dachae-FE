@@ -2,7 +2,7 @@ import { BrowserRouter,Routes,Route,Router,useNavigate,Link} from 'react-router-
 
 import Login from "./Login";
 import Join from "./Join";
-import Mainpage from './Mainpage';
+import Mainpage from './Main/MainPage';
 function App() {
   
 

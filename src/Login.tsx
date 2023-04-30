@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import kakao_login_img from './assets/kakao_login_img.png'
 //const navigate = useNavigate();
 
 
@@ -58,6 +59,7 @@ const onClickLogin = () => {
             </div><div>
                 <button type='button' onClick={navigateJoin}>Join</button>
             </div>
+            
         </div>
   )
 }
