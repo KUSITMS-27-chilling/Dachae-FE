@@ -171,7 +171,9 @@ margin-top: 44px;
 export const MainBody_Content_Program_Content = styled.div`
 position: relative;
 width: 1056px;
-height: 316px;
+height: 330px;
 border: 1px solid blue;
 margin-top: 24px;
+display: flex;
+justify-content: space-between;
 `

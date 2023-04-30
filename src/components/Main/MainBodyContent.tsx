@@ -16,6 +16,8 @@ import {
 import img from '../../assets/Vector.png'
 import img1 from '../../assets/Vector1.png'
 import img2 from '../../assets/Vector2.png'
+import temp_program from '../../assets/temp_program.jpg';
+import ProgramCard from '../ProgramCard';
 
 function MainBodyContent() {
     const navigate = useNavigate();
@@ -46,7 +48,26 @@ function MainBodyContent() {
         </MainBody_Content_Btn>
         <MainBody_Content_Program>
             <MainBody_Content_Program_Title>성북구에서 모집중인 프로그램</MainBody_Content_Program_Title>
-            <MainBody_Content_Program_Content>카드 이미지/내용 들어가야함</MainBody_Content_Program_Content>
+            <MainBody_Content_Program_Content>
+                <ProgramCard 
+                    imgSrc={temp_program}
+                    title="2023 한걸음에 닿는 동네 배움터 [성북 나래] 프로그램 접수"
+                    btnClick={() => console.log('test')}
+                    deadline="~05/24(수)"
+                ></ProgramCard>
+                <ProgramCard 
+                    imgSrc={temp_program}
+                    title="2023 한걸음에 닿는 동네 배움터 [성북 나래] 프로그램 접수"
+                    btnClick={() => console.log('test')}
+                    deadline="~05/24(수)"
+                ></ProgramCard>
+                <ProgramCard 
+                    imgSrc={temp_program}
+                    title="2023 한걸음에 닿는 동네 배움터 [성북 나래] 프로그램 접수"
+                    btnClick={() => console.log('test')}
+                    deadline="~05/24(수)"
+                ></ProgramCard>
+            </MainBody_Content_Program_Content>
         </MainBody_Content_Program>
     </MainBody_Content>
     </>

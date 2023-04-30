@@ -2,7 +2,6 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import { 
-  MainHeader,
   MainBanner,
   MainBody_Today,
   MainBody_Tapbar,
@@ -13,14 +12,15 @@ import {
 } from "./MainPage.styled"
 import MainBodyContent from '../../components/Main/MainBodyContent';
 import Header from '../../components/Header/Header';
-
+import ProgramCard from '../../components/ProgramCard';
+import temp_program from '../../assets/temp_program.jpg';
 
 function MainPage() {
     
     const navigate = useNavigate();
     const goLogin =()=>{
         navigate("/login");
-      }
+    }
     const goMain =()=>{ //모아보기
         navigate("/");
       }
@@ -37,8 +37,6 @@ function MainPage() {
     return (
       <>
       <Header>
-        {/* 메인페이지 헤더
-        <button onClick={goLogin}>go to login</button> */}
       </Header>
       <MainBanner>
         배너
@@ -46,7 +44,8 @@ function MainPage() {
       <MainBody_Today> 
   
         <MainBody_Today_In>
-          <MainBody_Today_New></MainBody_Today_New>
+          <MainBody_Today_New>
+          </MainBody_Today_New>
         </MainBody_Today_In>
         
       </MainBody_Today>
