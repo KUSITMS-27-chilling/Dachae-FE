@@ -13,6 +13,7 @@ export const HeaderContainer = styled.div`
     left: 11.8125em;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
   }
 `;
 
@@ -55,8 +56,6 @@ export const NotifyProfileContainer = styled.div`
   right: 4.6875em;
   top: 50%;
   transform: translateY(-50%);
-  /* display: flex;
-  justify-content: space-between; */
 
   #header__notification {
     width: 1.368125em;

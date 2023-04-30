@@ -10,11 +10,18 @@ import search_icon from '../../assets/search_icon.png';
 import notification_icon from '../../assets/notification_icon.png';
 import profile_icon from '../../assets/profile_icon.png';
 import polygon_icon from '../../assets/polygon_icon.png';
+import { useNavigate } from "react-router-dom";
 
 function Header(props: any) {
+  const navigate = useNavigate();
+
+  function goMain() {
+    navigate('/');
+  }
+
   return(
     <HeaderContainer>
-      <img src={logo_icon} alt="logo_icon" id="header__logo"/>
+      <img src={logo_icon} alt="logo_icon" id="header__logo" onClick={goMain}/>
       <SearchInputContainer>
         <img src={search_icon} alt="search_icon" id="header__search--icon" />
         <input type="text"
