@@ -19,6 +19,10 @@ function Header(props: any) {
     navigate('/');
   }
 
+  function goLogin() {
+    navigate('/login');
+  }
+
   return(
     <HeaderContainer>
       <img src={logo_icon} alt="logo_icon" id="header__logo" onClick={goMain}/>
@@ -32,13 +36,15 @@ function Header(props: any) {
         <img src={notification_icon} 
             alt="notification_icon" 
             id="header__notification"
-            className="header__notify--profile" />
+            className="header__notify--profile"
+            onClick={goLogin} />
 
         <ProfileContainer>
           <img src={profile_icon} 
               alt="profile_icon" 
               id="header__profile"
-              className="header__notify--profile" />
+              className="header__notify--profile"
+              onClick={goLogin} />
           <img src={polygon_icon} 
               alt="polygon_icon" 
               id="header__polygon"
