@@ -12,7 +12,7 @@ export const MainBanner = styled.div`
   position: relative;
   width: 100%;
   height: 240px;
-  background-color: white;
+  background-color: #91C8CA;
   border: 1px solid red;
 
 `
@@ -62,9 +62,9 @@ export const MainBody_Today_In = styled.div`
   position: absolute;
   width: 1136px;
   height: 350px;
-  background-color: white;
   border: 1px solid blue;
   margin-left: 72px;
+  display: flex;
 `
  export const MainBody_Today_New = styled.div`
   position: relative;
@@ -74,16 +74,85 @@ export const MainBody_Today_In = styled.div`
   background-color: white;
   border: 1px solid red;
 `
-// export const MainBody_Today_My = styled.div`
-//   position: relative;
-//   width: 380px;
-//   height: 350px;
-  
-//   margin-top: 42px;
-//   background-color: white;
-//   border: 1px solid red;
+export const MainBody_Today_My = styled.div`
+  position: relative;
+   width: 380px;
+   height: 350px;
+  border-radius: 20px;
+  border: 1px solid red;
+  margin-left: 50px;
+  background-color: #F6F6F6;
+  box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
+`
+export const MainBody_Today_My_Top = styled.div`
+  width: 380px;
+   height: 70px;
+  border: 1px solid blue;
+`
+export const MainBodyTodayTap1 = styled.div`
+   
+   width: 380px;
+   height: 213px;
+  border: 1px solid blue;
+  background-color: white;
+  //탭바 감싸는거
+`
 
-// `
+export const MainBody_Today_My_Bottom = styled.div`
+  position: relative;
+   width: 380px;
+   height: 63px;
+   
+  //탭바 밑에 있는 버튼
+
+  .TapBtn > button {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 15px;
+    background-color: #59CACB;
+    border: none;
+    width: 320px;
+    height: 34px;
+    border-radius: 14px;
+    color: white;
+  }
+`
+//탭바 컴포넌트 디자인
+export const TabMenu = styled.div`
+  background-color:  #F6F6F6;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin-bottom: 7rem;
+  
+  .submenu {
+  // 기본 Tabmenu 에 대한 CSS를 구현
+    display: flex;
+    /* justify-content: space-between;
+    width: 380px;
+    heigth: 30px; */
+    width: calc(100% /2);
+    padding: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+    border: 1px solid #CBCBCB;
+  }
+
+  .focused {
+   //선택된 Tabmenu 에만 적용되는 CSS를 구현
+    background-color: white;
+    color: rgb(21,20,20);
+  }
+
+  & div.desc {
+    text-align: center;
+  }
+`
+export const Desc = styled.div`
+   text-align: center;
+`
+
 
 
 //메인페이지 MainBody_Content 안 컴포넌트 스타일 지정
