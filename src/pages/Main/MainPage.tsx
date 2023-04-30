@@ -12,8 +12,7 @@ import {
 } from "./MainPage.styled"
 import MainBodyContent from '../../components/Main/MainBodyContent';
 import Header from '../../components/Header/Header';
-import ProgramCard from '../../components/ProgramCard';
-import temp_program from '../../assets/temp_program.jpg';
+import CenterNews from '../../components/CenterNews';
 
 function MainPage() {
     
@@ -44,8 +43,9 @@ function MainPage() {
       <MainBody_Today> 
   
         <MainBody_Today_In>
-          <MainBody_Today_New>
-          </MainBody_Today_New>
+          {/* <MainBody_Today_New>
+          </MainBody_Today_New> */}
+          <CenterNews></CenterNews>
         </MainBody_Today_In>
         
       </MainBody_Today>
