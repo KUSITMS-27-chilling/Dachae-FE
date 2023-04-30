@@ -23,7 +23,24 @@ export const MainBody_Tapbar = styled.div`
   background-color: white;
   border: 1px solid red;
 
-`
+  .MainBody_Tapbar_In{
+    position: absolute;
+    width: 540px;
+    height: 44px;
+    border: 1px solid red;
+    margin-left: 112px;
+    margin-top: 13px;
+  }
+  .MainBody_Tapbar_In > button{
+    width: 135px;
+    height: 44px;
+    background-color:transparent;
+    border: none;
+    font-size: 20px;
+    color: #B0B0B0;
+  }
+`// 탭바 박스 생성
+
 export const MainBody_Select = styled.div`
   position: relative;
   width: 100%;
