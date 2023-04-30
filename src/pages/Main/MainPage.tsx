@@ -16,6 +16,7 @@ import {
 } from "./MainPage.styled"
 import MainBodyContent from '../../components/Main/MainBodyContent';
 import Header from '../../components/Header/Header';
+import CenterNews from '../../components/CenterNews';
 import ProgramCard from '../../components/ProgramCard';
 import temp_program from '../../assets/temp_program.jpg';
 import {MainBodyTodayTap} from '../../components/Main/MainBodyTodayTap';
@@ -49,8 +50,9 @@ function MainPage() {
       <MainBody_Today> 
   
         <MainBody_Today_In>
-          <MainBody_Today_New>
-          </MainBody_Today_New>
+          {/* <MainBody_Today_New>
+          </MainBody_Today_New> */}
+          <CenterNews></CenterNews>
 
           <MainBody_Today_My>
             <MainBody_Today_My_Top>프로필 , 로그아웃</MainBody_Today_My_Top>
