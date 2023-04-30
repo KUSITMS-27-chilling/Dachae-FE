@@ -5,6 +5,10 @@ import GlobalFonts from './fonts/fonts';
 import Login from "./components/Login/Login";
 import Mainpage from './pages/Main/MainPage';
 import RegisterPage from './pages/RegisterPage';
+import Mypage from './pages/Mypage/MypagePage';
+import SuggestPage from './pages/Suggest/SuggestPage';
+import CommunityPage from './pages/Commu/CommunityPage';
+import MainPageDetail from './pages/Main/MainPageDetail';
 
 function App() {
   return (
@@ -15,6 +19,10 @@ function App() {
           <Route path="/" element={<Mainpage />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/join" element={<RegisterPage />}/>
+          <Route path="/suggest" element={<SuggestPage />}/>
+          <Route path="/commu" element={<CommunityPage />}/>
+          <Route path="/mypage" element={<Mypage />}/>
+          <Route path="/mainDetail" element={<MainPageDetail />}/>
         </Routes>
     </div>
     
