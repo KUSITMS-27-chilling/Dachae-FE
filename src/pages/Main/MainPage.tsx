@@ -51,10 +51,12 @@ function MainPage() {
         
       </MainBody_Today>
       <MainBody_Tapbar>
-      <button onClick={goMain}>모아보기</button>
-      <button onClick={goSuggest}>제안할래요</button>
-      <button onClick={goCommu}>커뮤니티</button>
-      <button onClick={goMypage}>마이페이지</button>
+      <div className='MainBody_Tapbar_In'>
+        <button onClick={goMain}>모아보기</button>
+        <button onClick={goSuggest}>제안할래요</button>
+        <button onClick={goCommu}>커뮤니티</button>
+        <button onClick={goMypage}>마이페이지</button>
+      </div>
       </MainBody_Tapbar>
       {/* <MainBody_Select>
         전체/배움터/일자리
