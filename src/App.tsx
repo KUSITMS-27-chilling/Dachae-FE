@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter,Routes,Route,Router,useNavigate,Link} from 'react-router-dom';
 import GlobalStyle from './components/GlobalStyle/GlobalStyle';
+import GlobalFonts from './fonts/fonts';
 import Login from "./components/Login/Login";
 import Mainpage from './pages/Main/MainPage';
 import RegisterPage from './pages/RegisterPage';
@@ -8,13 +9,12 @@ import Mypage from './pages/Mypage/MypagePage';
 import SuggestPage from './pages/Suggest/SuggestPage';
 import CommunityPage from './pages/Commu/CommunityPage';
 import MainPageDetail from './pages/Main/MainPageDetail';
-import GlobalFonts from './fonts/fonts';
 
 function App() {
   return (
     <div className='App'>
       <GlobalStyle />
-      <GlobalFonts/>
+      <GlobalFonts />
         <Routes>
           <Route path="/" element={<Mainpage />}/>
           <Route path="/login" element={<Login />}/>

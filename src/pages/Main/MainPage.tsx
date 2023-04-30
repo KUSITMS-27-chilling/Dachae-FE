@@ -12,6 +12,8 @@ import {
   MainBody_Today_New
 } from "./MainPage.styled"
 import MainBodyContent from '../../components/Main/MainBodyContent';
+import Header from '../../components/Header/Header';
+
 
 function MainPage() {
     
@@ -34,10 +36,10 @@ function MainPage() {
 
     return (
       <>
-      <MainHeader>
-        메인페이지 헤더
-        <button onClick={goLogin}>go to login</button>
-      </MainHeader>
+      <Header>
+        {/* 메인페이지 헤더
+        <button onClick={goLogin}>go to login</button> */}
+      </Header>
       <MainBanner>
         배너
       </MainBanner>
