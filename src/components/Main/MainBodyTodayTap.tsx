@@ -30,7 +30,7 @@ export const MainBodyTodayTap = () => {
           <li className="submenu">{menuArr[2].name}</li> */}
           {menuArr.map((el,index) => (
               <li className={index === currentTab ? "submenu focused" : "submenu" }
-              onClick={() => selectMenuHandler(index)}>{el.name}</li>
+              onClick={() => selectMenuHandler(index)} key={index}>{el.name}</li>
             ))}
         </TabMenu>
         <Desc>
