@@ -17,11 +17,62 @@ import {
 import MainBodyContent from '../../components/Main/MainBodyContent';
 import Header from '../../components/Header/Header';
 import CenterNews from '../../components/CenterNews';
-import ProgramCard from '../../components/ProgramCard';
-import temp_program from '../../assets/temp_program.jpg';
 import {MainBodyTodayTap} from '../../components/Main/MainBodyTodayTap';
+import { LGData } from '../../types/centerNews';
 
 function MainPage() {
+  const lgData: LGData[] = [
+    {
+      region: '종로',
+      programs: [
+        {
+          programTitle: '보태니컬 동양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },
+        {
+          programTitle: '명화 서양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },    
+        {
+          programTitle: '보태니컬 동양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },    
+        {
+          programTitle: '명화 서양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },    
+        {
+          programTitle: '보태니컬 동양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        }
+      ]
+    },
+    {
+      region: '성북',
+      programs: [
+        {
+          programTitle: '명화 서양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },
+        {
+          programTitle: '보태니컬 동양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },    
+        {
+          programTitle: '명화 서양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },    
+        {
+          programTitle: '보태니컬 동양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        },    
+        {
+          programTitle: '명화 서양화 배우기',
+          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
+        }
+      ]
+    }
+  ]
     
     const navigate = useNavigate();
     const goLogin =()=>{
@@ -52,7 +103,7 @@ function MainPage() {
         <MainBody_Today_In>
           {/* <MainBody_Today_New>
           </MainBody_Today_New> */}
-          <CenterNews></CenterNews>
+          <CenterNews lgData={lgData} ></CenterNews>
 
           <MainBody_Today_My>
             <MainBody_Today_My_Top>프로필 , 로그아웃</MainBody_Today_My_Top>

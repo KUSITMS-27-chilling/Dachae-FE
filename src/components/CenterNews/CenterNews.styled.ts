@@ -103,3 +103,25 @@ export const LearningGroundHeader = styled.div`
     color: #535353;
   }
 `;
+
+export const LearningGroundList = styled.div`
+  width: 34.0625rem;
+  height: 6.5625rem;
+  position: absolute;
+  top: 3.2rem;
+  left: 3rem;
+  font-weight: 600;
+`
+
+export const LearningGroundProgram = styled.div`
+  width: 34.0625rem;
+  height: 1.125rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.625rem 0;
+`;
+
+export const LearningGroundText = styled.div`
+  width: max-content;
+  height: 1.125rem;
+`;
