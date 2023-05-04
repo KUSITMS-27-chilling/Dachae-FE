@@ -5,11 +5,13 @@ import {
     Desc,
    
   } from "../../pages/Main/MainPage.styled"
+import Elipse from '../../assets/Ellipse.png'
   
 export const MainBodyTodayTap = () => {
     const [currentTab, clickTab] = useState(0);
     const menuArr = [
-        { name: '나의 배움 소식', content: 'Tab menu ONE' },
+        { name: '나의 배움 소식',
+         content: '소식본문 3' },
         { name: '나의 배움 등급', content: 'Tab menu TWO' }
       ];
     
@@ -34,7 +36,12 @@ export const MainBodyTodayTap = () => {
             ))}
         </TabMenu>
         <Desc>
-          <p>{menuArr[currentTab].content}</p>
+          <div className='Tab-Desc'>
+            <div className='Tab-Desc-font'>
+          <img className="Elipse" alt="1" src={Elipse} />
+            {menuArr[currentTab].content}
+            </div>
+          </div>
         </Desc>
       </div>
     </>

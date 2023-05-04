@@ -62,7 +62,6 @@ export const MainBody_Today_In = styled.div`
   position: absolute;
   width: 1136px;
   height: 350px;
-  border: 1px solid blue;
   margin-left: 72px;
   display: flex;
 `
@@ -72,14 +71,12 @@ export const MainBody_Today_In = styled.div`
    height: 350px;
   
   background-color: white;
-  border: 1px solid red;
 `
 export const MainBody_Today_My = styled.div`
   position: relative;
    width: 380px;
    height: 350px;
   border-radius: 20px;
-  border: 1px solid red;
   margin-left: 50px;
   background-color: #F6F6F6;
   box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
@@ -87,13 +84,23 @@ export const MainBody_Today_My = styled.div`
 export const MainBody_Today_My_Top = styled.div`
   width: 380px;
    height: 70px;
-  border: 1px solid blue;
+
+  .MainBody_Today_My_Top_logout > button{
+    margin-left: 262px;
+    margin-top: 25px;
+    width: 87px;
+    height: 28px;
+    border: 2px solid #59CACB;
+    background: none;
+    border-radius: 26px;
+    font-size: 14px;
+    font-weight: 600;
+  }
 `
 export const MainBodyTodayTap1 = styled.div`
    
    width: 380px;
    height: 213px;
-  border: 1px solid blue;
   background-color: white;
   //탭바 감싸는거
 `
@@ -115,16 +122,22 @@ export const MainBody_Today_My_Bottom = styled.div`
     height: 34px;
     border-radius: 14px;
     color: white;
+    font-size: 15px;
+    font-weight: 600;
   }
 `
 //탭바 컴포넌트 디자인
 export const TabMenu = styled.div`
+  position: relative;
   background-color:  #F6F6F6;
   display: flex;
   flex-direction: row;
   align-items: center;
   list-style: none;
-  margin-bottom: 7rem;
+  font-size: 13px;
+  font-weight: 700;
+  
+
   
   .submenu {
   // 기본 Tabmenu 에 대한 CSS를 구현
@@ -146,13 +159,33 @@ export const TabMenu = styled.div`
   }
 
   & div.desc {
-    text-align: center;
+    //text-align: center;
   }
 `
 export const Desc = styled.div`
-   text-align: center;
-`
+  display: flex;
+  justify-content: center;
+  
 
+  .Tab-Desc{
+  width: 380px;
+  height: 56px;
+  border: 1px solid #CBCBCB;
+  font-size: 15px;
+  font-weight: 500;
+  color: #535353;
+
+  }
+  .Tab-Desc-font{
+    margin-top: 13px;
+
+  }
+  .Tab-Desc-font > img{
+    margin-left: 35px;
+    margin-right: 22px;
+}
+`
+//내용 컴포넌트
 
 
 //메인페이지 MainBody_Content 안 컴포넌트 스타일 지정
