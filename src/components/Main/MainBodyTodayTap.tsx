@@ -2,17 +2,43 @@ import React from 'react';
 import { useState } from 'react';
 import { 
     TabMenu,
-    Desc,
-   
+    Desc, 
   } from "../../pages/Main/MainPage.styled"
 import Elipse from '../../assets/Ellipse.png'
   
 export const MainBodyTodayTap = () => {
     const [currentTab, clickTab] = useState(0);
+
+    const MenuComponentOne = () => {
+      return (
+        <div className='Tab-Desc'>
+            <div className='Tab-Desc-font'>
+              <img className="Elipse" alt="1" src={Elipse} />
+            소식 본문 3
+          </div>
+          </div>
+      );
+    };
+    const MenuComponentTwo = () => {
+      return (
+        <>
+        <div className='Tab-Desc-2'></div>
+        <div className='Tab-Desc-2-1'>
+          나의 활동 분야
+          <div className='TapBtn-2'>
+                <button>#언어</button>
+          </div>
+        </div>
+        </>
+      );
+    };
+
+
+
+
     const menuArr = [
-        { name: '나의 배움 소식',
-         content: '소식본문 3' },
-        { name: '나의 배움 등급', content: 'Tab menu TWO' }
+        { name: '나의 배움 소식', content: <MenuComponentOne /> },
+        { name: '나의 배움 등급', content: <MenuComponentTwo /> }
       ];
     
       const selectMenuHandler = (index:number) => {
@@ -36,12 +62,13 @@ export const MainBodyTodayTap = () => {
             ))}
         </TabMenu>
         <Desc>
-          <div className='Tab-Desc'>
+          {/* <div className='Tab-Desc'>
             <div className='Tab-Desc-font'>
           <img className="Elipse" alt="1" src={Elipse} />
             {menuArr[currentTab].content}
             </div>
-          </div>
+          </div> */}
+          {menuArr[currentTab].content}
         </Desc>
       </div>
     </>

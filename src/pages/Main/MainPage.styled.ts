@@ -163,7 +163,6 @@ export const TabMenu = styled.div`
   }
 `
 export const Desc = styled.div`
-  display: flex;
   justify-content: center;
   
 
@@ -174,7 +173,7 @@ export const Desc = styled.div`
   font-size: 15px;
   font-weight: 500;
   color: #535353;
-
+  display: flex;
   }
   .Tab-Desc-font{
     margin-top: 13px;
@@ -184,8 +183,37 @@ export const Desc = styled.div`
     margin-left: 35px;
     margin-right: 22px;
 }
+.Tab-Desc-2{
+  width: 380px;
+  height: 90px;
+  
+}
+.Tab-Desc-2-1{
+  width: 380px;
+  height: 78px;
+  margin-left: 30px;
+  font-size: 15px;
+  color: #535353;
+  font-weight: 600;
+  
+}
+.TapBtn-2 > button {
+    position: absolute;
+    
+    margin-top: 15px;
+    background-color: #D9D9D9;
+    border: none;
+    width: 70px;
+    height: 27px;
+    border-radius: 26px;
+    color: 535353;
+    font-size: 15px;
+    font-weight: 600;
+  }
 `
-//내용 컴포넌트
+//내용 컴포넌트 1
+
+
 
 
 //메인페이지 MainBody_Content 안 컴포넌트 스타일 지정
