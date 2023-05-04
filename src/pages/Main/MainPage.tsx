@@ -106,7 +106,10 @@ function MainPage() {
           <CenterNews lgData={lgData} ></CenterNews>
 
           <MainBody_Today_My>
-            <MainBody_Today_My_Top>프로필 , 로그아웃</MainBody_Today_My_Top>
+            <MainBody_Today_My_Top>
+              <div className='MainBody_Today_My_Top_logout'>
+              <button onClick={goMypage}>로그아웃</button></div>
+            </MainBody_Today_My_Top>
             
             <MainBodyTodayTap1> 
                <MainBodyTodayTap/>
