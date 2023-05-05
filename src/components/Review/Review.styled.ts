@@ -58,6 +58,15 @@ export const ReviewText = styled.div`
   }
 `
 
+export const ReviewSeeMore = styled.div<{ seeMore?: boolean }>`
+  width: 2.9375rem;
+  height: 1.3125rem;
+  font-size: 18px;
+  color: #535353;
+  cursor: pointer;
+  display: ${props => props.seeMore ? 'visible' : 'none'};
+`;
+
 export const ReviewInfo = styled.div`
   width: max-content;
   height: 3.375rem;

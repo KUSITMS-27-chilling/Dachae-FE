@@ -4,6 +4,7 @@ import {
   ReviewContainer,
   ReviewProfile,
   ReviewText,
+  ReviewSeeMore,
   ReviewInfo,
   ReviewContent,
   ReviewPlace,
@@ -12,19 +13,32 @@ import {
 
 function Review({ props }: ReviewProps) {
   const [count, setCount] = useState(0);
+  const [viewContent, setViewContent] = useState('');
+  const [overLength, setOverLength] = useState(false);
   const { userImg, userNick, time, title, lecture, content, region, detailPlace, reviewImg } = props;
-  // 문자열 받아서 길이가 226 넘으면 '...' 생성하고 '더보기' 추가하는 함수 필요
 
   function countImg() {
     if(reviewImg && (reviewImg?.length > 0)) {
-      const imgCount = document.getElementById('review__image-count');
       setCount(reviewImg.length);
       return;
     }
   }
 
+  function checkContentLength() {
+    if(content.length >= 250) {
+      let tempContent = content.substring(0, 249);
+      tempContent += '...';
+      setViewContent(tempContent);
+      setOverLength(true);
+      return;
+    }
+    setViewContent(content);
+    return;
+  }
+
   useEffect(() => {
     countImg();
+    checkContentLength();
   }, []);
  
   return (
@@ -42,9 +56,14 @@ function Review({ props }: ReviewProps) {
           <div id="review__info-lecture">{lecture}</div>
         </ReviewInfo>
         <ReviewContent>
-          {content}
+          {viewContent}
         </ReviewContent>
-        <div id="review__see-more">더보기</div>
+        {
+          overLength == true ?
+          <ReviewSeeMore seeMore={true} >더보기</ReviewSeeMore>
+          :
+          <ReviewSeeMore>더보기</ReviewSeeMore>
+        }
       </ReviewText>
       <ReviewPlace>
           <div id="review__place-region">&#35;{region}</div>
