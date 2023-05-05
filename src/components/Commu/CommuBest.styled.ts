@@ -55,3 +55,28 @@ export const Text1 = styled.div`
   font-weight: 700;
   color: #535353;
 `
+//버튼 컴포넌트
+// export const CommuPostButton = styled.div`
+//     position: relative;
+//   width: 920px;
+//   height: 46px;
+//   font-size: 15px;
+//   font-weight: 700;
+//   color: #535353;
+
+//`
+export const Stylebutton = styled.button`
+    position: relative;
+  width: 920px;
+  height: 46px;
+  border: 2px solid #CBCBCB;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #535353;
+  background: none;
+  .Write{
+    margin-right: 13px;
+  }
+
+`

@@ -8,6 +8,7 @@ import {
 import Header from '../../components/Header/Header';
 import CommuBest from '../../components/Commu/CommuBest'
 import CommuMyPost from '../../components/Commu/CommuMyPost'
+import CommuPostBtn from '../../components/Commu/CommuPostBtn';
 function CommunityPage() {
 
   const navigate = useNavigate();
@@ -43,7 +44,8 @@ function CommunityPage() {
         배너
       </MainBanner>
       {/* <CommuBest/> */}
-      <CommuMyPost/>
+      {/* <CommuMyPost/> */}
+      <CommuPostBtn/>
       </>
     </div>
   )
