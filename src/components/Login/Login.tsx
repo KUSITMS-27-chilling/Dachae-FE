@@ -32,7 +32,7 @@ const onClickLogin = () => {
     }
 )
 .then((res)=>  {
-  console.log(res)
+  console.log(res.data)
   if(res.data.data.accessToken) {
   
   navigate("/");
@@ -45,22 +45,28 @@ const onClickLogin = () => {
     
   return (
       <div>
-            <h2>Login</h2>
-            <div>
-                <label htmlFor='input_id'>ID : </label>
-                <input type='text' name='input_id' value={inputId} onChange={handleInputId} />
-            </div>
-            <div>
-                <label htmlFor='input_pw'>PW : </label>
-                <input type='password' name='input_pw' value={inputPw} onChange={handleInputPw} />
-            </div>
-            <div>
-                <button type='button' onClick={onClickLogin}>Login</button>
-            </div><div>
-                <button type='button' onClick={navigateJoin}>Join</button>
-            </div>
-            
+        <h2>Login</h2>
+        <form className='login-form'>
+          <div>
+              <label htmlFor='input_id'>ID : </label>
+              <input type='text' name='input_id' value={inputId} onChange={handleInputId} />
+          </div>
+          <div>
+              <label htmlFor='input_pw'>PW : </label>
+              <input type='password' 
+                    name='input_pw' 
+                    value={inputPw}
+                    autoComplete="off" 
+                    onChange={handleInputPw} />
+          </div>
+        </form>
+        <div>
+            <button type='button' onClick={onClickLogin}>Login</button>
         </div>
+        <div>
+            <button type='button' onClick={navigateJoin}>Join</button>
+        </div>
+      </div>
   )
 }
 
