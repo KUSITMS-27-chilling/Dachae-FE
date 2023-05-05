@@ -115,7 +115,7 @@ export const ReviewPlace = styled.div`
   }
 `;
 
-export const ReviewImage = styled.div`
+export const ReviewImage = styled.div<{ reviewImg?: string }>`
   width: 15.625rem;
   height: 15.625rem;
   position: absolute;
@@ -125,7 +125,8 @@ export const ReviewImage = styled.div`
   #review__image {
     width: 15.625rem;
     height: 15.625rem;
-    background-image: url(${temp_program});
+    background-color: #d9d9d9;
+    background-image: ${props => `url(${props.reviewImg})`};
     border-radius: 0.625rem;
     position: absolute;
     background-size: cover;
@@ -143,5 +144,6 @@ export const ReviewImage = styled.div`
     position: absolute;
     right: 0;
     bottom: 0;
+    display: ${props => props.reviewImg ? 'visible' : 'none'};
   }
 `;
