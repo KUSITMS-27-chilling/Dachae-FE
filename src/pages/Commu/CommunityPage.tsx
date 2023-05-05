@@ -45,7 +45,7 @@ function CommunityPage() {
       </MainBanner>
       {/* <CommuBest/> */}
       {/* <CommuMyPost/> */}
-      <CommuPostBtn/>
+      {/* <CommuPostBtn/> */}
       </>
     </div>
   )
