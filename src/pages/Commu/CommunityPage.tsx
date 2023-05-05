@@ -1,9 +1,10 @@
 import React from 'react'
+import Review from '../../components/Review'
 
 function CommunityPage() {
   return (
     <div>
-      커뮤니티 입니다
+      <Review></Review>
     </div>
   )
 }
