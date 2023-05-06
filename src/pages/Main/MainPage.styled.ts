@@ -249,8 +249,18 @@ export const MainBody_Content_People = styled.div`
 `
 export const MainBody_Content_detail = styled.div`
   position: absolute;
-  right: 134px;
-  size: 18px;
+  display: flex;
+  font-size: 16px;
+  right: 100px;
+  width: 70px;
+  height: 21px;
+  color: #535353;
+  cursor: pointer;
+
+  #center-news__header--setting-btn {
+    font-weight: 600;
+    margin-left: 3px;
+  }
 `
 
 /////여기까지 컴포넌트
