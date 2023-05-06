@@ -10,7 +10,7 @@ import {
 import MainBodyContent from '../../components/Main/MainBodyContent/MainBodyContent';
 import Header from '../../components/Header/Header';
 import CenterNews from '../../components/CenterNews';
-import TodayMy from '../../components/Main/TodayMy/TodayMy';
+import TodayMy from '../../components/Main/TodayMy';
 import { LGData } from '../../types/centerNews';
 
 function MainPage() {

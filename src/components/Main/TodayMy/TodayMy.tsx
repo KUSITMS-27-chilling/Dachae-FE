@@ -1,28 +1,16 @@
 import { 
-  TodayMyContainer, 
-  TodayMyTop,
-  TodayTapBox,
-  TodayBottom
+  TodayMyContainer
 } from "./TodayMy.styled";
-import MainBodyTodayTap from "../TodayMyTap";
+import TodayMyIn from "../TodayMyIn/TodayMyIn";
+import TodayMyOut from "../TodayMyOut";
 
-function MainBodyTodayMy(props: any) {
+function TodayMy(props: any) {
   return(
     <TodayMyContainer>
-      <TodayMyTop>
-        <div className='MainBody_Today_My_Top_logout'>
-        <button>로그아웃</button></div>
-      </TodayMyTop>
-      <TodayTapBox>
-        <MainBodyTodayTap />
-      </TodayTapBox>
-      <TodayBottom>
-        <div className='TapBtn'>
-          <button>마이페이지 바로가기</button>
-        </div>
-      </TodayBottom>
+      {/* <TodayMyIn></TodayMyIn> */}
+      <TodayMyOut></TodayMyOut>
     </TodayMyContainer>
   )
 }
 
-export default MainBodyTodayMy;
+export default TodayMy;
