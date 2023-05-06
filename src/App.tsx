@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter,Routes,Route,Router,useNavigate,Link} from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 import GlobalStyle from './components/GlobalStyle/GlobalStyle';
 import GlobalFonts from './fonts/fonts';
 import Login from "./components/Login/Login";
@@ -12,6 +13,7 @@ import MainPageDetail from './pages/Main/MainPageDetail';
 
 function App() {
   return (
+    <RecoilRoot>
     <div className='App'>
       <GlobalStyle />
       <GlobalFonts />
@@ -25,7 +27,7 @@ function App() {
           <Route path="/mainDetail" element={<MainPageDetail />}/>
         </Routes>
     </div>
-    
+    </RecoilRoot>
   );
 }
 
