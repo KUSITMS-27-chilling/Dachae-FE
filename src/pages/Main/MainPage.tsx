@@ -5,19 +5,12 @@ import {
   MainBanner,
   MainBody_Today,
   MainBody_Tapbar,
-  MainBody_Select,
-  MainBody_Content,
   MainBody_Today_In,
-  MainBody_Today_New,
-  MainBody_Today_My,
-  MainBody_Today_My_Top,
-  MainBodyTodayTap1,
-  MainBody_Today_My_Bottom
 } from "./MainPage.styled"
-import MainBodyContent from '../../components/Main/MainBodyContent';
+import MainBodyContent from '../../components/Main/MainBodyContent/MainBodyContent';
 import Header from '../../components/Header/Header';
 import CenterNews from '../../components/CenterNews';
-import {MainBodyTodayTap} from '../../components/Main/MainBodyTodayTap';
+import TodayMy from '../../components/Main/TodayMy/TodayMy';
 import { LGData } from '../../types/centerNews';
 
 function MainPage() {
@@ -101,28 +94,10 @@ function MainPage() {
       <MainBody_Today> 
   
         <MainBody_Today_In>
-          {/* <MainBody_Today_New>
-          </MainBody_Today_New> */}
           <CenterNews lgData={lgData} ></CenterNews>
 
-          <MainBody_Today_My>
-            <MainBody_Today_My_Top>
-              <div className='MainBody_Today_My_Top_logout'>
-              <button onClick={goMypage}>로그아웃</button></div>
-            </MainBody_Today_My_Top>
-            
-            <MainBodyTodayTap1> 
-               <MainBodyTodayTap/>
-              {/* 탭바 컴포넌트로 만듦 */}
-            </MainBodyTodayTap1>
+          <TodayMy></TodayMy>
 
-            <MainBody_Today_My_Bottom>
-              <div className='TapBtn'>
-                <button onClick={goMypage}>마이페이지 바로가기</button>
-              </div>
-            </MainBody_Today_My_Bottom>
-
-          </MainBody_Today_My>
         </MainBody_Today_In>
         
       </MainBody_Today>
@@ -134,9 +109,6 @@ function MainPage() {
         <button onClick={goMypage}>마이페이지</button>
       </div>
       </MainBody_Tapbar>
-      {/* <MainBody_Select>
-        전체/배움터/일자리
-      </MainBody_Select> */}
       <MainBodyContent/>
       </>
     )
