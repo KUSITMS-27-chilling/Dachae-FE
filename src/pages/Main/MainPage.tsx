@@ -86,30 +86,27 @@ function MainPage() {
 
     return (
       <>
-      <Header>
-      </Header>
-      <MainBanner>
-        배너
-      </MainBanner>
-      <MainBody_Today> 
-  
-        <MainBody_Today_In>
-          <CenterNews lgData={lgData} ></CenterNews>
+        <Header />
+        <MainBanner />
+        <MainBody_Today> 
+    
+          <MainBody_Today_In>
+            <CenterNews lgData={lgData} />
+            <TodayMy />
+          </MainBody_Today_In>
+          
+        </MainBody_Today>
 
-          <TodayMy></TodayMy>
-
-        </MainBody_Today_In>
+        <MainBody_Tapbar>
+          <div className='MainBody_Tapbar_In'>
+            <button onClick={goMain}>모아보기</button>
+            <button onClick={goSuggest}>제안할래요</button>
+            <button onClick={goCommu}>커뮤니티</button>
+            <button onClick={goMypage}>마이페이지</button>
+          </div>
+        </MainBody_Tapbar>
         
-      </MainBody_Today>
-      <MainBody_Tapbar>
-      <div className='MainBody_Tapbar_In'>
-        <button onClick={goMain}>모아보기</button>
-        <button onClick={goSuggest}>제안할래요</button>
-        <button onClick={goCommu}>커뮤니티</button>
-        <button onClick={goMypage}>마이페이지</button>
-      </div>
-      </MainBody_Tapbar>
-      <MainBodyContent/>
+        <MainBodyContent/>
       </>
     )
   }

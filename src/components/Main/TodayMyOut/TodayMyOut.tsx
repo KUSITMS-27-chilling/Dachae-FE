@@ -15,7 +15,6 @@ function TodayMyOut() {
   const setUserId = useSetRecoilState(loginId);
   const setLoginState = useSetRecoilState(loginState);
   const userId = useRecoilValue(loginId);
-  const userState = useRecoilValue(loginState);
   const [userPwd, setUserPwd] = useState('');
   
   const onClickLogin = () => {
