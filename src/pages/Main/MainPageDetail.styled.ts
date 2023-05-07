@@ -1,8 +1,87 @@
 import styled from "styled-components";
 
+export const MainBody_Tapbar = styled.div`
+  position: relative;
+  width: 100%;
+  height: 57px;
+  background-color: white;
+  border: 1px solid red;
+
+  .MainBody_Tapbar_In{
+    position: absolute;
+    width: 600px;
+    height: 44px;
+    border: 1px solid red;
+    margin-left: 126px;
+    margin-top: 13px;
+  }
+  .MainBody_Tapbar_In > button{
+    width: 140px;
+    height: 44px;
+    background-color:transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #B0B0B0;
+    letter-spacing: -5%;
+  }
+`
+export const MainBody_Content_title = styled.div`
+  position: relative;
+   width: 100%;
+   height: 108px;
+  border: 1px solid blue;
+  display: flex;
+  align-items: end;
+`
+export const MainBody_Content_title1 = styled.div`
+ position: absolute;
+  left: 142px;
+  font-size: 26px;
+  letter-spacing: -5%;
+  font-weight: 500px;
+  margin-bottom: 3px;
+`
+export const MainBody_Content_detail = styled.div`
+  position: absolute;
+  display: flex;
+  font-size: 20px;
+  letter-spacing: -5%;
+  margin-left: 360px;
+  width: 115px;
+  height: 36px;
+  cursor: pointer;
+  border: 1px solid #B0B0B0;
+  border-radius: 20px;
 
 
-export const Modal = styled.div`
+  #center-news__header--setting-text {
+    font-weight: 400;
+    margin-left: 24px;
+    margin-top: 6px;
+    color: #535353;
+  }
+`
+
+
+export const MainBody_Card = styled.div`
+width: 1218px;
+height: 112px;
+display: flex;
+margin-left: 142px;
+margin-top: 50px;
+`
+
+export const Mainbody_CardContent = styled.div`
+width: 344px;
+height: 112px;
+border-radius: 16px;
+background-color: #F6F6F6;
+border: 1px solid red;
+margin-right: 62px;
+`
+/////////모달 스타일 시작
+export const Modal1 = styled.div`
 width: 836px;
 height: 770px;
 border-radius: 20px;

@@ -24,6 +24,7 @@ function MainBodyContent() {
     const goMainDetail =()=>{
         navigate("/mainDetail");
       }
+      
   return (
     <>
     <MainBody_Content>
