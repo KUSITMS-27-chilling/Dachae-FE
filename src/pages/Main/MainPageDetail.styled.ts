@@ -30,7 +30,6 @@ export const MainBody_Content_title = styled.div`
   position: relative;
    width: 100%;
    height: 108px;
-  border: 1px solid blue;
   display: flex;
   align-items: end;
 `
@@ -77,8 +76,27 @@ width: 344px;
 height: 112px;
 border-radius: 16px;
 background-color: #F6F6F6;
-border: 1px solid red;
 margin-right: 62px;
+display: flex;
+img{
+  width: 48px;
+  height: 40px;
+  margin-left: 36px;
+  margin-top: 36px;
+}
+.Card-title{
+  margin-left: 30px;
+  margin-top: 22px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #000000;
+}
+.Card-content{
+  margin-top: 7px;
+  margin-left: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
 `
 /////////모달 스타일 시작
 export const Modal1 = styled.div`

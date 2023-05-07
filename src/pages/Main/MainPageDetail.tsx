@@ -16,6 +16,9 @@ import{
   Mainbody_CardContent,
 
 } from '../Main/MainPageDetail.styled'
+import img from '../../assets/Vector.png'
+import img2 from '../../assets/map.png'
+import img3 from '../../assets/phone.png'
 
 const MainPageDetail = () =>{
   const navigate = useNavigate();
@@ -60,9 +63,42 @@ const MainPageDetail = () =>{
             </MainBody_Content_detail>
         </MainBody_Content_title>
         <MainBody_Card>
-          <Mainbody_CardContent></Mainbody_CardContent>
-          <Mainbody_CardContent></Mainbody_CardContent>
-          <Mainbody_CardContent></Mainbody_CardContent>
+          <Mainbody_CardContent onClick={goMainDetail}>
+            <img className="Btn_3" alt="1" src={img} />
+            <div className='Card'>
+            <div className='Card-title'>
+              365명
+            </div>
+            <div className='Card-content'>
+              성북구 동네 배움터를 이용하는<br/>
+              친구를 만나보세요
+            </div>
+					</div>
+          </Mainbody_CardContent>
+          <Mainbody_CardContent onClick={goMainDetail}>
+          <img className="Btn_3" alt="1" src={img2} />
+            <div className='Card'>
+            <div className='Card-title'>
+              지도보기
+            </div>
+            <div className='Card-content'>
+              성북구 동네 배움터를 이용하는<br/>
+              친구를 만나보세요
+            </div>
+					</div>
+          </Mainbody_CardContent>
+          <Mainbody_CardContent>
+          <img className="Btn_3" alt="1" src={img3} />
+            <div className='Card'>
+            <div className='Card-title'>
+              배움터 연락하기
+            </div>
+            <div className='Card-content'>
+              성북구 동네 배움터를 이용하는<br/>
+              친구를 만나보세요
+            </div>
+					</div>
+          </Mainbody_CardContent>
         </MainBody_Card>
       <ModalBtn onClick={ () => setModal(true) }>글쓰기</ModalBtn>
       {
