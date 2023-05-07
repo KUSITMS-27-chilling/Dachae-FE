@@ -6,25 +6,65 @@ export const MainBanner = styled.div`
   height: 240px;
   background-color: #91C8CA;
 `
+
+export const MainMiddle = styled.div`
+  width: 100%;
+  height: 12.125rem;
+  background-color: #f6f6f6;
+  position: relative;
+
+  #main__middle-rect {
+    width: 72.125rem;
+    height: 5.625rem;
+    background-color: #fff;
+    border: 0;
+    border-radius: 1.25rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  img {
+    width: 2.25rem;
+    height: 2.3125rem;
+    position: absolute;
+    top: 1.4375rem;
+    left: 19.625rem;
+  }
+
+  #main__middle-text {
+    width: 29.6rem;
+    height: 1.5rem;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: rgba(0, 0, 0, 0.61);
+    position: absolute;
+    top: 50%;
+    left: 23.5625rem;
+    transform: translateY(-50%);
+  }
+`
+
 export const MainBody_Tapbar = styled.div`
   position: relative;
   width: 100%;
   height: 57px;
-  background-color: white;
-  border: 1px solid red;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.25);
 
   .MainBody_Tapbar_In{
     position: absolute;
     width: 540px;
     height: 44px;
-    border: 1px solid red;
     margin-left: 112px;
     margin-top: 13px;
   }
   .MainBody_Tapbar_In > button{
     width: 135px;
     height: 44px;
-    background-color:transparent;
+    background-color: transparent;
     border: none;
     font-size: 20px;
     color: #B0B0B0;
@@ -35,9 +75,6 @@ export const MainBody_Select = styled.div`
   position: relative;
   width: 100%;
   height: 115px;
-  background-color: pink;
-  border: 1px solid red;
-
 `
 export const MainBody_Today = styled.div`
   position: relative;
