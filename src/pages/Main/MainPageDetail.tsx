@@ -4,16 +4,20 @@ import { useState, useRef } from "react";
 import  Dropdown ,{ Option }from 'react-dropdown';
 import Modal from '../../components/Modal/Modal';
 import Header from '../../components/Header/Header';
+import {MainDetailTap} from '../../components/MainDetail/MainDetailTap';
 
 import{
-  ModalBg,
-  ModalBtn,
+
   MainBody_Tapbar,
   MainBody_Content_title,
   MainBody_Content_title1,
   MainBody_Content_detail,
   MainBody_Card,
   Mainbody_CardContent,
+  Main_Program,
+  Main_Program_Title,
+  Main_Program_content,
+  TapModal,
 
 } from '../Main/MainPageDetail.styled'
 import img from '../../assets/Vector.png'
@@ -41,8 +45,8 @@ const MainPageDetail = () =>{
       navigate("/mainDetail");
     }
 
-  const [modal, setModal] = useState(false);
-  const outside = useRef(null);
+  
+  
 
   return (
     <div>
@@ -100,18 +104,18 @@ const MainPageDetail = () =>{
 					</div>
           </Mainbody_CardContent>
         </MainBody_Card>
-      <ModalBtn onClick={ () => setModal(true) }>글쓰기</ModalBtn>
-      {
-        modal &&
-        <ModalBg 
-          ref={outside} 
-          onClick={ (e) => { if(e.target === outside.current) setModal(false) } }
-        >
-          <Modal/>
-      </ModalBg>
-      }
+        <Main_Program>
+          <Main_Program_Title>성북구에서 모집중인 프로그램</Main_Program_Title>
+          <Main_Program_content></Main_Program_content>
+        </Main_Program>
+        <TapModal>
+            <MainDetailTap/>
         
-    </div>
+        </TapModal>
+      </div>
+      
+        
+    
   )
 }
 
