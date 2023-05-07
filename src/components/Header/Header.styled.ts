@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  height: 4.625em;
+  height: 4.5rem;
   display: flex;
   position: relative;
 
   #header__logo {
-    width: 4.9375em;
-    height: 2.2675em;
+    width: 4.9375rem;
+    height: 2.2675rem;
     position: absolute;
-    left: 11.8125em;
+    left: 8.875rem;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -23,8 +23,8 @@ export const SearchInputContainer = styled.div`
   background-color: #eee;
   border-radius: 1.25em;
   position: absolute;
-  left: 19em;
-  top: 1.125em;
+  left: 16.1875rem;
+  top: 1.25rem;
 
   #header__search--icon {
     position: absolute;
@@ -50,19 +50,20 @@ export const SearchInputContainer = styled.div`
 `;
 
 export const NotifyProfileContainer = styled.div`
-  width: 6em;
-  height: 2.1875em;
+  width: 6.375rem;
+  height: 1.9813rem;
   position: absolute;
-  right: 4.6875em;
+  right: 8.875rem;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 
   #header__notification {
     width: 1.368125em;
     height: 1.60375em;
     position: absolute;
     top: 50%;
-    left: 1em;
     transform: translateY(-50%);
   }
 `;
@@ -73,8 +74,9 @@ export const ProfileContainer = styled.div`
   left: 3em;
   transform: translateY(-50%);
   display: flex;
-  width: 3.2em;
-  height: 2em;
+  justify-content: space-between;
+  width: 3.2781em;
+  height: 1.9813em;
 
   #header__profile {
     width: 2.028125em;
