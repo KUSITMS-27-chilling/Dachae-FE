@@ -3,12 +3,22 @@ import {
 } from "./TodayMy.styled";
 import TodayMyIn from "../TodayMyIn/TodayMyIn";
 import TodayMyOut from "../TodayMyOut";
+import { loginState } from "../../../recoil/user";
+import { useRecoilValue } from "recoil";
 
 function TodayMy(props: any) {
+  const state = useRecoilValue(loginState);
+
   return(
     <TodayMyContainer>
-      {/* <TodayMyIn></TodayMyIn> */}
-      <TodayMyOut></TodayMyOut>
+      {
+        state &&
+        <TodayMyIn></TodayMyIn>
+      }
+      {
+        !state &&
+        <TodayMyOut></TodayMyOut>
+      }
     </TodayMyContainer>
   )
 }

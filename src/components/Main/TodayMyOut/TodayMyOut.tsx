@@ -8,16 +8,18 @@ import naver_login from '../../../assets/naver_login.png';
 import kakao_login from '../../../assets/kakao_login.png';
 import { useState } from "react";
 import axios from 'axios';
-import { loginId } from "../../../recoil/user";
+import { loginId, loginState } from "../../../recoil/user";
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 
 function TodayMyOut() {
   const setUserId = useSetRecoilState(loginId);
+  const setLoginState = useSetRecoilState(loginState);
   const userId = useRecoilValue(loginId);
+  const userState = useRecoilValue(loginState);
   const [userPwd, setUserPwd] = useState('');
   
   const onClickLogin = () => {
-    axios.post(`${import.meta.env.VITE_APP_HOST}/user/login` ,
+    axios.post(`${import.meta.env.VITE_APP_HOST}/user/login`,
       {
         id: userId,
         password: userPwd
@@ -26,6 +28,7 @@ function TodayMyOut() {
     .then((res)=>  {
         localStorage.setItem('access_token', res.data.data.accessToken);
         localStorage.setItem('refresh_token', res.data.data.refreshToken);
+        setLoginState(true);
       }
     )
     .catch((err) => console.log(err))

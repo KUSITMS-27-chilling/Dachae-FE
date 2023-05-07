@@ -14,7 +14,7 @@ export const CenterNewsHeader = styled.div`
   height: 2.3125em;
   display: flex;
   justify-content: space-between;
-  line-height: 25px;
+  line-height: 1.5625rem;
   letter-spacing: -0.05em;
   position: absolute;
   top: 1.125em;
@@ -124,4 +124,17 @@ export const LearningGroundProgram = styled.div`
 export const LearningGroundText = styled.div`
   width: max-content;
   height: 1.125rem;
+`;
+
+export const CenterNewsOut = styled.div`
+  width: 23.75rem;
+  height: 3rem;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  position: absolute;
+  top: 10.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 `;
