@@ -12,11 +12,16 @@ import MainBodyContent from '../../components/Main/MainBodyContent/MainBodyConte
 import Header from '../../components/Header/Header';
 import CenterNews from '../../components/CenterNews';
 import TodayMy from '../../components/Main/TodayMy';
+import TabBar from '../../components/TabBar';
 import { LGData } from '../../types/centerNews';
 import axios from 'axios';
 import map_marker from '../../assets/map-marker-radius.png';
+import { loginState } from '../../recoil/user';
+import { useRecoilValue } from 'recoil';
 
 function MainPage() {
+  const state = useRecoilValue(loginState);
+
   axios.get(`${import.meta.env.VITE_APP_HOST}/program`)
     .then((res) => {
       console.log(res.data.data);
@@ -75,7 +80,7 @@ function MainPage() {
       ]
     }
   ]
-    
+
     const navigate = useNavigate();
     const goLogin =()=>{
         navigate("/login");
@@ -106,21 +111,17 @@ function MainPage() {
           
         </MainBody_Today>
 
-        <MainBody_Tapbar>
-          <div className='MainBody_Tapbar_In'>
-            <button onClick={goMain}>모아보기</button>
-            <button onClick={goSuggest}>제안할래요</button>
-            <button onClick={goCommu}>커뮤니티</button>
-            <button onClick={goMypage}>마이페이지</button>
-          </div>
-        </MainBody_Tapbar>
+        <TabBar />
 
-        <MainMiddle>
-          <div id='main__middle-rect'>
-            <img src={map_marker} alt="map-marker" />
-            <div id='main__middle-text'>다채에서 많은 분들이 지정해두신 관심 센터를 추천해드려요 !</div>
-          </div>
-        </MainMiddle>
+        {
+          !state &&
+          <MainMiddle>
+            <div id='main__middle-rect'>
+              <img src={map_marker} alt="map-marker" />
+              <div id='main__middle-text'>다채에서 많은 분들이 지정해두신 관심 센터를 추천해드려요 !</div>
+            </div>
+          </MainMiddle>
+        }
         
         <MainBodyContent/>
       </>
