@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { 
   MainBanner,
+  MainMiddle,
   MainBody_Today,
   MainBody_Tapbar,
   MainBody_Today_In,
@@ -12,8 +13,16 @@ import Header from '../../components/Header/Header';
 import CenterNews from '../../components/CenterNews';
 import TodayMy from '../../components/Main/TodayMy';
 import { LGData } from '../../types/centerNews';
+import axios from 'axios';
+import map_marker from '../../assets/map-marker-radius.png';
 
 function MainPage() {
+  axios.get(`${import.meta.env.VITE_APP_HOST}/program`)
+    .then((res) => {
+      console.log(res.data.data);
+    })
+    .catch((err) => {console.log(err)});
+
   const lgData: LGData[] = [
     {
       region: '종로',
@@ -105,6 +114,13 @@ function MainPage() {
             <button onClick={goMypage}>마이페이지</button>
           </div>
         </MainBody_Tapbar>
+
+        <MainMiddle>
+          <div id='main__middle-rect'>
+            <img src={map_marker} alt="map-marker" />
+            <div id='main__middle-text'>다채에서 많은 분들이 지정해두신 관심 센터를 추천해드려요 !</div>
+          </div>
+        </MainMiddle>
         
         <MainBodyContent/>
       </>
