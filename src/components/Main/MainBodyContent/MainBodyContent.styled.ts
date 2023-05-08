@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-//메인페이지 MainBody_Content 안 컴포넌트 스타일 지정
 export const MainContent = styled.div`
   position: relative;
   width: 100%;

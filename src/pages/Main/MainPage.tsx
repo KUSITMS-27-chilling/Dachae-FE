@@ -28,7 +28,6 @@ function MainPage() {
     await axios.get(`${import.meta.env.VITE_APP_HOST}/program`)
     .then((res) => {
       const programsData = res.data.data.programMainResponses;
-      console.log(programsData);
 
       for(let key in programsData) {
         const tempData: MainContentData = {
@@ -59,8 +58,6 @@ function MainPage() {
   useEffect(() => {
     getPrograms();
   }, [])
-
-  console.log(programData);
 
   const lgData: LGData[] = [
     {

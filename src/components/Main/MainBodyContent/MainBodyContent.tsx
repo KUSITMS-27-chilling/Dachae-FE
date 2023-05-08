@@ -19,21 +19,24 @@ import { MainContentProp } from '../../../types/mainContent';
 
 function MainBodyContent({ prop }: MainContentProp) {
 	const navigate = useNavigate();
-	const goMainDetail =()=>{
-			navigate("/mainDetail");
+
+	const btnClick = () => {
+		const absoluteUrl = new URL(`https://${prop.programs[0].programUrl!}`, window.location.href).toString();
+    window.open(absoluteUrl, "_blank");
 	}
 	
 	return (
 		<>
 			<MainContent>
 				<MainContentWrapper>
+
 					<MainContentHeader>
 							<div id='main-content__lg-name'>{prop.region} 동네배움터</div>
 							<MainContentFav>
 								<div id='main-content__fav-count'>{prop.favCount}</div>
 								<div id='main-content__fav-text'>명이 함께 하고 있어요</div>
 							</MainContentFav>
-							<div id='main-content__lg-detail'>상세보기 &gt;</div>
+							<div id='main-content__lg-detail' onClick={() => navigate(`/${prop.region}`)}>상세보기 &gt;</div>
 					</MainContentHeader>
 
 					<MainContentBtn>
@@ -66,23 +69,24 @@ function MainBodyContent({ prop }: MainContentProp) {
 									<ProgramCard 
 											imgSrc={temp_program}
 											title={prop.programs[0].programName!}
-											btnClick={() => console.log('test')}
+											btnClick={btnClick}
 											deadline="~05/24(수)"
 									></ProgramCard>
 									<ProgramCard 
 											imgSrc={temp_program}
 											title={prop.programs[1].programName!}
-											btnClick={() => console.log('test')}
+											btnClick={btnClick}
 											deadline="~05/24(수)"
 									></ProgramCard>
 									<ProgramCard 
 											imgSrc={temp_program}
 											title={prop.programs[2].programName!}
-											btnClick={() => console.log('test')}
+											btnClick={btnClick}
 											deadline="~05/24(수)"
 									></ProgramCard>
 							</MainContentProgramContainer>
 					</MainContentProgram>
+
 				</MainContentWrapper>
 			</MainContent>
 		</>
