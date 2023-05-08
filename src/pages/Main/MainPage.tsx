@@ -55,9 +55,54 @@ function MainPage() {
     .catch((err) => {console.log(err)});
   }
 
+  const getProgramsLogIn = async (token: string) => {
+    await axios.get(`${import.meta.env.VITE_APP_HOST}/program`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    .then((res) => {
+      const programsData = res.data.data.programMainResponses;
+
+      for(let key in programsData) {
+        const tempData: MainContentData = {
+          region: key,
+          favCount: programsData[key].favCount,
+          programs: []
+        }
+        
+        const programArr: MainProgramData[] = [];
+        if(programsData[key].programs) {
+          for(let i = 0; i < programsData[key].programs.length; i++) {
+            programArr.push({
+              programName: programsData[key].programs[i].programName,
+              programEnd: programsData[key].programs[i].endDate,
+              programUrl: programsData[key].programs[i].url
+            })
+          }
+        }
+        tempData.programs = programArr;
+
+        setProgramData(programData => [tempData, ...programData]);
+      }
+
+    })
+    .catch((err) => {console.log(err)});
+  }
+
+  const sliceArr = () => {
+    const newList = programData.slice(0, 4);
+    setProgramData(newList);
+  }
+
   useEffect(() => {
-    getPrograms();
-  }, [])
+    setProgramData([]);
+    if(localStorage.getItem('access_token') !== null) getProgramsLogIn(localStorage.getItem('access_token')!);
+    else getPrograms();
+    // sliceArr();
+  }, [state])
+
 
   const lgData: LGData[] = [
     {
