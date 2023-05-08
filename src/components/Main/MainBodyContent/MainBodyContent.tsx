@@ -25,6 +25,18 @@ function MainBodyContent({ prop }: MainContentProp) {
     window.open(absoluteUrl, "_blank");
 	}
 	
+	function formatEndDate(date: string){
+    let result = '~';
+		const week = ['일', '월', '화', '수', '목', '금', '토'];
+    const dayOfWeek = week[new Date(date).getDay()];
+
+		const dateArr = date.split('-');
+		result += dateArr[1] + '/' + dateArr[2];
+		result += '(' + dayOfWeek + ')';
+
+    return result;
+	}
+	
 	return (
 		<>
 			<MainContent>
@@ -70,19 +82,19 @@ function MainBodyContent({ prop }: MainContentProp) {
 											imgSrc={temp_program}
 											title={prop.programs[0].programName!}
 											btnClick={btnClick}
-											deadline="~05/24(수)"
+											deadline={formatEndDate(prop.programs[0].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
 											imgSrc={temp_program}
 											title={prop.programs[1].programName!}
 											btnClick={btnClick}
-											deadline="~05/24(수)"
+											deadline={formatEndDate(prop.programs[1].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
 											imgSrc={temp_program}
 											title={prop.programs[2].programName!}
 											btnClick={btnClick}
-											deadline="~05/24(수)"
+											deadline={formatEndDate(prop.programs[2].programEnd!)}
 									></ProgramCard>
 							</MainContentProgramContainer>
 					</MainContentProgram>
