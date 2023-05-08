@@ -31,7 +31,8 @@ function MainBodyContent() {
 							<MainBody_Content_title1>성북구 동네배움터</MainBody_Content_title1>
 							<MainBody_Content_People>365명이 함께 하고 있어요</MainBody_Content_People>
 							<MainBody_Content_detail>
-									<button onClick={goMainDetail}>자세히보기</button>
+									<div id='center-news__header--setting-text' onClick={goMainDetail}>상세보기</div>
+            						<div id='center-news__header--setting-btn'>&gt;</div>
 							</MainBody_Content_detail>
 					</MainBody_Content_title>
 					<MainBody_Content_Btn>

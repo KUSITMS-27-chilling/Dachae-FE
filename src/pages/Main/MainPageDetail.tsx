@@ -23,6 +23,7 @@ import{
 import img from '../../assets/Vector.png'
 import img2 from '../../assets/map.png'
 import img3 from '../../assets/phone.png'
+import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProgram';
 
 const MainPageDetail = () =>{
   const navigate = useNavigate();
@@ -106,7 +107,9 @@ const MainPageDetail = () =>{
         </MainBody_Card>
         <Main_Program>
           <Main_Program_Title>성북구에서 모집중인 프로그램</Main_Program_Title>
-          <Main_Program_content></Main_Program_content>
+          <Main_Program_content>
+            <MainDetailProgram/>
+          </Main_Program_content>
         </Main_Program>
         <TapModal>
             <MainDetailTap/>

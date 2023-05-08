@@ -33,8 +33,17 @@ export const MainBody_Content_People = styled.div`
 `
 export const MainBody_Content_detail = styled.div`
   position: absolute;
-  right: 134px;
+  margin-left: 1226px;
   size: 18px;
+  display: flex;
+  .center-news__header--setting-text{
+    font-size: 18px;
+    color: #535353;
+  }
+  .center-news__header--setting-btn{
+    color: #7D7D7D;
+    font-size: 30px;
+  }
 `
 
 /////여기까지 컴포넌트
