@@ -24,7 +24,7 @@ function App() {
           <Route path="/suggest" element={<SuggestPage />}/>
           <Route path="/commu" element={<CommunityPage />}/>
           <Route path="/mypage" element={<Mypage />}/>
-          <Route path="/mainDetail" element={<MainPageDetail />}/>
+          <Route path="/:region" element={<MainPageDetail />}/>
         </Routes>
     </div>
     </RecoilRoot>
