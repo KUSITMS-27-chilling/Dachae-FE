@@ -1,3 +1,5 @@
+export type detailOrCommu = 'detail' | 'community';
+
 // api 나오면 타입 재점검
 export interface ReviewData {
   userImg?: string;
@@ -9,6 +11,7 @@ export interface ReviewData {
   region: string;
   detailPlace: string;
   reviewImg?: string[];
+  detailOrCommu: detailOrCommu;
 }
 
 export type ReviewProps = {
