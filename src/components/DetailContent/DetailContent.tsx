@@ -5,7 +5,7 @@ import { DetailContentContainer } from "./DetailContent.styled";
 import { detailTabKind } from "../../recoil/detail";
 import { useRecoilValue } from "recoil";
 import temp_program from "../../assets/temp_program.jpg";
-import { detailOrCommu } from "../../types/review";
+import { detailOrCommu, ReviewData } from "../../types/review";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -15,6 +15,7 @@ function DetailContent() {
   const detailTab = useRecoilValue(detailTabKind);
   const detail: detailOrCommu = 'detail';
   const [togetherArr, setTogetherArr] = useState<TogetherData[]>([]);
+  const [reviewArr, setReviewArr] = useState<ReviewData[]>([]);
 
   const reviewData = {
     userNick: '다채 고수',
@@ -63,18 +64,37 @@ function DetailContent() {
     return;
   }
 
-  const getReview = () => {
+  const getReview = async () => {
+    await axios.get(`${import.meta.env.VITE_APP_HOST}/review/page/${region}`)
+      .then((res) => {
+        const response = res.data.data.reviews;
+        for(let key in response) {
+          const object: ReviewData = {
+            userNick: response[key].nickName,
+            time: '18시간 전',
+            title: response[key].title,
+            lecture: response[key].programName,
+            content: response[key].content,
+            region: response[key].tags[0],
+            detailPlace: response[key].tags[1],
+            detailOrCommu: 'detail'
+          }
 
+          setReviewArr(reviewArr => [object, ...reviewArr]);
+        }
+      })
+      .catch((err) => console.log(err));
+    return;
   }
 
   useEffect(() => {
-    setTogetherArr([]);
     if(detailTab == 'together'){
+      setTogetherArr([]);
       getListenTogether();
-      console.log(togetherArr);
       return;
     }
     if(detailTab == 'review'){
+      setReviewArr([]);
       getReview();
       return;
     }
@@ -88,11 +108,12 @@ function DetailContent() {
         (togetherArr.map((el, idx) => {
           return <Together key={idx} prop={el} />
         }))
-        // <Together />
       }
       {
         detailTab == 'review' &&
-        <Review props={reviewData} />
+        (reviewArr.map((el, idx) => {
+          return <Review key={idx} props={el} />
+        }))
       }
     </DetailContentContainer>
   )
