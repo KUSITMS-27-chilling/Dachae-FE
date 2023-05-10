@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useSetRecoilState } from "recoil";
+import { detailTabKind } from "../../recoil/detail";
 import { 
   DetailTabContainer,
   DetailTabToggle
@@ -6,6 +8,7 @@ import {
 
 function DetailTabBar() {
   const [btnText, setBtnText] = useState('모집글 쓰기');
+  const setDetailTab = useSetRecoilState(detailTabKind);
 
   const tabClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const tabArr = document.querySelectorAll('.detail-tab__toggle');
@@ -17,11 +20,13 @@ function DetailTabBar() {
 
     if(e.currentTarget.id == 'detail-tab__together') {
       setBtnText('모집글 쓰기');
+      setDetailTab('together');
       return;
     }
 
     if(e.currentTarget.id == 'detail-tab__review') {
       setBtnText('후기 쓰기');
+      setDetailTab('review');
       return;
     }
   }

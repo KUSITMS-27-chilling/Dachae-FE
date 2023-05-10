@@ -8,12 +8,12 @@ export const ReviewContainer = styled.div`
   position: relative;
 `;
 
-export const ReviewProfile = styled.div`
+export const ReviewProfile = styled.div<{ topProp?: boolean }>`
   width: max-content;
   height: 3rem;
   display: flex;
   position: absolute;
-  top: 2rem;
+  top: ${props => props.topProp ? '2.4375rem' : '2rem'};
 
   #review__profile-photo {
     width: 3rem;
@@ -95,14 +95,14 @@ export const ReviewContent = styled.div`
   font-size: 18px;
 `;
 
-export const ReviewPlace = styled.div`
+export const ReviewPlace = styled.div<{ topProp?: boolean }>`
   width: max-content;
   height: 2.0625rem;
   display: flex;
   font-size: 19px;
   line-height: 2.0625rem;
   position: absolute;
-  top: 21.5rem;
+  top: ${props => props.topProp ? '0' : '21.5rem'};
 
   #review__place-region {
     width: max-content;
@@ -112,6 +112,7 @@ export const ReviewPlace = styled.div`
     color: #39afb0;
     font-weight: 700;
     padding: 0.25rem 0.625rem;
+    margin-right: 0.875rem;
   }
 
   #review__place-detail {
