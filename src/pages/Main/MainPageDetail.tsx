@@ -30,6 +30,7 @@ import { MainDetailTap } from '../../components/MainDetail/MainDetailTap';
 
 const MainPageDetail = () =>{
   const { region } = useParams();
+  console.log(region);
 
   const navigate = useNavigate();
   const goMainDetail =()=>{
@@ -94,10 +95,11 @@ const MainPageDetail = () =>{
             <MainDetailProgram region = {Region}/>
           </Main_Program_content>
         </Main_Program>
-        <TapModal>
+        {/* <TapModal>
             <MainDetailTap/>
         
-        </TapModal>
+        </TapModal> */}
+        <DetailContent/>
       </div>
       
         
