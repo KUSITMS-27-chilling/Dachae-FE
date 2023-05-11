@@ -75,3 +75,18 @@ export const DetailTabToggle = styled.div`
   }
 
 `
+
+export const ModalBg = styled.div`
+// Modal이 떴을 때의 배경을 깔아주는 CSS를 구현
+z-index: 1; //위치지정 요소
+position: fixed;
+display : flex;
+justify-content : center;
+align-items : center;
+background-color: rgba(0,0,0,0.4);
+border-radius: 10px;
+top : 0;
+left : 0;
+right : 0;
+bottom : 0;
+`;
