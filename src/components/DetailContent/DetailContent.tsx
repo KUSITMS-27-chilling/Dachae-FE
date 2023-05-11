@@ -3,14 +3,18 @@ import Together from "../Together";
 import Review from "../Review";
 import { DetailContentContainer } from "./DetailContent.styled";
 import { detailTabKind } from "../../recoil/detail";
-import { useRecoilValue } from "recoil";
-import { detailOrCommu, ReviewData } from "../../types/review";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { ReviewData } from "../../types/review";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { TogetherData } from "../../types/together";
 
 function DetailContent() {
+  const setTab = useSetRecoilState(detailTabKind);
+  useEffect(() => {
+    setTab('together');
+  }, [])
   const detailTab = useRecoilValue(detailTabKind);
   const [togetherArr, setTogetherArr] = useState<TogetherData[]>([]);
   const [reviewArr, setReviewArr] = useState<ReviewData[]>([]);
