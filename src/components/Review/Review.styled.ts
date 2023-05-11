@@ -1,19 +1,22 @@
 import styled from "styled-components";
+import { detailOrCommu } from "../../types/review";
 import temp_program from "../../assets/temp_program.jpg";
 
-export const ReviewContainer = styled.div`
-  width: 57.5rem;
+export const ReviewContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
+  /* width: 57.5rem; */
+  width: ${props => props.detailOrCommu == 'detail' ? '72.25rem' : '57.5rem'};
   height: 26.25rem;
-  border: 1px solid #000;
   position: relative;
+  margin: 0 auto;
+  border-bottom: 2px solid #cbcbcb;
 `;
 
-export const ReviewProfile = styled.div`
+export const ReviewProfile = styled.div<{ topProp?: boolean }>`
   width: max-content;
   height: 3rem;
   display: flex;
   position: absolute;
-  top: 2rem;
+  top: ${props => props.topProp ? '2.4375rem' : '2rem'};
 
   #review__profile-photo {
     width: 3rem;
@@ -42,8 +45,9 @@ export const ReviewProfile = styled.div`
   }
 `;
 
-export const ReviewText = styled.div`
-  width: 37.125rem;
+export const ReviewText = styled.div<{ detailOrCommu: detailOrCommu }>`
+  /* width: 37.125rem; */
+  width: ${props => props.detailOrCommu == 'detail' ? '46.5rem' : '37.125rem'};
   height: 10.4375rem;
   position: absolute;
   top: 7.0625rem;
@@ -88,21 +92,22 @@ export const ReviewInfo = styled.div`
 
 `;
 
-export const ReviewContent = styled.div`
-  width: 37.125rem;
+export const ReviewContent = styled.div<{ detailOrCommu: detailOrCommu }>`
+  /* width: 37.125rem; */
+  width: ${props => props.detailOrCommu == 'detail' ? '46.5rem' : '37.125rem'};
   height: 5.6875rem;
   overflow: hidden;
   font-size: 18px;
 `;
 
-export const ReviewPlace = styled.div`
+export const ReviewPlace = styled.div<{ topProp?: boolean }>`
   width: max-content;
   height: 2.0625rem;
   display: flex;
   font-size: 19px;
   line-height: 2.0625rem;
   position: absolute;
-  top: 21.5rem;
+  top: ${props => props.topProp ? '0' : '21.5rem'};
 
   #review__place-region {
     width: max-content;
@@ -112,6 +117,7 @@ export const ReviewPlace = styled.div`
     color: #39afb0;
     font-weight: 700;
     padding: 0.25rem 0.625rem;
+    margin-right: 0.875rem;
   }
 
   #review__place-detail {

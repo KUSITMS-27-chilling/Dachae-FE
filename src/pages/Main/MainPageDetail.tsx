@@ -5,6 +5,7 @@ import  Dropdown ,{ Option }from 'react-dropdown';
 import Modal from '../../components/Modal/Modal';
 import Header from '../../components/Header/Header';
 import TabBar from '../../components/TabBar';
+import DetailContent from '../../components/DetailContent';
 
 import{
 
