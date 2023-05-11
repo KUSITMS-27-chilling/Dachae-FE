@@ -5,7 +5,8 @@ import{
     MainDetailProgramCard,
     MainDetailProgramCardContent,
     CardTitle,
-    CardContent
+    CardContent,
+    ProgramContainer
   
   } from '../MainDetailProgram/MainDetailProgram.styled'
   interface Program {
@@ -40,8 +41,10 @@ console.log(data);
 
   return (
     <div>
+      <ProgramContainer>
          {data.map( (card ,index) => (
       <MainDetailProgramCard key={index}>
+        
         <MainDetailProgramCardContent>
         <div className='img'></div>
         <div className='text'>
@@ -53,6 +56,7 @@ console.log(data);
         </MainDetailProgramCardContent>
       </MainDetailProgramCard>
        ))}
+       </ProgramContainer>
     </div>
   );
 };

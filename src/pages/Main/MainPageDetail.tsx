@@ -41,7 +41,7 @@ const MainPageDetail = () =>{
       </Header>
       <TabBar />
       <MainBody_Content_title>
-            <MainBody_Content_title1>동네배움터</MainBody_Content_title1>
+            <MainBody_Content_title1>{region} 동네배움터</MainBody_Content_title1>
             <MainBody_Content_detail>
                 <div id='center-news__header--setting-text' onClick={goMainDetail}>바로가기</div>
             </MainBody_Content_detail>
@@ -66,7 +66,7 @@ const MainPageDetail = () =>{
               지도보기
             </div>
             <div className='Card-content'>
-            동네 배움터를 이용하는<br/>
+            {region}동네 배움터를 이용하는<br/>
               친구를 만나보세요
             </div>
 					</div>
@@ -78,16 +78,16 @@ const MainPageDetail = () =>{
               배움터 연락하기
             </div>
             <div className='Card-content'>
-              성북구 동네 배움터를 이용하는<br/>
+            {region} 동네 배움터를 이용하는<br/>
               친구를 만나보세요
             </div>
 					</div>
           </Mainbody_CardContent>
         </MainBody_Card>
         <Main_Program>
-          <Main_Program_Title>에서 모집중인 프로그램</Main_Program_Title>
+          <Main_Program_Title>{region}에서 모집중인 프로그램</Main_Program_Title>
           <Main_Program_content>
-            <MainDetailProgram region = {Region}/>
+            <MainDetailProgram region = {region as string}/>
           </Main_Program_content>
         </Main_Program>
         <DetailContent/>

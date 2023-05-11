@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 export const MainBody_Tapbar = styled.div`
   position: relative;
   width: 100%;
