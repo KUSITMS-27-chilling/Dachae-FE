@@ -216,6 +216,12 @@ select{
   border: 1px solid #CBCBCB;
   border-radius:10px;
 }
+option{
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -5%;
+}
 `
 export const Day = styled.div`
 margin-bottom: 30px;
@@ -225,6 +231,12 @@ select{
   height: 44px;
   border: 1px solid #CBCBCB;
   border-radius:10px;
+}
+option{
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -5%;
 }
 `
 export const Write = styled.div`

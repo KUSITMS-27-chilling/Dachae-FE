@@ -45,15 +45,12 @@ const Modal =({ region }: Props)=> {
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(event.target.value);
   };
-  //강의 옵션
-  // const options1 = ['Option 1', 'Option 2', 'Option 3'];
-  // const [selectedOption1, setSelectedOption1] = useState(options1[0]);
 
   const handleSelect1 = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
   };
 
-  const options2 = ['Option 1', 'Option 2', 'Option 3'];
+  const options2 = ['1주차', '2주차', '3주차','4주차','5주차','6주차','7주차','8주차',];
   const [selectedOption2, setSelectedOption2] = useState(options2[0]);
 
   const handleSelect2 = (event: React.ChangeEvent<HTMLSelectElement>) => {
