@@ -1,15 +1,12 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { useState, useRef } from "react";
-import  Dropdown ,{ Option }from 'react-dropdown';
-import Modal from '../../components/Modal/Modal';
 import Header from '../../components/Header/Header';
 import TabBar from '../../components/TabBar';
 import DetailContent from '../../components/DetailContent';
 
 import{
 
-  MainBody_Tapbar,
+  
   MainBody_Content_title,
   MainBody_Content_title1,
   MainBody_Content_detail,
@@ -18,7 +15,6 @@ import{
   Main_Program,
   Main_Program_Title,
   Main_Program_content,
-  TapModal,
   Region,
 
 } from '../Main/MainPageDetail.styled'
@@ -26,7 +22,6 @@ import img from '../../assets/Vector.png'
 import img2 from '../../assets/map.png'
 import img3 from '../../assets/phone.png'
 import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProgram';
-import { MainDetailTap } from '../../components/MainDetail/MainDetailTap';
 
 const MainPageDetail = () =>{
   const { region } = useParams();
@@ -95,10 +90,6 @@ const MainPageDetail = () =>{
             <MainDetailProgram region = {Region}/>
           </Main_Program_content>
         </Main_Program>
-        {/* <TapModal>
-            <MainDetailTap/>
-        
-        </TapModal> */}
         <DetailContent/>
       </div>
       
