@@ -98,7 +98,35 @@ img{
   font-weight: 500;
 }
 `
-/////////모달 스타일 시작
+
+export const Main_Program = styled.div`
+width: 100%;
+height: 539px;
+border: 1px solid red;
+`
+export const Main_Program_Title = styled.div`
+width: 250px;
+height: 25px;
+border: 1px solid red;
+margin-top: 18px;
+margin-left: 144px;
+font-size: 21px;
+font-weight: 500;
+letter-spacing: -5%;
+`
+export const Main_Program_content = styled.div`
+width: 1180px;
+height: 486px;
+margin-left: 142px;
+margin-top: 10px;
+border: 1px solid red;
+`
+////////////////////////Tap 시작//////////////////////////////
+export const TapModal = styled.div`
+display: flex;
+
+`
+/////////모달 스타일 시작//////////////////////////
 export const Modal1 = styled.div`
 width: 836px;
 height: 770px;
@@ -115,6 +143,9 @@ export const ModalBtn = styled.button`
   color: white;
   border-radius: 30px;
   cursor: grab;
+  width: 122px;
+  height: 40px;
+  margin-top: 107px;
 `;
 export const ModalBg = styled.div`
   // Modal이 떴을 때의 배경을 깔아주는 CSS를 구현
