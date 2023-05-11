@@ -9,6 +9,7 @@ import CommuBest from '../../components/Commu/CommuBest'
 import CommuMyPost from '../../components/Commu/CommuMyPost'
 import CommuPostBtn from '../../components/Commu/CommuPostBtn';
 import CommuTab from '../../components/Commu/CommuTab';
+import CommuHeader from '../../components/Commu/CommuHeader';
 import temp_program from "../../assets/temp_program.jpg";
 import { Category } from '../../types/tabCategory';
 import { detailOrCommu } from '../../types/review';
@@ -20,11 +21,11 @@ function CommunityPage() {
   return (
     <div>
       <>
-      <Header>
-      </Header>
+      <Header/>
       <TabBar prop={category} />
       <MainBanner />
       <CommuTab />
+      <CommuHeader />
       </>
     </div>
   )

@@ -14,19 +14,19 @@ interface IData {
     day: string;
   }
 
-function CommuBest() {
+function CommuMyPost() {
 
     const [data, setData] = useState<IData[]>([]);
 
-    useEffect(() => {
-        axios.get('')
-          .then(response => {
-            setData(response.data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }, []);
+    // useEffect(() => {
+    //     axios.get('')
+    //       .then(response => {
+    //         setData(response.data);
+    //       })
+    //       .catch(error => {
+    //         console.error(error);
+    //       });
+    //   }, []);
 
   return (
     <div>
@@ -43,4 +43,4 @@ function CommuBest() {
   )
 }
 
-export default CommuBest
+export default CommuMyPost

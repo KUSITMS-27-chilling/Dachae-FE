@@ -18,13 +18,12 @@ export const Best = styled.div`
   color: #535353;
 `
 export const Text = styled.div`
-    position: relative;
-    width: 170px;
-     height: 50px;
-     border: 3px solid #767676;
-     margin-top: 9px;
-    margin-left: 18px;
-
+  position: relative;
+  width: 170px;
+  height: 50px;
+  border: 3px solid #767676;
+  margin-top: 9px;
+  margin-left: 18px;
 `
 
 //내가 남긴 후기 글 박스
@@ -65,18 +64,36 @@ export const Text1 = styled.div`
 //   color: #535353;
 
 //`
-export const Stylebutton = styled.button`
-    position: relative;
-  width: 920px;
-  height: 46px;
+
+export const CommuPostBtnContainer = styled.div`
+  width: 57.5rem;
+  height: 2.875rem;
+  position: absolute;
+  bottom: 0;
   border: 2px solid #CBCBCB;
   border-radius: 20px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #535353;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.61);;
   background: none;
-  .Write{
-    margin-right: 13px;
+`
+
+export const Stylebutton = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16.5rem;
+  height: 2.875rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  #commu-post-btn__img {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
+  #commu-post-btn__text {
+  }
 `

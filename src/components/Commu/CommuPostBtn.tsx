@@ -1,25 +1,25 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import {
-    Stylebutton
-
+  CommuPostBtnContainer,
+  Stylebutton
 } from './CommuBest.styled'
 import Write from '../../assets/Write.png'
 
 function CommuPostBtn() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const goMypage =()=>{ //일단은 마이페이지로 해놓았음
-        navigate("/mypage");
-      }
+  const goMypage =()=>{ //일단은 마이페이지로 해놓았음
+      navigate("/mypage");
+  }
+  
   return (
-    <div>
-              <Stylebutton onClick={goMypage}>
-              <img className="Write" alt="1" src={Write} />
-                나의 배움에 대해 작성해보세요!
-              </Stylebutton>
-       
-    </div>
+    <CommuPostBtnContainer>
+      <Stylebutton onClick={goMypage}>
+        <img id='commu-post-btn__img' alt="write-img" src={Write} />
+        <div id='commu-post-btn__text'>함께 배울 친구를 찾아보세요!</div>
+      </Stylebutton>
+    </CommuPostBtnContainer>
   )
 }
 
