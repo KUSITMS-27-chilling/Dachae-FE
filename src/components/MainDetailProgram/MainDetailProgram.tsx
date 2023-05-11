@@ -8,8 +8,15 @@ import{
     CardContent
   
   } from '../MainDetailProgram/MainDetailProgram.styled'
-function MainDetailProgram() {
-    const [data, setData] = useState(null);
+  interface Program {
+    programName: string;
+  }
+  
+  interface Props {
+    region: string;
+  }
+const MainDetailProgram = ({ region }: Props)=> {
+    const [data, setData] = useState<Program[]>([]);
     const [loading, setLoading] = useState(false);
 
     useEffect (() => {
@@ -17,33 +24,35 @@ function MainDetailProgram() {
         setLoading(true);
         try {
             const response = await axios.get(
-                `${import.meta.env.VITE_APP_HOST}/program/page/{region}`
+                `${import.meta.env.VITE_APP_HOST}/program/page/${region}`
             );
-            setArticles(response.data.articles);
+            setData(response.data.programs);
         } catch (e) {
             console.log(e);
         }
         setLoading(false);
     }
     fetchData();
-}, []);
+},  [region]);
 
 
   return (
     <div>
-      <MainDetailProgramCard>
+         {data.map( (card ,index) => (
+      <MainDetailProgramCard key={index}>
         <MainDetailProgramCardContent>
         <div className='img'></div>
         <div className='text'>
-            <CardTitle>신박한 정리를 위한 미니멀리즘</CardTitle>
+            <CardTitle>{card.programName}</CardTitle>
             <CardContent>
                 <button>생활 프로그램 더보기</button>
             </CardContent>
         </div>
         </MainDetailProgramCardContent>
       </MainDetailProgramCard>
+       ))}
     </div>
-  )
-}
+  );
+};
 
 export default MainDetailProgram

@@ -6,9 +6,6 @@ export const CenterNewsContainer = styled.div`
   background-color: #f6f6f6;
   box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
   border-radius: 0.875em;
-  /* position: absolute;
-  top: 2.625rem;
-  left: 8.875rem; */
   position: relative;
 `;
 
