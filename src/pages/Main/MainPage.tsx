@@ -91,16 +91,10 @@ function MainPage() {
     .catch((err) => {console.log(err)});
   }
 
-  const sliceArr = () => {
-    const newList = programData.slice(0, 4);
-    setProgramData(newList);
-  }
-
   useEffect(() => {
     setProgramData([]);
     if(localStorage.getItem('access_token') !== null) getProgramsLogIn(localStorage.getItem('access_token')!);
     else getPrograms();
-    // sliceArr();
   }, [state])
 
 

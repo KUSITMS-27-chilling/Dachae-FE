@@ -37,14 +37,17 @@ function TodayMyOut() {
     <TodayMyOutContainer>
       <div id="today-my-out__login-text">로그인</div>
       <TodayFormContainer>
-        <input type="text" 
-              placeholder="아이디를 입력해주세요" 
-              className="today-my-out__form"
-              onChange={(e) => setUserId(e.target.value)} />
-        <input type="password" 
-              placeholder="비밀번호를 입력해주세요" 
-              className="today-my-out__form"
-              onChange={(e) => setUserPwd(e.target.value)} />
+        <form id="today-my-out__login-form">
+          <input type="text" 
+                placeholder="아이디를 입력해주세요" 
+                className="today-my-out__form"
+                onChange={(e) => setUserId(e.target.value)} />
+          <input type="password" 
+                placeholder="비밀번호를 입력해주세요" 
+                className="today-my-out__form"
+                autoComplete="off"
+                onChange={(e) => setUserPwd(e.target.value)} />
+        </form>
       </TodayFormContainer>
       <button id="today-my-out__login-btn" onClick={onClickLogin}>로그인</button>
       <div id="today-my-out__register-btn">회원가입</div>

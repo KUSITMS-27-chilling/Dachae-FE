@@ -3,7 +3,7 @@ import {
   CategoryContainer,
 } from "./TabBar.styled";
 import { useNavigate } from "react-router-dom";
-import { Category, TabBarProps } from "../../types/tabCategory";
+import { TabBarProps } from "../../types/tabCategory";
 import { useEffect } from "react";
 
 function TabBar({ prop = 'program' } : TabBarProps) {
@@ -37,11 +37,11 @@ function TabBar({ prop = 'program' } : TabBarProps) {
         <div 
           id="tab-bar__category-program"
           className="tab-bar__category active" 
-          onClick={goMain}>배움터 정보</div>
+          onClick={goMain}>프로그램</div>
         <div
           id="tab-bar__category-suggest"
           className="tab-bar__category" 
-          onClick={goSuggest}>프로그램 제안</div>
+          onClick={goSuggest}>우리 동네 강사</div>
         <div
           id="tab-bar__category-community"
           className="tab-bar__category" 

@@ -10,8 +10,11 @@ import CommuMyPost from '../../components/Commu/CommuMyPost'
 import CommuPostBtn from '../../components/Commu/CommuPostBtn';
 import temp_program from "../../assets/temp_program.jpg";
 import { Category } from '../../types/tabCategory';
+import { detailOrCommu } from '../../types/review';
 
 function CommunityPage() {
+  const commu: detailOrCommu = 'community';
+
   const reviewData = {
     userNick: '다채 고수',
     time: '18시간 전',
@@ -29,7 +32,8 @@ function CommunityPage() {
       temp_program,
       temp_program,
       temp_program
-    ]
+    ],
+    detailOrCommu: commu
   }
 
   const category: Category = 'community';
