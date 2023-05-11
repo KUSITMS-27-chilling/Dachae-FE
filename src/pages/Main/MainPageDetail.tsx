@@ -91,7 +91,7 @@ const MainPageDetail = () =>{
             <MainDetailProgram region = {region as string}/>
           </Main_Program_content>
         </Main_Program>
-        <DetailContent/>
+        <DetailContent />
       </div>
       
         

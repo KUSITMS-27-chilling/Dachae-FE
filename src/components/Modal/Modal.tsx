@@ -1,6 +1,6 @@
 import React from 'react'
-import { useState, useRef } from "react";
-import  Dropdown ,{ Option }from 'react-dropdown';
+import { useState, useRef ,useEffect} from "react";
+import axios from 'axios';
 import{
     Modal1,
     ExitBtn,
@@ -14,12 +14,20 @@ import{
     SubmitBtn,
     Button,
   } from '../../pages/Main/MainPageDetail.styled'
-
-function Modal() {
+  interface Program {
+    programs: string;
+    programName:string;
+    
+  }
+  interface Props {
+    region: string;
+  }
+const Modal =({ region }: Props)=> {
     const [text, setText] = useState("");
     const [title, setTitle] = useState("");
     const [modal, setModal] = useState(false);
-  
+    const [options1, setOptions1] = useState<Program[]>([]);
+    const [selectedOption1, setSelectedOption1] = useState<string>("");
     
   const outside = useRef(null);
 
@@ -38,8 +46,8 @@ function Modal() {
     setSelectedOption(event.target.value);
   };
   //강의 옵션
-  const options1 = ['Option 1', 'Option 2', 'Option 3'];
-  const [selectedOption1, setSelectedOption1] = useState(options1[0]);
+  // const options1 = ['Option 1', 'Option 2', 'Option 3'];
+  // const [selectedOption1, setSelectedOption1] = useState(options1[0]);
 
   const handleSelect1 = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
@@ -51,6 +59,22 @@ function Modal() {
   const handleSelect2 = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption2(event.target.value);
   };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try{
+        const response = await axios.get( 
+          `${import.meta.env.VITE_APP_HOST}/program/${region}`
+        );
+      setOptions1(response.data.data.programs);
+      console.log(options1);
+    }
+  catch(e) {
+    console.log(e);
+  }}
+  fetchData();
+  },  [region]);
+  console.log (region);
 
   return (
     <div>
@@ -73,8 +97,8 @@ function Modal() {
               <Class>강의
               <select value={selectedOption1} onChange={handleSelect1}>
                 {options1.map((option, index) => (
-              <option key={index} value={option}>
-                {option}
+              <option key={index} value={option.programName}>
+                {option.programName}
               </option>
               ))}
             </select>
