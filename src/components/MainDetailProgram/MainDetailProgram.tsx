@@ -6,11 +6,14 @@ import{
     MainDetailProgramCardContent,
     CardTitle,
     CardContent,
-    ProgramContainer
+    ProgramContainer,
+    Button
   
   } from '../MainDetailProgram/MainDetailProgram.styled'
   interface Program {
     programName: string;
+    category:string;
+    url:string;
   }
   
   interface Props {
@@ -20,6 +23,11 @@ const MainDetailProgram = ({ region }: Props)=> {
     const [data, setData] = useState<Program[]>([]);
     const [loading, setLoading] = useState(false);
 
+    const btnClick = () => {
+      const absoluteUrl = new URL(`https://${data[0].url!}`, window.location.href).toString();
+      window.open(absoluteUrl, "_blank");
+    }
+
     useEffect (() => {
     const fetchData = async () => {
         setLoading(true);
@@ -28,7 +36,7 @@ const MainDetailProgram = ({ region }: Props)=> {
                 `${import.meta.env.VITE_APP_HOST}/program/page/${region}`
             );
             setData(response.data.data.programs);
-            console.log(response.data.data);
+            console.log(data);
         } catch (e) {
             console.log(e);
         }
@@ -42,20 +50,25 @@ console.log(data);
   return (
     <div>
       <ProgramContainer>
-         {data.map( (card ,index) => (
+      {data.map( (card ,index) => (
       <MainDetailProgramCard key={index}>
-        
+      
         <MainDetailProgramCardContent>
         <div className='img'></div>
         <div className='text'>
             <CardTitle>{card.programName}</CardTitle>
             <CardContent>
-                <button>생활 프로그램 더보기</button>
+                <div className='category'>#{card.category}</div>
+                <Button>
+                  <div className='Btn' onClick={btnClick}>
+                  신청페이지 바로가기&gt;</div>
+                  </Button>
             </CardContent>
         </div>
         </MainDetailProgramCardContent>
+        
       </MainDetailProgramCard>
-       ))}
+      ))}
        </ProgramContainer>
     </div>
   );

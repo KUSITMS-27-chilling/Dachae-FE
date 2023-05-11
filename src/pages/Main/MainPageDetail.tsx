@@ -85,7 +85,8 @@ const MainPageDetail = () =>{
           </Mainbody_CardContent>
         </MainBody_Card>
         <Main_Program>
-          <Main_Program_Title>{region}에서 모집중인 프로그램</Main_Program_Title>
+          <Main_Program_Title>
+            <div className='color'>{region}</div>에서 모집중인 프로그램</Main_Program_Title>
           <Main_Program_content>
             <MainDetailProgram region = {region as string}/>
           </Main_Program_content>

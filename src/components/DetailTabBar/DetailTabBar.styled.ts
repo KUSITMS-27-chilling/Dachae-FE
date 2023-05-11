@@ -7,7 +7,7 @@ export const DetailTabContainer = styled.div`
   margin-top: 4.8125rem;
   position: relative;
 
-  button {
+  #detail-tab__post-btn {
     width: max-content;
     height: 2.5rem;
     position: absolute;

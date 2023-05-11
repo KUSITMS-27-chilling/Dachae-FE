@@ -4,8 +4,6 @@ import  Dropdown ,{ Option }from 'react-dropdown';
 import{
     Modal1,
     ExitBtn,
-    ModalBg,
-    ModalBtn,
     MainText,
     Content,
     Title,
@@ -25,10 +23,10 @@ function Modal() {
     
   const outside = useRef(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTitle(e.target.value);
   };
-  const handleChange1 = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange1 = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
@@ -47,6 +45,13 @@ function Modal() {
     setSelectedOption1(event.target.value);
   };
 
+  const options2 = ['Option 1', 'Option 2', 'Option 3'];
+  const [selectedOption2, setSelectedOption2] = useState(options2[0]);
+
+  const handleSelect2 = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption2(event.target.value);
+  };
+
   return (
     <div>
       <Modal1>
@@ -54,7 +59,7 @@ function Modal() {
             <Content>
               <Title>
                 <div>제목</div>
-                <input  onChange={handleChange} value={title} />
+                <textarea  onChange={handleChange} value={title} />
               </Title>
               <Region>지역
               <select value={selectedOption} onChange={handleSelect}>
@@ -74,9 +79,17 @@ function Modal() {
               ))}
             </select>
               </Class>
-              <Day>날짜</Day>
+              <Day>날짜
+              <select value={selectedOption2} onChange={handleSelect2}>
+                {options2.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+              ))}
+              </select>
+              </Day>
               <Write>글쓰기
-                <input  onChange={handleChange1} value={text} />
+                <textarea onChange={handleChange1} value={text} placeholder='내용을 입력하세요' />
               </Write>
 
             </Content>
