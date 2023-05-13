@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useRef ,useEffect} from "react";
 import axios from 'axios';
+import { loginState } from '../../recoil/user';
+import { useRecoilValue } from 'recoil';
 import{
     Modal1,
     ExitBtn,
@@ -17,17 +19,20 @@ import{
   interface Program {
     programs: string;
     programName:string;
+    programIdx: number;
     
   }
   interface Props {
     region: string;
   }
 const Modal =({ region }: Props)=> {
+
     const [text, setText] = useState("");
     const [title, setTitle] = useState("");
     const [modal, setModal] = useState(false);
     const [options1, setOptions1] = useState<Program[]>([]);
     const [selectedOption1, setSelectedOption1] = useState<string>("");
+    const [programIdx, setProgramIdx] = useState<number>(0);
     
   const outside = useRef(null);
 
@@ -48,13 +53,22 @@ const Modal =({ region }: Props)=> {
 
   const handleSelect1 = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
+    // const selectedProgramName = event.target.value;
+    // setSelectedOption1(selectedProgramName);
+    // const selectedProgram = options1.find(
+    //   (program) => program.programName === selectedProgramName
+    // );
+    // if (selectedProgram) {
+    //   setProgramIdx(selectedProgram.programIdx);
+    // }
   };
 
   const options2 = ['1주차', '2주차', '3주차','4주차','5주차','6주차','7주차','8주차',];
-  const [selectedOption2, setSelectedOption2] = useState(options2[0]);
+  const [selectedOption2, setSelectedOption2] = useState<string>("");
 
   const handleSelect2 = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption2(event.target.value);
+    
   };
 
   useEffect(() => {
@@ -63,8 +77,13 @@ const Modal =({ region }: Props)=> {
         const response = await axios.get( 
           `${import.meta.env.VITE_APP_HOST}/program/${region}`
         );
-      setOptions1(response.data.data.programs);
-      console.log(options1);
+        const programs = response.data.data.programs.map((program: Program, index: number) => {
+          return { ...program }; // programIdx 속성 추가
+      });
+      setOptions1(programs);
+      //setProgramIdx(response.data.programIdx);
+      console.log(programs);
+      
     }
   catch(e) {
     console.log(e);
@@ -72,6 +91,53 @@ const Modal =({ region }: Props)=> {
   fetchData();
   },  [region]);
   console.log (region);
+
+
+
+  const handleSubmit = async () => {
+    const token = localStorage.getItem('access_token');
+    let tempIdx = 0;
+
+    options1.forEach(el => {
+      if(el.programName == selectedOption1) {
+        tempIdx = el.programIdx;
+      }
+    })
+
+    //const selectedProgram = options1.find((option) => option.programName === selectedOption1);
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_APP_HOST}/review/save`,
+        {
+          title: title,
+          region: region,
+          programName: selectedOption1,
+          week: parseInt(selectedOption2),
+          content: text,
+          image: null,
+          programIdx:tempIdx,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (e) {
+      console.log(e);
+    }
+    console.log({
+      title: title,
+      region: region,
+      programName: selectedOption1,
+      week: parseInt(selectedOption2),
+      content: text,
+      programIdx: tempIdx,
+    });
+  };
+
+  
 
   return (
     <div>
@@ -84,11 +150,10 @@ const Modal =({ region }: Props)=> {
               </Title>
               <Region>지역
               <select value={selectedOption} onChange={handleSelect}>
-                {options.map((option, index) => (
-              <option key={index} value={option}>
-                {option}
+              <option >
+                {region}
               </option>
-              ))}
+            
             </select>
               </Region>
               <Class>강의
@@ -116,7 +181,7 @@ const Modal =({ region }: Props)=> {
             </Content>
             <Button>
             <ExitBtn onClick={ () => setModal(false) }>닫기</ExitBtn>
-            <SubmitBtn onClick={ () => setModal(false) }>완료</SubmitBtn>
+            <SubmitBtn onClick ={ () => handleSubmit()}>완료</SubmitBtn>
             </Button>
         </Modal1>
     </div>
