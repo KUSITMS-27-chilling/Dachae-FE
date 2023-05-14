@@ -47,6 +47,7 @@ const data ={
 function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [data, setData] = useState<Program>();
+    
     function handleMouseOver() {
         setIsMouseOver(true);
       }
@@ -54,6 +55,31 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
       function handleMouseOut() {
         setIsMouseOver(false);
       }
+
+    //JoinTogether 버튼 누르면 서버에게 post
+    const JoinTogether=  ()=>{
+      const token = localStorage.getItem('access_token');
+      try {
+        axios.post(
+          `${import.meta.env.VITE_APP_HOST}/listen/participant`,
+          {
+            listenTogetherIdx:listenIdx
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(response => {
+          console.log(response);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+      }
+      catch{}
+    }
 
       useEffect (() => {
         const fetchData = async () => {
@@ -105,7 +131,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                 <div className='goal'>{data.goalNum}명</div>
             </JoinPeople>
         </CardTag>
-        <TogetherBtn onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>같이 하기</TogetherBtn>
+        <TogetherBtn onClick={JoinTogether} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>같이 하기</TogetherBtn>
         {isMouseOver && (
         <CurrentJoinPeople>
           <div className='current-join'>
