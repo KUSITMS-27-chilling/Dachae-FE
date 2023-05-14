@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DeToHeaderContainer = styled.div`
   width: 57.5rem;
-  height: 18.3125rem;
+  height: 20.4375rem;
   display: flex;
   justify-content: space-between;
   position: absolute;
@@ -16,24 +16,24 @@ export const DeToHeaderContainer = styled.div`
 `;
 
 export const DeToMyPost = styled.div`
-  width: 13.375rem;
-  height: 11.625rem;
+  width: 17.25rem;
+  height: 13.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 export const DeToBest = styled.div`
-  width: 42rem;
-  height: 11.3rem;
+  width: 36rem;
+  height: 13.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
 export const CommuBestContainer = styled.div`
-  width: 42rem;
-  height: 8.25rem;
+  width: 36.125rem;
+  height: 10.375rem;
   display: flex;
   justify-content: space-between;
 `

@@ -83,7 +83,7 @@ function DetailContent() {
 
   return(
     <DetailContentContainer>
-      <DetailTabBar />
+      <DetailTabBar region={region as string}/>
       {
         detailTab == 'together' &&
         (togetherArr.map((el, idx) => {

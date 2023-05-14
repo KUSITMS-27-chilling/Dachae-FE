@@ -7,11 +7,12 @@ import {
   ModalBg
 } from "./DetailTabBar.styled";
 import Modal from "../Modal/Modal";
-function DetailTabBar() {
+function DetailTabBar(props: { region: string }) {
   const [btnText, setBtnText] = useState('모집글 쓰기');
   const setDetailTab = useSetRecoilState(detailTabKind);
   const [modal, setModal] = useState(false);
     const outside = useRef(null);
+    const { region } = props;
 
   const tabClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const tabArr = document.querySelectorAll('.detail-tab__toggle');
@@ -59,7 +60,7 @@ function DetailTabBar() {
               ref={outside} 
               onClick={ (e) => { if(e.target === outside.current) setModal(false) } }
             >
-              <Modal/>
+              <Modal region = {region as string}/>
           </ModalBg>
           }
     </DetailTabContainer>
