@@ -10,13 +10,15 @@ import {
   LearningGroundText,
   CenterNewsOut
 } from './CenterNews.styled';
-import { LGDataArr } from '../../types/centerNews';
-import { useState } from 'react';
+import { LGData, LGProgram } from '../../types/centerNews';
+import { useEffect, useState } from 'react';
 import { loginState } from '../../recoil/user';
 import { useRecoilValue } from 'recoil';
+import axios from 'axios';
 
-function CenterNews({ lgData }: LGDataArr) {
-  const [programs, setPrograms] = useState(lgData[0].programs);
+function CenterNews() {
+  const [lgData, setLgData] = useState<LGData[]>([]);
+  const [programs, setPrograms] = useState<LGProgram[]>([]);
   const state = useRecoilValue(loginState);
   
   function regionClick(e: React.MouseEvent<HTMLButtonElement>) {
@@ -37,6 +39,60 @@ function CenterNews({ lgData }: LGDataArr) {
     })
   }
 
+  async function getMyRegions(token: string) {
+    if(token !== null) {
+      await axios.get(`${import.meta.env.VITE_APP_HOST}/user/regions`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then((res) => {
+        getCenterNews(res.data.data.regions);
+      })
+      .catch((err) => console.log(err));
+    }
+  }
+
+  async function getCenterNews(regions: string[]) {
+    const tempArr: LGData[] = await Promise.all(
+      regions.map(async (el) => {
+        const response = await axios.get(`${import.meta.env.VITE_APP_HOST}/program/new/${el}`);
+        const res = response.data.data.newPrograms;
+        const tempPrograms: LGProgram[] = [];
+        for (let key in res) {
+          const tempProgram: LGProgram = {
+            programTitle: res[key].programName,
+            programPeriod: dateToStr(res[key].startDate, res[key].endDate)
+          }
+          tempPrograms.push(tempProgram);
+        }
+        return {
+          region: el,
+          programs: tempPrograms
+        };
+      })
+    );
+    setPrograms(tempArr[0].programs);
+    setLgData(tempArr);
+  }
+  
+
+  function dateToStr(start: string, end: string) {
+    let str = '';
+    let dateParts = start.split('-');
+    str = `${dateParts[0]}. ${dateParts[1]}. ${dateParts[2]} ~ `;
+    dateParts = end.split('-');
+    str += `${dateParts[0]}. ${dateParts[1]}. ${dateParts[2]}`;
+    return str;
+  }
+
+  useEffect(() => {
+    setLgData([]);
+    const token = localStorage.getItem('access_token');
+    if(token !== null) getMyRegions(token);
+
+    console.log(lgData);
+  }, [state])
+
   return(
     <CenterNewsContainer>
       <CenterNewsHeader>
@@ -54,7 +110,7 @@ function CenterNews({ lgData }: LGDataArr) {
         <>
           <RegionContainer>
           {
-            lgData &&
+            (lgData.length > 0) &&
             lgData.map((el, idx) => {
               if(idx == 0){
                 return (
@@ -75,7 +131,7 @@ function CenterNews({ lgData }: LGDataArr) {
           </LearningGroundHeader>
           <LearningGroundList>
             {
-              lgData &&
+              (lgData.length > 0) &&
               programs.map((el, idx) => (
                 <LearningGroundProgram key={idx}>
                   <LearningGroundText>{el.programTitle}</LearningGroundText>

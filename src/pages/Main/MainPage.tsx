@@ -158,7 +158,7 @@ function MainPage() {
         <MainBody_Today> 
     
           <MainBody_Today_In>
-            <CenterNews lgData={lgData} />
+            <CenterNews />
             <TodayMy />
           </MainBody_Today_In>
           
