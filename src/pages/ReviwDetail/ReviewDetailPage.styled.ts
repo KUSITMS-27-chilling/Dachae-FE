@@ -4,7 +4,7 @@ export const MainBanner = styled.div`
   width: 100%;
   height: 240px;
   background-color: #91C8CA;
-`;
+`
 export const ReviewDetailBox = styled.div`
   position: relative;
   margin-left: 378px;
