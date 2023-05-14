@@ -6,7 +6,7 @@ height: 350px;
 background: #FFFFFF;
 box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
 border-radius: 20px;
-margin-left: 20px; //임의로 확인용
+
 `
 export const CardTop = styled.div`
 position: relative;
