@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+
+
 export const MainBody_Tapbar = styled.div`
   position: relative;
   width: 100%;
@@ -102,24 +104,25 @@ img{
 export const Main_Program = styled.div`
 width: 100%;
 height: 539px;
-border: 1px solid red;
 `
 export const Main_Program_Title = styled.div`
-width: 250px;
-height: 25px;
-border: 1px solid red;
+width: 270px;
+height: 27px;
 margin-top: 18px;
 margin-left: 144px;
-font-size: 21px;
+font-size: 23px;
 font-weight: 500;
-letter-spacing: -5%;
+letter-spacing:-5%;
+display: flex;
+.color{
+  color: #39AFB0;
+}
 `
 export const Main_Program_content = styled.div`
 width: 1180px;
 height: 486px;
 margin-left: 142px;
 margin-top: 10px;
-border: 1px solid red;
 `
 ////////////////////////Tap 시작//////////////////////////////
 export const TapModal = styled.div`
@@ -132,7 +135,6 @@ width: 836px;
 height: 770px;
 border-radius: 20px;
 background-color: white;
-border: 1px solid red;
 `
 
 export const ModalBtn = styled.button`
@@ -164,70 +166,109 @@ export const ModalBg = styled.div`
 
 //모달 내용 작성합니다
 export const MainText = styled.div`
-width: 130px;
+position: relative;
+width: 150px;
 height: 29px;
 font-size: 23px;
 font-weight: 700;
 margin-left: 353px;
-margin-top: 29px;
+margin-bottom: 34px;
 `
 export const Content = styled.div`
 height: 570px;
 width: 712px;
-border:1px solid red;
-font-size: 20px;
+font-size: 21px;
 font-weight: 700;
 margin-left: 62px;
-margin-top: 34px;
 letter-spacing: -5%;
 `
 export const Title = styled.div`
-margin-bottom: 50px;
+margin-bottom: 11px;
 justify-content: space-between;
 display: flex;
 div{
     width: 37px;
 }
-input{
-    width: 611px;
+textarea{
+    width: 598px;
     height: 44px;
-    
+    border: 1px solid #CBCBCB;
+    border-radius:10px;
     
 }
 `
 export const Region = styled.div`
-margin-bottom: 50px;
+margin-bottom: 30px;
+select{
+  margin-left: 74px;
+  width: 173px;
+  height: 44px;
+  border: 1px solid #CBCBCB;
+  border-radius:10px;
+}
 `     
 export const Class = styled.div`
-margin-bottom: 50px;
+margin-bottom: 30px;
+select{
+  margin-left: 23px;
+  width: 464px;
+  height: 44px;
+  border: 1px solid #CBCBCB;
+  border-radius:10px;
+}
+option{
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -5%;
+}
 `
 export const Day = styled.div`
-margin-bottom: 50px;
+margin-bottom: 30px;
+select{
+  margin-left: 53px;
+  width: 173px;
+  height: 44px;
+  border: 1px solid #CBCBCB;
+  border-radius:10px;
+}
+option{
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -5%;
+}
 `
 export const Write = styled.div`
 margin-bottom: 50px;
 justify-content: space-between;
 display: flex;
-input{
-    width: 611px;
+textarea{
+  font-family: Pretendard;
+    width: 598px;
     height: 200px;
-    
+    border: 1px solid #CBCBCB;
+    border-radius:10px;
+    font-size: 20px;
 }
 `
 export const Button = styled.div`
+
+width: 458px;
+height: 90px;
+margin-left:189px;
+position: relative;
 display: flex;
 `;
 
-export const ExitBtn = styled(ModalBtn) `
+export const ExitBtn = styled.button `
+margin-right: 24px;
 background-color : white;
 color: black;
 border-radius: 14px;
 text-decoration: none;
-margin-left: 189px;
-//padding: 5px 10px;
 width: 217px;
 height: 61px;
-display : flex;
 justify-content : center;
 align-items : center;
 font-size: 21px;
@@ -239,7 +280,7 @@ background-color : #39AFB0;
 color: white;
 border-radius: 14px;
 text-decoration: none;
-margin-left: 24px;
+
 //padding: 5px 10px;
 width: 217px;
 height: 61px;
