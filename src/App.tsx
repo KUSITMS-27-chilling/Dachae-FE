@@ -28,8 +28,8 @@ function App() {
           <Route path="/commu" element={<CommunityPage />}/>
           <Route path="/mypage" element={<Mypage />}/>
           <Route path="/:region" element={<MainPageDetail />}/>
-          <Route path="/commu/review/:programIdx" element={<RevieDetailPage />}/>
-          <Route path="/commu/together/:programIdx" element={<TogetherDetailPage />}/>
+          <Route path="/commu/review/:reviewIdx" element={<RevieDetailPage />}/>
+          <Route path="/commu/together/:listenIdx" element={<TogetherDetailPage />}/>
         </Routes>
     </div>
     </RecoilRoot>
