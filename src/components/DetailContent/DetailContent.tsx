@@ -35,7 +35,9 @@ function DetailContent() {
             goalNum: response[key].goalNum,
             currentNum: response[key].currentNum,
             tags: response[key].tags,
-            programName: response[key].programName
+            listenIdx: response[key].listenIdx,
+            programName: response[key].programName,
+            detailOrCommu: 'detail'
           }
 
           setTogetherArr(togetherArr => [object, ...togetherArr]);
@@ -51,6 +53,7 @@ function DetailContent() {
         const response = res.data.data.reviews;
         for(let key in response) {
           const object: ReviewData = {
+            userImg: response[key].profile,
             userNick: response[key].nickName,
             time: '18시간 전',
             title: response[key].title,

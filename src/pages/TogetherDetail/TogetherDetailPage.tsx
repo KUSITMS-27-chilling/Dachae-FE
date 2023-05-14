@@ -20,7 +20,7 @@ function TogetherDetailPage() {
       <Header/>
       <TabBar prop={category} />
       <MainBanner />
-      <CommuTab />
+      <CommuTab thisCommu='together' />
       <ReviewDetailBox>
       <TogetherDetail listenIdx ={Number(listenIdx)}/>
       </ReviewDetailBox>

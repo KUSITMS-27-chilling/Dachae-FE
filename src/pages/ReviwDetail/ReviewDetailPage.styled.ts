@@ -34,13 +34,12 @@ export const CommentWrite = styled.div`
     border-radius: 10px;
     background: none;
     ::placeholder{
-font-family: 'Pretendard';
-font-weight: 500;
-font-size: 20px;
-line-height: 50px;
-color: rgba(0, 0, 0, 0.61);
-margin-left: 50px;
+      font-family: 'Pretendard';
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 50px;
+      color: rgba(0, 0, 0, 0.61);
+      margin-left: 50px;
+    }
   }
-  }
- 
 `

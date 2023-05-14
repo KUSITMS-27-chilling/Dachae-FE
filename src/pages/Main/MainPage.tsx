@@ -97,60 +97,6 @@ function MainPage() {
     else getPrograms();
   }, [state])
 
-
-  const lgData: LGData[] = [
-    {
-      region: '종로',
-      programs: [
-        {
-          programTitle: '보태니컬 동양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },
-        {
-          programTitle: '명화 서양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },    
-        {
-          programTitle: '보태니컬 동양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },    
-        {
-          programTitle: '명화 서양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },    
-        {
-          programTitle: '보태니컬 동양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        }
-      ]
-    },
-    {
-      region: '성북',
-      programs: [
-        {
-          programTitle: '명화 서양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },
-        {
-          programTitle: '보태니컬 동양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },    
-        {
-          programTitle: '명화 서양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },    
-        {
-          programTitle: '보태니컬 동양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        },    
-        {
-          programTitle: '명화 서양화 배우기',
-          programPeriod: '2023. 04. 01 ~ 2023. 05. 21'
-        }
-      ]
-    }
-  ]
-
     return (
       <>
         <Header />
@@ -158,7 +104,7 @@ function MainPage() {
         <MainBody_Today> 
     
           <MainBody_Today_In>
-            <CenterNews lgData={lgData} />
+            <CenterNews />
             <TodayMy />
           </MainBody_Today_In>
           

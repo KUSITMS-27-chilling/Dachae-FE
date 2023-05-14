@@ -14,14 +14,13 @@ import{
 
 const RevieDetailPage =() => {
     const { reviewIdx } = useParams();
-    console.log(reviewIdx);
     const category: Category = 'community';
   return (
     <div>
       <Header/>
       <TabBar prop={category} />
       <MainBanner />
-      <CommuTab />
+      <CommuTab thisCommu='review' />
       <ReviewDetailBox>
         <ReviewDetail reviewIdx ={Number(reviewIdx)}/>
       </ReviewDetailBox>

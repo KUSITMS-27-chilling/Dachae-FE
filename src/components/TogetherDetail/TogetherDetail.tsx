@@ -72,7 +72,6 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                     `${import.meta.env.VITE_APP_HOST}/listen/${listenIdx}`
                 );
                 setData(response.data.data);
-                console.log(data);
             } catch (e) {
                 console.log(e);
             }
@@ -94,8 +93,8 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                 </div>
                 <div className='tag-day'>
                     <div className='tag-category-box'>
-                    {data.favField.map((favFields) => (
-                    <div className="tag-category">#{favFields}</div>
+                    {data.favField.map((favFields, idx) => (
+                    <div className="tag-category" key={idx}>#{favFields}</div>
                   ))}
                     {/* <div className='tag-category'>#{data.favField[0]}</div>
                     <div className='tag-category'>#{data.favField[1]}</div> */}
