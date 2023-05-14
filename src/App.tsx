@@ -10,6 +10,9 @@ import Mypage from './pages/Mypage/MypagePage';
 import SuggestPage from './pages/Suggest/SuggestPage';
 import CommunityPage from './pages/Commu/CommunityPage';
 import MainPageDetail from './pages/Main/MainPageDetail';
+import RevieDetailPage from './pages/ReviwDetail/RevieDetailPage';
+import TogetherDetailPage from './pages/TogetherDetail/TogetherDetailPage';
+
 
 function App() {
   return (
@@ -25,6 +28,8 @@ function App() {
           <Route path="/commu" element={<CommunityPage />}/>
           <Route path="/mypage" element={<Mypage />}/>
           <Route path="/:region" element={<MainPageDetail />}/>
+          <Route path="/commu/review/:programIdx" element={<RevieDetailPage />}/>
+          <Route path="/commu/together/:programIdx" element={<TogetherDetailPage />}/>
         </Routes>
     </div>
     </RecoilRoot>
