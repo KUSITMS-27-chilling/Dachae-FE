@@ -6,12 +6,19 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { loginState } from "../../../recoil/user";
-import { useRecoilValue } from "recoil";
+import { commuRegions, selectedRegion } from "../../../recoil/community";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import search_icon from '../../../assets/search_icon.png';
+import { 
+  ReviewData,
+  CommuReviewData
+} from "../../../types/review";
 
 function CommuRegion () {
   const state = useRecoilValue(loginState);
-  const [regions, setRegions] = useState<string[]>([]);
+  const regions = useRecoilValue(commuRegions);
+  const setRegions = useSetRecoilState(commuRegions);
+  const setSelectedRegion = useSetRecoilState(selectedRegion);
 
   useEffect(() => {
     const token = localStorage.getItem('access_token');
@@ -56,6 +63,7 @@ function CommuRegion () {
       el.className = 'commu-region__btn';
     });
     e.currentTarget.className = 'commu-region__btn active';
+    setSelectedRegion(e.currentTarget.innerText);
   }
 
   return(

@@ -4,6 +4,8 @@ export const CommuRegionContainer = styled.div`
   width: 57.5rem;
   height: 4.25rem;
   display: flex;
+  position: absolute;
+  border-bottom: 2px solid #cbcbcb;
 `;
 
 export const CommuRegionBtnBox = styled.div`

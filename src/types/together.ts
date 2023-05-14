@@ -1,3 +1,5 @@
+import { detailOrCommu } from "./review";
+
 export interface TogetherData {
   nickname: string;
   time: string;
@@ -8,6 +10,12 @@ export interface TogetherData {
   currentNum: number;
   tags: string[];
   programName: string;
+  detailOrCommu: detailOrCommu
+}
+
+export interface CommuTogetherData {
+  region: string;
+  togethers: TogetherData[];
 }
 
 export interface TogetherProp {

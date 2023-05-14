@@ -57,6 +57,7 @@ function DetailContent() {
             lecture: response[key].programName,
             content: response[key].content,
             region: response[key].tags[0],
+            reviewIdx: response[key].reviewIdx,
             detailPlace: response[key].tags[1],
             detailOrCommu: 'detail'
           }

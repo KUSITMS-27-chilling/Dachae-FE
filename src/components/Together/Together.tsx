@@ -16,24 +16,6 @@ import { TogetherProp } from "../../types/together";
 function Together ({ prop }: TogetherProp) {
   const [favStr, setFavStr] = useState<string>('');
 
-  // 추후 api 호출 반영을 위한 동적 데이터
-  // const props = {
-  //   nickname: '다채 고수',
-  //   time: '18시간 전',
-  //   recruiting: true,
-  //   title: '성복구 레진아트 강좌 같이 들을 분 계실까요?^^',
-  //   favFields: [
-  //     "문화여가", "자기계발"
-  //   ],
-  //   goalNum: 5,
-  //   currentNum: 2,
-  //   tags: [
-  //     "은평구",
-  //     "봉산아래공동체주택동네배움터"
-  //   ],
-  //   programName: "초보를 위한 레진아트 수업"
-  // }
-
   const favToStr = (favFields: Array<string>):void => {
     let tempStr = '';
     if(favFields.length <= 0) return;
@@ -57,7 +39,7 @@ function Together ({ prop }: TogetherProp) {
   }, [])
 
   return(
-    <TogetherContainer>
+    <TogetherContainer detailOrCommu={prop.detailOrCommu} >
       <ReviewProfile topProp={true}>
         <div id="review__profile-photo"></div>
         <div>
@@ -73,7 +55,7 @@ function Together ({ prop }: TogetherProp) {
         <div id="together__fav-fields">지원자 활동 분야: {favStr}</div>
         <div id="together__goal-num">희망 인원: {prop.goalNum}명</div>
       </TogetherInfo>
-      <TogetherFooter>
+      <TogetherFooter detailOrCommu={prop.detailOrCommu} >
         <ReviewPlace topProp={true} >
             <div id="review__place-region">&#35;{prop.tags[0]}</div>
             <div id="review__place-detail">&#35;{prop.tags[1]}</div>

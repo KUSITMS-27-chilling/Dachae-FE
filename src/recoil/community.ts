@@ -5,3 +5,13 @@ export const commuTabKind = atom<CommuTabType>({
   key: 'commuTabKind',
   default: 'review',
 });
+
+export const commuRegions = atom<string[]>({
+  key: 'commuRegions',
+  default: []
+});
+
+export const selectedRegion = atom<string>({
+  key: 'selectedRegion',
+  default: "전체보기"
+});
