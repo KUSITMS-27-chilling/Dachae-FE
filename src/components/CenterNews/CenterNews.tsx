@@ -79,7 +79,7 @@ function CenterNews({ lgData }: LGDataArr) {
               programs.map((el, idx) => (
                 <LearningGroundProgram key={idx}>
                   <LearningGroundText>{el.programTitle}</LearningGroundText>
-                  <LearningGroundText>신청 기간 {el.programPeriod}</LearningGroundText>
+                  <LearningGroundText>신청기간 {el.programPeriod}</LearningGroundText>
                 </LearningGroundProgram>
               ))
             }

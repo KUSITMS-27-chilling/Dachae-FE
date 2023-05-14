@@ -12,27 +12,11 @@ import { useEffect, useState } from "react";
 import recruiting_img from '../../assets/recruiting.png';
 import recruited_img from '../../assets/recruited.png';
 import { TogetherProp } from "../../types/together";
+import { useNavigate } from "react-router-dom";
 
 function Together ({ prop }: TogetherProp) {
+  const navigate = useNavigate();
   const [favStr, setFavStr] = useState<string>('');
-
-  // 추후 api 호출 반영을 위한 동적 데이터
-  // const props = {
-  //   nickname: '다채 고수',
-  //   time: '18시간 전',
-  //   recruiting: true,
-  //   title: '성복구 레진아트 강좌 같이 들을 분 계실까요?^^',
-  //   favFields: [
-  //     "문화여가", "자기계발"
-  //   ],
-  //   goalNum: 5,
-  //   currentNum: 2,
-  //   tags: [
-  //     "은평구",
-  //     "봉산아래공동체주택동네배움터"
-  //   ],
-  //   programName: "초보를 위한 레진아트 수업"
-  // }
 
   const favToStr = (favFields: Array<string>):void => {
     let tempStr = '';
@@ -56,8 +40,13 @@ function Together ({ prop }: TogetherProp) {
     favToStr(prop.favFields);
   }, [])
 
+  function clickTogether() {
+    navigate(`/commu/together/${prop.listenIdx}`);
+    return;
+  }
+
   return(
-    <TogetherContainer>
+    <TogetherContainer detailOrCommu={prop.detailOrCommu} >
       <ReviewProfile topProp={true}>
         <div id="review__profile-photo"></div>
         <div>
@@ -65,7 +54,7 @@ function Together ({ prop }: TogetherProp) {
           <div id="review__profile-time">{prop.time}</div>
         </div>
       </ReviewProfile>
-      <TogetherTitle recruiting={prop.recruiting}>
+      <TogetherTitle recruiting={prop.recruiting} onClick={clickTogether} >
         <div id="together__recruiting">{prop.recruiting ? "모집중" : "모집완료"}</div>
         <div id="together__title">{prop.title}</div>
       </TogetherTitle>
@@ -73,7 +62,7 @@ function Together ({ prop }: TogetherProp) {
         <div id="together__fav-fields">지원자 활동 분야: {favStr}</div>
         <div id="together__goal-num">희망 인원: {prop.goalNum}명</div>
       </TogetherInfo>
-      <TogetherFooter>
+      <TogetherFooter detailOrCommu={prop.detailOrCommu} >
         <ReviewPlace topProp={true} >
             <div id="review__place-region">&#35;{prop.tags[0]}</div>
             <div id="review__place-detail">&#35;{prop.tags[1]}</div>

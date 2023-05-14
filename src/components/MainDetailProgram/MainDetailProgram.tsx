@@ -36,7 +36,6 @@ const MainDetailProgram = ({ region }: Props)=> {
                 `${import.meta.env.VITE_APP_HOST}/program/page/${region}`
             );
             setData(response.data.data.programs);
-            console.log(data);
         } catch (e) {
             console.log(e);
         }
@@ -44,8 +43,6 @@ const MainDetailProgram = ({ region }: Props)=> {
     }
     fetchData();
 },  [region]);
-console.log(data);
-
 
   return (
     <div>

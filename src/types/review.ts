@@ -9,9 +9,15 @@ export interface ReviewData {
   lecture: string;
   content: string;
   region: string;
+  reviewIdx: number;
   detailPlace: string;
   reviewImg?: string[];
   detailOrCommu: detailOrCommu;
+}
+
+export interface CommuReviewData {
+  region: string;
+  reviews: ReviewData[]
 }
 
 export type ReviewProps = {
