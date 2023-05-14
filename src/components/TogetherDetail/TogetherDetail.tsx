@@ -20,7 +20,7 @@ interface Program {
     createdAt:string;
     title:string;
     content:string;
-    favField:string;
+    favField:string[];
     currentNum:number;
     goalNum:number;
     programName:string;
@@ -94,8 +94,11 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                 </div>
                 <div className='tag-day'>
                     <div className='tag-category-box'>
-                    <div className='tag-category'>#{data.favField[0]}</div>
-                    <div className='tag-category'>#{data.favField[1]}</div>
+                    {data.favField.map((favFields) => (
+                    <div className="tag-category">#{favFields}</div>
+                  ))}
+                    {/* <div className='tag-category'>#{data.favField[0]}</div>
+                    <div className='tag-category'>#{data.favField[1]}</div> */}
                 </div>
                     <div className='day'>{data.createdAt}</div>
                 </div>

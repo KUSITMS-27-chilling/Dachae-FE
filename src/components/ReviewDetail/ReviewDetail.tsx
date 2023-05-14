@@ -34,7 +34,7 @@ const data = {
     createdAt:string;
     title:string;
     content:string;
-    favFields:string;
+    favFields:string[];
     week:number;
     programName:string;
     tags:string;
@@ -76,8 +76,11 @@ console.log(data);
                 </div>
                 <div className='tag-day'>
                     <div className='tag-category-box'>
-                    <div className='tag-category'>#{data.favFields[0]}</div>
-                    <div className='tag-category'>#{data.favFields[1]}</div>
+                    {data.favFields.map((favField) => (
+                    <div className="tag-category">#{favField}</div>
+                  ))}
+                    {/* <div className='tag-category'>#{data.favFields[0]}</div>
+                    <div className='tag-category'>#{data.favFields[1]}</div> */}
                 </div>
                     <div className='day'>{data.createdAt}</div>
                 </div>
