@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { detailOrCommu } from "../../types/review";
 
-export const TogetherContainer = styled.div`
-  width: 72.25rem;
+export const TogetherContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
+  width: ${props => props.detailOrCommu == 'detail' ? '72.25rem' : '57.5rem'};
   height: 21.4375rem;
   border-bottom: 2px solid #cbcbcb;
   margin: 0 auto;
@@ -50,8 +51,9 @@ export const TogetherInfo = styled.div`
   line-height: 1.875rem;
 `;
 
-export const TogetherFooter = styled.div`
-  width: 69.25rem;
+export const TogetherFooter = styled.div<{ detailOrCommu: detailOrCommu }>`
+  // width: 69.25rem;
+  width: ${props => props.detailOrCommu == 'detail' ? '69.25rem' : '57.5rem'};
   height: 2.625rem;
   position: absolute;
   top: 16.125rem;

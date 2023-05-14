@@ -7,36 +7,12 @@ import {
 
 } from './CommuBest.styled'
 
-
-interface IData {
-    id: number;
-    title: string;
-    body: string;
-  }
-
-function CommuBest() {
-
-    const [data, setData] = useState<IData[]>([]);
-
-    useEffect(() => {
-        axios.get('')
-          .then(response => {
-            setData(response.data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }, []);
-
+function CommuBest({ titleStr } : { titleStr: string}) {
   return (
     <div>
       <CommuBestBox>
-      {data.map(item => (
-        <div key={item.id}>
-           <Best>BEST</Best>
-           <Text>{item.body}</Text>
-        </div>
-      ))}
+        <Best>BEST</Best>
+        <Text>{titleStr}</Text>
       </CommuBestBox>
     </div>
   )

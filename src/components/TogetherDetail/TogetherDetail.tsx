@@ -13,25 +13,7 @@ import{
 
 } from './TogetherDetail.styled'
 
-const data ={
-    "title": "함께하자",
-    "programName": "강좌명: 초보를 위한 레진아트 수업",
-    "createdAt": "2023-05-01-13-09",
-    "content": "즐겁게하자",
-    "profile": "test.com",
-    "nickName": "test2",
-    "grade": 1,
-    "favField": [
-      "미술",
-      "창작"
-    ],
-    "currentNum": 0,
-    "goalNum": 5,
-    "hit": 11,
-    "participantsInfos": []
-
-  }
-  interface Program {
+interface Program {
     
     profile:string;
     nickName:string;
@@ -43,7 +25,8 @@ const data ={
     goalNum:number;
     programName:string;
     
-  }
+}
+
 function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [data, setData] = useState<Program>();

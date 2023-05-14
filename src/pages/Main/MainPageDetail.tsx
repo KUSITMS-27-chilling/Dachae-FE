@@ -5,8 +5,6 @@ import TabBar from '../../components/TabBar';
 import DetailContent from '../../components/DetailContent';
 
 import{
-
-  
   MainBody_Content_title,
   MainBody_Content_title1,
   MainBody_Content_detail,
@@ -15,8 +13,6 @@ import{
   Main_Program,
   Main_Program_Title,
   Main_Program_content,
-  Region,
-
 } from '../Main/MainPageDetail.styled'
 import img from '../../assets/Vector.png'
 import img2 from '../../assets/map.png'
@@ -25,15 +21,11 @@ import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProg
 
 const MainPageDetail = () =>{
   const { region } = useParams();
-  console.log(region);
 
   const navigate = useNavigate();
   const goMainDetail =()=>{
       navigate("/mainDetail");
     }
-
-  
-  
 
   return (
     <div>

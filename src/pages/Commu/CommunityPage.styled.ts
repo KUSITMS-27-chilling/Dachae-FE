@@ -38,6 +38,4 @@ export const MainBanner = styled.div`
   width: 100%;
   height: 240px;
   background-color: #91C8CA;
-  border: 1px solid red;
-
 `

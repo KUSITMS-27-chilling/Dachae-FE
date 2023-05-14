@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ReviewProps } from "../../types/review";
 import { 
   ReviewContainer,
@@ -12,10 +13,11 @@ import {
 } from "./Review.styled";
 
 function Review({ props }: ReviewProps) {
+  const navigate = useNavigate();
   const [count, setCount] = useState(0);
   const [viewContent, setViewContent] = useState('');
   const [overLength, setOverLength] = useState(false);
-  const { userImg, userNick, time, title, lecture, content, region, detailPlace, reviewImg, detailOrCommu } = props;
+  const { userImg, userNick, time, title, lecture, content, region, detailPlace, reviewImg, reviewIdx, detailOrCommu } = props;
 
   function countImg() {
     if(reviewImg && (reviewImg?.length > 0)) {
@@ -40,9 +42,14 @@ function Review({ props }: ReviewProps) {
     countImg();
     checkContentLength();
   }, []);
+
+  function clickReview () {
+    navigate(`/commu/review/${reviewIdx}`);
+    return;
+  }
  
   return (
-    <ReviewContainer detailOrCommu={detailOrCommu} >
+    <ReviewContainer detailOrCommu={detailOrCommu} onClick={clickReview} >
       <ReviewProfile>
         <div id="review__profile-photo"></div>
         <div>
