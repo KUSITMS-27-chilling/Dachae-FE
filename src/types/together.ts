@@ -10,6 +10,7 @@ export interface TogetherData {
   currentNum: number;
   tags: string[];
   programName: string;
+  listenIdx: number;
   detailOrCommu: detailOrCommu
 }
 

@@ -12,8 +12,10 @@ import { useEffect, useState } from "react";
 import recruiting_img from '../../assets/recruiting.png';
 import recruited_img from '../../assets/recruited.png';
 import { TogetherProp } from "../../types/together";
+import { useNavigate } from "react-router-dom";
 
 function Together ({ prop }: TogetherProp) {
+  const navigate = useNavigate();
   const [favStr, setFavStr] = useState<string>('');
 
   const favToStr = (favFields: Array<string>):void => {
@@ -38,6 +40,11 @@ function Together ({ prop }: TogetherProp) {
     favToStr(prop.favFields);
   }, [])
 
+  function clickTogether() {
+    navigate(`/commu/together/${prop.listenIdx}`);
+    return;
+  }
+
   return(
     <TogetherContainer detailOrCommu={prop.detailOrCommu} >
       <ReviewProfile topProp={true}>
@@ -47,7 +54,7 @@ function Together ({ prop }: TogetherProp) {
           <div id="review__profile-time">{prop.time}</div>
         </div>
       </ReviewProfile>
-      <TogetherTitle recruiting={prop.recruiting}>
+      <TogetherTitle recruiting={prop.recruiting} onClick={clickTogether} >
         <div id="together__recruiting">{prop.recruiting ? "모집중" : "모집완료"}</div>
         <div id="together__title">{prop.title}</div>
       </TogetherTitle>

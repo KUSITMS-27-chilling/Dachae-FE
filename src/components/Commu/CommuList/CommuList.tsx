@@ -78,6 +78,7 @@ function CommuList () {
             currentNum: res[key].currentNum,
             tags: res[key].tags,
             programName: res[key].programName,
+            listenIdx: res[key].listenIdx,
             detailOrCommu: 'community'
           }
           tempArr.push(tempEl);

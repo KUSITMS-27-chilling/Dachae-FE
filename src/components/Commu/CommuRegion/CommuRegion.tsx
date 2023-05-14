@@ -9,10 +9,6 @@ import { loginState } from "../../../recoil/user";
 import { commuRegions, selectedRegion } from "../../../recoil/community";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import search_icon from '../../../assets/search_icon.png';
-import { 
-  ReviewData,
-  CommuReviewData
-} from "../../../types/review";
 
 function CommuRegion () {
   const state = useRecoilValue(loginState);
