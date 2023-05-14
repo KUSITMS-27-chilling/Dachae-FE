@@ -167,7 +167,7 @@ export const ModalBg = styled.div`
 //모달 내용 작성합니다
 export const MainText = styled.div`
 position: relative;
-width: 130px;
+width: 150px;
 height: 29px;
 font-size: 23px;
 font-weight: 700;
@@ -210,7 +210,7 @@ select{
 export const Class = styled.div`
 margin-bottom: 30px;
 select{
-  margin-left: 74px;
+  margin-left: 23px;
   width: 464px;
   height: 44px;
   border: 1px solid #CBCBCB;
@@ -226,7 +226,7 @@ option{
 export const Day = styled.div`
 margin-bottom: 30px;
 select{
-  margin-left: 74px;
+  margin-left: 53px;
   width: 173px;
   height: 44px;
   border: 1px solid #CBCBCB;

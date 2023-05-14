@@ -63,7 +63,7 @@ const Modal =({ region }: Props)=> {
     // }
   };
 
-  const options2 = ['1주차', '2주차', '3주차','4주차','5주차','6주차','7주차','8주차',];
+  const options2 = ['1명', '2명', '3명','4명','5명','6명','7명','8명','9명','10명'];
   const [selectedOption2, setSelectedOption2] = useState<string>("");
 
   const handleSelect2 = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -107,14 +107,13 @@ const Modal =({ region }: Props)=> {
     //const selectedProgram = options1.find((option) => option.programName === selectedOption1);
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_HOST}/review/save`,
+        `${import.meta.env.VITE_APP_HOST}/listen/save`,
         {
           title: title,
           region: region,
           programName: selectedOption1,
-          week: parseInt(selectedOption2),
+          goalNum: parseInt(selectedOption2),
           content: text,
-          image: null,
           programIdx:tempIdx,
         },
         {
@@ -131,9 +130,9 @@ const Modal =({ region }: Props)=> {
       title: title,
       region: region,
       programName: selectedOption1,
-      week: parseInt(selectedOption2),
+      goalNum: parseInt(selectedOption2),
       content: text,
-      programIdx: tempIdx,
+      programIdx:tempIdx,
     });
   };
 
@@ -142,7 +141,7 @@ const Modal =({ region }: Props)=> {
   return (
     <div>
       <Modal1>
-            <MainText>후기 작성하기</MainText>
+            <MainText>모집글 작성하기</MainText>
             <Content>
               <Title>
                 <div>제목</div>
@@ -156,7 +155,7 @@ const Modal =({ region }: Props)=> {
             
             </select>
               </Region>
-              <Class>강의
+              <Class>프로그램명
               <select value={selectedOption1} onChange={handleSelect1}>
                 {options1.map((option, index) => (
               <option key={index} value={option.programName}>
@@ -165,7 +164,7 @@ const Modal =({ region }: Props)=> {
               ))}
             </select>
               </Class>
-              <Day>날짜
+              <Day>인원수
               <select value={selectedOption2} onChange={handleSelect2}>
                 {options2.map((option, index) => (
               <option key={index} value={option}>
