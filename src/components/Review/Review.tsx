@@ -18,7 +18,7 @@ function Review({ props }: ReviewProps) {
   const [viewContent, setViewContent] = useState('');
   const [overLength, setOverLength] = useState(false);
   const { userImg, userNick, time, title, lecture, content, region, detailPlace, reviewImg, reviewIdx, detailOrCommu } = props;
-
+  
   function countImg() {
     if(reviewImg && (reviewImg?.length > 0)) {
       setCount(reviewImg.length);
