@@ -5,12 +5,15 @@ import {
 import { commuTabKind } from "../../../recoil/community";
 import { useSetRecoilState } from "recoil";
 import { useEffect } from "react";
+import { Navigate ,useNavigate } from "react-router-dom";
 
 function CommuTab(props: any) {
   const setCommuTab = useSetRecoilState(commuTabKind);
   useEffect(() => {
     setCommuTab('review');
   },[])
+
+  const navigate = useNavigate();
 
   function btnClick(e: React.MouseEvent<HTMLDivElement>) {
     const tabArr = document.querySelectorAll('.community-tab__btn');
@@ -21,16 +24,19 @@ function CommuTab(props: any) {
     target.classList.add('active');
 
     if(e.currentTarget.id == 'community-tab__together') {
+      navigate('/commu');
       setCommuTab('together');
       return;
     }
 
     if(e.currentTarget.id == 'community-tab__review') {
+      navigate('/commu');
       setCommuTab('review');
       return;
     }
 
     if(e.currentTarget.id == 'community-tab__free-board') {
+      navigate('/commu');
       setCommuTab('freeBoard');
       return;
     }
