@@ -5,12 +5,9 @@ import {
 } from "./CommunityPage.styled"
 import TabBar from '../../components/TabBar';
 import Header from '../../components/Header/Header';
-import CommuBest from '../../components/Commu/CommuBest'
-import CommuMyPost from '../../components/Commu/CommuMyPost'
-import CommuPostBtn from '../../components/Commu/CommuPostBtn';
 import CommuTab from '../../components/Commu/CommuTab';
 import CommuHeader from '../../components/Commu/CommuHeader';
-import temp_program from "../../assets/temp_program.jpg";
+import CommuList from '../../components/Commu/CommuList';
 import { Category } from '../../types/tabCategory';
 import { detailOrCommu } from '../../types/review';
 
@@ -26,6 +23,7 @@ function CommunityPage() {
       <MainBanner />
       <CommuTab />
       <CommuHeader />
+      <CommuList />
       </>
     </div>
   )

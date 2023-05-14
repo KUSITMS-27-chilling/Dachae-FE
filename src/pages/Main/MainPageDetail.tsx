@@ -21,15 +21,11 @@ import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProg
 
 const MainPageDetail = () =>{
   const { region } = useParams();
-  console.log(region);
 
   const navigate = useNavigate();
   const goMainDetail =()=>{
       navigate("/mainDetail");
     }
-
-  
-  
 
   return (
     <div>
