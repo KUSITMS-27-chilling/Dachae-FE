@@ -20,7 +20,7 @@ interface Program {
     createdAt:string;
     title:string;
     content:string;
-    favField:string;
+    favField:string[];
     currentNum:number;
     goalNum:number;
     programName:string;
@@ -30,6 +30,7 @@ interface Program {
 function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [data, setData] = useState<Program>();
+    
     function handleMouseOver() {
         setIsMouseOver(true);
       }
@@ -37,6 +38,31 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
       function handleMouseOut() {
         setIsMouseOver(false);
       }
+
+    //JoinTogether 버튼 누르면 서버에게 post
+    const JoinTogether=  ()=>{
+      const token = localStorage.getItem('access_token');
+      try {
+        axios.post(
+          `${import.meta.env.VITE_APP_HOST}/listen/participant`,
+          {
+            listenTogetherIdx:listenIdx
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then(response => {
+          console.log(response);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+      }
+      catch{}
+    }
 
       useEffect (() => {
         const fetchData = async () => {
@@ -46,7 +72,6 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                     `${import.meta.env.VITE_APP_HOST}/listen/${listenIdx}`
                 );
                 setData(response.data.data);
-                console.log(data);
             } catch (e) {
                 console.log(e);
             }
@@ -68,8 +93,11 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                 </div>
                 <div className='tag-day'>
                     <div className='tag-category-box'>
-                    <div className='tag-category'>#{data.favField[0]}</div>
-                    <div className='tag-category'>#{data.favField[1]}</div>
+                    {data.favField.map((favFields, idx) => (
+                    <div className="tag-category" key={idx}>#{favFields}</div>
+                  ))}
+                    {/* <div className='tag-category'>#{data.favField[0]}</div>
+                    <div className='tag-category'>#{data.favField[1]}</div> */}
                 </div>
                     <div className='day'>{data.createdAt}</div>
                 </div>
@@ -88,7 +116,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                 <div className='goal'>{data.goalNum}명</div>
             </JoinPeople>
         </CardTag>
-        <TogetherBtn onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>같이 하기</TogetherBtn>
+        <TogetherBtn onClick={JoinTogether} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>같이 하기</TogetherBtn>
         {isMouseOver && (
         <CurrentJoinPeople>
           <div className='current-join'>

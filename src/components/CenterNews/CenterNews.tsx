@@ -66,7 +66,7 @@ function CenterNews() {
           tempPrograms.push(tempProgram);
         }
         return {
-          region: el,
+          region: el.slice(0, -1),
           programs: tempPrograms
         };
       })
@@ -89,8 +89,6 @@ function CenterNews() {
     setLgData([]);
     const token = localStorage.getItem('access_token');
     if(token !== null) getMyRegions(token);
-
-    console.log(lgData);
   }, [state])
 
   return(

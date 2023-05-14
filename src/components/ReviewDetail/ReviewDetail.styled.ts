@@ -5,7 +5,6 @@ export const CardForm = styled.div`
  height: 615px;
  border-radius: 18px;
  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
- margin: 20px;//확인하려고 그냥 넣음
 `
 export const CardTop = styled.div`
 position: absolute;
@@ -43,6 +42,7 @@ background: #5DB5B6;
 }
 .tag-category-box{
     display: flex;
+    line-height:27px;
 }
 .tag-day{
     margin-top: 6px;
@@ -127,21 +127,26 @@ display: flex;
     margin-top: 119px;
     display: flex;
     text-align: center;
+    line-height: 33px;
+    
+font-size: 19px;
 }
 .tag-region{
 width: 94px;
 height: 33px;
 background: #E9F8F1;
 border-radius: 26px;
-
+color: #39AFB0;
+font-weight: 700;
 }
 .tag-center{
-    border: 1px solid red;
 height: 33px;
 background: #F6F6F6;
 border-radius: 26px;
 margin-left: 14px;
 padding-right: 10px;
 padding-left: 10px;
+color: #7D7D7D;
+font-weight: 500;
 }
 `

@@ -34,7 +34,7 @@ const data = {
     createdAt:string;
     title:string;
     content:string;
-    favFields:string;
+    favFields:string[];
     week:number;
     programName:string;
     tags:string;
@@ -59,7 +59,6 @@ function ReviewDetail({ reviewIdx }: { reviewIdx: number }) {
     fetchData();
 },  [reviewIdx]);
 
-console.log(data);
 
   return (
     <div>
@@ -67,37 +66,40 @@ console.log(data);
         {
           data && (
             <>
-                    <CardTop>
-        <div className='profile'></div>
-            <div className='right'>
-                <div className='user-title'>
-                    <div className='user-name'>{data.nickName}</div>
-                    <div className='user-grade'></div>
+              <CardTop>
+                <div className='profile'></div>
+                <div className='right'>
+                    <div className='user-title'>
+                        <div className='user-name'>{data.nickName}</div>
+                        <div className='user-grade'></div>
+                    </div>
+                    <div className='tag-day'>
+                        <div className='tag-category-box'>
+                        {data.favFields.map((favField, idx) => (
+                        <div className="tag-category" key={idx}>#{favField}</div>
+                      ))}
+                        {/* <div className='tag-category'>#{data.favFields[0]}</div>
+                        <div className='tag-category'>#{data.favFields[1]}</div> */}
+                    </div>
+                        <div className='day'>{data.createdAt}</div>
+                    </div>
                 </div>
-                <div className='tag-day'>
-                    <div className='tag-category-box'>
-                    <div className='tag-category'>#{data.favFields[0]}</div>
-                    <div className='tag-category'>#{data.favFields[1]}</div>
-                </div>
-                    <div className='day'>{data.createdAt}</div>
-                </div>
-            </div>
-        </CardTop>
-        <Line></Line>
-        <CardTitle>
-            <div className='content-title'>{data.title}</div>
-            <div className='content-classname'>{data.programName}</div>
-        </CardTitle>
-        <CardContent>
-            <div className='img'>{data.image}</div>
-            <div className='content-tag'>
-                <div className='content'>{data.content}</div>
-                <div className='tag'>
-                    <div className='tag-region'>#{data.tags[0]}</div>
-                    <div className='tag-center'>#{data.tags[1]}</div>
-                </div>
-            </div>
-        </CardContent>
+              </CardTop>
+              <Line></Line>
+              <CardTitle>
+                  <div className='content-title'>{data.title}</div>
+                  <div className='content-classname'>{data.programName}</div>
+              </CardTitle>
+              <CardContent>
+                  <div className='img'>{data.image}</div>
+                  <div className='content-tag'>
+                      <div className='content'>{data.content}</div>
+                      <div className='tag'>
+                          <div className='tag-region'>#{data.tags[0]}</div>
+                          <div className='tag-center'>#{data.tags[1]}</div>
+                      </div>
+                  </div>
+              </CardContent>
             </>
           )
         }

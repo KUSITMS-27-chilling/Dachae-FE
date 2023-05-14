@@ -103,8 +103,6 @@ const Modal =({ region }: Props)=> {
         tempIdx = el.programIdx;
       }
     })
-
-    //const selectedProgram = options1.find((option) => option.programName === selectedOption1);
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_APP_HOST}/listen/save`,
