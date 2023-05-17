@@ -25,6 +25,7 @@ function DetailContent() {
     await axios.get(`${import.meta.env.VITE_APP_HOST}/listen/page/${region}`)
       .then((res) => {
         const response = res.data.data.listenTogethers;
+        const tempArr:TogetherData[] = [];
         for(let key in response) {
           const object: TogetherData = {
             nickname: response[key].nickName,
@@ -39,9 +40,9 @@ function DetailContent() {
             programName: response[key].programName,
             detailOrCommu: 'detail'
           }
-
-          setTogetherArr(togetherArr => [object, ...togetherArr]);
+          tempArr.push(object);
         }
+        setTogetherArr(tempArr);
       })
       .catch((err) => console.log(err));
     return;
@@ -51,6 +52,7 @@ function DetailContent() {
     await axios.get(`${import.meta.env.VITE_APP_HOST}/review/page/${region}`)
       .then((res) => {
         const response = res.data.data.reviews;
+        const tempArr:ReviewData[] = []
         for(let key in response) {
           const object: ReviewData = {
             userImg: response[key].profile,
@@ -64,9 +66,9 @@ function DetailContent() {
             detailPlace: response[key].tags[1],
             detailOrCommu: 'detail'
           }
-
-          setReviewArr(reviewArr => [object, ...reviewArr]);
+          tempArr.push(object);
         }
+        setReviewArr(tempArr);
       })
       .catch((err) => console.log(err));
     return;
@@ -74,12 +76,12 @@ function DetailContent() {
 
   useEffect(() => {
     if(detailTab == 'together'){
-      setTogetherArr([]);
+      // setTogetherArr([]);
       getListenTogether();
       return;
     }
     if(detailTab == 'review'){
-      setReviewArr([]);
+      // setReviewArr([]);
       getReview();
       return;
     }
