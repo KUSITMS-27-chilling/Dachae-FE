@@ -12,6 +12,7 @@ import CommunityPage from './pages/Commu/CommunityPage';
 import MainPageDetail from './pages/Main/MainPageDetail';
 import RevieDetailPage from './pages/ReviwDetail/RevieDetailPage';
 import TogetherDetailPage from './pages/TogetherDetail/TogetherDetailPage';
+import TeacherDetailPage from './pages/TeacherDetail/TeacherDetailPage';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/:region" element={<MainPageDetail />}/>
           <Route path="/commu/review/:reviewIdx" element={<RevieDetailPage />}/>
           <Route path="/commu/together/:listenIdx" element={<TogetherDetailPage />}/>
+          <Route path="/suggest/:lectureIdx" element={<TeacherDetailPage />}/>
         </Routes>
     </div>
     </RecoilRoot>

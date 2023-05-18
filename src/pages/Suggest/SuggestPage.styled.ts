@@ -10,7 +10,7 @@ export const Content = styled.div`
   width: 1156px;
   height: 416px;
   margin-top: 48px;
-  margin-left: 142px;
+   margin-left: 142px;
   display: flex;
 `
 export const TodayTeacher = styled.div`
@@ -37,7 +37,7 @@ export const MyTeacherTitle = styled.div`
 font-size: 21px;
 letter-spacing: -0.05em;
 `
-export const MyTeacherCard = styled.div`
+export const TeacherCard = styled.div`
   margin-top: 34px;
 `
 export const SuggestPostBtnContainer = styled.div`
@@ -74,4 +74,24 @@ export const Stylebutton = styled.div`
     width: max-content;
     height: 1.75rem;
   }
+`
+export const TapTitle = styled.div`
+position: relative;
+  display: flex;
+  font-weight: 700;
+    font-size: 26px;
+    margin-top: 169px;
+    margin-left: 142px;
+  .titlecolor{
+    color: #59CACB;
+  }
+`
+export const SuggestListContainer = styled.div`
+  width: 1156px;
+  //height: max-content;
+  height: 1000px;
+  position: relative;
+  margin-top: 35px;
+  left: 142px;
+  border: 1px solid red;
 `
