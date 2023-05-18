@@ -1,0 +1,1 @@
+export type CommuTabType = 'together' | 'review' | 'freeBoard';
