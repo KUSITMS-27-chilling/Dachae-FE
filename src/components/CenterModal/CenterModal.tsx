@@ -17,8 +17,6 @@ function CenterModal({ closeModal }: { closeModal: () => void }) {
                      '동대문구', '동작구', '마포구', '서대문구', '서초구',
                       '성동구', '성북구', '송파구', '양천구', '영등포구',
                       '용산구', '은평구', '종로구', '중구', '중랑구'];
-  
-  
 
   const [regions, setRegions] = useState([]);
   
@@ -62,6 +60,18 @@ function CenterModal({ closeModal }: { closeModal: () => void }) {
                 }
               </CenterBtnContainer>
             </CModalMy>
+            <CModalTotal>
+              <div id="center-modal__total-text">관심센터 설정</div>
+              <CenterBtnContainer>
+                {
+                  seoulArr &&
+                  seoulArr.map((el, idx) => {
+                    return <CenterBtn key={idx}>{el}</CenterBtn>
+                  })
+                }
+              </CenterBtnContainer>
+            </CModalTotal>
+            <div id="center-modal__warning-text">관심센터는 최대 4개까지 설정할 수 있어요!</div>
           </CModalContent>
         </CModalContainer>
       </CModalBackground>
