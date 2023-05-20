@@ -13,8 +13,8 @@ import {
   SuggestListContainer
 } from '../Suggest/SuggestPage.styled'
 // import TeacherCard from '../../components/TeacherCard/MyTeacherCard';
-// import SuggestList from '../../components/SuggestList/SuggestList';
-// import SuggestRegion from '../../components/SuggestRegion/SuggestRegion';
+ import SuggestList from '../../components/SuggestList/SuggestList';
+ import SuggestRegion from '../../components/SuggestRegion/SuggestRegion';
 import SuggestHeader from '../../components/SuggestHeader/SuggestHeader';
 
 function SuggestPage() {
@@ -40,7 +40,10 @@ const goMypage =()=>{ //일단은 마이페이지로 해놓았음
     </SuggestPostBtnContainer>
     <TapTitle>제안한<div className='titlecolor'>프로그램</div>목록</TapTitle>
     {/* <SuggestList/> */}
-    
+    <SuggestListContainer>
+        <SuggestRegion/>
+        <SuggestList/>
+    </SuggestListContainer>
     
     </div>
   )

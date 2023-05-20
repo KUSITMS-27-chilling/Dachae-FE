@@ -4,7 +4,7 @@ import {
 } from "./CommuTab.styled";
 import { commuTabKind } from "../../../recoil/community";
 import { useSetRecoilState } from "recoil";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CommuTabType } from "../../../types/communityTab";
 
@@ -12,7 +12,7 @@ function CommuTab({ thisCommu }: { thisCommu: CommuTabType }) {
   const setCommuTab = useSetRecoilState(commuTabKind);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setCommuTab(thisCommu);
     const el = document.getElementById(`community-tab__${thisCommu}`);
     el?.click();

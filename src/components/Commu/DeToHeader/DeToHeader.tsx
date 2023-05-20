@@ -10,7 +10,7 @@ import CommuBest from "../CommuBest";
 import CommuMyPost from "../CommuMyPost";
 import CommuPostBtn from "../CommuPostBtn";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { CommuPopularData } from "../../../types/community";
 
 function DeToHeader () {
@@ -22,7 +22,7 @@ function DeToHeader () {
   }
   const [popularData, setPopularData] = useState<CommuPopularData[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if(commuTab == 'review') {
       getReviewPopular();
       return;

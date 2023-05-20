@@ -17,7 +17,7 @@ import {
 
 
 interface Program {
-  category: string;
+    category: string;
     introduce: string;
     lectureIdx: number;
     name: string;
@@ -25,39 +25,36 @@ interface Program {
     title: string;
     years: number;
 }
-function MyTeacherCard() {
-  const navigate = useNavigate();
+interface Props {
+    category: string;
+  }
+function CategoryCard({ category }: Props) {
   const [TeacherData, setTeacherData] = useState<Program[]>([]);
     const token = localStorage.getItem('access_token');
+    const onMouseMove = (e: React.MouseEvent) => {};
 
-    const goTeacherDetail=(e:React.MouseEvent<HTMLDivElement>)=>{
-      // navigate(`/suggest/${lectureIdx}`);
-      console.log(TeacherData)
-      // console.log(e.currentTarget)
-    }
   
 
     useEffect(() => {
         getMyTeacher();
       }, []);
     const getMyTeacher=() =>{
-        axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/my`,
+        axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${category}/page`,
         {
             headers: {
               Authorization: `Bearer ${token}`
             }
           })
         .then((response) => {
-            setTeacherData(response.data.data);
+            setTeacherData(response.data.data.lectureInfos);
         })
         .catch((err) => console.log(err));
       }
   return (
     <div>
-      <ScrollContainer>
-      <TeacherCard>
+      <TeacherCard onMouseMove={onMouseMove}>
       {TeacherData.map((data) => (
-      <TeacherCardBox key={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
+      <TeacherCardBox key={data.lectureIdx} >
         <CardTop>
             <div className='title'>{data.title}</div>
             <div className='catedory'>{data.category}</div>
@@ -77,9 +74,8 @@ function MyTeacherCard() {
       </TeacherCardBox>
       ))}
       </TeacherCard>
-      </ScrollContainer>
     </div>
   )
 }
 
-export default MyTeacherCard
+export default CategoryCard

@@ -23,6 +23,11 @@ background-color: gray;
 margin-left: 142px;
 margin-top: 56px;
 `
+export const Content= styled.div`
+width: 700px;
+height: 300px;
+ border: 1px solid red;
+`
 export const Title= styled.div`
  
 `

@@ -38,7 +38,8 @@ font-size: 21px;
 letter-spacing: -0.05em;
 `
 export const TeacherCard = styled.div`
-  margin-top: 34px;
+  margin-top: 5px;
+  display: flex;
 `
 export const SuggestPostBtnContainer = styled.div`
   width: 1156px;
@@ -88,8 +89,7 @@ position: relative;
 `
 export const SuggestListContainer = styled.div`
   width: 1156px;
-  //height: max-content;
-  height: 1000px;
+  height: max-content;
   position: relative;
   margin-top: 35px;
   left: 142px;

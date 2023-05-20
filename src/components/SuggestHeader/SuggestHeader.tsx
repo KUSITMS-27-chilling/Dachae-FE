@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react";
+import ScrollContainer from 'react-indiana-drag-scroll'
 import {
     Content,
     TodayTeacher,
@@ -21,13 +22,14 @@ const SuggestHeader=()=> {
       <TodayTeacher>
           <TodayTitle>오늘 등록한 동네강사</TodayTitle>
           <TodayCard>
-            <TodayTeacherCard/>
-            {/* 강사 카드 넣어봤음 */}
+              <TodayTeacherCard/>
           </TodayCard>
         </TodayTeacher>
         <MyTeacher>
         <MyTeacherTitle>내가 신청한 동네강사</MyTeacherTitle>
+        
           <MyTeacherCard/>
+         
         </MyTeacher>
         </Content>
     </div>
