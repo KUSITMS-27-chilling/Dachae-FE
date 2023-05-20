@@ -104,9 +104,26 @@ export const CenterBtnContainer = styled.div`
   height: max-content;
   display: flex;
   flex-wrap: wrap;
+
+  .selected {
+    background-color: #59c7c8;
+  }
 `;
 
 export const CenterBtn = styled.button`
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   width: 9rem;
   height: 3.6875rem;
   margin-right: 0.75rem;
@@ -118,8 +135,37 @@ export const CenterBtn = styled.button`
   font-size: 23px;
   font-weight: 500;
   font-family: Pretendard;
+  animation: fade-in 0.3s ease-in-out;
 
   :last-child {
     margin-right: 0;
   }
+`;
+
+export const ControlBtnContainer = styled.div`
+  width: 15.125rem;
+  height: 2.75rem;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 2.3125rem;
+  bottom: 2.5rem;
+
+  #control-btn__confirm {
+    background-color: #39afb0;
+    color: #fff;
+    border: none;
+  }
+`
+
+export const ControlBtn = styled.button`
+  width: 7.125rem;
+  height: 2.75rem;
+  border-radius: 0.875rem;
+  background-color: #fff;
+  color: #000;
+  font-size: 21px;
+  font-weight: 700;
+  font-family: Pretendard;
+  border: 3px solid #DADADA;
 `;

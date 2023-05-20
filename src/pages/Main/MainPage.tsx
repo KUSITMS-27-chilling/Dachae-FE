@@ -15,6 +15,7 @@ import CenterModal from '../../components/CenterModal';
 import axios from 'axios';
 import map_marker from '../../assets/map-marker-radius.png';
 import { loginState } from '../../recoil/user';
+import { favRegs } from '../../recoil/center';
 import { useRecoilValue } from 'recoil';
 import { 
   MainContentData,
@@ -23,6 +24,7 @@ import {
 
 function MainPage() {
   const state = useRecoilValue(loginState);
+  const favRegion = useRecoilValue(favRegs);
   const { isOpenModal, openModal, closeModal } = useModal();
   const [programData, setProgramData] = useState<MainContentData[]>([]);
 
@@ -97,7 +99,7 @@ function MainPage() {
     setProgramData([]);
     if(localStorage.getItem('access_token') !== null) getProgramsLogIn(localStorage.getItem('access_token')!);
     else getPrograms();
-  }, [state])
+  }, [state, favRegion])
 
     return (
       <>

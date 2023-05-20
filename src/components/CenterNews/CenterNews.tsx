@@ -15,14 +15,15 @@ import useModal from '../../hooks/useModal';
 import { LGData, LGProgram } from '../../types/centerNews';
 import { useEffect, useState } from 'react';
 import { loginState } from '../../recoil/user';
+import { favRegs } from '../../recoil/center';
 import { useRecoilValue } from 'recoil';
 import axios from 'axios';
 
 function CenterNews({ openModal }: { openModal: () => void }) {
-  // const { isOpenModal, openModal, closeModal } = useModal();
   const [lgData, setLgData] = useState<LGData[]>([]);
   const [programs, setPrograms] = useState<LGProgram[]>([]);
   const state = useRecoilValue(loginState);
+  const favRegion = useRecoilValue(favRegs);
   
   function regionClick(e: React.MouseEvent<HTMLButtonElement>) {
     const regionArr = document.querySelectorAll('.center-news__region-btn');
@@ -96,7 +97,7 @@ function CenterNews({ openModal }: { openModal: () => void }) {
     setLgData([]);
     const token = localStorage.getItem('access_token');
     if(token !== null) getMyRegions(token);
-  }, [state])
+  }, [state, favRegion])
 
   return(
     <CenterNewsContainer>
