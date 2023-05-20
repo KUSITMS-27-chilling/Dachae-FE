@@ -10,7 +10,7 @@ import CommuBest from "../CommuBest";
 import CommuMyPost from "../CommuMyPost";
 import CommuPostBtn from "../CommuPostBtn";
 import axios from "axios";
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import { CommuPopularData } from "../../../types/community";
 
 function DeToHeader () {

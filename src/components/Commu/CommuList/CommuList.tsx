@@ -7,7 +7,7 @@ import { commuRegions, commuTabKind, selectedRegion } from "../../../recoil/comm
 import { useRecoilValue } from "recoil";
 import { ReviewData, CommuReviewData } from "../../../types/review";
 import { CommuTogetherData, TogetherData } from "../../../types/together";
-import { useState, useLayoutEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import Review from "../../Review";
 import Together from "../../Together";

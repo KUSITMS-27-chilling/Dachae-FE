@@ -4,7 +4,7 @@ import {
 } from "./CommuTab.styled";
 import { commuTabKind } from "../../../recoil/community";
 import { useSetRecoilState } from "recoil";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CommuTabType } from "../../../types/communityTab";
 
