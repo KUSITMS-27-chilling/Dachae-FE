@@ -7,7 +7,7 @@ import { commuRegions, commuTabKind, selectedRegion } from "../../../recoil/comm
 import { useRecoilValue } from "recoil";
 import { ReviewData, CommuReviewData } from "../../../types/review";
 import { CommuTogetherData, TogetherData } from "../../../types/together";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import axios from "axios";
 import Review from "../../Review";
 import Together from "../../Together";
@@ -19,7 +19,7 @@ function CommuList () {
   const [commuReviews, setCommuReviews] = useState<CommuReviewData[]>([]);
   const [commuTogethers, setCommuTogethers] = useState<CommuTogetherData[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setCommuReviews([]);
     setCommuTogethers([]);
     if(commuTab == 'review') {

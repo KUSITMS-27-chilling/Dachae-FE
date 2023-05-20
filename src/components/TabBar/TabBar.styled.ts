@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const TabBarContainer = styled.div`
-  width: 100%;
+  width: 90rem;
   height: 4.4375rem;
   position: relative;
   box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.25);
