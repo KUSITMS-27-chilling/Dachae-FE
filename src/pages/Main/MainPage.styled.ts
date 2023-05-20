@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const MainBanner = styled.div`
-  position: relative;
-  width: 90rem;
-  height: 240px;
-  background-color: #91C8CA;
-`
-
 export const MainMiddle = styled.div`
   width: 100%;
   height: 12.125rem;

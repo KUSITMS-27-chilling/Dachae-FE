@@ -2,10 +2,7 @@ import React from 'react'
 import Header from '../../components/Header/Header';
 import TabBar from '../../components/TabBar';
 import { Category } from '../../types/tabCategory';
-import {
-  MainBanner,
-
-} from '../Suggest/SuggestPage.styled'
+import MainBanner from '../../components/MainBanner';
 import TeacherCard from '../../components/TeacherCard/TeacherCard';
 
 function SuggestPage() {
@@ -14,7 +11,7 @@ function SuggestPage() {
     <div>
       <Header />
       <TabBar prop={category} />
-      <MainBanner />
+      <MainBanner bannerType='teacherBanner' />
       <TeacherCard/>
     </div>
   )
