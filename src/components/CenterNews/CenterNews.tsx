@@ -10,16 +10,20 @@ import {
   LearningGroundText,
   CenterNewsOut
 } from './CenterNews.styled';
+import CenterModal from '../CenterModal';
+import useModal from '../../hooks/useModal';
 import { LGData, LGProgram } from '../../types/centerNews';
 import { useEffect, useState } from 'react';
 import { loginState } from '../../recoil/user';
+import { favRegs } from '../../recoil/center';
 import { useRecoilValue } from 'recoil';
 import axios from 'axios';
 
-function CenterNews() {
+function CenterNews({ openModal }: { openModal: () => void }) {
   const [lgData, setLgData] = useState<LGData[]>([]);
   const [programs, setPrograms] = useState<LGProgram[]>([]);
   const state = useRecoilValue(loginState);
+  const favRegion = useRecoilValue(favRegs);
   
   function regionClick(e: React.MouseEvent<HTMLButtonElement>) {
     const regionArr = document.querySelectorAll('.center-news__region-btn');
@@ -46,16 +50,20 @@ function CenterNews() {
           Authorization: `Bearer ${token}`
         }
       }).then((res) => {
-        getCenterNews(res.data.data.regions);
+        getCenterNews(res.data.data.regions, token);
       })
       .catch((err) => console.log(err));
     }
   }
 
-  async function getCenterNews(regions: string[]) {
+  async function getCenterNews(regions: string[], token: string) {
     const tempArr: LGData[] = await Promise.all(
       regions.map(async (el) => {
-        const response = await axios.get(`${import.meta.env.VITE_APP_HOST}/program/new/${el}`);
+        const response = await axios.get(`${import.meta.env.VITE_APP_HOST}/program/new/${el}`,{
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
         const res = response.data.data.newPrograms;
         const tempPrograms: LGProgram[] = [];
         for (let key in res) {
@@ -89,7 +97,7 @@ function CenterNews() {
     setLgData([]);
     const token = localStorage.getItem('access_token');
     if(token !== null) getMyRegions(token);
-  }, [state])
+  }, [state, favRegion])
 
   return(
     <CenterNewsContainer>
@@ -98,7 +106,7 @@ function CenterNews() {
         {
           state &&
           <CenterSetting>
-            <div id='center-news__header--setting-text'>나의 관심센터 설정하기</div>
+            <div id='center-news__header--setting-text' onClick={openModal}>나의 관심센터 설정하기</div>
             <div id='center-news__header--setting-btn'>&gt;</div>
           </CenterSetting>
         }

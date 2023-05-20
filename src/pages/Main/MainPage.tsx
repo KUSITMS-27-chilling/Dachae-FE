@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import useModal from '../../hooks/useModal';
 import { 
   MainBanner,
   MainMiddle,
@@ -10,10 +11,11 @@ import Header from '../../components/Header/Header';
 import CenterNews from '../../components/CenterNews';
 import TodayMy from '../../components/Main/TodayMy';
 import TabBar from '../../components/TabBar';
-import { LGData } from '../../types/centerNews';
+import CenterModal from '../../components/CenterModal';
 import axios from 'axios';
 import map_marker from '../../assets/map-marker-radius.png';
 import { loginState } from '../../recoil/user';
+import { favRegs } from '../../recoil/center';
 import { useRecoilValue } from 'recoil';
 import { 
   MainContentData,
@@ -22,6 +24,8 @@ import {
 
 function MainPage() {
   const state = useRecoilValue(loginState);
+  const favRegion = useRecoilValue(favRegs);
+  const { isOpenModal, openModal, closeModal } = useModal();
   const [programData, setProgramData] = useState<MainContentData[]>([]);
 
   const getPrograms = async () => {
@@ -95,16 +99,21 @@ function MainPage() {
     setProgramData([]);
     if(localStorage.getItem('access_token') !== null) getProgramsLogIn(localStorage.getItem('access_token')!);
     else getPrograms();
-  }, [state])
+  }, [state, favRegion])
 
     return (
       <>
+        {
+          isOpenModal && (
+            <CenterModal closeModal={closeModal} ></CenterModal>
+          )
+        }
         <Header />
         <MainBanner />
         <MainBody_Today> 
     
           <MainBody_Today_In>
-            <CenterNews />
+            <CenterNews openModal={openModal} />
             <TodayMy />
           </MainBody_Today_In>
           
