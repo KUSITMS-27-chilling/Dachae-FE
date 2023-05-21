@@ -104,7 +104,8 @@ function TeacherDetailPage() {
       <div className='line-btn'/>
         강사이력
         </Title>
-      <Content>{ TeacherData && TeacherData.careers}</Content>
+      <Content>{ TeacherData && TeacherData.careers[0]}<br/>
+      { TeacherData && TeacherData.careers[1]}</Content>
       <Title>
       <div className='line-btn'/>
       보유자격증
