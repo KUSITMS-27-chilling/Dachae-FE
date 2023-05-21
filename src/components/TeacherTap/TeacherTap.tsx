@@ -3,18 +3,20 @@ import {
     CategoryContainer,
   } from "./TeacherTap.styled";
   import { useNavigate } from "react-router-dom";
-  import { TabBarProps } from "../../types/tabCategory";
   import { useEffect } from "react";
+ import {TeacherTabType} from'../../types/Teacher'
   
-  function TeacherTabBar({ prop = 'program' } : TabBarProps) {
+  function TeacherTabBar({ thisTeacher }: { thisTeacher: TeacherTabType }) {
     const navigate = useNavigate();
+    // const category: Category = 'community';
+    // const commuTab = useRecoilValue(TeacherTabKind);
   
     useEffect(() => {
       const categoryArr = document.querySelectorAll('.tab-bar__category');
       categoryArr.forEach((el) => {
         el.className = 'tab-bar__category';
       })
-      const activeCategory = document.getElementById(`tab-bar__category-${prop}`)
+      const activeCategory = document.getElementById(`tab-bar__category-${thisTeacher}`)
       activeCategory!.className = 'tab-bar__category active';
     }, [])
   
@@ -24,22 +26,15 @@ import {
     const goSuggest =()=>{ //제안할래요
       navigate("/suggest");
     }
-    const goCommu =()=>{ //커뮤니티
-      navigate("/commu");
-    }
-    const goMypage =()=>{ //마이페이지
-      navigate("/mypage");
-    }
-  
     return(
-      <TabBarContainer>
+      <TabBarContainer >
         <CategoryContainer>
           <div 
-            id="tab-bar__category-program"
+            id="tab-bar__category-Teacherinfo"
             className="tab-bar__category active" 
             onClick={goMain}>강사정보</div>
           <div
-            id="tab-bar__category-suggest"
+            id="tab-bar__category-lectureinfo"
             className="tab-bar__category" 
             onClick={goSuggest}>수업정보</div>
         </CategoryContainer>

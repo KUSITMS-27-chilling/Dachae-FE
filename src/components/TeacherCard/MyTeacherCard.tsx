@@ -31,9 +31,14 @@ function MyTeacherCard() {
     const token = localStorage.getItem('access_token');
 
     const goTeacherDetail=(e:React.MouseEvent<HTMLDivElement>)=>{
-      // navigate(`/suggest/${lectureIdx}`);
-      console.log(TeacherData)
-      // console.log(e.currentTarget)
+       //navigate(`/suggest/${lectureIdx}`);
+      //console.log(TeacherData)
+       //console.log(e.currentTarget)
+      
+       const dataText = e.currentTarget.dataset.text!;
+       console.log(dataText)
+    
+       navigate(`/suggest/${dataText}`);
     }
   
 
@@ -57,7 +62,7 @@ function MyTeacherCard() {
       <ScrollContainer>
       <TeacherCard>
       {TeacherData.map((data) => (
-      <TeacherCardBox key={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
+      <TeacherCardBox key={data.lectureIdx} data-text ={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
         <CardTop>
             <div className='title'>{data.title}</div>
             <div className='catedory'>{data.category}</div>

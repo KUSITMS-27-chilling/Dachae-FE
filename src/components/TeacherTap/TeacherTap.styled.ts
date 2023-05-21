@@ -8,7 +8,7 @@ export const TabBarContainer = styled.div`
 `;
 
 export const CategoryContainer = styled.div`
-  width: 32.4375rem;
+  width: 292px;
   height: 2.75rem;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,7 @@ export const CategoryContainer = styled.div`
   left: 8.875rem;
 
   .tab-bar__category {
-    width: max-content;
+    width: 146px;
     height: 2.4375rem;
     font-size: 25px;
     font-weight: 700;
@@ -25,6 +25,7 @@ export const CategoryContainer = styled.div`
     letter-spacing: -0.05em;
     color: #b0b0b0;
     cursor: pointer;
+    text-align: center;
   }
 
   .active {

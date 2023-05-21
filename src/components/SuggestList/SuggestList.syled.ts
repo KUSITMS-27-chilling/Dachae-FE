@@ -5,7 +5,7 @@ export const SuggestContainer = styled.div`
   //height: max-content;
   height: 510px;
   margin-top: 106px;
-  border: 1px solid white ;
+  border: 1px solid black ;
 `
 export const ContentTitle = styled.div`
   width: 1156px;
@@ -27,6 +27,8 @@ color: #535353;
 `
 export const CardContent = styled.div`
  width: 330px;
+ height: 380px;
  margin-top: 84px;
   margin-right: 42px;
+  border: 1px solid black;
 `

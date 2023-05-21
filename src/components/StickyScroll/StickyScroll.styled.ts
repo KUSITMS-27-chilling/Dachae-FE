@@ -5,6 +5,9 @@ height: 545px;
 background-color: #F6F6F6;
 border: 1px solid #CBCBCB;
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+position: sticky;
+top: 0;
+//margin-top: 702px;
 button{
     margin-top: 12Px;
     margin-left: 27px;

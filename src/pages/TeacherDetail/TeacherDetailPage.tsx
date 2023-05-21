@@ -9,15 +9,24 @@ import {
     HeaderImg,
     TeacherImg,
     Content,
-    Title
+    Title,
+    Total,
+    ContentRight,
+    Contentleft,
+    Subtitle,
+    Subcontent,
+    Contentinfo,
+    Contentclass
 } from '../../pages/TeacherDetail/TeacherDetailPage.styled'
 import TeacherTabBar from '../../components/TeacherTap/TeacherTap';
 import StickyScroll from '../../components/StickyScroll/StickyScroll';
-
+import { TeacherTabKind } from "../../recoil/TeacherTap";
+  import { useRecoilValue } from 'recoil';
 interface Program {
   careers:string;
   certificates:string;
   profile:string;
+  
 }
 interface Class{
   price: number;
@@ -26,11 +35,14 @@ interface Class{
 }
 
 function TeacherDetailPage() {
-    const category: Category = 'suggest';
-    // const { lectureIdx } = useParams();
-    const lectureIdx = 3;
+     const info = 'suggest';
+     const { lectureIdx } = useParams();
     const [TeacherData, setTeacherData] = useState<Program>();
     const [ClassData, setClassData] = useState<Class>();
+    const category = 'community';
+    const TeacherTab = useRecoilValue(TeacherTabKind);
+    const [scrollPosition, setScrollPosition] = useState(0);
+  const [isFixed, setIsFixed] = useState(false);
 
     useEffect(() => {
       getTeacherData();
@@ -55,30 +67,85 @@ function TeacherDetailPage() {
       })
       .catch((err) => console.log(err));
     }
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentPosition = window.pageYOffset;
+        setScrollPosition(currentPosition);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+  
+    useEffect(() => {
+      if (scrollPosition >= 330) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    }, [scrollPosition]);
+
   return (
     <div>
       <Header/>
       <TabBar prop={category} />
-      
       <HeaderImg>
         <img className='img1'></img>
         <img className='img2'></img>
       </HeaderImg>
-      <TeacherTabBar/>
+      <TeacherTabBar thisTeacher={TeacherTab}/>
+      <Total>
+      <Contentleft>
       <TeacherImg></TeacherImg>
-      <StickyScroll/>
-      <Title>강사이력</Title>
+      <Title>
+      <div className='line-btn'/>
+        강사이력
+        </Title>
       <Content>{ TeacherData && TeacherData.careers}</Content>
-      <Title>보유자격증</Title>
+      <Title>
+      <div className='line-btn'/>
+      보유자격증
+      </Title>
       <Content>{ TeacherData && TeacherData.certificates}</Content>
-      <Title>수업기본정보</Title>
-      <Content>{ClassData && ClassData.price}
-                {ClassData && ClassData.goalNum}
-      </Content>
-      <Title>수업 진행방식</Title>
-      <Content>{ClassData && ClassData.proceed}</Content>
-      
-      
+      <Title>
+      <div className='line-btn'/>
+      수업기본정보
+      </Title>
+      <Contentinfo>
+        <div>
+        <Subtitle>1시간당 가격</Subtitle>
+        <Subtitle>인원수</Subtitle>
+        </div>
+        <div>
+        <Subcontent>{ClassData && ClassData.price}원</Subcontent>
+        <Subcontent>{ClassData && ClassData.goalNum}명</Subcontent>
+        </div>
+               
+      </Contentinfo>
+      <Title>
+      <div className='line-btn'/>
+      수업 진행방식
+      </Title>
+      <Contentclass>
+        <div className='subclasstitle'>수업 목표</div>
+        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasstitle'>강의 내용</div>
+        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasstitle'>강의 방식</div>
+        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasstitle'>필요한 장비</div>
+        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        </Contentclass>
+      </Contentleft>
+      <ContentRight>
+      <div className={isFixed ? 'fixed' : ''}>
+        <StickyScroll/>
+        </div>
+      </ContentRight>
+      </Total>
     </div>
   )
 }

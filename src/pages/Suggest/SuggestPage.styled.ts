@@ -39,7 +39,10 @@ letter-spacing: -0.05em;
 `
 export const TeacherCard = styled.div`
   margin-top: 5px;
+  height: 360px;
   display: flex;
+  border:1px solid black;
+  
 `
 export const SuggestPostBtnContainer = styled.div`
   width: 1156px;

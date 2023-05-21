@@ -105,7 +105,7 @@ const Modal =({ region }: Props)=> {
     })
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_APP_HOST}/listen/save`,
+        `${import.meta.env.VITE_APP_HOST}/review/posts`,
         {
           title: title,
           region: region,
