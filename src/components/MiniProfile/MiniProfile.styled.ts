@@ -107,6 +107,7 @@ export const LearningGradeBox = styled.div`
 export const LearningNewsBox = styled.div`
   width: 23.75rem;
   height: 10.5rem;
+  overflow: auto;
 `
 
 export const LearningGradeBar = styled.div`
@@ -147,12 +148,38 @@ export const LearningGradeBar = styled.div`
   }
 `;
 
-export const MyActivityField = styled.div`
-  width: 19.75rem;
-  height: 3.8125rem;
-`;
-
 export const LearningNews = styled.div`
   width: 23.75rem;
   height: 3.5rem;
+  display: flex;
+  position: relative;
+
+  #learning-news__circle {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: rgba(89, 202, 203, 0.38);
+    position: absolute;
+    top: 50%;
+    left: 2.1875rem;
+    transform: translateY(-50%);
+  }
+
+  #learning-news__title {
+    width: 15.1875rem;
+    height: 1.125rem;
+    position: absolute;
+    top: 50%;
+    left: 4.8125rem;
+    transform: translateY(-50%);
+  }
+
+  #learning-news__x {
+    width: 0.6319rem;
+    height: 0.6319rem;
+    position: absolute;
+    top: 50%;
+    right: 2.3713rem;
+    transform: translateY(-50%);
+  }
 `;
