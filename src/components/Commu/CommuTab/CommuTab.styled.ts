@@ -4,7 +4,7 @@ export const CommuTabContainer = styled.div`
   width: 13.25rem;
   height: 11.75rem;
   position: absolute;
-  top: 27.1875rem;
+  top: 31.6875rem;
   left: 8.875rem;
   display: flex;
   flex-direction: column;
