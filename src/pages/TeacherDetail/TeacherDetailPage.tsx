@@ -42,13 +42,13 @@ interface img{
 
 function TeacherDetailPage() {
   
-     const { lectureIdx } = useParams();
-    const [TeacherData, setTeacherData] = useState<Program>();
-    const [ClassData, setClassData] = useState<Class>();
-    const [Teacherimg, setTeacherimg] = useState<img>();
-    const category: Category = 'suggest';
-    const TeacherTab = useRecoilValue(TeacherTabKind);
-    const [scrollPosition, setScrollPosition] = useState(0);
+  const { lectureIdx } = useParams();
+  const [TeacherData, setTeacherData] = useState<Program>();
+  const [ClassData, setClassData] = useState<Class>();
+  const [Teacherimg, setTeacherimg] = useState<img>();
+  const category: Category = "suggest";
+  const TeacherTab = useRecoilValue(TeacherTabKind);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [isFixed, setIsFixed] = useState(false);
   const { isPreparing, showPopup } = usePreparing();
 

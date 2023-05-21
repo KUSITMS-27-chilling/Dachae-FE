@@ -65,7 +65,7 @@ function CommuRegion () {
   return(
     <CommuRegionContainer>
       <CommuRegionBtnBox>
-      <div className="commu-region__btn active" onClick={e => clickRegion(e)} >전체보기</div>
+      <div className="commu-region__btn active" onClick={e => clickRegion(e)} >모든 지역보기</div>
       {
         regions.map((el, idx) => (
           <div className="commu-region__btn" key={idx} onClick={e => clickRegion(e)}>{el}</div>
