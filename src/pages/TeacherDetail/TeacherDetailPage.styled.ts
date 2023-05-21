@@ -1,26 +1,38 @@
 import styled from "styled-components";
 
-export const HeaderImg= styled.div`
+export const HeaderImg= styled.div<{img:string[]}>`
  width: 1156px;
  height: 352px;
  margin-top: 68px;
  margin-left: 142px;
  display: flex;
- .img1,.img2{
+.img1{
+background-image: ${props => `url(${props.img[0]})`};
+object-fit: cover;
+background-size:cover;
 width: 556px;
 height: 352px;
 margin-right: 24px;
-background-color: #DFF5F5;
+ }
+ .img2{
+background-image: ${props => `url(${props.img[1]})`};
+object-fit: cover;
+background-size:cover;
+width: 556px;
+height: 352px;
+margin-right: 24px;
  }
 `
 
-export const TeacherImg= styled.div`
+export const TeacherImg= styled.div<{imgSrc:string}>`
  width: 212px;
  height: 212px;
  border-radius: 90%;
-background-color: #DFF5F5;
 margin-top: 56px;
 margin-bottom: 41px;
+background-image: ${props => `url(${props.imgSrc})`};
+object-fit: cover;
+background-size:cover;
 `
 export const Content= styled.div`
 width: 732px;

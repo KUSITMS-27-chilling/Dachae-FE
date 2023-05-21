@@ -9,7 +9,8 @@ import{
     Line,
     CardContent,
     Career,
-    CardEnd
+    CardEnd,
+    Img
 }from './TeacherCard.styled'
 import {
   TeacherCard
@@ -69,7 +70,9 @@ function CategoryCard({ category}: Props) {
                     <div className='month'>{data.years}년</div>
                 </Career>
             </div>
-            <div className='user-img'></div>
+            <Img imgSrc={data ? data.profile : ''}>
+          <div className='user-img'></div>
+          </Img>
         </CardContent>
         <CardEnd>{data.introduce}</CardEnd>
       </TeacherCardBox>

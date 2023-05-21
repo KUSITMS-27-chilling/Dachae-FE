@@ -34,6 +34,9 @@ function DetailTabBar(props: { region: string }) {
       return;
     }
   }
+  const handleCloseModal = () => {
+    setModal(false);
+  };
 
   return(
     <DetailTabContainer>
@@ -54,15 +57,16 @@ function DetailTabBar(props: { region: string }) {
       </DetailTabToggle>
 
       <button id="detail-tab__post-btn" onClick={ () => setModal(true) }>{btnText}</button>
-      {
-            modal &&
+      
+      { modal &&( 
             <ModalBg 
               ref={outside} 
               onClick={ (e) => { if(e.target === outside.current) setModal(false) } }
             >
-              <Modal region = {region as string}/>
+              <Modal region = {region as string} handleCloseModal={handleCloseModal}/>
+             
           </ModalBg>
-          }
+          )}
     </DetailTabContainer>
   )
 }

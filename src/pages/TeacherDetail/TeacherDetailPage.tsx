@@ -33,12 +33,16 @@ interface Class{
     goalNum: number;
     proceed: string;
 }
+interface img{
+  images:string[];
+}
 
 function TeacherDetailPage() {
   
      const { lectureIdx } = useParams();
     const [TeacherData, setTeacherData] = useState<Program>();
     const [ClassData, setClassData] = useState<Class>();
+    const [Teacherimg, setTeacherimg] = useState<img>();
     const category: Category = 'suggest';
     const TeacherTab = useRecoilValue(TeacherTabKind);
     const [scrollPosition, setScrollPosition] = useState(0);
@@ -51,6 +55,18 @@ function TeacherDetailPage() {
       axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/teacherInfo/${lectureIdx}`)
       .then((response) => {
           setTeacherData(response.data.data);
+    
+      })
+      .catch((err) => console.log(err));
+    }
+
+    useEffect(() => {
+      getTeacherimg();
+    }, []);
+  const getTeacherimg=() =>{
+      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/images/${lectureIdx}`)
+      .then((response) => {
+          setTeacherimg(response.data.data);
           console.log(response.data.data);
       })
       .catch((err) => console.log(err));
@@ -63,7 +79,7 @@ function TeacherDetailPage() {
       axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/basicInfo/${lectureIdx}`)
       .then((response) => {
         setClassData(response.data.data);
-          console.log(response.data.data);
+          
       })
       .catch((err) => console.log(err));
     }
@@ -92,14 +108,16 @@ function TeacherDetailPage() {
     <div>
       <Header/>
       <TabBar prop={category} />
-      <HeaderImg>
-        <img className='img1'></img>
-        <img className='img2'></img>
+      <HeaderImg img={Teacherimg ? Teacherimg.images : []} >
+      <div className='img1'/>
+        <div className='img2' ></div>
       </HeaderImg>
       <TeacherTabBar thisTeacher={TeacherTab}/>
       <Total>
       <Contentleft>
-      <TeacherImg></TeacherImg>
+      <TeacherImg imgSrc={TeacherData ? TeacherData.profile : ''}>
+        <div className='img'></div>
+      </TeacherImg>
       <Title>
       <div className='line-btn'/>
         강사이력

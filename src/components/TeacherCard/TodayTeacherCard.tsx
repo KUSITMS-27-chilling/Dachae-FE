@@ -8,7 +8,8 @@ import{
     Line,
     CardContent,
     Career,
-    CardEnd
+    CardEnd,
+    Img
 }from '../../components/TeacherCard/TeacherCard.styled'
 import {
     TeacherCard
@@ -64,7 +65,9 @@ function TodayTeacherCard() {
                   <div className='month'>{data.years}년</div>
               </Career>
           </div>
+          <Img imgSrc={data ? data.profile : ''}>
           <div className='user-img'></div>
+          </Img>
       </CardContent>
       <CardEnd>{data.years}</CardEnd>
     </TeacherCardBox>

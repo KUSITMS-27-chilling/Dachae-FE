@@ -40,6 +40,17 @@ width: 330px;
 height: 0px;
 border: 1px solid #CBCBCB;
 `
+export const Img = styled.div<{imgSrc:string}>`
+ width: 107px;
+    height: 107px;
+    margin-top: 15px;
+    border-radius: 90PX;
+background-image: ${props => `url(${props.imgSrc})`};
+object-fit: cover;
+background-size:cover;
+.user-img{
+}
+`
 export const CardContent = styled.div`
 width: 330px;
 height: 122px;
@@ -48,12 +59,6 @@ display: flex;
     margin-right: 84px;
     margin-left: 25px;
     margin-top: 39px;
-}.user-img{
-    width: 107px;
-    height: 107px;
-    background-color: gray;
-    margin-top: 15px;
-    border-radius: 90PX;
 }
 .name{
     font-weight: 700;
