@@ -1,6 +1,7 @@
 export type LGProgram = {
   programTitle: string;
   programPeriod: string;
+  programUrl: string;
 }
 
 export type LGData = {

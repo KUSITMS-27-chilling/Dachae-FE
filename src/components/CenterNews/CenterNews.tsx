@@ -10,8 +10,6 @@ import {
   LearningGroundText,
   CenterNewsOut
 } from './CenterNews.styled';
-import CenterModal from '../CenterModal';
-import useModal from '../../hooks/useModal';
 import { LGData, LGProgram } from '../../types/centerNews';
 import { useEffect, useState } from 'react';
 import { loginState } from '../../recoil/user';
@@ -65,11 +63,13 @@ function CenterNews({ openModal }: { openModal: () => void }) {
           }
         });
         const res = response.data.data.newPrograms;
+        console.log(res);
         const tempPrograms: LGProgram[] = [];
         for (let key in res) {
           const tempProgram: LGProgram = {
             programTitle: res[key].programName,
-            programPeriod: dateToStr(res[key].startDate, res[key].endDate)
+            programPeriod: dateToStr(res[key].startDate, res[key].endDate),
+            programUrl: res[key].url
           }
           tempPrograms.push(tempProgram);
         }
@@ -91,6 +91,11 @@ function CenterNews({ openModal }: { openModal: () => void }) {
     dateParts = end.split('-');
     str += `${dateParts[0]}. ${dateParts[1]}. ${dateParts[2]}`;
     return str;
+  }
+
+  function goLearningGround(url: string) {
+    const absoluteUrl = new URL(`https://${url!}`, window.location.href).toString();
+    window.open(absoluteUrl, "_blank");
   }
 
   useEffect(() => {
@@ -140,7 +145,7 @@ function CenterNews({ openModal }: { openModal: () => void }) {
               (lgData.length > 0) &&
               programs.map((el, idx) => (
                 <LearningGroundProgram key={idx}>
-                  <LearningGroundText>{el.programTitle}</LearningGroundText>
+                  <LearningGroundText onClick={() => goLearningGround(el.programUrl)}>{el.programTitle}</LearningGroundText>
                   <LearningGroundText>신청기간 {el.programPeriod}</LearningGroundText>
                 </LearningGroundProgram>
               ))
