@@ -9,3 +9,8 @@ export const loginState = atom<boolean>({
   key: 'loginState',
   default: false,
 });
+
+export const userGrade = atom<number>({
+  key: 'userGrade',
+  default: 0,
+})
