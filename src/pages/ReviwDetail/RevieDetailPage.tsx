@@ -11,16 +11,25 @@ import{
   Comment,
   CommentWrite
 } from './ReviewDetailPage.styled'
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 const RevieDetailPage =() => {
     const { reviewIdx } = useParams();
     const category: Category = 'community';
+    const { isPreparing, showPopup } = usePreparing();
+
   return (
     <div>
-      <Header/>
+        {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+      <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <MainBanner />
-      <CommuTab thisCommu='review' />
+      <CommuTab thisCommu='review' showPopup={showPopup} />
       <ReviewDetailBox>
         <ReviewDetail reviewIdx ={Number(reviewIdx)}/>
       </ReviewDetailBox>

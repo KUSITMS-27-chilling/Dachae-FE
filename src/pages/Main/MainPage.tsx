@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import useModal from '../../hooks/useModal';
 import { 
-  MainBanner,
   MainMiddle,
   MainBody_Today,
   MainBody_Today_In,
 } from "./MainPage.styled"
 import MainBodyContent from '../../components/Main/MainBodyContent/MainBodyContent';
 import Header from '../../components/Header/Header';
+import MainBanner from '../../components/MainBanner';
 import CenterNews from '../../components/CenterNews';
 import TodayMy from '../../components/Main/TodayMy';
 import TabBar from '../../components/TabBar';
@@ -21,11 +21,14 @@ import {
   MainContentData,
   MainProgramData
 } from '../../types/mainContent';
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 function MainPage() {
   const state = useRecoilValue(loginState);
   const favRegion = useRecoilValue(favRegs);
   const { isOpenModal, openModal, closeModal } = useModal();
+  const { isPreparing, showPopup } = usePreparing();
   const [programData, setProgramData] = useState<MainContentData[]>([]);
 
   const getPrograms = async () => {
@@ -108,13 +111,18 @@ function MainPage() {
             <CenterModal closeModal={closeModal} ></CenterModal>
           )
         }
-        <Header />
-        <MainBanner />
+        {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+        <Header showPopup={showPopup} />
+        <MainBanner bannerType='mainBanner' />
         <MainBody_Today> 
     
           <MainBody_Today_In>
             <CenterNews openModal={openModal} />
-            <TodayMy />
+            <TodayMy showPopup={showPopup} />
           </MainBody_Today_In>
           
         </MainBody_Today>

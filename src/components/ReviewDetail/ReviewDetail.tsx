@@ -8,25 +8,25 @@ import{
     CardContent,
 } from './ReviewDetail.styled'
 //서버 임의 더미데이터 생성
-const data = {
-    reviewIdx: 20,
-    profile: "test.com",
-    nickName: "test2",
-    createdAt: "2023-05-10-11-35",
-    title: "[1주차 후기] 강의 들은 후기 입니다",
-    content: "꽃을 키우다 드는 생각.얘는 이래서 좋고쟤는 저래서 좋고또 얘는 이래서 예쁘고 또 쟤는 이래서 정말 예뻐...한다.골드이파리에 열광하며 골드존을 만들어 흐믓하던..브룩사이드 베티가 골드 이파리로 다. 5월의 시작...근로자들은 휴무라는데 나는 뭘까?...하며 출근중.복잡한 전철역이 오늘은 헐렁이다. 앉아  ",
-    favFields: [
-      "미술",
-      "창작"
-    ],
-    week: 1,
-    image: [],
-    programName: "신박한 정리를 위한 미니멀리즘",
-    tags: [
-      "양천구",
-      "양천구재밌는배움터"
-    ]
-  };
+// const data = {
+//     reviewIdx: 20,
+//     profile: "test.com",
+//     nickName: "test2",
+//     createdAt: "2023-05-10-11-35",
+//     title: "[1주차 후기] 강의 들은 후기 입니다",
+//     content: "꽃을 키우다 드는 생각.얘는 이래서 좋고쟤는 저래서 좋고또 얘는 이래서 예쁘고 또 쟤는 이래서 정말 예뻐...한다.골드이파리에 열광하며 골드존을 만들어 흐믓하던..브룩사이드 베티가 골드 이파리로 다. 5월의 시작...근로자들은 휴무라는데 나는 뭘까?...하며 출근중.복잡한 전철역이 오늘은 헐렁이다. 앉아  ",
+//     favFields: [
+//       "미술",
+//       "창작"
+//     ],
+//     week: 1,
+//     image: [],
+//     programName: "신박한 정리를 위한 미니멀리즘",
+//     tags: [
+//       "양천구",
+//       "양천구재밌는배움터"
+//     ]
+//   };
   interface Program {
     reviewId:number;
     profile:string;

@@ -5,9 +5,6 @@ export const DeToHeaderContainer = styled.div`
   height: 20.4375rem;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  top: 27.3125rem;
-  left: 24.625rem;
 
   .deto-header__title {
     font-size: 21px;

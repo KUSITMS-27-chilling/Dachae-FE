@@ -1,0 +1,1 @@
+export type BannerType = 'mainBanner' | 'teacherBanner' | 'listenBanner' | 'reviewBanner';

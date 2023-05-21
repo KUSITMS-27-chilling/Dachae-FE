@@ -34,15 +34,15 @@ export const SearchInputContainer = styled.div`
   }
 
   #header__search--form {
-    width: 19em;
+    width: 14rem;
     border: 0;
     padding: 0;
     background-color: #eee;
     font-family: Pretendard;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 16px;
     position: absolute;
-    left: 4em;
+    left: 3.375rem;
     top: 50%;
     transform: translateY(-50%);
     outline: none;
