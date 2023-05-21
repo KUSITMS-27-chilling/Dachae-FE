@@ -7,7 +7,7 @@ import MainBodyTodayTap from "../TodayMyTap";
 import { loginState } from "../../../recoil/user";
 import { useSetRecoilState } from "recoil";
 
-function TodayMyIn() {
+function TodayMyIn({ showPopup }: { showPopup: () => void }) {
   const setLogState = useSetRecoilState(loginState);
 
   const logOut = () => {
@@ -27,7 +27,7 @@ function TodayMyIn() {
       </TodayTapBox>
       <TodayBottom>
         <div className='TapBtn'>
-          <button>마이페이지 바로가기</button>
+          <button onClick={showPopup}>마이페이지 바로가기</button>
         </div>
       </TodayBottom>
     </div>
