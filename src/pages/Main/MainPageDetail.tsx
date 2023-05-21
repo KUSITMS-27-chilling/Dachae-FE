@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import TabBar from '../../components/TabBar';
 import DetailContent from '../../components/DetailContent';
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 import{
   MainBody_Content_title,
@@ -21,6 +23,7 @@ import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProg
 
 const MainPageDetail = () =>{
   const { region } = useParams();
+  const { isPreparing, showPopup } = usePreparing();
 
   const navigate = useNavigate();
   const goMainDetail =()=>{
@@ -29,8 +32,12 @@ const MainPageDetail = () =>{
 
   return (
     <div>
-      <Header>
-      </Header>
+      {
+        isPreparing && (
+          <Preparing></Preparing>
+        )
+      }
+      <Header showPopup={showPopup} />
       <TabBar />
       <MainBody_Content_title>
             <MainBody_Content_title1>{region} 동네배움터</MainBody_Content_title1>

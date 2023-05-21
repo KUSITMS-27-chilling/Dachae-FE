@@ -21,7 +21,10 @@ import {
 import TeacherTabBar from '../../components/TeacherTap/TeacherTap';
 import StickyScroll from '../../components/StickyScroll/StickyScroll';
 import { TeacherTabKind } from "../../recoil/TeacherTap";
-  import { useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
+
 interface Program {
   careers:string;
   certificates:string;
@@ -47,6 +50,8 @@ function TeacherDetailPage() {
     const TeacherTab = useRecoilValue(TeacherTabKind);
     const [scrollPosition, setScrollPosition] = useState(0);
   const [isFixed, setIsFixed] = useState(false);
+  const { isPreparing, showPopup } = usePreparing();
+
 
     useEffect(() => {
       getTeacherData();
@@ -106,7 +111,12 @@ function TeacherDetailPage() {
 
   return (
     <div>
-      <Header/>
+        {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+      <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <HeaderImg img={Teacherimg ? Teacherimg.images : []} >
       <div className='img1'/>

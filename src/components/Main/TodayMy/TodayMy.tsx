@@ -6,18 +6,18 @@ import TodayMyOut from "../TodayMyOut";
 import { loginState } from "../../../recoil/user";
 import { useRecoilValue } from "recoil";
 
-function TodayMy(props: any) {
+function TodayMy({ showPopup }: { showPopup: () => void }) {
   const state = useRecoilValue(loginState);
 
   return(
     <TodayMyContainer>
       {
         state &&
-        <TodayMyIn></TodayMyIn>
+        <TodayMyIn showPopup={showPopup} ></TodayMyIn>
       }
       {
         !state &&
-        <TodayMyOut></TodayMyOut>
+        <TodayMyOut showPopup={showPopup}></TodayMyOut>
       }
     </TodayMyContainer>
   )

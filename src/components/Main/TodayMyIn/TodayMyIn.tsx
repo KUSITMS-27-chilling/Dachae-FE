@@ -11,7 +11,7 @@ import profile_icon_light from '../../../assets/profile_icon_light.png';
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function TodayMyIn() {
+function TodayMyIn({ showPopup }: { showPopup: () => void }) {
   const setLogState = useSetRecoilState(loginState);
   const setUserGrade = useSetRecoilState(userGrade);
   const [favField, setFavField] = useState([]);
@@ -56,7 +56,7 @@ function TodayMyIn() {
       <MiniProfile favField={favField} />
       <TodayBottom>
         <div className='TapBtn'>
-          <button>마이페이지 바로가기</button>
+          <button onClick={showPopup}>마이페이지 바로가기</button>
         </div>
       </TodayBottom>
     </div>

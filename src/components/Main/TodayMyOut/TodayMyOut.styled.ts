@@ -55,6 +55,14 @@ export const TodayFormContainer = styled.div`
   position: absolute;
   top: 2.4375rem;
 
+  #today-my-out__login-form {
+    width: 18.5rem;
+    height: 5.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .today-my-out__form {
     width: 18.5rem;
     height: 2.5rem;
@@ -70,7 +78,7 @@ export const TodayFormContainer = styled.div`
     font-weight: 500;
     color: #535353;
     line-height: 1.125rem;
-    letter-spacing: -0.05em;
+    font-family: Pretendard;
   }
 `;
 

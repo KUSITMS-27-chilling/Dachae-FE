@@ -8,7 +8,7 @@ import { useEffect, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CommuTabType } from "../../../types/communityTab";
 
-function CommuTab({ thisCommu }: { thisCommu: CommuTabType }) {
+function CommuTab({ thisCommu, showPopup }: { thisCommu: CommuTabType, showPopup: () => void }) {
   const setCommuTab = useSetRecoilState(commuTabKind);
   const navigate = useNavigate();
 
@@ -55,7 +55,7 @@ function CommuTab({ thisCommu }: { thisCommu: CommuTabType }) {
         onClick={e => btnClick(e)}>같이 듣기</CommuTabBtn>
       <CommuTabBtn id="community-tab__freeBoard"
         className="community-tab__btn" 
-        onClick={e => btnClick(e)}>자유게시판</CommuTabBtn>
+        onClick={showPopup}>자유게시판</CommuTabBtn>
     </CommuTabContainer>
   )
 }

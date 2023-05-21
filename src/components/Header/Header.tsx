@@ -12,7 +12,7 @@ import profile_icon from '../../assets/profile_icon.png';
 import polygon_icon from '../../assets/polygon_icon.png';
 import { useNavigate } from "react-router-dom";
 
-function Header(props: any) {
+function Header({ showPopup }: { showPopup: () => void }) {
   const navigate = useNavigate();
 
   function goMain() {
@@ -37,14 +37,14 @@ function Header(props: any) {
             alt="notification_icon" 
             id="header__notification"
             className="header__notify--profile"
-            onClick={goLogin} />
+            onClick={showPopup} />
 
         <ProfileContainer>
           <img src={profile_icon} 
               alt="profile_icon" 
               id="header__profile"
               className="header__notify--profile"
-              onClick={goLogin} />
+              onClick={showPopup} />
           <img src={polygon_icon} 
               alt="polygon_icon" 
               id="header__polygon"

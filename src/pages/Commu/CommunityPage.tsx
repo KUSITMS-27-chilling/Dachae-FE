@@ -8,18 +8,26 @@ import MainBanner from '../../components/MainBanner';
 import { Category } from '../../types/tabCategory';
 import { commuTabKind } from '../../recoil/community';
 import { useRecoilValue } from 'recoil';
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 function CommunityPage() {
   const category: Category = 'community';
   const commuTab = useRecoilValue(commuTabKind);
+  const { isPreparing, showPopup } = usePreparing();
 
   return (
     <div>
       <>
-      <Header/>
+      {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+      <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <MainBanner bannerType={commuTab == 'review' ? 'reviewBanner' : 'listenBanner'} />
-      <CommuTab thisCommu={commuTab} />
+      <CommuTab thisCommu={commuTab} showPopup={showPopup} />
       <CommuHeader />
       <CommuList />
       </>

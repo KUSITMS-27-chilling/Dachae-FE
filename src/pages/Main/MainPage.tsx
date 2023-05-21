@@ -21,11 +21,14 @@ import {
   MainContentData,
   MainProgramData
 } from '../../types/mainContent';
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 function MainPage() {
   const state = useRecoilValue(loginState);
   const favRegion = useRecoilValue(favRegs);
   const { isOpenModal, openModal, closeModal } = useModal();
+  const { isPreparing, showPopup } = usePreparing();
   const [programData, setProgramData] = useState<MainContentData[]>([]);
 
   const getPrograms = async () => {
@@ -108,13 +111,18 @@ function MainPage() {
             <CenterModal closeModal={closeModal} ></CenterModal>
           )
         }
-        <Header />
+        {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+        <Header showPopup={showPopup} />
         <MainBanner bannerType='mainBanner' />
         <MainBody_Today> 
     
           <MainBody_Today_In>
             <CenterNews openModal={openModal} />
-            <TodayMy />
+            <TodayMy showPopup={showPopup} />
           </MainBody_Today_In>
           
         </MainBody_Today>

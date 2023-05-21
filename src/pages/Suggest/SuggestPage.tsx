@@ -17,6 +17,8 @@ import {
  import SuggestRegion from '../../components/SuggestRegion/SuggestRegion';
 import SuggestHeader from '../../components/SuggestHeader/SuggestHeader';
 import SlideBanner from '../../components/SlideBanner';
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 function SuggestPage() {
   
@@ -24,10 +26,17 @@ function SuggestPage() {
 const goMypage =()=>{ //일단은 마이페이지로 해놓았음
   navigate("/mypage");
 }
+const { isPreparing, showPopup } = usePreparing();
+
   const category: Category = 'suggest';
   return (
     <div>
-      <Header />
+              {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+      <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <SlideBanner />
        <SuggestHeader/>
