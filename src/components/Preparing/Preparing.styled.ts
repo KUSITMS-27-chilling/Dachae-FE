@@ -39,7 +39,7 @@ export const PreparingBox = styled.div`
   line-height: 50px;
   border-radius: 1.5625rem;
   position: absolute;
-  bottom: 20px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   animation: popupAnimation 1.2s ease-in-out backwards;

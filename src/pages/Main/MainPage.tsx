@@ -116,7 +116,7 @@ function MainPage() {
             <Preparing></Preparing>
           )
         }
-        <Header />
+        <Header showPopup={showPopup} />
         <MainBanner bannerType='mainBanner' />
         <MainBody_Today> 
     

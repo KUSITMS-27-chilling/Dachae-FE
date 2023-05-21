@@ -11,13 +11,22 @@ import {
   Comment,
   CommentWrite
 }from './TogetherDetailPage.styled'
+import usePreparing from '../../hooks/usePreparing';
+import Preparing from '../../components/Preparing';
 
 function TogetherDetailPage() {
   const { listenIdx } = useParams();
   const category: Category = 'community';
+  const { isPreparing, showPopup } = usePreparing();
+
   return (
     <div>
-      <Header/>
+        {
+          isPreparing && (
+            <Preparing></Preparing>
+          )
+        }
+      <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <MainBanner />
       <CommuTab thisCommu='together' />

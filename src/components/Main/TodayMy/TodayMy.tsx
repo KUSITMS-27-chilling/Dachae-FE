@@ -17,7 +17,7 @@ function TodayMy({ showPopup }: { showPopup: () => void }) {
       }
       {
         !state &&
-        <TodayMyOut></TodayMyOut>
+        <TodayMyOut showPopup={showPopup}></TodayMyOut>
       }
     </TodayMyContainer>
   )

@@ -11,7 +11,7 @@ import axios from 'axios';
 import { loginId, loginState } from "../../../recoil/user";
 import { useSetRecoilState, useRecoilValue } from 'recoil';
 
-function TodayMyOut() {
+function TodayMyOut({ showPopup }: { showPopup: () => void }) {
   const setUserId = useSetRecoilState(loginId);
   const setLoginState = useSetRecoilState(loginState);
   const userId = useRecoilValue(loginId);
@@ -50,7 +50,7 @@ function TodayMyOut() {
         </form>
       </TodayFormContainer>
       <button id="today-my-out__login-btn" onClick={onClickLogin}>로그인</button>
-      <div id="today-my-out__register-btn">회원가입</div>
+      <div id="today-my-out__register-btn" onClick={showPopup}>회원가입</div>
       <DividerContainer>
         <div id="today-my-out__line"></div>
         <div id="today-my-out__line-text">SNS 계정으로 로그인</div>
