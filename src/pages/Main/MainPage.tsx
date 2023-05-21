@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import useModal from '../../hooks/useModal';
 import { 
-  MainBanner,
   MainMiddle,
   MainBody_Today,
   MainBody_Today_In,
 } from "./MainPage.styled"
 import MainBodyContent from '../../components/Main/MainBodyContent/MainBodyContent';
 import Header from '../../components/Header/Header';
+import MainBanner from '../../components/MainBanner';
 import CenterNews from '../../components/CenterNews';
 import TodayMy from '../../components/Main/TodayMy';
 import TabBar from '../../components/TabBar';
@@ -109,7 +109,7 @@ function MainPage() {
           )
         }
         <Header />
-        <MainBanner />
+        <MainBanner bannerType='mainBanner' />
         <MainBody_Today> 
     
           <MainBody_Today_In>
