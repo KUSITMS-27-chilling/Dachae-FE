@@ -105,12 +105,14 @@ export const LearningGroundHeader = styled.div`
 `;
 
 export const LearningGroundList = styled.div`
-  width: 34.0625rem;
-  height: 6.5625rem;
+  width: 35.5rem;
+  height: 8.9rem;
   position: absolute;
   top: 3.2rem;
   left: 3rem;
   font-weight: 600;
+  overflow-x: hidden;
+  overflow-y: auto;
 `
 
 export const LearningGroundProgram = styled.div`
