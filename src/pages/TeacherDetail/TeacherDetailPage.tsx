@@ -35,11 +35,11 @@ interface Class{
 }
 
 function TeacherDetailPage() {
-     const info = 'suggest';
+  
      const { lectureIdx } = useParams();
     const [TeacherData, setTeacherData] = useState<Program>();
     const [ClassData, setClassData] = useState<Class>();
-    const category = 'community';
+    const category: Category = 'suggest';
     const TeacherTab = useRecoilValue(TeacherTabKind);
     const [scrollPosition, setScrollPosition] = useState(0);
   const [isFixed, setIsFixed] = useState(false);
@@ -81,7 +81,7 @@ function TeacherDetailPage() {
     }, []);
   
     useEffect(() => {
-      if (scrollPosition >= 330) {
+      if (scrollPosition >= 710) {
         setIsFixed(true);
       } else {
         setIsFixed(false);

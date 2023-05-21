@@ -1,11 +1,14 @@
-import React from 'react'
+import { useEffect ,useState} from "react";
 import {
   SuggestContainer,
   ContentTitle,
   CardContent,
+  SlideButton
 } from './SuggestList.syled'
 import CategoryCard from '../TeacherCard/CategoryCard'
 import ScrollContainer from 'react-indiana-drag-scroll'
+import left from '../../assets/left.png'
+import right from '../../assets/right.png'
 
 
 const data=[
@@ -17,6 +20,23 @@ const data=[
   '기타'
 ]
 function SuggestList() {
+  const [counters, setCounters] = useState(data.map(() => 0));
+
+  const leftBtnClickHandler = (index: number) => {
+    setCounters((prevCounters) => {
+      const newCounters = [...prevCounters];
+      newCounters[index] = newCounters[index] - 1;
+      return newCounters;
+    });
+  };
+
+  const rightBtnClickHandler = (index: number) => {
+    setCounters((prevCounters) => {
+      const newCounters = [...prevCounters];
+      newCounters[index] = newCounters[index] + 1;
+      return newCounters;
+    });
+  };
   return (
     <div>
       
@@ -28,11 +48,19 @@ function SuggestList() {
             <div className='maincategory'>{category}&nbsp;&nbsp;&nbsp;&gt;</div>
             <div className='subcategory'>분야에 관한 설명</div>
           </div>
-          <div className=''>버튼구현</div>
+          <SlideButton>
+          <img className='carouselLeft' alt="left-img" src={left}  onClick={() => leftBtnClickHandler(index)}/>
+          <img className='carouselright' alt="right-img" src={right}  onClick={() => rightBtnClickHandler(index)}/>
+         </SlideButton>
         </ContentTitle>
         <ScrollContainer>
         <CardContent>
+        <div
+         className="products"
+         style={{ transform: `translateX(-${20 * counters[index]}%)` }}
+       >
           <CategoryCard category={category as string}/>
+          </div>
         </CardContent>
       </ScrollContainer>
         </SuggestContainer>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const RegionContainer = styled.div`
   width: 1143px;
   height: 4.25rem;
+
   display: flex;
   position: absolute;
   border-bottom: 2px solid #cbcbcb;

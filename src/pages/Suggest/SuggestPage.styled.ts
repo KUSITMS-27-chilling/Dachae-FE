@@ -7,22 +7,24 @@ export const MainBanner = styled.div`
 `
 export const Content = styled.div`
   position: relative;
-  width: 1156px;
-  height: 416px;
+  //width: 1156px;
+  width: max-content;
+  //height: 435px;
+  height: max-content;  
   margin-top: 48px;
    margin-left: 142px;
   display: flex;
 `
 export const TodayTeacher = styled.div`
-  border: 1px solid red;
+
   width: 702px;
-  height: 416px;
+  height: 425px;
 `
 export const MyTeacher = styled.div`
-  border: 1px solid red;
-  width: 330px;
-  height: 416px;
-  margin-left: 124px;
+  width: 350px;
+  //width: max-content;
+  height: 380px;
+  margin-left: 110px;
 `
 export const TodayTitle = styled.div`
   font-weight: 700;
@@ -30,7 +32,9 @@ font-size: 21px;
 letter-spacing: -0.05em;
 `
 export const TodayCard = styled.div`
-  margin-top: 34px;
+  margin-top: 25px;
+  height: 385px;
+  //border: 1px solid blue;
 `
 export const MyTeacherTitle = styled.div`
   font-weight: 700;
@@ -38,17 +42,16 @@ font-size: 21px;
 letter-spacing: -0.05em;
 `
 export const TeacherCard = styled.div`
-  margin-top: 5px;
-  height: 360px;
+  height: 390px;
+  width: 350px;
   display: flex;
-  border:1px solid black;
-  
+
 `
 export const SuggestPostBtnContainer = styled.div`
   width: 1156px;
   height: 2.875rem;
   position: absolute;
-  bottom: 0;
+  //bottom: 0;
   border: 2px solid #CBCBCB;
   border-radius: 20px;
   font-size: 20px;
@@ -56,6 +59,7 @@ export const SuggestPostBtnContainer = styled.div`
   color: rgba(0, 0, 0, 0.61);;
   background: none;
   margin-left: 142px;
+  margin-top: 71px;
 `
 export const Stylebutton = styled.div`
   position: absolute;
@@ -67,7 +71,6 @@ export const Stylebutton = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   #Suggest-post-btn__img {
     width: 1.75rem;
     height: 1.75rem;
@@ -88,6 +91,8 @@ position: relative;
     margin-left: 142px;
   .titlecolor{
     color: #59CACB;
+    margin-left: 6px;
+    margin-right: 6px;
   }
 `
 export const SuggestListContainer = styled.div`
@@ -96,5 +101,5 @@ export const SuggestListContainer = styled.div`
   position: relative;
   margin-top: 35px;
   left: 142px;
-  border: 1px solid red;
+  border: 1px solid white;
 `

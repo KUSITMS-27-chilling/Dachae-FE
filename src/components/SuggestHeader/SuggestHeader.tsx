@@ -27,8 +27,9 @@ const SuggestHeader=()=> {
         </TodayTeacher>
         <MyTeacher>
         <MyTeacherTitle>내가 신청한 동네강사</MyTeacherTitle>
-        
-          <MyTeacherCard/>
+        <TodayCard>
+        <MyTeacherCard/>
+        </TodayCard>
          
         </MyTeacher>
         </Content>

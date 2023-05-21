@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const SuggestContainer = styled.div`
   width: 1156px;
-  //height: max-content;
+  height: max-content;
   height: 510px;
-  margin-top: 106px;
-  border: 1px solid black ;
+  margin-top: 90px;
+  //position: absolute;
 `
 export const ContentTitle = styled.div`
   width: 1156px;
@@ -27,8 +27,21 @@ color: #535353;
 `
 export const CardContent = styled.div`
  width: 330px;
- height: 380px;
+ height: 390px;
  margin-top: 84px;
   margin-right: 42px;
-  border: 1px solid black;
+`
+export const SlideButton = styled.div`
+width: 83px;
+height: 36px;
+margin-right: 11px;
+display: flex;
+.carouselLeft{
+  margin-right: 12px;
+}
+img{
+  width: 35px;
+height: 35.7px;
+}
+
 `

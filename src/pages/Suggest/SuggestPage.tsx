@@ -30,16 +30,14 @@ const goMypage =()=>{ //일단은 마이페이지로 해놓았음
       <Header />
       <TabBar prop={category} />
       <SlideBanner />
-      
        <SuggestHeader/>
-      
       <SuggestPostBtnContainer>
       <Stylebutton onClick={goMypage}>
         <img id='Suggest-post-btn__img' alt="write-img" src={Plus} />
         <div id='Suggest-post-btn__text'>나의 지식을 나누고 동네강사가 되어보세요!</div>
       </Stylebutton>
     </SuggestPostBtnContainer>
-    <TapTitle>제안한 <div className='titlecolor'> 프로그램</div> 목록</TapTitle>
+    <TapTitle>제안한 <div className='titlecolor'>프로그램</div> 목록</TapTitle>
     {/* <SuggestList/> */}
     <SuggestListContainer>
         <SuggestRegion/>

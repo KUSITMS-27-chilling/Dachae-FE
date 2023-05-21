@@ -28,7 +28,7 @@ interface Program {
 interface Props {
     category: string;
   }
-function CategoryCard({ category }: Props) {
+function CategoryCard({ category}: Props) {
   const [TeacherData, setTeacherData] = useState<Program[]>([]);
     const token = localStorage.getItem('access_token');
     const onMouseMove = (e: React.MouseEvent) => {};
@@ -47,6 +47,7 @@ function CategoryCard({ category }: Props) {
           })
         .then((response) => {
             setTeacherData(response.data.data.lectureInfos);
+            //console.log(response.data.data.lectureInfos);
         })
         .catch((err) => console.log(err));
       }

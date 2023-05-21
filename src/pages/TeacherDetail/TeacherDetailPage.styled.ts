@@ -3,15 +3,14 @@ import styled from "styled-components";
 export const HeaderImg= styled.div`
  width: 1156px;
  height: 352px;
- border: 1px solid red;
  margin-top: 68px;
  margin-left: 142px;
  display: flex;
  .img1,.img2{
 width: 556px;
 height: 352px;
-border: 1px solid black;
 margin-right: 24px;
+background-color: #DFF5F5;
  }
 `
 
@@ -19,14 +18,13 @@ export const TeacherImg= styled.div`
  width: 212px;
  height: 212px;
  border-radius: 90%;
-background-color: gray;
+background-color: #DFF5F5;
 margin-top: 56px;
 margin-bottom: 41px;
 `
 export const Content= styled.div`
 width: 732px;
 height: 157px;
-border: 1px solid red;
 margin-bottom: 41px;
 background-color: #F6F6F6;
 padding: 30px;
@@ -39,7 +37,6 @@ color: #535353;
 export const Contentclass= styled.div`
 width: 732px;
 height: max-content;
-border: 1px solid red;
 margin-bottom: 41px;
 background-color: #F6F6F6;
 padding: 30px;
@@ -73,18 +70,19 @@ export const Total= styled.div`
 width: 1156px;
 margin-left: 142px;
 height: max-content;
-border: 1px solid red;
 display: flex;
 `
 export const Contentleft= styled.div`
 width:802px;
-border: 1px solid blue;
 `
 export const ContentRight= styled.div`
  width: 330px;
- border: 1px solid blue;
  margin-left: 27px;
- 
+ .fixed{
+  position: fixed;
+top:0;
+transition: top 0.8s ease;
+ }
 `
 export const Contentinfo= styled.div`
  width: max-content;

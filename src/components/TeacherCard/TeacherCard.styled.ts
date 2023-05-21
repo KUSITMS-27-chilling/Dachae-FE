@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const TeacherCardBox = styled.div`
+margin-left: 8px;
+margin-top: 15px;
 width: 330px;
 height: 350px;
 background: #FFFFFF;
