@@ -76,12 +76,10 @@ function DetailContent() {
 
   useEffect(() => {
     if(detailTab == 'together'){
-      // setTogetherArr([]);
       getListenTogether();
       return;
     }
     if(detailTab == 'review'){
-      // setReviewArr([]);
       getReview();
       return;
     }

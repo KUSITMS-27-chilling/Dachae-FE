@@ -31,11 +31,11 @@ const { isPreparing, showPopup } = usePreparing();
   const category: Category = 'suggest';
   return (
     <div>
-              {
-          isPreparing && (
-            <Preparing></Preparing>
-          )
-        }
+      {
+        isPreparing && (
+          <Preparing></Preparing>
+        )
+      }
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <SlideBanner />
