@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
 export const TeacherCardBox = styled.div`
+margin-left: 8px;
+margin-top: 15px;
 width: 330px;
 height: 350px;
 background: #FFFFFF;
 box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
 border-radius: 20px;
-margin-left: 20px; //임의로 확인용
+margin-right: 42px;
+transition: all 0.3s ease-in-out; 
+&:hover{
+    transform: scale(1.1);
+  }
 `
 export const CardTop = styled.div`
 position: relative;
