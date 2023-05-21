@@ -64,8 +64,6 @@ option{
   font-size: 20px;
   font-weight: 500;
   letter-spacing: -5%;
-  background: none;
-  border: none;
 }
 `     
 export const Class = styled.div`

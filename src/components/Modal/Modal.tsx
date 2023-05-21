@@ -141,7 +141,7 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
               </Title>
               <Region>지역
               <select value={selectedOption} onChange={handleSelect}>
-              <option >
+              <option>
                 {region}
               </option>
             
