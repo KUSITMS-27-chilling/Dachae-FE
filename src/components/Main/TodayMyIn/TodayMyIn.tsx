@@ -4,8 +4,10 @@ import {
   TodayBottom
 } from "../TodayMyIn/TodayMyIn.styled";
 import MainBodyTodayTap from "../TodayMyTap";
+import MiniProfile from "../../MiniProfile";
 import { loginState } from "../../../recoil/user";
 import { useSetRecoilState } from "recoil";
+import profile_icon_light from '../../../assets/profile_icon_light.png';
 
 function TodayMyIn() {
   const setLogState = useSetRecoilState(loginState);
@@ -19,12 +21,13 @@ function TodayMyIn() {
   return (
     <div>
       <TodayMyTop>
-        <div className='MainBody_Today_My_Top_logout'>
-        <button onClick={logOut}>로그아웃</button></div>
+        <div id="today-my-top__profile-box">
+          <img id="today-my-top__profile-img" src={profile_icon_light} alt="profile-icon" />
+          <div id="today-my-top__profile-name">당근 고수</div>
+        </div>
+        <button id="today-my-top__logout-btn" onClick={logOut}>로그아웃</button>
       </TodayMyTop>
-      <TodayTapBox>
-        <MainBodyTodayTap />
-      </TodayTapBox>
+      <MiniProfile />
       <TodayBottom>
         <div className='TapBtn'>
           <button>마이페이지 바로가기</button>
