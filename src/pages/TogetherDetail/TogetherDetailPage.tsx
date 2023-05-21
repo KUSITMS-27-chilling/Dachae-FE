@@ -29,7 +29,7 @@ function TogetherDetailPage() {
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <MainBanner />
-      <CommuTab thisCommu='together' />
+      <CommuTab thisCommu='together' showPopup={showPopup} />
       <ReviewDetailBox>
       <TogetherDetail listenIdx ={Number(listenIdx)}/>
       </ReviewDetailBox>

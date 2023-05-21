@@ -56,8 +56,8 @@ function TodayMyOut({ showPopup }: { showPopup: () => void }) {
         <div id="today-my-out__line-text">SNS 계정으로 로그인</div>
       </DividerContainer>
       <TodayMyOutLogin>
-        <img src={naver_login} alt="naver-login"></img>
-        <img src={kakao_login} alt="kakao-login"></img>
+        <img src={naver_login} alt="naver-login" onClick={showPopup} ></img>
+        <img src={kakao_login} alt="kakao-login" onClick={showPopup} ></img>
       </TodayMyOutLogin>
     </TodayMyOutContainer>
   )

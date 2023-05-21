@@ -29,7 +29,7 @@ const RevieDetailPage =() => {
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <MainBanner />
-      <CommuTab thisCommu='review' />
+      <CommuTab thisCommu='review' showPopup={showPopup} />
       <ReviewDetailBox>
         <ReviewDetail reviewIdx ={Number(reviewIdx)}/>
       </ReviewDetailBox>
