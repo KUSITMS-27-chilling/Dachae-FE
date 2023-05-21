@@ -1,12 +1,33 @@
-import React from 'react'
+import {useState,useEffect} from 'react'
 import {
     ReactstickyBox,
     Title,
     Email,
     Message,
-    Line
+    Line,
+    Popup
 } from './StickyScroll.styled'
 function StickyScroll() {
+    const [popupVisible, setPopupVisible] = useState(false);
+  
+    const togglePopup = () => {
+      setPopupVisible(!popupVisible);
+    };
+
+    useEffect(() => {
+      let timer: NodeJS.Timeout;
+  
+      if (popupVisible) {
+        timer = setTimeout(() => {
+          togglePopup();
+        }, 2000);
+      }
+  
+      return () => {
+        clearTimeout(timer);
+      };
+    }, [popupVisible]);
+
   return (
     <div>
       <ReactstickyBox>
@@ -23,8 +44,15 @@ function StickyScroll() {
         <textarea  placeholder=''></textarea>
         </Message>
         <Line></Line>
-        <button>신청하기</button>
+        <button onClick ={togglePopup}>신청하기</button>
       </ReactstickyBox>
+      {popupVisible && (
+        <Popup className={popupVisible ? '' : 'hide'}>
+          <div className='popup-title'>신청완료</div>
+          <div className='popup-sub'>강사가 남긴 메세지</div>
+          <div className='popup-content'>쉽고 재밌게 스탭바이스탭 알려주는 강사 김성은 입니다! 신청해주셔서 감사합니다.</div>
+        </Popup>
+      )}
     </div>
   )
 }

@@ -2,11 +2,11 @@ import { atom } from 'recoil';
 
 
 export const suggestRegions = atom<string[]>({
-  key: 'commuRegions',
+  key: 'suggestRegions',
   default: []
 });
 
 export const selectRegion = atom<string>({
-  key: 'selectedRegion',
+  key: 'selectRegion',
   default: "전체보기"
 });

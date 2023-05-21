@@ -57,7 +57,8 @@ function SuggestList() {
         <CardContent>
         <div
          className="products"
-         style={{ transform: `translateX(-${20 * counters[index]}%)` }}
+         style={{ transform: `translateX(-${60 * counters[index]}%)`,
+         transition: 'transform 0.3s ease-out' }}
        >
           <CategoryCard category={category as string}/>
           </div>
