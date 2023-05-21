@@ -4,28 +4,29 @@ import axios from 'axios';
 import { loginState } from '../../recoil/user';
 import { useRecoilValue } from 'recoil';
 import{
-    Modal1,
-    ExitBtn,
-    MainText,
-    Content,
-    Title,
-    Region,
-    Class,
-    Day,
-    Write,
-    SubmitBtn,
-    Button,
-  } from '../../pages/Main/MainPageDetail.styled'
+  Modal1,
+  ModalBtn,
+  MainText,
+  Content,
+  Title,
+  Region,
+  Class,
+  Day,
+  Write,
+  Button,
+  ExitBtn,
+  SubmitBtn
+  } from './Modal.styled'
   interface Program {
     programs: string;
     programName:string;
     programIdx: number;
-    
   }
   interface Props {
     region: string;
+    handleCloseModal:() => void;
   }
-const Modal =({ region }: Props)=> {
+const Modal =({ region ,handleCloseModal}: Props)=> {
 
     const [text, setText] = useState("");
     const [title, setTitle] = useState("");
@@ -53,14 +54,6 @@ const Modal =({ region }: Props)=> {
 
   const handleSelect1 = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption1(event.target.value);
-    // const selectedProgramName = event.target.value;
-    // setSelectedOption1(selectedProgramName);
-    // const selectedProgram = options1.find(
-    //   (program) => program.programName === selectedProgramName
-    // );
-    // if (selectedProgram) {
-    //   setProgramIdx(selectedProgram.programIdx);
-    // }
   };
 
   const options2 = ['1명', '2명', '3명','4명','5명','6명','7명','8명','9명','10명'];
@@ -124,6 +117,7 @@ const Modal =({ region }: Props)=> {
     } catch (e) {
       console.log(e);
     }
+    handleCloseModal();
     console.log({
       title: title,
       region: region,
@@ -134,11 +128,11 @@ const Modal =({ region }: Props)=> {
     });
   };
 
-  
+
 
   return (
     <div>
-      <Modal1>
+       <Modal1>
             <MainText>모집글 작성하기</MainText>
             <Content>
               <Title>
@@ -147,7 +141,7 @@ const Modal =({ region }: Props)=> {
               </Title>
               <Region>지역
               <select value={selectedOption} onChange={handleSelect}>
-              <option >
+              <option>
                 {region}
               </option>
             
@@ -177,10 +171,11 @@ const Modal =({ region }: Props)=> {
 
             </Content>
             <Button>
-            <ExitBtn onClick={ () => setModal(false) }>닫기</ExitBtn>
+            <ExitBtn onClick={ () =>handleCloseModal()}>닫기</ExitBtn>
             <SubmitBtn onClick ={ () => handleSubmit()}>완료</SubmitBtn>
             </Button>
         </Modal1>
+       
     </div>
   )
 }
