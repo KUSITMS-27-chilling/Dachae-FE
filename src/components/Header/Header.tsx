@@ -18,11 +18,7 @@ function Header({ showPopup }: { showPopup: () => void }) {
   function goMain() {
     navigate('/');
   }
-
-  function goLogin() {
-    navigate('/login');
-  }
-
+  
   return(
     <HeaderContainer>
       <img src={logo_icon} alt="logo_icon" id="header__logo" onClick={goMain}/>

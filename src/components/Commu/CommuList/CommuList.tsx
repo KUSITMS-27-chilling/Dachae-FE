@@ -99,7 +99,7 @@ function CommuList () {
         {
           (commuTab == 'review') && (commuReviews) &&
           (
-            (selected == "전체보기") ? (
+            (selected == "모든 지역보기") ? (
               commuReviews.map((el) =>
                 (
                   el.reviews.map((el, idx) => (
@@ -120,7 +120,7 @@ function CommuList () {
                 {
           (commuTab == 'together') && (commuTogethers) &&
           (
-            (selected == "전체보기") ? (
+            (selected == "모든 지역보기") ? (
               commuTogethers.map((el) =>
                 (
                   el.togethers.map((el, idx) => (

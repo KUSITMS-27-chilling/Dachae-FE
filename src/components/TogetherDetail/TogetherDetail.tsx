@@ -55,7 +55,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
           }
         )
         .then(response => {
-          console.log(response);
+          // console.log(response);
         })
         .catch(e => {
           console.log(e);

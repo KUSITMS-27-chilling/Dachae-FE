@@ -84,11 +84,33 @@ export const MainContentBtn = styled.div`
     border-right: 1px solid #cbcbcb;
   }
 
+  .main-content__btn-img {
+    margin-right: 1.875rem;
+  }
+
+  .main-content__btn-text {
+    width: max-content;
+    height: 1.3125rem;
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .main-content__btn-region {
+    width: max-content;
+    height: 1.3125rem;
+    color: #59cacb;
+  }
+
+  .main-content__btn-rest {
+    width: max-content;
+    height: 1.3125rem;
+  }
+
   .main-content__btn-wrapper {
-    width: 13.625rem;
+    width: max-content;
     height: 2.625rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     font-size: 18px;
     line-height: 1.3125rem;
@@ -115,7 +137,6 @@ export const MainContentBtn = styled.div`
   }
 
   .sec-wrap {
-    width: 12rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -123,7 +144,6 @@ export const MainContentBtn = styled.div`
   }
 
   .thi-wrap {
-    width: 11.9375rem;
     position: absolute;
     top: 50%;
     right: 6.0625rem;

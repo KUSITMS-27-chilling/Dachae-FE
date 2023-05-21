@@ -107,7 +107,8 @@ export const LearningGradeBox = styled.div`
 export const LearningNewsBox = styled.div`
   width: 23.75rem;
   height: 10.5rem;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 `
 
 export const LearningGradeBar = styled.div`
