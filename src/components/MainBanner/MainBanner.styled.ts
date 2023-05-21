@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import banner_bg1 from '../../assets/banner_bg1.png';
-import banner_bg2 from '../../assets/banner_bg2.png';
-import banner_bg3 from '../../assets/banner_bg3.png';
 import banner_bg4 from '../../assets/banner_bg4.png';
 import banner_bg5 from '../../assets/banner_bg5.png';
 
@@ -46,20 +44,6 @@ export const MBannerContent = styled.div`
     overflow: hidden;
   }
 
-  #main-banner__teacher1{
-    width: 90rem;
-    height: 20rem;
-    background-image: url(${banner_bg2});
-    overflow: hidden;
-  }
-
-  #main-banner__teacher2{
-    width: 90rem;
-    height: 20rem;
-    background-image: url(${banner_bg3});
-    overflow: hidden;
-  }
-
   #main-banner__review {
     width: 90rem;
     height: 20rem;
@@ -84,14 +68,6 @@ export const MBannerContent = styled.div`
     right: 3.6875rem;
   }
 
-  #main-banner__teacher-icon1 {
-    width: 21rem;
-    height: 21rem;
-    position: absolute;
-    top: 8rem;
-    right: 8.8125rem;
-  }
-
   #main-banner__review-icon {
     width: 18.01rem;
     height: 17.1875rem;
@@ -108,5 +84,4 @@ export const MBannerContent = styled.div`
     right: 5.745625rem;
     transform: rotate(3.05deg);
   }
-
 `;
