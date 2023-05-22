@@ -31,7 +31,35 @@ background: #FFFFFF;
 box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
 border-radius: 18px;
 margin-right: 26px;
+.mytitle{
+position: absolute;
+font-weight: 700;
+font-size: 26px;
+letter-spacing: -0.05em;
+color: #000000;
+margin-top: 32px;
+margin-left: 54px;
+}
+.sub{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    height: 37px;
+    width: 458px;
+    margin-top: 108px;
+    margin-left: 54px;
+    font-weight: 500;
+font-size: 21px;
+color: #000000;
 
+}
+`
+export const Line = styled.div`
+width: 457px;
+height: 0px;
+border: 2px solid #CBCBCB;
+margin-top: 145px;
+margin-left: 55px;
 `
 export const Myapply = styled.div`
 width: 566px;
@@ -39,7 +67,28 @@ height: 446px;
 background: #FFFFFF;
 box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
 border-radius: 18px;
+.appplytitle{ 
+position: absolute;
+font-weight: 700;
+font-size: 26px;
+letter-spacing: -0.05em;
+color: #000000;
+margin-top: 32px;
+margin-left: 54px;
+}
+.sub{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    height: 37px;
+    width: 458px;
+    margin-top: 108px;
+    margin-left: 54px;
+    font-weight: 500;
+font-size: 21px;
+color: #000000;
 
+}
 `
 
 

@@ -20,6 +20,7 @@ export const TodayMyTop = styled.div`
     width: 2.875rem;
     height: 2.75rem;
     margin-right: 0.9375rem;
+    cursor: pointer;
   }
 
   #today-my-top__profile-name {
@@ -39,6 +40,7 @@ export const TodayMyTop = styled.div`
     position: absolute;
     top: 1.5625rem;
     right: 1.9375rem;
+    cursor: pointer;
   }
 `
 
@@ -70,5 +72,6 @@ export const TodayBottom = styled.div`
     line-height: 34px;
     letter-spacing: -0.05em;
     padding: 0;
+    cursor: pointer;
   }
 `

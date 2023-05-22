@@ -8,6 +8,7 @@ export const DetailTabContainer = styled.div`
   position: relative;
 
   #detail-tab__post-btn {
+    cursor: pointer;
     width: max-content;
     height: 2.5rem;
     position: absolute;
@@ -28,6 +29,7 @@ export const DetailTabContainer = styled.div`
 `;
 
 export const DetailTabToggle = styled.div`
+cursor: pointer;
   width: 18.375rem;
   height: 2.9375rem;
   display: flex;

@@ -42,6 +42,7 @@ font-size: 21px;
 letter-spacing: -0.05em;
 `
 export const TeacherCard = styled.div`
+cursor: pointer;
   height: 390px;
   width: 350px;
   display: flex;
@@ -62,6 +63,7 @@ export const SuggestPostBtnContainer = styled.div`
   margin-top: 71px;
 `
 export const Stylebutton = styled.div`
+cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;

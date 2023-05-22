@@ -15,7 +15,8 @@ import {
   Grade,
   Category,
   FavField,
-  Contentflex
+  Contentflex,
+  Line
 } from './Mypagepage.styled'
 import Footer from '../../components/Footer';
 
@@ -68,14 +69,24 @@ function Mypage() {
       <My>
       <MyWrite>
         <div className='mytitle'>내가 쓴 글</div>
+        <div className='sub'>
+          <div className='subtitle'>작성한 글 전체</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
       </MyWrite>
       <Myapply>
       <div className='appplytitle'>내가 신청한 글</div>
+      <div className='sub'>
+          <div className='subtitle'>작성한 글 전체</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
       </Myapply>
       </My>
       <Footer />
     </div>
   )
 }
-
+  
 export default Mypage

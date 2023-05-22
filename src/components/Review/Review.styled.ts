@@ -9,6 +9,7 @@ export const ReviewContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
   position: relative;
   margin: 0 auto;
   border-bottom: 2px solid #cbcbcb;
+  cursor: pointer;
 `;
 
 export const ReviewProfile = styled.div<{ topProp?: boolean, img?:string }>`
