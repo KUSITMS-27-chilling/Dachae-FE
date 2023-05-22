@@ -6,13 +6,13 @@ import Header from '../../components/Header/Header';
 import { Category } from '../../types/tabCategory';
 import CommuTab from '../../components/Commu/CommuTab';
 import{
-  MainBanner,
   ReviewDetailBox,
   Comment,
   CommentWrite
 } from './ReviewDetailPage.styled'
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import MainBanner from '../../components/MainBanner';
 
 const RevieDetailPage =() => {
     const { reviewIdx } = useParams();
@@ -28,7 +28,7 @@ const RevieDetailPage =() => {
         }
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
-      <MainBanner />
+      <MainBanner bannerType='reviewBanner' />
       <CommuTab thisCommu='review' showPopup={showPopup} />
       <ReviewDetailBox>
         <ReviewDetail reviewIdx ={Number(reviewIdx)}/>
