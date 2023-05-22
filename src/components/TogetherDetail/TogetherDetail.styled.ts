@@ -7,7 +7,7 @@ export const CardForm = styled.div`
  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
  margin: 20px;//확인하려고 그냥 넣음
 `
-export const CardTop = styled.div`
+export const CardTop = styled.div<{img:string}>`
 position: absolute;
  width: 795px;
  height: 57px;
@@ -17,8 +17,10 @@ position: absolute;
  .profile{
     width: 57px;
     height: 57px;
-    background: #D9D9D9;
     border-radius: 90px;
+    background-image: ${props => `url(${props.img})`};
+object-fit: cover;
+background-size:cover;
 }
 .right{
  width: 711px;

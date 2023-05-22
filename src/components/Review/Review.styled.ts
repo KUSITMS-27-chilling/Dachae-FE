@@ -11,7 +11,7 @@ export const ReviewContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
   border-bottom: 2px solid #cbcbcb;
 `;
 
-export const ReviewProfile = styled.div<{ topProp?: boolean }>`
+export const ReviewProfile = styled.div<{ topProp?: boolean, img?:string }>`
   width: max-content;
   height: 3rem;
   display: flex;
@@ -19,11 +19,14 @@ export const ReviewProfile = styled.div<{ topProp?: boolean }>`
   top: ${props => props.topProp ? '2.4375rem' : '2rem'};
 
   #review__profile-photo {
+    background-image: ${props => `url(${props.img})`};
+    object-fit: cover;
+    background-size:cover;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
-    background: #d9d9d9;
     margin-right: 1.25rem;
+    border:1px solid red;
   }
 
   #review__profile-nickname {
@@ -145,6 +148,7 @@ export const ReviewImage = styled.div<{ reviewImg?: string }>`
     border-radius: 0.625rem;
     position: absolute;
     background-size: cover;
+    object-fit:cover;
   }
 
   #review__image-count {

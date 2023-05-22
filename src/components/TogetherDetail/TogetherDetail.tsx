@@ -85,7 +85,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
       {
         data && (
           <>
-                  <CardTop>
+                  <CardTop img={data ? data.profile : ''}>
         <div className='profile'></div>
             <div className='right'>
                 <div className='user-title'>

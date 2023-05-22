@@ -50,7 +50,7 @@ function Review({ props }: ReviewProps) {
  
   return (
     <ReviewContainer detailOrCommu={detailOrCommu} onClick={clickReview} >
-      <ReviewProfile>
+      <ReviewProfile img={userImg}>
         <div id="review__profile-photo"></div>
         <div>
           <div id="review__profile-nickname">{userNick}</div>

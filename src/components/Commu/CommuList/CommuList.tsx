@@ -79,6 +79,7 @@ function CommuList () {
             tags: res[key].tags,
             programName: res[key].programName,
             listenIdx: res[key].listenIdx,
+            profile: res[key].profile,
             detailOrCommu: 'community'
           }
           tempArr.push(tempEl);
