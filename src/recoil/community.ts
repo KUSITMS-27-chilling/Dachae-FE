@@ -13,5 +13,5 @@ export const commuRegions = atom<string[]>({
 
 export const selectedRegion = atom<string>({
   key: 'selectedRegion',
-  default: "전체보기"
+  default: "모든 지역보기"
 });

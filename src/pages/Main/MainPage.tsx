@@ -23,6 +23,7 @@ import {
 } from '../../types/mainContent';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 function MainPage() {
   const state = useRecoilValue(loginState);
@@ -49,7 +50,8 @@ function MainPage() {
             programArr.push({
               programName: programsData[key].programs[i].programName,
               programEnd: programsData[key].programs[i].endDate,
-              programUrl: programsData[key].programs[i].url
+              programUrl: programsData[key].programs[i].url,
+              programCategory: programsData[key].programs[i].category
             })
           }
         }
@@ -85,7 +87,8 @@ function MainPage() {
             programArr.push({
               programName: programsData[key].programs[i].programName,
               programEnd: programsData[key].programs[i].endDate,
-              programUrl: programsData[key].programs[i].url
+              programUrl: programsData[key].programs[i].url,
+              programCategory: programsData[key].programs[i].category
             })
           }
         }
@@ -144,6 +147,7 @@ function MainPage() {
             <MainBodyContent key={idx} prop={el} />
           ))
         }
+        <Footer />
       </>
     )
   }

@@ -24,6 +24,7 @@ import { TeacherTabKind } from "../../recoil/TeacherTap";
 import { useRecoilValue } from 'recoil';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 interface Program {
   careers:string;
@@ -33,8 +34,8 @@ interface Program {
 }
 interface Class{
   price: number;
-    goalNum: number;
-    proceed: string;
+  goalNum: number;
+  proceed: string;
 }
 interface img{
   images:string[];
@@ -42,40 +43,39 @@ interface img{
 
 function TeacherDetailPage() {
   
-     const { lectureIdx } = useParams();
-    const [TeacherData, setTeacherData] = useState<Program>();
-    const [ClassData, setClassData] = useState<Class>();
-    const [Teacherimg, setTeacherimg] = useState<img>();
-    const category: Category = 'suggest';
-    const TeacherTab = useRecoilValue(TeacherTabKind);
-    const [scrollPosition, setScrollPosition] = useState(0);
+  const { lectureIdx } = useParams();
+  const [TeacherData, setTeacherData] = useState<Program>();
+  const [ClassData, setClassData] = useState<Class>();
+  const [Teacherimg, setTeacherimg] = useState<img>();
+  const category: Category = "suggest";
+  const TeacherTab = useRecoilValue(TeacherTabKind);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [isFixed, setIsFixed] = useState(false);
   const { isPreparing, showPopup } = usePreparing();
 
 
-    useEffect(() => {
-      getTeacherData();
-    }, []);
-  const getTeacherData=() =>{
-      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/teacherInfo/${lectureIdx}`)
-      .then((response) => {
-          setTeacherData(response.data.data);
-    
-      })
-      .catch((err) => console.log(err));
-    }
+  useEffect(() => {
+    getTeacherData();
+  }, []);
 
-    useEffect(() => {
-      getTeacherimg();
-    }, []);
+  const getTeacherData=() =>{
+    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/teacherInfo/${lectureIdx}`)
+    .then((response) => {
+        setTeacherData(response.data.data);
+    })
+    .catch((err) => console.log(err));
+  }
+
+  useEffect(() => {
+    getTeacherimg();
+  }, []);
   const getTeacherimg=() =>{
-      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/images/${lectureIdx}`)
-      .then((response) => {
-          setTeacherimg(response.data.data);
-          console.log(response.data.data);
-      })
-      .catch((err) => console.log(err));
-    }
+    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/images/${lectureIdx}`)
+    .then((response) => {
+        setTeacherimg(response.data.data);
+    })
+    .catch((err) => console.log(err));
+  }
 
     useEffect(() => {
       getTeacherClass();
@@ -89,37 +89,37 @@ function TeacherDetailPage() {
       .catch((err) => console.log(err));
     }
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentPosition = window.pageYOffset;
-        setScrollPosition(currentPosition);
-      };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.pageYOffset;
+      setScrollPosition(currentPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-  
-    useEffect(() => {
-      if (scrollPosition >= 710) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    }, [scrollPosition]);
+  useEffect(() => {
+    if (scrollPosition >= 710) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+  }, [scrollPosition]);
 
   return (
     <div>
-        {
-          isPreparing && (
-            <Preparing></Preparing>
-          )
-        }
+      {
+        isPreparing && (
+          <Preparing></Preparing>
+        )
+      }
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <HeaderImg img={Teacherimg ? Teacherimg.images : []} >
-      <div className='img1'/>
+        <div className='img1'/>
         <div className='img2' ></div>
       </HeaderImg>
       <TeacherTabBar thisTeacher={TeacherTab}/>
@@ -175,6 +175,7 @@ function TeacherDetailPage() {
         </div>
       </ContentRight>
       </Total>
+      <Footer />
     </div>
   )
 }

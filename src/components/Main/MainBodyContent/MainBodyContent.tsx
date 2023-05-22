@@ -54,20 +54,29 @@ function MainBodyContent({ prop }: MainContentProp) {
 					<MainContentBtn>
 						<div className='main-content__btn-inside'>
 							<div className='main-content__btn-wrapper fir-wrap'>
-								<img src={vector_icon1} alt="vector-icon1" id='main-content__btn-img-1'/>
-								<div className='main-content__btn-text'>함께 배울 모임 만들기</div>
+								<img className='main-content__btn-img' src={vector_icon1} alt="vector-icon1" id='main-content__btn-img-1'/>
+								<div className='main-content__btn-text'>
+									<div className='main-content__btn-region'>{prop.region}</div>
+									<div className='main-content__btn-rest'>에서 함께 배우기</div>
+								</div>
 							</div>
 						</div>
 						<div id='main-content__btn-mid' className='main-content__btn-inside'>
 							<div className='main-content__btn-wrapper sec-wrap'>
-								<img src={vector_icon2} alt="vector-icon2" id='main-content__btn-img-2' />
-								<div className='main-content__btn-text'>프로그램 참여 기록 <br />공유하기</div>
+								<img className='main-content__btn-img' src={vector_icon2} alt="vector-icon2" id='main-content__btn-img-2' />
+								<div className='main-content__btn-text'>
+									<div className='main-content__btn-region'>{prop.region}</div>
+									<div className='main-content__btn-rest'>&nbsp;프로그램 후기 쓰기</div>
+								</div>
 							</div>
 						</div>
 						<div className='main-content__btn-inside'>
 							<div className='main-content__btn-wrapper thi-wrap'>
-								<img src={vector_icon3} alt="vector-icon3" id='main-content__btn-img-3' />
-								<div className='main-content__btn-text'>프로그램 제안하기</div>
+								<img className='main-content__btn-img' src={vector_icon3} alt="vector-icon3" id='main-content__btn-img-3' />
+								<div className='main-content__btn-text'>
+									<div className='main-content__btn-region'>{prop.region}</div>
+									<div className='main-content__btn-rest'>&nbsp;강사 보러가기</div>
+								</div>
 							</div>
 						</div>
 					</MainContentBtn>
@@ -79,19 +88,19 @@ function MainBodyContent({ prop }: MainContentProp) {
 							</div>
 							<MainContentProgramContainer>
 									<ProgramCard 
-											imgSrc={temp_program}
+											category={prop.programs[0].programCategory!}
 											title={prop.programs[0].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[0].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
-											imgSrc={temp_program}
+											category={prop.programs[1].programCategory!}
 											title={prop.programs[1].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[1].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
-											imgSrc={temp_program}
+											category={prop.programs[2].programCategory!}
 											title={prop.programs[2].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[2].programEnd!)}

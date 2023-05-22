@@ -8,25 +8,22 @@ import{
     CardContent,
     ProgramContainer,
     Button
-  
-  } from '../MainDetailProgram/MainDetailProgram.styled'
-  interface Program {
-    programName: string;
-    category:string;
-    url:string;
-  }
-  
-  interface Props {
-    region: string;
-  }
+} from '../MainDetailProgram/MainDetailProgram.styled'
+import DetailProgramCard from '../DetailProgramCard'
+
+interface Program {
+  programName: string;
+  category:string;
+  url:string;
+}
+
+interface Props {
+  region: string;
+}
+
 const MainDetailProgram = ({ region }: Props)=> {
     const [data, setData] = useState<Program[]>([]);
     const [loading, setLoading] = useState(false);
-
-    const btnClick = () => {
-      const absoluteUrl = new URL(`https://${data[0].url!}`, window.location.href).toString();
-      window.open(absoluteUrl, "_blank");
-    }
 
     useEffect (() => {
     const fetchData = async () => {
@@ -47,25 +44,9 @@ const MainDetailProgram = ({ region }: Props)=> {
   return (
     <div>
       <ProgramContainer>
-      {data.map( (card ,index) => (
-      <MainDetailProgramCard key={index}>
-      
-        <MainDetailProgramCardContent>
-        <div className='img'></div>
-        <div className='text'>
-            <CardTitle>{card.programName}</CardTitle>
-            <CardContent>
-                <div className='category'>#{card.category}</div>
-                <Button>
-                  <div className='Btn' onClick={btnClick}>
-                  신청페이지 바로가기&gt;</div>
-                  </Button>
-            </CardContent>
-        </div>
-        </MainDetailProgramCardContent>
-        
-      </MainDetailProgramCard>
-      ))}
+        {data.map((card, index) => (
+          <DetailProgramCard card={card} key={index} ></DetailProgramCard>
+        ))}
        </ProgramContainer>
     </div>
   );

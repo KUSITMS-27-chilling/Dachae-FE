@@ -1,34 +1,30 @@
 import styled from "styled-components";
 
-export const ProgramContainer = styled.div`
-  position: relative;
-  width: 1210px;
-  height: 486px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`
-export const MainDetailProgramCard = styled.div`
+export const DetailProgramCardContainer = styled.div`
   position: relative;
   width: 566px;
   height: 162px;
   margin-right: 22px;
-  .img{
-    width: 112px;
-    height: 112px;
-    border-radius: 10.35px;
-    background-color: gray;
-  }
+
   .text{
     width: 400px;
     height: 112px;
     margin-left: 27px;
   }
-`
+`;
 
-export const MainDetailProgramCardContent = styled.div`
+export const MainDetailProgramCardContent = styled.div<{ imgSrc: string }>`
   display: flex;
   margin-top: 25px;
+
+  .img{
+    width: 112px;
+    height: 112px;
+    border-radius: 10.35px;
+    background-color: gray;
+    background-image: ${props => `url(${props.imgSrc})`};
+    background-size: cover;
+  }
 `
 
 export const CardTitle = styled.div`

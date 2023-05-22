@@ -1,60 +1,45 @@
 import styled from "styled-components";
 
-
-
-export const MainBody_Tapbar = styled.div`
+export const MainBody_Content_Header = styled.div`
   position: relative;
   width: 100%;
-  height: 57px;
-  background-color: white;
-  border: 1px solid red;
+  height: 8rem;
+  display: flex;
+  align-items: end;
 
-  .MainBody_Tapbar_In{
+  .program-detail__telephone-number {
     position: absolute;
-    width: 600px;
-    height: 44px;
-    border: 1px solid red;
-    margin-left: 126px;
-    margin-top: 13px;
-  }
-  .MainBody_Tapbar_In > button{
-    width: 140px;
-    height: 44px;
-    background-color:transparent;
-    border: none;
+    right: 16rem;
+    top: 9.3rem;
     font-size: 20px;
     font-weight: 600;
-    color: #B0B0B0;
-    letter-spacing: -5%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .active {
+    opacity: 1;
   }
 `
 export const MainBody_Content_title = styled.div`
-  position: relative;
-   width: 100%;
-   height: 108px;
-  display: flex;
-  align-items: end;
-`
-export const MainBody_Content_title1 = styled.div`
- position: absolute;
+  position: absolute;
   left: 142px;
   font-size: 26px;
-  letter-spacing: -5%;
-  font-weight: 500px;
+  letter-spacing: -0.05em;
+  font-weight: 600;
   margin-bottom: 3px;
 `
 export const MainBody_Content_detail = styled.div`
   position: absolute;
   display: flex;
   font-size: 20px;
-  letter-spacing: -5%;
-  margin-left: 360px;
+  letter-spacing: -0.05em;
+  margin-left: 345px;
   width: 115px;
   height: 36px;
   cursor: pointer;
-  border: 1px solid #B0B0B0;
+  border: 2.33px solid #B0B0B0;
   border-radius: 20px;
-
 
   #center-news__header--setting-text {
     font-weight: 400;
@@ -66,70 +51,96 @@ export const MainBody_Content_detail = styled.div`
 
 
 export const MainBody_Card = styled.div`
-width: 1218px;
-height: 112px;
-display: flex;
-margin-left: 142px;
-margin-top: 50px;
+  width: 1218px;
+  height: 112px;
+  display: flex;
+  margin: 3.125rem 0 3.5625rem 8.875rem;
 `
 
 export const Mainbody_CardContent = styled.div`
-width: 344px;
-height: 112px;
-border-radius: 16px;
-background-color: #F6F6F6;
-margin-right: 62px;
-display: flex;
-img{
-  width: 48px;
-  height: 40px;
-  margin-left: 36px;
-  margin-top: 36px;
-}
-.Card-title{
-  margin-left: 30px;
-  margin-top: 22px;
-  font-size: 20px;
-  font-weight: 800;
-  color: #000000;
-}
-.Card-content{
-  margin-top: 7px;
-  margin-left: 30px;
-  font-size: 15px;
-  font-weight: 500;
-}
+  width: 344px;
+  height: 112px;
+  border-radius: 16px;
+  background-color: #F6F6F6;
+  margin-right: 62px;
+  display: flex;
+  position: relative;
+
+  #program-detail__btn1 {
+    width: 4.0256rem;
+    height: 2.875rem;
+    position: absolute;
+    top: 1.9375rem;
+    left: 1.875rem;
+  }
+
+  #program-detail__btn2 {
+    width: 2.3125rem;
+    height: 3.4375rem;
+    position: absolute;
+    top: 1.625rem;
+    left: 2.6875rem;
+  }
+
+  #program-detail__btn3 {
+    width: 3.25rem;
+    height: 3.25rem;
+    position: absolute;
+    top: 1.8125rem;
+    left: 2.25rem;
+  }
+
+  .Card {
+    width: max-content;
+    height: 4.1875rem;
+    position: absolute;
+    top: 1.375rem;
+    left: 7.375rem;
+  }
+
+  .Card-title{
+    width: max-content;
+    height: 1.625rem;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .Card-content {
+    width: max-content;
+    height: 2.3125rem;
+    color: #535353;
+    font-size: 15px;
+  }
 `
 
 export const Main_Program = styled.div`
-width: 100%;
-height: 539px;
+  width: 100%;
+  height: 539px;
 `
 export const Main_Program_Title = styled.div`
-width: 270px;
-height: 27px;
-margin-top: 18px;
-margin-left: 144px;
-font-size: 23px;
-font-weight: 500;
-letter-spacing:-5%;
-display: flex;
-.color{
-  color: #39AFB0;
-}
+  width: max-content;
+  height: 27px;
+  margin-top: 18px;
+  margin-left: 144px;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing:-5%;
+  display: flex;
+  .color{
+    color: #39AFB0;
+  }
 `
 export const Main_Program_content = styled.div`
-width: 1180px;
-height: 486px;
-margin-left: 142px;
-margin-top: 10px;
+  width: 1180px;
+  height: 486px;
+  margin-left: 142px;
+  margin-top: 10px;
 `
-////////////////////////Tap 시작//////////////////////////////
-export const TapModal = styled.div`
-display: flex;
 
+export const TapModal = styled.div`
+  display: flex;
 `
-/////////모달 스타일 시작//////////////////////////
 
 export const ModalBtn = styled.button`
   background-color: purple;

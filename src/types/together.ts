@@ -11,7 +11,8 @@ export interface TogetherData {
   tags: string[];
   programName: string;
   listenIdx: number;
-  detailOrCommu: detailOrCommu
+  detailOrCommu: detailOrCommu;
+  profile:string;
 }
 
 export interface CommuTogetherData {

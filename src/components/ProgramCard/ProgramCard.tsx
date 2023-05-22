@@ -3,11 +3,18 @@ import {
   ProgramCardBottom
 } from './ProgramCard.styled';
 import { ProgramCardInfo } from '../../types/programCard';
+import useImage from '../../hooks/useImage';
+import { useEffect } from 'react';
 
-function ProgramCard({ imgSrc, title, btnClick, deadline }: ProgramCardInfo) {
+function ProgramCard({ category, title, btnClick, deadline }: ProgramCardInfo) {
+  const { imgUrl, imgHandler } = useImage(category);
+
+  useEffect(() => {
+    imgHandler();
+  }, [])
 
   return (
-    <ProgramCardContainer imgSrc={imgSrc}>
+    <ProgramCardContainer imgSrc={imgUrl}>
       <div id="program-card__image"></div>
       <div id="program-card__title">
         {title}

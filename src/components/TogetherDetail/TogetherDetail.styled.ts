@@ -7,7 +7,7 @@ export const CardForm = styled.div`
  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
  margin: 20px;//확인하려고 그냥 넣음
 `
-export const CardTop = styled.div`
+export const CardTop = styled.div<{img:string}>`
 position: absolute;
  width: 795px;
  height: 57px;
@@ -17,8 +17,10 @@ position: absolute;
  .profile{
     width: 57px;
     height: 57px;
-    background: #D9D9D9;
     border-radius: 90px;
+    background-image: ${props => `url(${props.img})`};
+object-fit: cover;
+background-size:cover;
 }
 .right{
  width: 711px;
@@ -150,32 +152,45 @@ text-align: center;
 `
 export const CurrentJoinPeople = styled.div`
 position: absolute;
-width: 232px;
-height: 96px;
+width: max-content;
+height: 114px;
 background: #FFFFFF;
 border: 2px solid #CBCBCB;
 box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
 border-radius: 7px;
-margin-left: 632px;
-margin-top: 319px;
+margin-left: 593px;
+margin-top: 300px;
+padding-left:12px;
 .current-join{
-    font-weight: 400;
+font-weight: 400;
 font-size: 18px;
 line-height: 21px;
 letter-spacing: -0.05em;
 color: #7D7D7D;
 margin-top: 14px;
-margin-left: 40px;
 display: flex;
+padding-right:12px ;
 }
 .num-color{
     color: #39AFB0;
 }
 .user-profile{
-    width: 173px;
-    height: 32px;
-    border: 1px solid red;
+    width: max-content;
+    height: max-content;
     margin-top: 13px;
-    margin-left: 30px;
+    margin-left: 2px;
+    display: flex;
+    .user-name{
+     margin-right: 13px;
+     .name{
+        font-weight: 500;
+        font-size: 19px;
+        text-align: center;
+        color: #535353;
+    }
+    img{
+        margin-left: 7px;
+    }
+}
 }
 `

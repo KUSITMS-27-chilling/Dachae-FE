@@ -2,6 +2,7 @@ export type MainProgramData = {
   programName?: string;
   programEnd?: string;
   programUrl?: string;
+  programCategory?: string;
 }
 
 export interface MainContentData {

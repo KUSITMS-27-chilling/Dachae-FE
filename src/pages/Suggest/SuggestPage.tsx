@@ -19,6 +19,7 @@ import SuggestHeader from '../../components/SuggestHeader/SuggestHeader';
 import SlideBanner from '../../components/SlideBanner';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 function SuggestPage() {
   
@@ -31,11 +32,11 @@ const { isPreparing, showPopup } = usePreparing();
   const category: Category = 'suggest';
   return (
     <div>
-              {
-          isPreparing && (
-            <Preparing></Preparing>
-          )
-        }
+      {
+        isPreparing && (
+          <Preparing></Preparing>
+        )
+      }
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <SlideBanner />
@@ -52,7 +53,7 @@ const { isPreparing, showPopup } = usePreparing();
         <SuggestRegion/>
         <SuggestList/>
     </SuggestListContainer>
-    
+    <Footer />
     </div>
   )
 }

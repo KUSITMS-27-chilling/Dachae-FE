@@ -6,13 +6,14 @@ import Header from '../../components/Header/Header';
 import { Category } from '../../types/tabCategory';
 import CommuTab from '../../components/Commu/CommuTab';
 import {
-  MainBanner,
   ReviewDetailBox,
   Comment,
   CommentWrite
 }from './TogetherDetailPage.styled'
+import MainBanner from '../../components/MainBanner';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 function TogetherDetailPage() {
   const { listenIdx } = useParams();
@@ -28,7 +29,7 @@ function TogetherDetailPage() {
         }
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
-      <MainBanner />
+      <MainBanner bannerType='listenBanner' />
       <CommuTab thisCommu='together' showPopup={showPopup} />
       <ReviewDetailBox>
       <TogetherDetail listenIdx ={Number(listenIdx)}/>
@@ -39,6 +40,7 @@ function TogetherDetailPage() {
       <CommentWrite>
         <input type='text' placeholder='댓글을 남겨주세요'></input>
       </CommentWrite>
+      <Footer />
     </div>
   )
 }

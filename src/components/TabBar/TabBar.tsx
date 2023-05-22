@@ -15,7 +15,7 @@ function TabBar({ prop = 'program' } : TabBarProps) {
       el.className = 'tab-bar__category';
     })
     const activeCategory = document.getElementById(`tab-bar__category-${prop}`)
-    activeCategory!.className = 'tab-bar__category active';
+    activeCategory!.classList.add('active');
   }, [])
 
   const goMain =()=>{ //메인 디테일
