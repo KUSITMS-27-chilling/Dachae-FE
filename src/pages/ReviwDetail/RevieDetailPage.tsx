@@ -13,6 +13,7 @@ import{
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
 import MainBanner from '../../components/MainBanner';
+import Footer from '../../components/Footer';
 
 const RevieDetailPage =() => {
     const { reviewIdx } = useParams();
@@ -39,8 +40,7 @@ const RevieDetailPage =() => {
       <CommentWrite>
         <input type='text' placeholder='댓글을 남겨주세요'></input>
       </CommentWrite>
-        
-      
+      <Footer />
     </div>
   )
 }

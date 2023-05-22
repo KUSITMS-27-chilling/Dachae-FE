@@ -13,6 +13,7 @@ import {
 import MainBanner from '../../components/MainBanner';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 function TogetherDetailPage() {
   const { listenIdx } = useParams();
@@ -39,6 +40,7 @@ function TogetherDetailPage() {
       <CommentWrite>
         <input type='text' placeholder='댓글을 남겨주세요'></input>
       </CommentWrite>
+      <Footer />
     </div>
   )
 }

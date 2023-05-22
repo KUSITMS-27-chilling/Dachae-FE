@@ -21,6 +21,7 @@ import detail_icon2 from '../../assets/detail_icon2.png';
 import detail_icon3 from '../../assets/detail_icon3.png';
 import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProgram';
 import axios from 'axios';
+import Footer from '../../components/Footer';
 
 const MainPageDetail = () =>{
   const { region } = useParams();
@@ -120,6 +121,7 @@ const MainPageDetail = () =>{
         </Main_Program_content>
       </Main_Program>
       <DetailContent />
+      <Footer />
     </div>
   )
 }

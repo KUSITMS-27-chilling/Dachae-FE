@@ -23,6 +23,7 @@ import {
 } from '../../types/mainContent';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 function MainPage() {
   const state = useRecoilValue(loginState);
@@ -144,6 +145,7 @@ function MainPage() {
             <MainBodyContent key={idx} prop={el} />
           ))
         }
+        <Footer />
       </>
     )
   }
