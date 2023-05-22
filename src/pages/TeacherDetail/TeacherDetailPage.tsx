@@ -33,8 +33,8 @@ interface Program {
 }
 interface Class{
   price: number;
-    goalNum: number;
-    proceed: string;
+  goalNum: number;
+  proceed: string;
 }
 interface img{
   images:string[];
@@ -53,29 +53,28 @@ function TeacherDetailPage() {
   const { isPreparing, showPopup } = usePreparing();
 
 
-    useEffect(() => {
-      getTeacherData();
-    }, []);
-  const getTeacherData=() =>{
-      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/teacherInfo/${lectureIdx}`)
-      .then((response) => {
-          setTeacherData(response.data.data);
-    
-      })
-      .catch((err) => console.log(err));
-    }
+  useEffect(() => {
+    getTeacherData();
+  }, []);
 
-    useEffect(() => {
-      getTeacherimg();
-    }, []);
+  const getTeacherData=() =>{
+    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/teacherInfo/${lectureIdx}`)
+    .then((response) => {
+        setTeacherData(response.data.data);
+    })
+    .catch((err) => console.log(err));
+  }
+
+  useEffect(() => {
+    getTeacherimg();
+  }, []);
   const getTeacherimg=() =>{
-      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/images/${lectureIdx}`)
-      .then((response) => {
-          setTeacherimg(response.data.data);
-          console.log(response.data.data);
-      })
-      .catch((err) => console.log(err));
-    }
+    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/images/${lectureIdx}`)
+    .then((response) => {
+        setTeacherimg(response.data.data);
+    })
+    .catch((err) => console.log(err));
+  }
 
     useEffect(() => {
       getTeacherClass();
@@ -89,37 +88,37 @@ function TeacherDetailPage() {
       .catch((err) => console.log(err));
     }
 
-    useEffect(() => {
-      const handleScroll = () => {
-        const currentPosition = window.pageYOffset;
-        setScrollPosition(currentPosition);
-      };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.pageYOffset;
+      setScrollPosition(currentPosition);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
-      window.addEventListener('scroll', handleScroll);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-  
-    useEffect(() => {
-      if (scrollPosition >= 710) {
-        setIsFixed(true);
-      } else {
-        setIsFixed(false);
-      }
-    }, [scrollPosition]);
+  useEffect(() => {
+    if (scrollPosition >= 710) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+  }, [scrollPosition]);
 
   return (
     <div>
-        {
-          isPreparing && (
-            <Preparing></Preparing>
-          )
-        }
+      {
+        isPreparing && (
+          <Preparing></Preparing>
+        )
+      }
       <Header showPopup={showPopup} />
       <TabBar prop={category} />
       <HeaderImg img={Teacherimg ? Teacherimg.images : []} >
-      <div className='img1'/>
+        <div className='img1'/>
         <div className='img2' ></div>
       </HeaderImg>
       <TeacherTabBar thisTeacher={TeacherTab}/>
