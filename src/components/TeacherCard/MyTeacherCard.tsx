@@ -47,7 +47,7 @@ function MyTeacherCard() {
         getMyTeacher();
       }, []);
     const getMyTeacher=() =>{
-        axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/my`,
+        axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/mine`,
         {
             headers: {
               Authorization: `Bearer ${token}`

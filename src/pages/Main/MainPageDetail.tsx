@@ -31,7 +31,7 @@ const MainPageDetail = () =>{
   const [url, setUrl] = useState('');
 
   function getBtnInfo() {
-    axios.get(`${import.meta.env.VITE_APP_HOST}/center/info/${region}`,{
+    axios.get(`${import.meta.env.VITE_APP_HOST}/center/${region}/info`,{
       params: {
         region: region
       }
