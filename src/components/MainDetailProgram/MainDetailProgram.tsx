@@ -55,11 +55,10 @@ const MainDetailProgram = ({ region }: Props)=> {
         <div className='text'>
             <CardTitle>{card.programName}</CardTitle>
             <CardContent>
-                <div className='category'>#{card.category}</div>
+                <div className='category'># {card.category}</div>
                 <Button>
-                  <div className='Btn' onClick={btnClick}>
-                  신청페이지 바로가기&gt;</div>
-                  </Button>
+                  <div className='Btn' onClick={btnClick}>신청페이지 바로가기 &gt;</div>
+                </Button>
             </CardContent>
         </div>
         </MainDetailProgramCardContent>
