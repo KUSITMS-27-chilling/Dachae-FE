@@ -172,7 +172,7 @@ display: flex;
     color: #39AFB0;
 }
 .user-profile{
-    width: 173px;
+    width: max-content;
     height: 32px;
     border: 1px solid red;
     margin-top: 13px;

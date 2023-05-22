@@ -122,7 +122,8 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
           <div className='current-join'>
             <div className='num-color'>{data.currentNum}</div>
             명이 함께하고 있어요</div>
-          <div className='user-profile'></div>
+            
+          <div className='user-profile'>프로필 넣어sdfsdfbsjdfsjd야함</div>
         </CurrentJoinPeople>
       )}
       </>

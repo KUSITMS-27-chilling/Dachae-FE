@@ -6,6 +6,7 @@ export const HeaderImg= styled.div<{img:string[]}>`
  margin-top: 68px;
  margin-left: 142px;
  display: flex;
+ margin-bottom: 68px;
 .img1{
 background-image: ${props => `url(${props.img[0]})`};
 object-fit: cover;
@@ -13,6 +14,7 @@ background-size:cover;
 width: 556px;
 height: 352px;
 margin-right: 24px;
+border-radius: 10px;
  }
  .img2{
 background-image: ${props => `url(${props.img[1]})`};
@@ -21,6 +23,7 @@ background-size:cover;
 width: 556px;
 height: 352px;
 margin-right: 24px;
+border-radius: 10px;
  }
 `
 
