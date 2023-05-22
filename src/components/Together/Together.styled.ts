@@ -8,7 +8,7 @@ export const TogetherContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
   margin: 0 auto;
   position: relative;
 `;
-export const ReviewProfile = styled.div<{ topProp?: boolean, img:string }>`
+export const ReviewProfile = styled.div<{ topProp?: boolean}>`
   width: max-content;
   height: 3rem;
   display: flex;
@@ -16,9 +16,6 @@ export const ReviewProfile = styled.div<{ topProp?: boolean, img:string }>`
   top: ${props => props.topProp ? '2.4375rem' : '2rem'};
 
   #review__profile-photo {
-    background-image: ${props => `url(${props.img})`};
-    object-fit: cover;
-    background-size:cover;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;

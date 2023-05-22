@@ -49,7 +49,7 @@ function Together ({ prop }: TogetherProp) {
 
   return(
     <TogetherContainer detailOrCommu={prop.detailOrCommu} >
-      <ReviewProfile topProp={true} img={prop ? prop.profile : ''}>
+      <ReviewProfile topProp={true} >
         <div id="review__profile-photo"></div>
         <div>
           <div id="review__profile-nickname">{prop.nickname}</div>
