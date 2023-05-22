@@ -102,9 +102,13 @@ function MainPage() {
   }
 
   useEffect(() => {
-    setProgramData([]);
-    if(localStorage.getItem('access_token') !== null) getProgramsLogIn(localStorage.getItem('access_token')!);
-    else getPrograms();
+    const asyncGetPrograms = async () => {
+      setProgramData([]);
+      if(localStorage.getItem('access_token') !== null) await getProgramsLogIn(localStorage.getItem('access_token')!);
+      else await getPrograms();
+    }
+
+    asyncGetPrograms();
   }, [state, favRegion])
 
     return (
