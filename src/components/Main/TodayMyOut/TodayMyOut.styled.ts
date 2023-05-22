@@ -8,7 +8,7 @@ export const TodayMyOutContainer = styled.div`
   left: 2.1875rem;
 
   #today-my-out__login-text {
-    width: 3.25rem;
+    width: 5rem;
     height: 1.5rem;
     font-size: 20px;
     font-weight: 600;
