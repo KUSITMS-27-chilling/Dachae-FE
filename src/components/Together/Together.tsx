@@ -6,10 +6,6 @@ import {
   ReviewProfile,
   ReviewPlace
 } from "./Together.styled";
-import { 
-  //ReviewProfile,
-  //ReviewPlace
-} from "../Review/Review.styled";
 import { useEffect, useState } from "react";
 import recruiting_img from '../../assets/recruiting.png';
 import recruited_img from '../../assets/recruited.png';
@@ -49,7 +45,7 @@ function Together ({ prop }: TogetherProp) {
 
   return(
     <TogetherContainer detailOrCommu={prop.detailOrCommu} >
-      <ReviewProfile topProp={true} >
+      <ReviewProfile topProp={true} profile={(prop.profile) ? prop.profile : ''} >
         <div id="review__profile-photo"></div>
         <div>
           <div id="review__profile-nickname">{prop.nickname}</div>

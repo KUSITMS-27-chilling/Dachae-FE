@@ -26,7 +26,6 @@ export const ReviewProfile = styled.div<{ topProp?: boolean, img?:string }>`
     height: 3rem;
     border-radius: 50%;
     margin-right: 1.25rem;
-    border:1px solid red;
   }
 
   #review__profile-nickname {
@@ -143,7 +142,7 @@ export const ReviewImage = styled.div<{ reviewImg?: string }>`
   #review__image {
     width: 15.625rem;
     height: 15.625rem;
-    background-color: #d9d9d9;
+    background-color: #fff;
     background-image: ${props => `url(${props.reviewImg})`};
     border-radius: 0.625rem;
     position: absolute;

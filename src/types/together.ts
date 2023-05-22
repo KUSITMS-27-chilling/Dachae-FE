@@ -12,7 +12,7 @@ export interface TogetherData {
   programName: string;
   listenIdx: number;
   detailOrCommu: detailOrCommu;
-  //profile:string;
+  profile:string;
 }
 
 export interface CommuTogetherData {
