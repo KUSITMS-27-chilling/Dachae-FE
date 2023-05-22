@@ -88,19 +88,19 @@ function MainBodyContent({ prop }: MainContentProp) {
 							</div>
 							<MainContentProgramContainer>
 									<ProgramCard 
-											imgSrc={temp_program}
+											category={prop.programs[0].programCategory!}
 											title={prop.programs[0].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[0].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
-											imgSrc={temp_program}
+											category={prop.programs[1].programCategory!}
 											title={prop.programs[1].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[1].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
-											imgSrc={temp_program}
+											category={prop.programs[2].programCategory!}
 											title={prop.programs[2].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[2].programEnd!)}

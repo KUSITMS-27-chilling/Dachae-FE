@@ -1,5 +1,5 @@
 export interface ProgramCardInfo {
-  imgSrc: string;
+  category: string;
   title: string;
   btnClick: React.MouseEventHandler<HTMLButtonElement>;
   deadline: string;

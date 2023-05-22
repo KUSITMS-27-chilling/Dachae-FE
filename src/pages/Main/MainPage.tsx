@@ -50,7 +50,8 @@ function MainPage() {
             programArr.push({
               programName: programsData[key].programs[i].programName,
               programEnd: programsData[key].programs[i].endDate,
-              programUrl: programsData[key].programs[i].url
+              programUrl: programsData[key].programs[i].url,
+              programCategory: programsData[key].programs[i].category
             })
           }
         }
@@ -86,7 +87,8 @@ function MainPage() {
             programArr.push({
               programName: programsData[key].programs[i].programName,
               programEnd: programsData[key].programs[i].endDate,
-              programUrl: programsData[key].programs[i].url
+              programUrl: programsData[key].programs[i].url,
+              programCategory: programsData[key].programs[i].category
             })
           }
         }
