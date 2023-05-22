@@ -8,7 +8,7 @@ export const TogetherContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
   margin: 0 auto;
   position: relative;
 `;
-export const ReviewProfile = styled.div<{ topProp?: boolean}>`
+export const ReviewProfile = styled.div<{ topProp?: boolean, profile?: string }>`
   width: max-content;
   height: 3rem;
   display: flex;
@@ -20,7 +20,7 @@ export const ReviewProfile = styled.div<{ topProp?: boolean}>`
     height: 3rem;
     border-radius: 50%;
     margin-right: 1.25rem;
-    border:1px solid red;
+    background-image: ${props => `url(${props.profile})`};
   }
 
   #review__profile-nickname {

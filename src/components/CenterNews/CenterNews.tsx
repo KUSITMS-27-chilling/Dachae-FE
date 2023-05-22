@@ -63,7 +63,6 @@ function CenterNews({ openModal }: { openModal: () => void }) {
           }
         });
         const res = response.data.data.newPrograms;
-        console.log(res);
         const tempPrograms: LGProgram[] = [];
         for (let key in res) {
           const tempProgram: LGProgram = {

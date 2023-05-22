@@ -21,12 +21,14 @@ import detail_icon2 from '../../assets/detail_icon2.png';
 import detail_icon3 from '../../assets/detail_icon3.png';
 import MainDetailProgram from '../../components/MainDetailProgram/MainDetailProgram';
 import axios from 'axios';
+import Footer from '../../components/Footer';
 
 const MainPageDetail = () =>{
   const { region } = useParams();
   const { isPreparing, showPopup } = usePreparing();
   const [favCount, setFavCount] = useState(0);
   const [telephone, setTelephone] = useState('');
+  const [url, setUrl] = useState('');
 
   function getBtnInfo() {
     axios.get(`${import.meta.env.VITE_APP_HOST}/center/info/${region}`,{
@@ -37,6 +39,7 @@ const MainPageDetail = () =>{
       const res = response.data.data;
       setFavCount(res.favCount);
       setTelephone(res.tell);
+      setUrl(res.url);
     }).catch((err) => console.error(err));
   }
 
@@ -70,7 +73,7 @@ const MainPageDetail = () =>{
       <MainBody_Content_Header>
         <MainBody_Content_title>{region} 동네배움터</MainBody_Content_title>
         <MainBody_Content_detail>
-            <div id='center-news__header--setting-text'>바로가기</div>
+            <div id='center-news__header--setting-text' onClick={() => window.open(url, "_blank")}>바로가기</div>
         </MainBody_Content_detail>
         <div className='program-detail__telephone-number'>{telephone}</div>
       </MainBody_Content_Header>
@@ -120,6 +123,7 @@ const MainPageDetail = () =>{
         </Main_Program_content>
       </Main_Program>
       <DetailContent />
+      <Footer />
     </div>
   )
 }

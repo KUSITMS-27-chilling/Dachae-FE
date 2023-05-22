@@ -24,6 +24,7 @@ import { TeacherTabKind } from "../../recoil/TeacherTap";
 import { useRecoilValue } from 'recoil';
 import usePreparing from '../../hooks/usePreparing';
 import Preparing from '../../components/Preparing';
+import Footer from '../../components/Footer';
 
 interface Program {
   careers:string;
@@ -174,6 +175,7 @@ function TeacherDetailPage() {
         </div>
       </ContentRight>
       </Total>
+      <Footer />
     </div>
   )
 }

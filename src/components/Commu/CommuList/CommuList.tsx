@@ -40,6 +40,7 @@ function CommuList () {
         const tempArr: ReviewData[] = [];
         for(let key in res) {
           const tempEl: ReviewData = {
+            userImg: res[key].profile,
             userNick: res[key].nickName,
             time: '18시간 전',
             title: res[key].title,
@@ -48,6 +49,7 @@ function CommuList () {
             region: res[key].tags[0],
             reviewIdx: res[key].reviewIdx,
             detailPlace: res[key].tags[1],
+            reviewImg: res[key].image,
             detailOrCommu: 'community'
           }
           tempArr.push(tempEl);
@@ -79,7 +81,8 @@ function CommuList () {
             tags: res[key].tags,
             programName: res[key].programName,
             listenIdx: res[key].listenIdx,
-            detailOrCommu: 'community'
+            detailOrCommu: 'community',
+            profile: res[key].profile
           }
           tempArr.push(tempEl);
         }
@@ -117,7 +120,7 @@ function CommuList () {
             )
           )
         }
-                {
+        {
           (commuTab == 'together') && (commuTogethers) &&
           (
             (selected == "모든 지역보기") ? (

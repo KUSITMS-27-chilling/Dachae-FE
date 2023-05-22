@@ -17,6 +17,8 @@ import {
   FavField,
   Contentflex
 } from './Mypagepage.styled'
+import Footer from '../../components/Footer';
+
 function Mypage() {
   const { isPreparing, showPopup } = usePreparing();
   const category = 'mypage';
@@ -71,6 +73,7 @@ function Mypage() {
       <div className='appplytitle'>내가 신청한 글</div>
       </Myapply>
       </My>
+      <Footer />
     </div>
   )
 }

@@ -38,7 +38,8 @@ function DetailContent() {
             tags: response[key].tags,
             listenIdx: response[key].listenIdx,
             programName: response[key].programName,
-            detailOrCommu: 'detail'
+            detailOrCommu: 'detail',
+            profile: response[key].profile
           }
           tempArr.push(object);
         }
@@ -63,6 +64,7 @@ function DetailContent() {
             content: response[key].content,
             region: response[key].tags[0],
             reviewIdx: response[key].reviewIdx,
+            reviewImg: response[key].image,
             detailPlace: response[key].tags[1],
             detailOrCommu: 'detail'
           }
