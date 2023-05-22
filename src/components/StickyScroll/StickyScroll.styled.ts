@@ -24,7 +24,7 @@ margin-left: 34px;
 margin-top: 30px;
 margin-bottom: 15px;
 .phonetitle{
-font-weight: 600px;
+font-weight: 800;
 font-size: 18px;
 letter-spacing: -5%;
 }
@@ -37,13 +37,16 @@ height: 34px;
 font-family:'Pretendard';
 font-weight: 500;
 font-size: 17px;
+&::placeholder {
+      color: #DADADA;
+    }
 }
 `
 export const Email = styled.div`
 margin-left: 34px;
 margin-bottom: 16px;
 .emailtitle{
-font-weight: 600px;
+font-weight: 600;
 font-size: 18px;
 letter-spacing: -5%;
 }
@@ -56,6 +59,9 @@ width: 259px;
 height: 34px;
 font-weight: 500;
 font-size: 17px;
+&::placeholder {
+      color: #DADADA;
+    }
 }
 
 
@@ -63,7 +69,7 @@ font-size: 17px;
 export const Message = styled.div`
 margin-left: 34px;
 .teachertitle{
-    font-weight: 600px;
+    font-weight: 600;
 font-size: 18px;
 letter-spacing: -5%;
 }

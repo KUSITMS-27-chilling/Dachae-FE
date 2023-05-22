@@ -63,6 +63,7 @@ border: none;
  font-size: 18px;
  font-weight: 500;
  letter-spacing: -5%;
+ line-height: 29px;
  cursor: pointer;
   }
 `

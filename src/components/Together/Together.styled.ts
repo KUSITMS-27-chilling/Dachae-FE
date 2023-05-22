@@ -8,6 +8,68 @@ export const TogetherContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
   margin: 0 auto;
   position: relative;
 `;
+export const ReviewProfile = styled.div<{ topProp?: boolean}>`
+  width: max-content;
+  height: 3rem;
+  display: flex;
+  position: absolute;
+  top: ${props => props.topProp ? '2.4375rem' : '2rem'};
+
+  #review__profile-photo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 1.25rem;
+    border:1px solid red;
+  }
+
+  #review__profile-nickname {
+    width: max-content;
+    height: 1.4375rem;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4375rem;
+    letter-spacing: -0.05em;
+  }
+
+  #review__profile-time {
+    width: max-content;
+    height: 1.25rem;
+    font-size: 17px;
+    color: #7d7d7d;
+    line-height: 1.25rem;
+    letter-spacing: -0.05em;
+  }
+`;
+export const ReviewPlace = styled.div<{ topProp?: boolean }>`
+  width: max-content;
+  height: 2.0625rem;
+  display: flex;
+  font-size: 19px;
+  line-height: 2.0625rem;
+  position: absolute;
+  top: ${props => props.topProp ? '0' : '21.5rem'};
+
+  #review__place-region {
+    width: max-content;
+    height: 2.0625rem;
+    background-color: #e9f8f1;
+    border-radius: 1.6786rem;
+    color: #39afb0;
+    font-weight: 700;
+    padding: 0.25rem 0.625rem;
+    margin-right: 0.875rem;
+  }
+
+  #review__place-detail {
+    width: max-content;
+    height: 2.0625rem;
+    background-color: #f6f6f6;
+    border-radius: 1.6786rem;
+    color: #7d7d7d;
+    padding: 0.25rem 0.625rem;
+  }
+`;
 
 export const TogetherTitle = styled.div<{ recruiting: boolean }>`
   width: max-content;

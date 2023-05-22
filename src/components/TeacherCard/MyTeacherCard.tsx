@@ -37,7 +37,7 @@ function MyTeacherCard() {
        //console.log(e.currentTarget)
       
        const dataText = e.currentTarget.dataset.text!;
-       console.log(dataText)
+       //console.log(dataText)
     
        navigate(`/suggest/${dataText}`);
     }
