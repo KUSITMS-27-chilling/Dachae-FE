@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import ScrollContainer from 'react-indiana-drag-scroll'
+import { useNavigate } from "react-router-dom";
 import{
     TeacherCardBox,
     CardTop,
@@ -26,8 +27,16 @@ interface Program {
   }
 
 function TodayTeacherCard() {
+  const navigate = useNavigate();
     const [TeacherData, setTeacherData] = useState<Program[]>([]);
     const token = localStorage.getItem('access_token');
+    
+    const goTeacherDetail=(e:React.MouseEvent<HTMLDivElement>)=>{
+      const dataText = e.currentTarget.dataset.text!;
+      console.log(dataText)
+   
+      navigate(`/suggest/${dataText}`);
+   }
 
     useEffect(() => {
         getMyTeacher();
@@ -50,7 +59,7 @@ function TodayTeacherCard() {
     <ScrollContainer>
     <TeacherCard>
     {TeacherData.map((data) => ( 
-     <TeacherCardBox key={data.lectureIdx}>
+     <TeacherCardBox key={data.lectureIdx}  data-text ={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
     {/* // <TeacherCardBox> */}
       <CardTop>
           <div className='title'>{data.title}</div>

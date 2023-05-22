@@ -66,7 +66,7 @@ function ReviewDetail({ reviewIdx }: { reviewIdx: number }) {
         {
           data && (
             <>
-              <CardTop>
+              <CardTop img={data ? data.profile : ''}>
                 <div className='profile'></div>
                 <div className='right'>
                     <div className='user-title'>
@@ -90,8 +90,8 @@ function ReviewDetail({ reviewIdx }: { reviewIdx: number }) {
                   <div className='content-title'>{data.title}</div>
                   <div className='content-classname'>{data.programName}</div>
               </CardTitle>
-              <CardContent>
-                  <div className='img'>{data.image}</div>
+              <CardContent img={data ? data.image : ''}>
+                  <div className='img'></div>
                   <div className='content-tag'>
                       <div className='content'>{data.content}</div>
                       <div className='tag'>

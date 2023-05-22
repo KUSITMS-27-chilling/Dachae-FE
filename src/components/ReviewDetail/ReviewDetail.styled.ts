@@ -6,7 +6,7 @@ export const CardForm = styled.div`
  border-radius: 18px;
  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
 `
-export const CardTop = styled.div`
+export const CardTop = styled.div<{img:string}>`
 position: absolute;
  width: 795px;
  height: 57px;
@@ -16,8 +16,10 @@ position: absolute;
  .profile{
     width: 57px;
     height: 57px;
-    background: #D9D9D9;
     border-radius: 90px;
+    background-image: ${props => `url(${props.img})`};
+    object-fit: cover;
+    background-size:cover;
 }
 .right{
  width: 711px;
@@ -94,7 +96,7 @@ margin-left: 56px;
     margin-top: 12px;
 }
 `
-export const CardContent = styled.div`
+export const CardContent = styled.div<{img:string}>`
 position: absolute;
 width: 808px;
 height: 312px;
@@ -102,10 +104,11 @@ margin-top: 240px;
 margin-left: 56px;
 display: flex;
 .img{
-    
+    background-image: ${props => `url(${props.img})`};
+    object-fit: cover;
+background-size:cover;
     width: 312px;
     height: 312px;
-    background-color: gray;
     border-radius: 8px;
 }
 .content-tag{

@@ -33,7 +33,12 @@ function CategoryCard({ category}: Props) {
   const [TeacherData, setTeacherData] = useState<Program[]>([]);
     const token = localStorage.getItem('access_token');
     const onMouseMove = (e: React.MouseEvent) => {};
+    const navigate = useNavigate();
 
+    const goTeacherDetail =(e:React.MouseEvent<HTMLDivElement>)=>{
+      const dataText = e.currentTarget.dataset.text!;
+      navigate(`/suggest/${dataText}`);
+    }
   
 
     useEffect(() => {
@@ -56,7 +61,7 @@ function CategoryCard({ category}: Props) {
     <div>
       <TeacherCard onMouseMove={onMouseMove}>
       {TeacherData.map((data) => (
-      <TeacherCardBox key={data.lectureIdx} >
+      <TeacherCardBox key={data.lectureIdx}  data-text ={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
         <CardTop>
             <div className='title'>{data.title}</div>
             <div className='catedory'>{data.category}</div>

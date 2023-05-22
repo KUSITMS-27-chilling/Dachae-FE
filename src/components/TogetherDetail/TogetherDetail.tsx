@@ -12,6 +12,7 @@ import{
     CurrentJoinPeople,
 
 } from './TogetherDetail.styled'
+import img from '../../assets/profile_icon.png'
 
 interface Program {
     
@@ -84,7 +85,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
       {
         data && (
           <>
-                  <CardTop>
+                  <CardTop img={data ? data.profile : ''}>
         <div className='profile'></div>
             <div className='right'>
                 <div className='user-title'>
@@ -122,7 +123,23 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
           <div className='current-join'>
             <div className='num-color'>{data.currentNum}</div>
             명이 함께하고 있어요</div>
-          <div className='user-profile'></div>
+          <div className='user-profile'>
+            <div className='user-name'>
+            <img className="Btn_3" alt="1" src={img} />
+            <div className='name'>김연수</div>
+            </div>
+            <div className='user-name'>
+            <img className="Btn_3" alt="1" src={img} />
+            <div className='name'>김연수</div>
+            </div>
+            
+            {/* {[...Array(data.currentNum)].map((_, index) => (
+      <div className='user-name' key={index}>
+        <img className="Btn_3" alt="1" src={img} />
+        <div className='name'>김연수</div>
+      </div>
+    ))} */}
+          </div>
         </CurrentJoinPeople>
       )}
       </>

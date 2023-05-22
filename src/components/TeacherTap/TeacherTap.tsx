@@ -23,8 +23,9 @@ import {
     const goMain =()=>{ //메인 디테일
       navigate("/");
     }
-    const goSuggest =()=>{ //제안할래요
-      navigate("/suggest");
+    const goClassinfo =()=>{ //제안할래요
+      //navigate("/suggest");
+      window.scrollTo({top:1500, behavior:'smooth'});
     }
     return(
       <TabBarContainer >
@@ -36,7 +37,7 @@ import {
           <div
             id="tab-bar__category-lectureinfo"
             className="tab-bar__category" 
-            onClick={goSuggest}>수업정보</div>
+            onClick={goClassinfo}>수업정보</div>
         </CategoryContainer>
       </TabBarContainer>
     )
