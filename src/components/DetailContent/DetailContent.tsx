@@ -50,7 +50,7 @@ function DetailContent() {
   }
 
   const getReview = async () => {
-    await axios.get(`${import.meta.env.VITE_APP_HOST}/review/page/${region}`)
+    await axios.get(`${import.meta.env.VITE_APP_HOST}/review/${region}/page`)
       .then((res) => {
         const response = res.data.data.reviews;
         const tempArr:ReviewData[] = []
