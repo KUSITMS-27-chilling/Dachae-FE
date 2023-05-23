@@ -34,7 +34,7 @@ function CommuList () {
 
   function getReviews () {
     regions.map((el) => {
-      axios.get(`${import.meta.env.VITE_APP_HOST}/review/page/${el}`)
+      axios.get(`${import.meta.env.VITE_APP_HOST}/review/${el}/page`)
       .then((response) => {
         const res = response.data.data.reviews;
         const tempArr: ReviewData[] = [];
@@ -65,7 +65,7 @@ function CommuList () {
 
   function getTogethers () {
     regions.map((el) => {
-      axios.get(`${import.meta.env.VITE_APP_HOST}/listen/page/${el}`)
+      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${el}/page`)
       .then((response) => {
         const res = response.data.data.listenTogethers;
         const tempArr: TogetherData[] = [];

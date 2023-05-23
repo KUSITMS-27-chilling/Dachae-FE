@@ -57,7 +57,7 @@ height: 122px;
 display: flex;
 .user-info{
     margin-right: 84px;
-    margin-left: 25px;
+    margin-left: 32px;
     margin-top: 39px;
 }
 .name{
@@ -82,7 +82,7 @@ margin-top: 5px;
 `
 export const CardEnd = styled.div`
 width: 270px;
-margin-left: 30px;
+margin-left: 32px;
 font-weight: 500;
 font-size: 18px;
 line-height: 30px;

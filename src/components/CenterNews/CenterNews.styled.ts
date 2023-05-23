@@ -59,6 +59,7 @@ export const RegionContainer = styled.div`
     font-family: Pretendard;
     background-color: #DADADA;
     margin: 0.1176em 0.3529em;
+    cursor: pointer;
   }
 
   .active {

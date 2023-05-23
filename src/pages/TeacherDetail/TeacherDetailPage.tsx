@@ -59,7 +59,7 @@ function TeacherDetailPage() {
   }, []);
 
   const getTeacherData=() =>{
-    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/teacherInfo/${lectureIdx}`)
+    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${lectureIdx}/teacher`)
     .then((response) => {
         setTeacherData(response.data.data);
     })
@@ -70,7 +70,7 @@ function TeacherDetailPage() {
     getTeacherimg();
   }, []);
   const getTeacherimg=() =>{
-    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/images/${lectureIdx}`)
+    axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${lectureIdx}/image`)
     .then((response) => {
         setTeacherimg(response.data.data);
     })
@@ -81,7 +81,7 @@ function TeacherDetailPage() {
       getTeacherClass();
     }, []);
   const getTeacherClass=() =>{
-      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/detail/basicInfo/${lectureIdx}`)
+      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${lectureIdx}/info`)
       .then((response) => {
         setClassData(response.data.data);
           

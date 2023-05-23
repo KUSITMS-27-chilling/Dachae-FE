@@ -35,7 +35,7 @@ function DeToHeader () {
   }, [commuTab]);
 
   function getReviewPopular() {
-    axios.get(`${import.meta.env.VITE_APP_HOST}/review/popular`)
+    axios.get(`${import.meta.env.VITE_APP_HOST}/review/top`)
     .then((response) => {
       const res = response.data.data.popularReviews;
       for(let key in res) {
@@ -49,7 +49,7 @@ function DeToHeader () {
   }
 
   function getTogetherPopular() {
-    axios.get(`${import.meta.env.VITE_APP_HOST}/listen/popular`)
+    axios.get(`${import.meta.env.VITE_APP_HOST}/listen/top`)
     .then((response) => {
       const res = response.data.data.popularListenTogethers;
       for(let key in res) {

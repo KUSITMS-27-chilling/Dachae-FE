@@ -85,6 +85,7 @@ export const CommuPostBtnContainer = styled.div`
   font-weight: 500;
   color: rgba(0, 0, 0, 0.61);;
   background: none;
+  cursor: pointer;
 `
 
 export const Stylebutton = styled.div`

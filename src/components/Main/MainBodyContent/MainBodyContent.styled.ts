@@ -43,6 +43,7 @@ export const MainContentHeader = styled.div`
     font-size: 18px;
     line-height: 1.3125rem;
     color: #535353;
+    cursor: pointer;
   }
 `
 
@@ -63,6 +64,7 @@ export const MainContentFav = styled.div`
 `
 
 export const MainContentBtn = styled.div`
+cursor: pointer;
   width: 72.25rem;
   height: 5.125rem;
   background-color: #f6f6f6;
