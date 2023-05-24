@@ -162,7 +162,7 @@ function Mypage() {
               </Contentflexuser>
             </Nickname>
             <Grade>
-              <div className='user-grade'>채움등급</div>
+              <div className='user-grade'>배움등급</div>
               <div id="learning-grade__grade-top">
                 <Contentflexgrade>
                 <progress id="learning-grade__progress-bar" value={grade % 10} max="10"/>

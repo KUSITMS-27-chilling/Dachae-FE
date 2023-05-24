@@ -183,38 +183,23 @@ justify-content: center;
     width: max-content;
     height: max-content;
     margin-top: 13px;
-    margin-left: 2px;
+    //margin-left: 2px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     .user-name{
      margin-right: 5px;
+     border: 1px solid black;
      .name{
-    position: absolute;
-    width: 446px;
-    height: 33px;
-    margin-top: 376px;
-    margin-left: 54px;
-    display: flex;
-    justify-content: space-between;
-    .className{
-        height: 33px;
-        background: #F6F6F6;
-        border-radius: 26px;
-        font-weight: 500;
-        font-size: 19px;
-        color: #535353;
-        white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-    }
+  font-weight: 500;
+  font-size: 19px;
+  text-align: center;
+  color: #535353;
+     }
     img{
         margin-left: 7px;
         width: 32px;
         height: 32px;
         border-radius: 50%;
-       
     }
 }
-}}
+}
 `
