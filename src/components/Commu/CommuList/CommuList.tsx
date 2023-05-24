@@ -65,7 +65,7 @@ function CommuList () {
 
   function getTogethers () {
     regions.map((el) => {
-      axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${el}/page`)
+      axios.get(`${import.meta.env.VITE_APP_HOST}/listen/${el}/page`)
       .then((response) => {
         const res = response.data.data.listenTogethers;
         const tempArr: TogetherData[] = [];

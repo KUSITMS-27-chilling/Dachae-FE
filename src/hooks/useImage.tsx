@@ -6,7 +6,7 @@ import participation_default from '../assets/participation_default.png';
 import job_default from '../assets/job_default.png';
 import selfdevelop_default from '../assets/selfdevelop_default.png';
 
-export default function useImage(category: string) {
+export default function useImage(category?: string) {
   const [imgUrl, setImgUrl] = useState(etc_default);
 
   const imgHandler = () => {
@@ -30,6 +30,7 @@ export default function useImage(category: string) {
         setImgUrl(selfdevelop_default);
         break;
       default:
+        setImgUrl(etc_default);
         break;
     }
   }
