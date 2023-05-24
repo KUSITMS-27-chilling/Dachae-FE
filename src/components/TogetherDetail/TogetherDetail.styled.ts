@@ -163,6 +163,7 @@ border-radius: 7px;
 margin-left: 593px;
 margin-top: 300px;
 padding-left:12px;
+padding-right: 8px;
 .current-join{
 font-weight: 400;
 font-size: 18px;
@@ -171,7 +172,8 @@ letter-spacing: -0.05em;
 color: #7D7D7D;
 margin-top: 14px;
 display: flex;
-padding-right:12px ;
+padding-right:12px;
+justify-content: center;
 }
 .num-color{
     color: #39AFB0;
@@ -182,18 +184,27 @@ padding-right:12px ;
     margin-top: 13px;
     margin-left: 2px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     .user-name{
-     margin-right: 13px;
+     margin-right: 5px;
      .name{
         font-weight: 500;
         font-size: 19px;
         text-align: center;
         color: #535353;
+        white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
     }
     img{
         margin-left: 7px;
         width: 32px;
         height: 32px;
+        border-radius: 50%;
+        background-image: ${props => `url(${props.imgSrc})`};
+        object-fit: cover;
+        background-size:cover;
     }
 }
 }

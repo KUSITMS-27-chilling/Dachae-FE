@@ -29,7 +29,7 @@ interface Program {
 function TodayTeacherCard() {
   const navigate = useNavigate();
     const [TeacherData, setTeacherData] = useState<Program[]>([]);
-    const token = localStorage.getItem('access_token');
+    //const token = localStorage.getItem('access_token');
     
     const goTeacherDetail=(e:React.MouseEvent<HTMLDivElement>)=>{
       const dataText = e.currentTarget.dataset.text!;
@@ -39,15 +39,29 @@ function TodayTeacherCard() {
    }
 
     useEffect(() => {
-        getMyTeacher();
+      const asyncGetPrograms = async () => {
+        if(localStorage.getItem('access_token') !== null) await getMyTeacherLogin(localStorage.getItem('access_token')!);
+        else await getMyTeacher();
+      }
+      asyncGetPrograms();
       }, []);
-    const getMyTeacher=() =>{
+
+
+    const getMyTeacherLogin=(token: string) =>{
         axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/today`,
         {
             headers: {
               Authorization: `Bearer ${token}`
             }
           })
+        .then((response) => {
+            setTeacherData(response.data.data);
+            console.log(response.data.data);
+        })
+        .catch((err) => console.log(err));
+      }
+      const getMyTeacher=() =>{
+        axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/today`)
         .then((response) => {
             setTeacherData(response.data.data);
             console.log(response.data.data);
@@ -78,7 +92,7 @@ function TodayTeacherCard() {
           <div className='user-img'></div>
           </Img>
       </CardContent>
-      <CardEnd>{data.years}</CardEnd>
+      <CardEnd>{data.introduce}</CardEnd>
     </TeacherCardBox>
     ))}
     </TeacherCard>
