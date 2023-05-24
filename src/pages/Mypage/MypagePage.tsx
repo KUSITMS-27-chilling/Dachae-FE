@@ -18,10 +18,11 @@ import {
   Contentflex,
   Line,
   Contentflexgrade,
-  LearningGradeBar
+  Content
 } from './Mypagepage.styled'
 import Footer from '../../components/Footer';
 import gradeImg from '../../assets/vane2.png'
+import profile from '../../assets/user_prf.png'
 
 function Mypage() {
   const { isPreparing, showPopup } = usePreparing();
@@ -39,7 +40,9 @@ function Mypage() {
         <div className='title'>내정보</div>
         <Info>
           <Profile>
-            <div className='user-img'></div>
+            <div className='user-img' >
+              <img className='userimg'src={profile} alt="user-img"></img>
+            </div>
             <div className='user-fix'>수정하기</div>
           </Profile>
           <User>
@@ -93,20 +96,48 @@ function Mypage() {
       <My>
       <MyWrite>
         <div className='mytitle'>내가 쓴 글</div>
+        <Content>
         <div className='sub'>
           <div className='subtitle'>작성한 글 전체</div>
           <div className=''>56개</div>
         </div>
         <Line></Line>
-      </MyWrite>
-      <Myapply>
-      <div className='appplytitle'>내가 신청한 글</div>
-      <div className='sub'>
-          <div className='subtitle'>작성한 글 전체</div>
+        <div className='sub'>
+          <div className='subtitle'>내가 작성한 같이듣기</div>
           <div className=''>56개</div>
         </div>
         <Line></Line>
-        
+        <div className='sub'>
+          <div className='subtitle'>내가 작성한 후기</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
+        <div className='sub'>
+          <div className='subtitle'>내가 작성한 우리동네 강사</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
+        <div className='sub'>
+          <div className='subtitle'>자유게시판</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
+        </Content>
+      </MyWrite>
+      <Myapply>
+      <div className='appplytitle'>내가 신청한 글</div>
+      <Content>
+      <div className='sub'>
+          <div className='subtitle'>우리동네 강사 신청내역</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
+        <div className='sub'>
+          <div className='subtitle'>같이듣기 신청내역</div>
+          <div className=''>56개</div>
+        </div>
+        <Line></Line>
+      </Content>
       </Myapply>
       </My>
       <Footer />

@@ -41,25 +41,44 @@ margin-top: 32px;
 margin-left: 54px;
 }
 .sub{
+  margin-top: 20px;
     display: flex;
     justify-content: space-between;
     position: absolute;
-    height: 37px;
+    height: max-content;
     width: 458px;
-    margin-top: 108px;
-    margin-left: 54px;
     font-weight: 500;
 font-size: 21px;
 color: #000000;
-
+}
+`
+export const Content = styled.div`
+cursor:pointer;
+height: max-content;
+    width: 458px;
+    border: 1px solid white;
+    margin-top: 88px;
+    margin-left: 54px;
+    margin-top: 88px;
+    margin-left: 54px;
+    .sub{
+      font-family: 'Pretendard';
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    height: max-content;
+    width: 458px;
+    font-weight: 500;
+font-size: 21px;
+color: #000000;
+margin-top: 20px;
 }
 `
 export const Line = styled.div`
 width: 457px;
 height: 0px;
 border: 2px solid #CBCBCB;
-margin-top: 145px;
-margin-left: 55px;
+margin-top: 57px;
 `
 export const Myapply = styled.div`
 width: 566px;
@@ -76,43 +95,36 @@ color: #000000;
 margin-top: 32px;
 margin-left: 54px;
 }
-.sub{
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    height: 37px;
-    width: 458px;
-    margin-top: 108px;
-    margin-left: 54px;
-    font-weight: 500;
-font-size: 21px;
-color: #000000;
 
-}
 `
 
 
 export const Info = styled.div`
 position: absolute;
-border: 1px solid red;
 display: flex;
 margin-top: 98px;
 `
 export const Profile = styled.div`
 position: absolute;
-border: 1px solid blue;
 width: 118px;
 height: 118px;
 box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
 margin-left: 54px;
 border-radius: 50%;
+ background-size:cover;
+object-fit: cover;
+.userimg{
+ width: 118px;
+height: 118px;
+border-radius: 50%;
+}
 .user-fix{
   font-weight: 500;
 font-size: 14px;
 letter-spacing: -0.05em;
 color: #7D7D7D;
 text-decoration-line: underline;
-margin-top: 132px;
+margin-top: 14px;
 margin-left: 35px;
 cursor:pointer;
 }
@@ -121,13 +133,11 @@ export const User = styled.div`
 position: absolute;
 width: 900px;
 height: 270px;
-border: 1px solid blue;
 margin-left: 236px;
 `
 export const Nickname = styled.div`
 justify-content: space-between;
 width: 213px;
-border: 1px solid red;
 display: flex;
 .user-name-fix{
     display: flex;
@@ -137,7 +147,7 @@ font-weight: 700;
 font-size: 17px;
 letter-spacing: -0.05em;
 color: #000000;
-margin-bottom: 54px;
+margin-bottom: 44px;
 }`
 export const Contentflex = styled.div`
 display: flex;
@@ -242,7 +252,7 @@ width: max-content;
   img{
      width: 44px;
      height: 42px;
-     border: 1px solid red;
+     
   }
   .grade-text{
 font-weight: 500;
@@ -264,8 +274,7 @@ margin-top: 13px;
     width: 590px;
     height: 64px;
     display: flex;
-    justify-content: space-between;
-    border: 1px solid red;
+    justify-content: space-between; 
     margin-left: 37px;
     margin-top: 13px;
   }
@@ -275,7 +284,6 @@ export const Category = styled.div`
 //justify-content: space-between;
 display: flex;
 width: max-content;
-border: 1px solid red;
 .user-category{
 font-weight: 700;
 font-size: 17px;
@@ -326,7 +334,6 @@ export const FavField = styled.div`
 //justify-content: space-between;
 display: flex;
 width: max-content;
-border: 1px solid red;
 .user-FavField{
 font-weight: 700;
 font-size: 17px;
