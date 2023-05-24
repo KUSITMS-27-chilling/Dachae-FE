@@ -187,7 +187,6 @@ justify-content: center;
     display: flex;
     .user-name{
      margin-right: 5px;
-     border: 1px solid black;
      .name{
   font-weight: 500;
   font-size: 19px;
@@ -200,5 +199,5 @@ justify-content: center;
         height: 32px;
         border-radius: 50%;
 
-    }
+    }}}
 `
