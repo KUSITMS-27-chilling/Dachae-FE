@@ -4,6 +4,7 @@ import {
 } from "./CommuList.styled";
 import CommuRegion from "../CommuRegion";
 import { commuRegions, commuTabKind, selectedRegion } from "../../../recoil/community";
+import { togetherToggle } from "../../../recoil/together";
 import { useRecoilValue } from "recoil";
 import { ReviewData, CommuReviewData } from "../../../types/review";
 import { CommuTogetherData, TogetherData } from "../../../types/together";

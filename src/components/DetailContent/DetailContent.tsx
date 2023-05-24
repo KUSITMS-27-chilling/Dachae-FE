@@ -3,6 +3,7 @@ import Together from "../Together";
 import Review from "../Review";
 import { DetailContentContainer } from "./DetailContent.styled";
 import { detailTabKind } from "../../recoil/detail";
+import { togetherToggle } from "../../recoil/together";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { ReviewData } from "../../types/review";
 import axios from "axios";
@@ -18,6 +19,7 @@ function DetailContent() {
   const detailTab = useRecoilValue(detailTabKind);
   const [togetherArr, setTogetherArr] = useState<TogetherData[]>([]);
   const [reviewArr, setReviewArr] = useState<ReviewData[]>([]);
+  const toggle = useRecoilValue(togetherToggle);
 
   const { region } = useParams();
 
@@ -85,7 +87,7 @@ function DetailContent() {
       getReview();
       return;
     }
-  }, [detailTab]);
+  }, [detailTab, toggle]);
 
   return(
     <DetailContentContainer>
