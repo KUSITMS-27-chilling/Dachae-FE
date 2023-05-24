@@ -105,53 +105,53 @@ export const CardContent = styled.div`
     margin-left: 56px;
 `
 export const CardTag = styled.div`
-position: absolute;
-width: 446px;
-height: 33px;
-margin-top: 376px;
-margin-left: 54px;
-display: flex;
-justify-content: space-between;
+    position: absolute;
+    width: 446px;
+    height: 33px;
+    margin-top: 376px;
+    margin-left: 54px;
+    display: flex;
+    justify-content: space-between;
 
 
-.className{
-height: 33px;
-background: #F6F6F6;
-border-radius: 26px;
-font-weight: 500;
-font-size: 19px;
-color: #535353;
-padding-left:15px;
-padding-right: 15px;
-line-height: 33px;
-}
+    .className{
+        height: 33px;
+        background: #F6F6F6;
+        border-radius: 26px;
+        font-weight: 500;
+        font-size: 19px;
+        color: #535353;
+        padding-left:15px;
+        padding-right: 15px;
+        line-height: 33px;
+    }
 `
 export const JoinPeople = styled.div`
-height: 29px;
-font-weight: 600;
-font-size: 24px;
-color: #7d7d7d; 
-display: flex;
-.join{
-    color: #39AFB0;
-}
-.goal{
-}
+    height: 29px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #7d7d7d; 
+    display: flex;
+    .join{
+        color: #39AFB0;
+    }
+    .goal{
+    }
 `
 export const TogetherBtn = styled.div`
-position: absolute;
-width: 810px;
-height: 50px;
-background: #39AFB0;
-border-radius: 13.7647px;
-margin-top: 430px;
-margin-left: 54px;
-font-weight: 500;
-font-size: 20px;
-line-height: 50px;
-letter-spacing: -0.05em;
-color: #FFFFFF;
-text-align: center;
+    position: absolute;
+    width: 810px;
+    height: 50px;
+    background: #39AFB0;
+    border-radius: 13.7647px;
+    margin-top: 430px;
+    margin-left: 54px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 50px;
+    letter-spacing: -0.05em;
+    color: #FFFFFF;
+    text-align: center;
 `
 export const CurrentJoinPeople = styled.div`
 position: absolute;
@@ -199,7 +199,6 @@ justify-content: center;
         width: 32px;
         height: 32px;
         border-radius: 50%;
+
     }
-}
-}
 `
