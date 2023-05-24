@@ -7,7 +7,7 @@ import useImage from '../../hooks/useImage';
 import { useEffect } from 'react';
 
 function ProgramCard({ category, title, btnClick, deadline }: ProgramCardInfo) {
-  const { imgUrl, imgHandler } = useImage(category);
+  const { imgUrl, imgHandler } = useImage(false, category);
 
   useEffect(() => {
     imgHandler();
