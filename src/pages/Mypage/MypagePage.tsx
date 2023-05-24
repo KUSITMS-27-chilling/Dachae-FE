@@ -24,8 +24,11 @@ import {
   Contentflexuser
 } from './Mypagepage.styled'
 import Footer from '../../components/Footer';
-import gradeImg from '../../assets/vane2.png'
-import profile from '../../assets/user_prf.png'
+import profile from '../../assets/profile_icon.png';
+import { useRecoilValue } from 'recoil';
+import { userGrade } from '../../recoil/user';
+import useGrade from '../../hooks/useGrade';
+import vane1 from '../../assets/vane1.png';
 
 interface Program {
   favFiled:string[];
@@ -52,12 +55,36 @@ function Mypage() {
   const [UserData, setUserData] = useState<Program>();
   const [PostData, setPostData] = useState<Post>();
   const [participantsData, setparticipantsData] = useState<participants>();
-  
+  const grade = useRecoilValue(userGrade);
+  const { gradeImg, standardNum, gradeHandler } = useGrade(grade);
+  const [restNum, setRestNum] = useState(0);
+
+
+  function setRest(grade: number) {
+    switch((grade / 2) % 4) {
+      case 0:
+        setRestNum(5);
+        break;
+      case 1:
+        setRestNum(4);
+        break;
+      case 2:
+        setRestNum(3);
+        break;
+      case 3:
+        setRestNum(2);
+        break;
+      case 4:
+        setRestNum(1);
+        break;
+    }
+  }
 
   useEffect(() => {
     getUser();
   }, []);
-const getUser=() =>{
+
+  const getUser=() =>{
     axios.get(`${import.meta.env.VITE_APP_HOST}/user/info`,
     {
         headers: {
@@ -66,14 +93,17 @@ const getUser=() =>{
       })
     .then((response) => {
       setUserData(response.data.data);
+      setRest(response.data.data.grade);
     })
     .catch((err) => console.log(err));
   }
 
   useEffect(() => {
     getUserPost();
+    gradeHandler();
   }, []);
-const getUserPost=() =>{
+
+  const getUserPost=() =>{
     axios.get(`${import.meta.env.VITE_APP_HOST}/user/my-post`,
     {
         headers: {
@@ -82,7 +112,6 @@ const getUserPost=() =>{
       })
     .then((response) => {
       setPostData(response.data.data);
-      console.log(response.data.data);
     })
     .catch((err) => console.log(err));
   }
@@ -90,7 +119,8 @@ const getUserPost=() =>{
   useEffect(() => {
     getUserparticipants();
   }, []);
-const getUserparticipants=() =>{
+
+  const getUserparticipants=() =>{
     axios.get(`${import.meta.env.VITE_APP_HOST}/user/participants`,
     {
         headers: {
@@ -99,13 +129,11 @@ const getUserparticipants=() =>{
       })
     .then((response) => {
       setparticipantsData(response.data.data);
-      console.log(response.data.data);
     })
     .catch((err) => console.log(err));
   }
+
   return (
-
-
     <div>
       {
         isPreparing && (
@@ -117,7 +145,7 @@ const getUserparticipants=() =>{
       <Myinfo>
         <div className='title'>내정보</div>
         <Info>
-          <Profile img={UserData ? UserData.profile : ''}>
+          <Profile img={UserData ? UserData.profile : profile}>
             <div className='user-img'>
               <img className='userimg'></img>
             </div>
@@ -126,8 +154,8 @@ const getUserparticipants=() =>{
           <User>
             <Nickname>
               <div className='flex'>
-              <div className='user-name-title'>닉네임</div>
-              <div className='user-name'>{UserData ? UserData.nickName : ''}</div>
+                <div className='user-name-title'>닉네임</div>
+                <div className='user-name'>{UserData ? UserData.nickName : ''}</div>
               </div>
              <Contentflexuser>
                 <div className='user-fix'>수정하기</div>
@@ -136,17 +164,16 @@ const getUserparticipants=() =>{
             <Grade>
               <div className='user-grade'>채움등급</div>
               <div id="learning-grade__grade-top">
-            <Contentflexgrade>
-            <div id="learning-grade__progress-bar" ></div>
+                <Contentflexgrade>
+                <progress id="learning-grade__progress-bar" value={grade % 10} max="10"/>
                   <div id="learning-grade__level-text">
-                    <div id="learning-grade__low-level">다음 단계까지 글 4개 남았어요!</div>
-                  </div>
-                       
-            </Contentflexgrade>
-            </div>
+                  <div id="learning-grade__low-level">다음 단계까지 글 {restNum}개 남았어요!</div>
+                </div>      
+                </Contentflexgrade>
+              </div>
             <div className='grade-img'>
             <img id="learning-grade__vane-img" src={gradeImg} alt="grade-img" />
-            <div className='grade-text'>레벨 2</div>
+            <div className='grade-text'>레벨 {standardNum}</div>
             </div>
              
             </Grade>

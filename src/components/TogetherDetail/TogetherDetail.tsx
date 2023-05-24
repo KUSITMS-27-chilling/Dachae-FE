@@ -13,6 +13,10 @@ import{
 
 } from './TogetherDetail.styled'
 import img from '../../assets/profile_icon.png'
+import vane1 from '../../assets/vane1.png';
+import vane2 from '../../assets/vane2.png';
+import vane3 from '../../assets/vane3.png';
+import vane4 from '../../assets/vane4.png';
 
 interface Program {
     
@@ -31,6 +35,7 @@ interface Program {
 function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [data, setData] = useState<Program>();
+    const [gradeImg, setGradeImg] = useState(vane1);
     
     function handleMouseOver() {
         setIsMouseOver(true);
@@ -73,6 +78,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                     `${import.meta.env.VITE_APP_HOST}/listen/${listenIdx}`
                 );
                 setData(response.data.data);
+                setGrade(response.data.data.grade);
             } catch (e) {
                 console.log(e);
             }
@@ -80,12 +86,32 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
         fetchData();
     },  [listenIdx]);
 
+    function setGrade(grade: number) {
+      if((grade >= 0) && (grade < 10)) {
+        setGradeImg(vane1);
+        return;
+      }
+      else if((grade >=10) && (grade < 20)) {
+        setGradeImg(vane2);
+        return;
+      }
+      else if((grade >= 20) && (grade < 30)) {
+        setGradeImg(vane3);
+        return;
+      }
+      else if((grade > 30)) {
+        setGradeImg(vane4);
+        return;
+      }
+    else return;
+  }
+
   return (
     <CardForm>
       {
         data && (
           <>
-                  <CardTop img={data ? data.profile : ''}>
+                  <CardTop profile={data ? data.profile : ''} gradeImg={gradeImg} >
         <div className='profile'></div>
             <div className='right'>
                 <div className='user-title'>

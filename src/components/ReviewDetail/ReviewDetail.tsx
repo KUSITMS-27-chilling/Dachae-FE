@@ -6,40 +6,66 @@ import{
     Line,
     CardTitle,
     CardContent,
-} from './ReviewDetail.styled'
+} from './ReviewDetail.styled';
+import vane1 from '../../assets/vane1.png';
+import vane2 from '../../assets/vane2.png';
+import vane3 from '../../assets/vane3.png';
+import vane4 from '../../assets/vane4.png';
 
 interface Program {
-  reviewId:number;
-  profile:string;
-  nickName:string;
-  createdAt:string;
-  title:string;
-  content:string;
-  favFields:string[];
-  week:number;
-  programName:string;
-  tags:string;
-  image:string;
-}
+  reviewId: number;
+  profile: string;
+  nickName: string;
+  createdAt: string;
+  title: string;
+  content: string;
+  favFields: string[];
+  week: number;
+  programName: string;
+  tags: string;
+  image: string;
+  grade: number;
+};
 
 function ReviewDetail({ reviewIdx }: { reviewIdx: number }) {
   const [data, setData] = useState<Program>();
+  const [gradeImg, setGradeImg] = useState(vane1);
 
   useEffect (() => {
     const fetchData = async () => {
-    
-        try {
-            const response = await axios.get(
-                `${import.meta.env.VITE_APP_HOST}/review/${reviewIdx}`
-            );
-            setData(response.data.data);
-            console.log(data);
-        } catch (e) {
-            console.log(e);
-        }
+      try {
+          const response = await axios.get(
+              `${import.meta.env.VITE_APP_HOST}/review/${reviewIdx}`
+          );
+          setData(response.data.data);
+          setGrade(response.data.data.grade);
+      } catch (e) {
+          console.log(e);
+      }
     }
+
     fetchData();
-},  [reviewIdx]);
+  },  [reviewIdx]);
+
+    function setGrade(grade: number) {
+      if((grade >= 0) && (grade < 10)) {
+        setGradeImg(vane1);
+        return;
+      }
+      else if((grade >=10) && (grade < 20)) {
+        setGradeImg(vane2);
+        return;
+      }
+      else if((grade >= 20) && (grade < 30)) {
+        setGradeImg(vane3);
+        return;
+      }
+      else if((grade > 30)) {
+        setGradeImg(vane4);
+        return;
+      }
+    else return;
+  }
 
 
   return (
@@ -48,7 +74,7 @@ function ReviewDetail({ reviewIdx }: { reviewIdx: number }) {
         {
           data && (
             <>
-              <CardTop img={data ? data.profile : ''}>
+              <CardTop profile={data ? data.profile : ''} gradeImg={gradeImg} >
                 <div className='profile'></div>
                 <div className='right'>
                     <div className='user-title'>
