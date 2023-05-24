@@ -29,14 +29,19 @@ interface Program {
     currentNum:number;
     goalNum:number;
     programName:string;
-    
+    participantsInfos:participantsInfo[];
+}
+interface participantsInfo {
+  profile:string;
+  nickName:string;
 }
 
 function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [data, setData] = useState<Program>();
+    const[apply, setApply] = useState(false);
     const [gradeImg, setGradeImg] = useState(vane1);
-    
+
     function handleMouseOver() {
         setIsMouseOver(true);
       }
@@ -62,6 +67,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
         )
         .then(response => {
           // console.log(response);
+          setApply(true);
         })
         .catch(e => {
           console.log(e);
@@ -84,7 +90,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
             }
         }
         fetchData();
-    },  [listenIdx]);
+    },  [listenIdx , apply]);
 
     function setGrade(grade: number) {
       if((grade >= 0) && (grade < 10)) {
@@ -148,23 +154,15 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
         <CurrentJoinPeople>
           <div className='current-join'>
             <div className='num-color'>{data.currentNum}</div>
-            명이 함께하고 있어요</div>
+            명이 함께하고 있어요
+            </div>
           <div className='user-profile'>
-            <div className='user-name'>
-            <img className="Btn_3" alt="1" src={img} />
-            <div className='name'>김연수</div>
-            </div>
-            <div className='user-name'>
-            <img className="Btn_3" alt="1" src={img} />
-            <div className='name'>김연수</div>
-            </div>
-            
-            {/* {[...Array(data.currentNum)].map((_, index) => (
-      <div className='user-name' key={index}>
-        <img className="Btn_3" alt="1" src={img} />
-        <div className='name'>김연수</div>
-      </div>
-    ))} */}
+          {Array.from({ length: data.participantsInfos.length }).map((_, index) => (
+    <div className='user-name' key={index}>
+      <img className="Btn_3" src={data.participantsInfos[index] ? data.participantsInfos[index].profile : ''} />
+      <div className='name'>{data.participantsInfos[index].nickName}</div>
+    </div>
+  ))}
           </div>
         </CurrentJoinPeople>
       )}

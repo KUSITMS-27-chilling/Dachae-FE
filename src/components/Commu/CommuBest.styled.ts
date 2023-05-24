@@ -64,6 +64,7 @@ export const CommuMyTitle = styled.div`
   font-size: 18px;
   font-weight: 700;
   color: #000000;
+  margin-bottom: 6px;
 `
 export const CommuMyDate = styled.div`
   position: relative;
