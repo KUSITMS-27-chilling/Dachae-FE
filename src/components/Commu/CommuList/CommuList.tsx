@@ -33,6 +33,28 @@ function CommuList () {
     }
   }, [regions, commuTab, selected])
 
+  function displayedAt(createdAt: string) {
+    const [y, mon, d, h, min] = createdAt.split('-').map(Number);
+    const start = new Date(y, mon - 1, d, h, min);
+    const end = new Date();
+    const difference = (end.getTime() - start.getTime());
+
+    const seconds = difference / 1000
+    if (seconds < 60) return `방금 전`
+    const minutes = seconds / 60
+    if (minutes < 60) return `${Math.floor(minutes)}분 전`
+    const hours = minutes / 60
+    if (hours < 24) return `${Math.floor(hours)}시간 전`
+    const days = hours / 24
+    if (days < 7) return `${Math.floor(days)}일 전`
+    const weeks = days / 7
+    if (weeks < 5) return `${Math.floor(weeks)}주 전`
+    const months = days / 30
+    if (months < 12) return `${Math.floor(months)}개월 전`
+    const years = days / 365
+    return `${Math.floor(years)}년 전`
+  }
+
   function getReviews () {
     regions.map((el) => {
       axios.get(`${import.meta.env.VITE_APP_HOST}/review/${el}/page`)
@@ -43,7 +65,7 @@ function CommuList () {
           const tempEl: ReviewData = {
             userImg: res[key].profile,
             userNick: res[key].nickName,
-            time: '18시간 전',
+            time: displayedAt(res[key].createdAt),
             title: res[key].title,
             lecture: res[key].programName,
             content: res[key].content,
@@ -73,7 +95,7 @@ function CommuList () {
         for(let key in res) {
           const tempEl: TogetherData = {
             nickname: res[key].nickName,
-            time: '18시간 전',
+            time: displayedAt(res[key].createdAt),
             recruiting: res[key].recruiting,
             title: res[key].title,
             favFields: res[key].favFields,
