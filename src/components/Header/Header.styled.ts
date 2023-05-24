@@ -65,6 +65,7 @@ export const NotifyProfileContainer = styled.div`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
   }
 `;
 

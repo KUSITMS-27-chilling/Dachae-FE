@@ -30,7 +30,7 @@ const MainDetailProgram = ({ region }: Props)=> {
         setLoading(true);
         try {
             const response = await axios.get(
-                `${import.meta.env.VITE_APP_HOST}/program/page/${region}`
+                `${import.meta.env.VITE_APP_HOST}/program/${region}/page`
             );
             setData(response.data.data.programs);
         } catch (e) {

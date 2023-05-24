@@ -7,6 +7,7 @@ export const TogetherContainer = styled.div<{ detailOrCommu: detailOrCommu }>`
   border-bottom: 2px solid #cbcbcb;
   margin: 0 auto;
   position: relative;
+  cursor: pointer;
 `;
 export const ReviewProfile = styled.div<{ topProp?: boolean, profile?: string }>`
   width: max-content;

@@ -44,7 +44,8 @@ export const CenterSetting = styled.div`
 
 export const RegionContainer = styled.div`
   font-size: 17px;
-  width: 16em;
+  /* width: 16em; */
+  width: max-content;
   height: 1.7647em;
   position: absolute;
   top: 3.9412em;
@@ -59,6 +60,7 @@ export const RegionContainer = styled.div`
     font-family: Pretendard;
     background-color: #DADADA;
     margin: 0.1176em 0.3529em;
+    cursor: pointer;
   }
 
   .active {

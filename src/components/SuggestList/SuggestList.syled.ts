@@ -32,6 +32,7 @@ export const CardContent = styled.div`
   margin-right: 42px;
 `
 export const SlideButton = styled.div`
+cursor: pointer;
 width: 83px;
 height: 36px;
 margin-right: 11px;

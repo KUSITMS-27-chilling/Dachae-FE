@@ -65,5 +65,6 @@ export const SearchBox = styled.div`
   #commu-region__search-icon {
     width: 1.09375rem;
     height: 1.09375rem;
+    cursor: pointer;
   }
 `;

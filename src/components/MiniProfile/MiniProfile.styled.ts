@@ -10,6 +10,7 @@ export const MiniProfileTapBox = styled.div`
   width: 23.75rem;
   height: 2.8125rem;
   display: flex;
+  cursor: pointer;
 
   .active {
     background-color: #fff;

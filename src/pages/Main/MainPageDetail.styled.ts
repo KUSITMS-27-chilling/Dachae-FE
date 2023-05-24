@@ -51,6 +51,7 @@ export const MainBody_Content_detail = styled.div`
 
 
 export const MainBody_Card = styled.div`
+cursor: pointer;
   width: 1218px;
   height: 112px;
   display: flex;
