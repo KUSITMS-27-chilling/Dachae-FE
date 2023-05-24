@@ -3,11 +3,11 @@ export const ReactstickyBox = styled.div`
 width: 327px;
 height: 545px;
 background-color: #F6F6F6;
-border: 1px solid #CBCBCB;
+border: 1px solid #F6F6F6;
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 position: sticky;
 top: 0;
-//margin-top: 702px;
+border-radius: 10px;
 button{
     margin-top: 12Px;
     margin-left: 27px;
@@ -17,6 +17,9 @@ button{
     border-radius: 14px;
     color: #FFFFFF;
     border: none;
+    font-weight: 700;
+font-size: 17px;
+letter-spacing: -0.05em;
 }
 `
 export const Title = styled.div`
@@ -121,5 +124,6 @@ color: #59CACB;
     font-weight: 400;
 font-size: 15px;
 color: #000000;
+text-align: center;
 }
 `

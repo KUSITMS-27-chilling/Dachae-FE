@@ -60,6 +60,8 @@ background: #D9D9D9;
 border-radius: 26px;
 text-align: center;
 margin-right: 12px;
+padding-left: 15px;
+padding-right:15px;
 }
 .day{
     font-style: normal;
@@ -79,8 +81,7 @@ margin-top: 123px;
 margin-left: 56px;
 `
 export const CardTitle = styled.div`
-position: absolute;
-width: 381px;
+position: absolute; 
 height: 58px;
 margin-top: 148px;
 margin-left: 56px;
@@ -98,7 +99,8 @@ margin-left: 56px;
 `
 export const CardContent = styled.div<{img:string}>`
 position: absolute;
-width: 808px;
+//border: 1px solid black;
+width: 815px;
 height: 312px;
 margin-top: 240px;
 margin-left: 56px;
@@ -112,22 +114,23 @@ background-size:cover;
     border-radius: 8px;
 }
 .content-tag{
-    
-    width: 459px;
+    //border: 1px solid blue;
+    width: 470px;
     height: 312px;
     margin-left: 37px;
 }
 .content{
-    width: 459px;
-    height: 156px;
-    border: 1px solid red;
+    width: 470px;
+    height: 260px;
     font-weight: 500;
     font-size: 18px;
+    padding-right:5px;
+    overflow: auto;
 }
 .tag{
     width: 382px;
     height: 33px;
-    margin-top: 119px;
+    margin-top: 15px;
     display: flex;
     text-align: center;
     line-height: 33px;

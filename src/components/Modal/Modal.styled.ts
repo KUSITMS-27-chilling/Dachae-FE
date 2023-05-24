@@ -9,7 +9,7 @@ background-color: white;
 padding: 42px;
 `
 export const MainText = styled.div`
-width: 150px;
+width: max-content;
 height: 29px;
 font-size: 23px;
 font-weight: 700;
@@ -31,10 +31,10 @@ justify-content: space-between;
 display: flex;
 div{
   margin-top: 10px;
-    width: 37px;
+    width: max-content;
 }
 textarea{
-    width: 594px;
+    width: 592px;
     height: 44px;
     border: 1px solid #CBCBCB;
     border-radius:10px;
@@ -43,13 +43,13 @@ textarea{
 font-size: 20px;
 line-height: 44px;
 color: #535353;
-  margin-left: 30px;
+  margin-left: 36px;
 }
 `
 export const Region = styled.div`
 margin-bottom: 11px;
 select{
-  margin-left: 76px;
+  margin-left: 78px;
   width: 173px;
   height: 44px;
   border: 1px solid #CBCBCB;
@@ -110,11 +110,12 @@ justify-content: space-between;
 display: flex;
 textarea{
   font-family: Pretendard;
-    width: 592px;
-    height: 279px;
+    width: 587px;
+    height: 273px;
     border: 1px solid #CBCBCB;
     border-radius:10px;
     font-size: 20px;
+    padding: 5px;
 }
 `
 export const Button = styled.div`

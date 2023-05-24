@@ -61,6 +61,8 @@ background: #D9D9D9;
 border-radius: 26px;
 text-align: center;
 margin-right: 12px;
+padding-left: 15px;
+padding-right:15px;
 }
 .day{
     font-style: normal;
@@ -190,6 +192,8 @@ padding-right:12px ;
     }
     img{
         margin-left: 7px;
+        width: 32px;
+        height: 32px;
     }
 }
 }

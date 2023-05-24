@@ -8,7 +8,7 @@ export const MainBanner = styled.div`
 export const ReviewDetailBox = styled.div`
   position: relative;
   margin-left: 378px;
-  margin-top: 57px;
+  margin-top: 45px;
 `
 export const Comment = styled.div`
   position: relative;

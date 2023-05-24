@@ -40,7 +40,7 @@ function MainBodyContent({ prop }: MainContentProp) {
 		<>
 			<MainContent>
 				<MainContentWrapper>
-
+				
 					<MainContentHeader>
 							<div id='main-content__lg-name'>{prop.region} 동네배움터</div>
 							<MainContentFav>
