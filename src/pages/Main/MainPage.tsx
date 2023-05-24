@@ -48,10 +48,10 @@ function MainPage() {
         if(programsData[key].programs) {
           for(let i = 0; i < programsData[key].programs.length; i++) {
             programArr.push({
-              programName: programsData[key].programs[i].programName,
-              programEnd: programsData[key].programs[i].endDate,
-              programUrl: programsData[key].programs[i].url,
-              programCategory: programsData[key].programs[i].category
+              programName: programsData[key].programs[i].programName ? programsData[key].programs[i].programName : '',
+              programEnd: programsData[key].programs[i].endDate ? programsData[key].programs[i].endDate : '2023-05-24',
+              programUrl: programsData[key].programs[i].url ? programsData[key].programs[i].url : '',
+              programCategory: programsData[key].programs[i].category ? programsData[key].programs[i].category : 'etc'
             })
           }
         }
@@ -85,10 +85,10 @@ function MainPage() {
         if(programsData[key].programs) {
           for(let i = 0; i < programsData[key].programs.length; i++) {
             programArr.push({
-              programName: programsData[key].programs[i].programName,
-              programEnd: programsData[key].programs[i].endDate,
-              programUrl: programsData[key].programs[i].url,
-              programCategory: programsData[key].programs[i].category
+              programName: programsData[key].programs[i].programName ? programsData[key].programs[i].programName : '',
+              programEnd: programsData[key].programs[i].endDate ? programsData[key].programs[i].endDate : '2023-05-24',
+              programUrl: programsData[key].programs[i].url ? programsData[key].programs[i].url : '',
+              programCategory: programsData[key].programs[i].category ? programsData[key].programs[i].category : 'etc'
             })
           }
         }

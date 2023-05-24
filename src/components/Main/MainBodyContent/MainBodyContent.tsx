@@ -13,7 +13,6 @@ import {
 import vector_icon1 from '../../../assets/Vector.png'
 import vector_icon2 from '../../../assets/Vector1.png'
 import vector_icon3 from '../../../assets/Vector2.png'
-import temp_program from '../../../assets/temp_program.jpg';
 import ProgramCard from '../../ProgramCard';
 import { MainContentProp } from '../../../types/mainContent';
 
@@ -87,24 +86,48 @@ function MainBodyContent({ prop }: MainContentProp) {
 								<div id='main-content__program-text'>에서 모집 중인 프로그램</div>
 							</div>
 							<MainContentProgramContainer>
-									<ProgramCard 
-											category={prop.programs[0].programCategory!}
+								{
+									prop.programs && (
+										<>
+											<ProgramCard 
+												category={prop.programs[0].programCategory}
+												title={prop.programs[0].programName!}
+												btnClick={btnClick}
+												deadline={formatEndDate(prop.programs[0].programEnd!)}
+										></ProgramCard>
+										<ProgramCard
+												category={prop.programs[1].programCategory}
+												title={prop.programs[1].programName!}
+												btnClick={btnClick}
+												deadline={formatEndDate(prop.programs[1].programEnd!)}
+										></ProgramCard>
+										<ProgramCard 
+												category={prop.programs[2].programCategory}
+												title={prop.programs[2].programName!}
+												btnClick={btnClick}
+												deadline={formatEndDate(prop.programs[2].programEnd!)}
+										></ProgramCard>
+										</>
+									)
+								}
+									{/* <ProgramCard 
+											category={prop.programs[0].programCategory}
 											title={prop.programs[0].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[0].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
-											category={prop.programs[1].programCategory!}
+											category={prop.programs[1].programCategory}
 											title={prop.programs[1].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[1].programEnd!)}
 									></ProgramCard>
 									<ProgramCard 
-											category={prop.programs[2].programCategory!}
+											category={prop.programs[2].programCategory}
 											title={prop.programs[2].programName!}
 											btnClick={btnClick}
 											deadline={formatEndDate(prop.programs[2].programEnd!)}
-									></ProgramCard>
+									></ProgramCard> */}
 							</MainContentProgramContainer>
 					</MainContentProgram>
 

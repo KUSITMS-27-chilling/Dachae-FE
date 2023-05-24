@@ -22,7 +22,7 @@ function DetailContent() {
   const { region } = useParams();
 
   const getListenTogether = async () => {
-    await axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${region}/page`)
+    await axios.get(`${import.meta.env.VITE_APP_HOST}/listen/${region}/page`)
       .then((res) => {
         const response = res.data.data.listenTogethers;
         const tempArr:TogetherData[] = [];
