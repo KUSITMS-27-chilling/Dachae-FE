@@ -15,12 +15,12 @@ import vane4 from '../../assets/vane4.png';
 import x_mark from '../../assets/x_mark.png';
 import { userGrade } from "../../recoil/user";
 import { useRecoilValue } from "recoil";
+import useGrade from "../../hooks/useGrade";
 
 function MiniProfile({ favField }: { favField: Array<string>}) {
   const [selectedTap, setSelectedTap] = useState('learningGrade');
-  const [gradeImg, setGradeImg] = useState(vane4);
-  const [standardNum, setStandardNum] = useState(1);
   const grade = useRecoilValue(userGrade);
+  const { gradeImg, standardNum, gradeHandler } = useGrade(grade);
 
   const lnArr = ['내가 작성한 같이듣기 인원이 찼습니다.', 
                 'herblee 님이 같이 듣기를 신청하였습니다.', 
@@ -38,26 +38,6 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
     if(e.currentTarget.dataset.text == 'learningNews') setSelectedTap('learningNews');
   }
 
-  function setGrade() {
-    if((grade >= 0) && (grade < 10)) {
-      setGradeImg(vane1);
-      setStandardNum(1);
-    }
-    else if((grade >=10) && (grade < 20)) {
-      setGradeImg(vane2);
-      setStandardNum(2);
-    }
-    else if((grade >= 20) && (grade < 30)) {
-      setGradeImg(vane3);
-      setStandardNum(3);
-    }
-    else if((grade > 30)) {
-      setGradeImg(vane4);
-      setStandardNum(4);
-    }
-    else return;
-  }
-
   function addSeeMore(titleStr: string): string {
     let tempStr = titleStr;
 
@@ -71,7 +51,7 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
   }
 
   useEffect(() => {
-    setGrade();
+    gradeHandler();
   }, [grade])
 
   return(
