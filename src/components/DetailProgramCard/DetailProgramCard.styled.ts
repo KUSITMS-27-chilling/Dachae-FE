@@ -35,17 +35,17 @@ export const CardTitle = styled.div`
 
 `
 export const CardContent = styled.div`
-  margin-top: 30px;
+  margin-top: 27px;
   width: 300px;
-  height: 27px;
+  height: max-content;
   display: flex;
   .category{
     font-size: 18px;
     letter-spacing: -0.05em;
     font-weight: 600;
     color: #606060;
-    margin-right: 17px;
-    line-height: 27px;
+    margin-right: 16px;
+    margin-top: 4px; /* 바닥에 붙이기 */
   }
 `
 export const Button = styled.button`

@@ -158,7 +158,7 @@ font-size: 14px;
 letter-spacing: -0.05em;
 text-decoration-line: underline;
 color: #7D7D7D;
-line-height: 20px;
+line-height: 27px;
 margin-left: 6px;
 }
 .category{
@@ -172,13 +172,6 @@ font-weight: 500;
 font-size: 16px;
 line-height: 27px;
 color: #535353;
-margin-right: 10px;
-}
-.user-name{
-font-weight: 400;
-font-size: 17px;
-letter-spacing: -0.05em;
-color: #000000;
 margin-right: 10px;
 }
  #learning-grade__progress-bar {
@@ -208,6 +201,26 @@ margin-right: 10px;
     font-size: 15px;
     font-weight: 500;
   }
+`
+export const Contentflexuser = styled.div`
+display: flex;
+.user-fix{
+cursor:pointer;
+font-weight: 500;
+font-size: 14px;
+letter-spacing: -0.05em;
+text-decoration-line: underline;
+color: #7D7D7D;
+line-height: 20px;
+margin-left: 6px;
+}
+.user-name{
+font-weight: 400;
+font-size: 17px;
+letter-spacing: -0.05em;
+color: #000000;
+margin-right: 10px;
+}
 `
 export const Contentflexgrade = styled.div`
  #learning-grade__progress-bar {

@@ -18,7 +18,8 @@ import {
   Contentflex,
   Line,
   Contentflexgrade,
-  Content
+  Content,
+  Contentflexuser
 } from './Mypagepage.styled'
 import Footer from '../../components/Footer';
 import gradeImg from '../../assets/vane2.png'
@@ -48,10 +49,10 @@ function Mypage() {
           <User>
             <Nickname>
               <div className='user-name-title'>닉네임</div>
-             <Contentflex>
+             <Contentflexuser>
                 <div className='user-name'>다채고수</div>
                 <div className='user-fix'>수정하기</div>
-              </Contentflex>
+              </Contentflexuser>
             </Nickname>
             <Grade>
               <div className='user-grade'>채움등급</div>

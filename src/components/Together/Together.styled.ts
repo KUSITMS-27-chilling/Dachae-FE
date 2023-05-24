@@ -140,10 +140,10 @@ export const TogetherFooter = styled.div<{ detailOrCommu: detailOrCommu }>`
   }
 
   #together__recruit-img {
-    width: 2.625rem;
-    height: 2.625rem;
+    width: 42px;
+    height: 42px;
     position: absolute;
-    right: 2.125rem;
+    left: 835px;
   }
 
   #together__hit-and-goal {

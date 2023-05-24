@@ -72,6 +72,7 @@ export const ReviewSeeMore = styled.div<{ seeMore?: boolean }>`
   color: #535353;
   cursor: pointer;
   display: ${props => props.seeMore ? 'visible' : 'none'};
+  margin-top: 12px;
 `;
 
 export const ReviewInfo = styled.div`
@@ -98,9 +99,10 @@ export const ReviewInfo = styled.div`
 export const ReviewContent = styled.div<{ detailOrCommu: detailOrCommu }>`
   /* width: 37.125rem; */
   width: ${props => props.detailOrCommu == 'detail' ? '46.5rem' : '37.125rem'};
-  height: 5.6875rem;
+  height: 87px;
   overflow: hidden;
   font-size: 18px;
+  border: 1px solid black;
 `;
 
 export const ReviewPlace = styled.div<{ topProp?: boolean }>`

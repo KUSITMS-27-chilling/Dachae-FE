@@ -16,7 +16,8 @@ import {
     Subtitle,
     Subcontent,
     Contentinfo,
-    Contentclass
+    Contentclass,
+    Line
 } from '../../pages/TeacherDetail/TeacherDetailPage.styled'
 import TeacherTabBar from '../../components/TeacherTap/TeacherTap';
 import StickyScroll from '../../components/StickyScroll/StickyScroll';
@@ -35,7 +36,10 @@ interface Program {
 interface Class{
   price: number;
   goalNum: number;
-  proceed: string;
+  lectureObjective: string;
+  lectureContent:string;
+  lectureMethod:string;
+  lectureRequired:string;
 }
 interface img{
   images:string[];
@@ -123,6 +127,7 @@ function TeacherDetailPage() {
         <div className='img2' ></div>
       </HeaderImg>
       <TeacherTabBar thisTeacher={TeacherTab}/>
+      <Line></Line>
       <Total>
       <Contentleft>
       <TeacherImg imgSrc={TeacherData ? TeacherData.profile : ''}>
@@ -160,13 +165,13 @@ function TeacherDetailPage() {
       </Title>
       <Contentclass>
         <div className='subclasstitle'>수업 목표</div>
-        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasscontent'> {ClassData && ClassData.lectureObjective}</div>
         <div className='subclasstitle'>강의 내용</div>
-        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasscontent'> {ClassData && ClassData.lectureContent}</div>
         <div className='subclasstitle'>강의 방식</div>
-        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasscontent'> {ClassData && ClassData.lectureMethod}</div>
         <div className='subclasstitle'>필요한 장비</div>
-        <div className='subclasscontent'> {ClassData && ClassData.proceed}</div>
+        <div className='subclasscontent'> {ClassData && ClassData.lectureRequired}</div>
         </Contentclass>
       </Contentleft>
       <ContentRight>

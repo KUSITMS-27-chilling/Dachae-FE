@@ -14,7 +14,7 @@ export const RegionBtnBox = styled.div`
   height: 2.25rem;
   display: flex;
   position: absolute;
-  top: 50%;
+  top: 27%;
   left: 0;
   transform: translateY(-50%);
 
@@ -42,10 +42,11 @@ export const RegionBtnBox = styled.div`
 
 export const SearchBox = styled.div`
   width: 18.5rem;
-  height: 2.03125rem;
+  height: 26px;
+  line-height: 26px;
   border-bottom: 2px solid #cbcbcb;
   position: absolute;
-  top: 50%;
+  top: 29%;
   right: 0;
   transform: translateY(-50%);
   display: flex;

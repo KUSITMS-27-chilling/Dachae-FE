@@ -4,7 +4,6 @@ export const TabBarContainer = styled.div`
   width: 100%;
   height: 4.4375rem;
   position: relative;
-  box-shadow: 0px 4px 6px rgba(162, 162, 162, 0.25);
 `;
 
 export const CategoryContainer = styled.div`
