@@ -44,7 +44,8 @@ export const CenterSetting = styled.div`
 
 export const RegionContainer = styled.div`
   font-size: 17px;
-  width: 16em;
+  /* width: 16em; */
+  width: max-content;
   height: 1.7647em;
   position: absolute;
   top: 3.9412em;
