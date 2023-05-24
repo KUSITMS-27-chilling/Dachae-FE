@@ -72,6 +72,7 @@ export const ReviewSeeMore = styled.div<{ seeMore?: boolean }>`
   color: #535353;
   cursor: pointer;
   display: ${props => props.seeMore ? 'visible' : 'none'};
+  margin-top: 12px;
 `;
 
 export const ReviewInfo = styled.div`

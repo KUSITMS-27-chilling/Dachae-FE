@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MainContent = styled.div`
+margin-top: 5px;
   position: relative;
   width: 100%;
   height: 46.4375rem;
@@ -26,7 +27,7 @@ export const MainContentHeader = styled.div`
   align-items: end;
 
   #main-content__lg-name {
-    width: 13rem;
+    width: max-content;
     height: 1.9375rem;
     font-size: 26px;
     font-weight: 500;

@@ -34,13 +34,15 @@ export const TodayMyTop = styled.div`
   #today-my-top__logout-btn{
     width: 5.4375rem;
     height: 1.75rem;
-    border: 1.4px solid #59CACB;
+    border: 2px solid #59CACB;
     border-radius: 1.625rem;
     font-weight: 600;
     position: absolute;
     top: 1.5625rem;
     right: 1.9375rem;
     cursor: pointer;
+    background-color: #F6F6F6;
+    font-size: 15px;
   }
 `
 

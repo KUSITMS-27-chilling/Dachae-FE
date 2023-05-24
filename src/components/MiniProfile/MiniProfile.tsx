@@ -22,7 +22,10 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
   const [standardNum, setStandardNum] = useState(1);
   const grade = useRecoilValue(userGrade);
 
-  const lnArr = ['소식 본문1', '소식 본문2', '소식 본문3', '소식 본문 4'];
+  const lnArr = ['내가 작성한 같이듣기 인원이 찼습니다.', 
+                'herblee 님이 같이 듣기를 신청하였습니다.', 
+                'hyuna 님이 같이 듣기를 신청하였습니다.', 
+                '다채님이 같이 듣기를 신청하였습니다.'];
 
   function clickTap (e:React.MouseEvent<HTMLDivElement>) {
     const tapArr = document.querySelectorAll('.mini-profile__tap');
@@ -53,6 +56,18 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
       setStandardNum(4);
     }
     else return;
+  }
+
+  function addSeeMore(titleStr: string): string {
+    let tempStr = titleStr;
+
+    if(titleStr.length > 18) {
+      tempStr = tempStr.slice(0, 17);
+      tempStr += '...'
+      return tempStr;
+    }
+
+    return tempStr;
   }
 
   useEffect(() => {
@@ -98,7 +113,7 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
                 lnArr.map((el, idx) => (
                   <LearningNews key={idx}>
                     <div id="learning-news__circle"></div>
-                    <div id="learning-news__title">{el}</div>
+                    <div id="learning-news__title">{addSeeMore(el)}</div>
                     <img id="learning-news__x" src={x_mark} alt="x-mark" />
                   </LearningNews>
                 ))

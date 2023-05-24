@@ -18,7 +18,7 @@ function TabBar({ prop = 'program' } : TabBarProps) {
     activeCategory!.classList.add('active');
   }, [])
 
-  const goMain =()=>{ //메인 디테일
+  const goMain =()=>{ //메인
     navigate("/");
   }
   const goSuggest =()=>{ //제안할래요
@@ -41,7 +41,7 @@ function TabBar({ prop = 'program' } : TabBarProps) {
         <div
           id="tab-bar__category-suggest"
           className="tab-bar__category" 
-          onClick={goSuggest}>우리 동네 강사</div>
+          onClick={goSuggest}>우리동네 강사</div>
         <div
           id="tab-bar__category-community"
           className="tab-bar__category" 

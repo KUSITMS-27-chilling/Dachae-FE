@@ -50,7 +50,7 @@ function StickyScroll() {
         <Popup className={popupVisible ? '' : 'hide'}>
           <div className='popup-title'>신청완료</div>
           <div className='popup-sub'>강사가 남긴 메세지</div>
-          <div className='popup-content'>쉽고 재밌게 스탭바이스탭 알려주는 강사 김성은 입니다! 신청해주셔서 감사합니다.</div>
+          <div className='popup-content'>쉽고 재밌게 스탭바이스탭 알려주는 강사<br/>김성은 입니다! <br/>신청해주셔서 감사합니다.</div>
         </Popup>
       )}
     </div>

@@ -135,7 +135,6 @@ function MainPage() {
         </MainBody_Today>
 
         <TabBar />
-
         {
           !state &&
           <MainMiddle>

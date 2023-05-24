@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderImg= styled.div<{img:string[]}>`
+border: 1px solid black;
  width: 1156px;
  height: 352px;
  margin-top: 68px;
@@ -81,6 +82,13 @@ background-color: #59CACB;
 margin-right: 19px;
 }
 `
+export const Line = styled.div`
+position: absolute;
+width: 802px;
+height: 0px;
+left: 142px;  
+border: 2px solid #F2F2F2;
+`;
 export const Total= styled.div`
 width: 1156px;
 margin-left: 142px;

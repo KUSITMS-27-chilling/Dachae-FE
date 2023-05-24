@@ -6,9 +6,10 @@ export const MainBanner = styled.div`
   background-color: #91C8CA;
 `
 export const ReviewDetailBox = styled.div`
+
   position: relative;
-  margin-left: 378px;
-  margin-top: 57px;
+  margin-left: 393px;
+  margin-top: 45px;
 `
 export const Comment = styled.div`
   position: relative;

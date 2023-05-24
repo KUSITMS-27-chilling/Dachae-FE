@@ -13,19 +13,19 @@ export const CommuRegionBtnBox = styled.div`
   height: 2.25rem;
   display: flex;
   position: absolute;
-  top: 50%;
+  top: 27%;
   left: 0;
   transform: translateY(-50%);
 
   .commu-region__btn {
     width: max-content;
-    height: 2.25rem;
+    height: 36px;
     background-color: #dadada;
     color: #535353;
     font-size: 20px;
     font-weight: 500;
     border-radius: 0.75rem;
-    line-height: 2.25rem;
+    line-height: 36px;
     padding: 3px 17px;
     margin-right: 0.75rem;
     cursor: pointer;
@@ -40,11 +40,13 @@ export const CommuRegionBtnBox = styled.div`
 `;
 
 export const CommuSearchBox = styled.div`
+//border: 1px solid black;
   width: 18.5rem;
-  height: 2.03125rem;
+  height: 26px;
+  line-height: 26px;
   border-bottom: 2px solid #cbcbcb;
   position: absolute;
-  top: 50%;
+  top: 29%;
   right: 0;
   transform: translateY(-50%);
   display: flex;
