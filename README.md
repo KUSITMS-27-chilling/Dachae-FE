@@ -197,7 +197,7 @@ https://dachae.vercel.app/
 
 ### 📃 API 명세
   
-  ![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/775dc8e8-e753-4dcc-be3b-c413dfbef1f8)
+  넣어야함
 
   <br/>
   
