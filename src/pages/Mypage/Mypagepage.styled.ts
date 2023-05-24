@@ -22,7 +22,7 @@ export const My = styled.div`
 display: flex;
 margin-top: 76px;
 margin-left: 142px;
-height: 1000px;
+height: 550px;
 `
 export const MyWrite = styled.div`
 width: 566px;
@@ -104,19 +104,20 @@ position: absolute;
 display: flex;
 margin-top: 98px;
 `
-export const Profile = styled.div`
+export const Profile = styled.div<{img:string}>`
 position: absolute;
 width: 118px;
 height: 118px;
 box-shadow: 0px 5px 9px 2px rgba(0, 0, 0, 0.15);
 margin-left: 54px;
 border-radius: 50%;
- background-size:cover;
-object-fit: cover;
 .userimg{
+  background-image: ${props => `url(${props.img})`};
  width: 118px;
 height: 118px;
 border-radius: 50%;
+ background-size:cover;
+object-fit: cover;
 }
 .user-fix{
   font-weight: 500;
@@ -137,8 +138,18 @@ margin-left: 236px;
 `
 export const Nickname = styled.div`
 justify-content: space-between;
-width: 213px;
+width: max-content;
 display: flex;
+.flex{
+   display: flex;
+}
+.user-name{
+font-weight: 400;
+font-size: 17px;
+letter-spacing: -0.05em;
+color: #000000;
+margin-right: 16px;
+}
 .user-name-fix{
     display: flex;
 }
@@ -148,6 +159,7 @@ font-size: 17px;
 letter-spacing: -0.05em;
 color: #000000;
 margin-bottom: 44px;
+margin-right: 45px;
 }`
 export const Contentflex = styled.div`
 display: flex;
@@ -213,13 +225,6 @@ text-decoration-line: underline;
 color: #7D7D7D;
 line-height: 20px;
 margin-left: 6px;
-}
-.user-name{
-font-weight: 400;
-font-size: 17px;
-letter-spacing: -0.05em;
-color: #000000;
-margin-right: 10px;
 }
 `
 export const Contentflexgrade = styled.div`

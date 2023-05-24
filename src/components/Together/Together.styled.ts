@@ -17,6 +17,8 @@ export const ReviewProfile = styled.div<{ topProp?: boolean, profile?: string }>
   top: ${props => props.topProp ? '2.4375rem' : '2rem'};
 
   #review__profile-photo {
+    object-fit: cover;
+    background-size:cover;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;
@@ -143,7 +145,7 @@ export const TogetherFooter = styled.div<{ detailOrCommu: detailOrCommu }>`
     width: 42px;
     height: 42px;
     position: absolute;
-    left: 835px;
+    right: 50px;
   }
 
   #together__hit-and-goal {

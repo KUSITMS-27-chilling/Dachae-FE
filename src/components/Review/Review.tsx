@@ -67,7 +67,7 @@ function Review({ props }: ReviewProps) {
         </ReviewContent>
         {
           overLength == true ?
-          <ReviewSeeMore seeMore={true} >더보기</ReviewSeeMore>
+          <ReviewSeeMore seeMore={true}>더보기</ReviewSeeMore>
           :
           <ReviewSeeMore>더보기</ReviewSeeMore>
         }
