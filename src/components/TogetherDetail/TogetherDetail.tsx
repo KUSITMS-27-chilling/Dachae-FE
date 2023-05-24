@@ -112,6 +112,26 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     else return;
   }
 
+    function setGrade(grade: number) {
+      if((grade >= 0) && (grade < 10)) {
+        setGradeImg(vane1);
+        return;
+      }
+      else if((grade >=10) && (grade < 20)) {
+        setGradeImg(vane2);
+        return;
+      }
+      else if((grade >= 20) && (grade < 30)) {
+        setGradeImg(vane3);
+        return;
+      }
+      else if((grade > 30)) {
+        setGradeImg(vane4);
+        return;
+      }
+    else return;
+  }
+
   return (
     <CardForm>
       {
