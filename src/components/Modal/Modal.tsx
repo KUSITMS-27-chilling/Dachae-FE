@@ -75,7 +75,6 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
       });
       setOptions1(programs);
       //setProgramIdx(response.data.programIdx);
-      console.log(programs);
       
     }
   catch(e) {
@@ -83,8 +82,6 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
   }}
   fetchData();
   },  [region]);
-  console.log (region);
-
 
 
   const handleSubmit = async () => {
@@ -113,7 +110,6 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
           },
         }
       );
-      console.log(response.data);
     } catch (e) {
       console.log(e);
     }
