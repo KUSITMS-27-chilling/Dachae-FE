@@ -26,7 +26,7 @@ export const MainContentHeader = styled.div`
   align-items: end;
 
   #main-content__lg-name {
-    width: 11rem;
+    width: 13rem;
     height: 1.9375rem;
     font-size: 26px;
     font-weight: 500;
