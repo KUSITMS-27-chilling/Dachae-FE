@@ -87,20 +87,23 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
   const handleSubmit = async () => {
     const token = localStorage.getItem('access_token');
     let tempIdx = 0;
+    const selectedNum: number = parseInt(selectedOption2) || parseInt(options2[0]);
+    const selectedProgram: string = selectedOption1 || options1[0].programName;
 
     options1.forEach(el => {
-      if(el.programName == selectedOption1) {
+      if(el.programName == selectedProgram) {
         tempIdx = el.programIdx;
       }
     })
+    
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_APP_HOST}/listen/post`,
         {
           title: title,
           region: region,
-          programName: selectedOption1,
-          goalNum: parseInt(selectedOption2),
+          programName: selectedProgram,
+          goalNum: selectedNum,
           content: text,
           programIdx:tempIdx,
         },
@@ -117,8 +120,8 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
     console.log({
       title: title,
       region: region,
-      programName: selectedOption1,
-      goalNum: parseInt(selectedOption2),
+      programName: selectedProgram,
+      goalNum: selectedNum,
       content: text,
       programIdx:tempIdx,
     });
