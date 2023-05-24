@@ -59,7 +59,7 @@ export const CommuMyContent = styled.div`
 
 export const CommuMyTitle = styled.div`
   position: relative;
-  width: 198px;
+  width: 14rem;
   height: 1.3125rem;
   font-size: 18px;
   font-weight: 700;

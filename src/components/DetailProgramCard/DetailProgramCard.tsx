@@ -15,7 +15,7 @@ interface Program {
 };
 
 function DetailProgramCard({ card }: { card: Program }) {
-  const { imgUrl, imgHandler } = useImage(card.category);
+  const { imgUrl, imgHandler } = useImage(true, card.category);
 
   useEffect(() => {
     imgHandler();

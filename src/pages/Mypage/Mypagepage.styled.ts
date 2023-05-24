@@ -215,49 +215,48 @@ margin-right: 10px;
   }
 `
 export const Contentflexuser = styled.div`
-display: flex;
-.user-fix{
-cursor:pointer;
-font-weight: 500;
-font-size: 14px;
-letter-spacing: -0.05em;
-text-decoration-line: underline;
-color: #7D7D7D;
-line-height: 20px;
-margin-left: 6px;
-}
+  display: flex;
+  .user-fix{
+    cursor:pointer;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.05em;
+    text-decoration-line: underline;
+    color: #7D7D7D;
+    line-height: 20px;
+    margin-left: 6px;
+  }
 `
 export const Contentflexgrade = styled.div`
- #learning-grade__progress-bar {
-  margin-top: 5px;
-    width: 590px;
-    height: 14px;
-    appearance: none;
-   background: #D9D9D9;
-border-radius: 10px;
+  #learning-grade__progress-bar {
+    width: 36.875rem;
+    height: 0.875rem;
+    background-color: #d9d9d9;
+    border-radius: 10px;
   }
 
   #learning-grade__progress-bar::-webkit-progress-bar {
-    width: 16.9375rem;
-    height: 0.375rem;
+    width: 36.875rem;
+    height: 0.875rem;
     background-color: #d9d9d9;
+    border-radius: 10px;
   }
 
   #learning-grade__progress-bar::-webkit-progress-value {
-    width: 16.9375rem;
-    height: 0.375rem;
+    width: 36.875rem;
+    height: 0.875rem;
     background-color: #66dccf;
+    border-radius: 10px;
   }
 
   #learning-grade__level-text{
     display: flex;
     font-weight: 400;
-font-size: 17px;
-line-height: 20px;
-letter-spacing: -0.05em;
-margin-top: 13px;
-color: #535353;
-
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: -0.05em;
+    margin-top: 13px;
+    color: #535353;
   }
 `
 export const Grade = styled.div`

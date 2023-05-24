@@ -15,14 +15,17 @@ import vane4 from '../../assets/vane4.png';
 import x_mark from '../../assets/x_mark.png';
 import { userGrade } from "../../recoil/user";
 import { useRecoilValue } from "recoil";
+import useGrade from "../../hooks/useGrade";
 
 function MiniProfile({ favField }: { favField: Array<string>}) {
   const [selectedTap, setSelectedTap] = useState('learningGrade');
-  const [gradeImg, setGradeImg] = useState(vane4);
-  const [standardNum, setStandardNum] = useState(1);
   const grade = useRecoilValue(userGrade);
+  const { gradeImg, standardNum, gradeHandler } = useGrade(grade);
 
-  const lnArr = ['소식 본문1', '소식 본문2', '소식 본문3', '소식 본문 4'];
+  const lnArr = ['내가 작성한 같이듣기 인원이 찼습니다.', 
+                'herblee 님이 같이 듣기를 신청하였습니다.', 
+                'hyuna 님이 같이 듣기를 신청하였습니다.', 
+                '다채님이 같이 듣기를 신청하였습니다.'];
 
   function clickTap (e:React.MouseEvent<HTMLDivElement>) {
     const tapArr = document.querySelectorAll('.mini-profile__tap');
@@ -35,28 +38,20 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
     if(e.currentTarget.dataset.text == 'learningNews') setSelectedTap('learningNews');
   }
 
-  function setGrade() {
-    if((grade >= 0) && (grade < 10)) {
-      setGradeImg(vane1);
-      setStandardNum(1);
+  function addSeeMore(titleStr: string): string {
+    let tempStr = titleStr;
+
+    if(titleStr.length > 18) {
+      tempStr = tempStr.slice(0, 17);
+      tempStr += '...'
+      return tempStr;
     }
-    else if((grade >=10) && (grade < 20)) {
-      setGradeImg(vane2);
-      setStandardNum(2);
-    }
-    else if((grade >= 20) && (grade < 30)) {
-      setGradeImg(vane3);
-      setStandardNum(3);
-    }
-    else if((grade > 30)) {
-      setGradeImg(vane4);
-      setStandardNum(4);
-    }
-    else return;
+
+    return tempStr;
   }
 
   useEffect(() => {
-    setGrade();
+    gradeHandler();
   }, [grade])
 
   return(
@@ -98,7 +93,7 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
                 lnArr.map((el, idx) => (
                   <LearningNews key={idx}>
                     <div id="learning-news__circle"></div>
-                    <div id="learning-news__title">{el}</div>
+                    <div id="learning-news__title">{addSeeMore(el)}</div>
                     <img id="learning-news__x" src={x_mark} alt="x-mark" />
                   </LearningNews>
                 ))
