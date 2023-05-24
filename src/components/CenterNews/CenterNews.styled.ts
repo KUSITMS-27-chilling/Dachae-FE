@@ -115,6 +115,7 @@ export const LearningGroundList = styled.div`
   font-weight: 600;
   overflow-x: hidden;
   overflow-y: auto;
+  //letter-spacing: -0.05em;
 `
 
 export const LearningGroundProgram = styled.div`
@@ -126,8 +127,19 @@ export const LearningGroundProgram = styled.div`
 `;
 
 export const LearningGroundText = styled.div`
-  width: max-content;
+
+  width: 297px;
   height: 1.125rem;
+  letter-spacing: -0.05em;
+`;
+export const LearningGroundTextDay = styled.div`
+
+  width: 248px;
+  height: 1.125rem;
+  letter-spacing: -0.05em;
+  text-align: left;
+  justify-content: left;
+  margin-left: 53px;
 `;
 
 export const CenterNewsOut = styled.div`

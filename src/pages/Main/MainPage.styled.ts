@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MainMiddle = styled.div`
+margin-top: 5px;
   width: 100%;
   height: 12.125rem;
   background-color: #f6f6f6;

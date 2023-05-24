@@ -8,7 +8,8 @@ import {
   LearningGroundList,
   LearningGroundProgram,
   LearningGroundText,
-  CenterNewsOut
+  CenterNewsOut,
+  LearningGroundTextDay
 } from './CenterNews.styled';
 import { LGData, LGProgram } from '../../types/centerNews';
 import { useEffect, useState } from 'react';
@@ -145,7 +146,7 @@ function CenterNews({ openModal }: { openModal: () => void }) {
               programs.map((el, idx) => (
                 <LearningGroundProgram key={idx}>
                   <LearningGroundText onClick={() => goLearningGround(el.programUrl)}>{el.programTitle}</LearningGroundText>
-                  <LearningGroundText>신청기간 {el.programPeriod}</LearningGroundText>
+                  <LearningGroundTextDay>신청기간 {el.programPeriod}</LearningGroundTextDay>
                 </LearningGroundProgram>
               ))
             }
