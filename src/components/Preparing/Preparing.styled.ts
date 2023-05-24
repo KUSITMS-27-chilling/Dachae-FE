@@ -10,7 +10,7 @@ export const PreparingWrapper = styled.div`
 export const PreparingContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
 `
