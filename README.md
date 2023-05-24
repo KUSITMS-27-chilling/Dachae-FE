@@ -183,8 +183,8 @@ https://dachae.vercel.app/
 > Front-end
   
 1. `main` → `develop` 브랜치 분기
-    - 기본적으로 모든 작업은 `develop` 브랜치에서 이루어지며, 배포 시에 `main` 에 merge<br/>
 2. `develop` → `{타입}/{기능 이름}/{작업자 이름}` 브랜치 분기하여 작업<br/>
+   - 기본적으로 모든 작업은 `develop` 브랜치에서 이루어지며, 배포 시에 `main` 에 merge<br/>
 3. commit → push → Pull Request 작성 (관련 Issue 와 연결)<br/>
     - PR 양식 : `1. 추가 기능`, `2. 추후 개선`, `3. FE의 경우 스크린샷`<br/>
     - Issue 양식 : `1. Description`, `2. Todo`, `3. Etc`<br/>
@@ -193,7 +193,16 @@ https://dachae.vercel.app/
 6. merge 된 작업이 있을 경우 pull<br/>
   
 >Back-end
-  <br/>
+
+1. `main` → `develop` 브랜치 분기
+2. `develop` → `{타입}/{기능이름}+(필요시)/{작업자이름}` 브랜치 분기하여 작업
+    - 기본적으로 모든 작업은 `develop` 브랜치에서 이루어지며, 배포 시에 `main` 에 merge
+3. commit → push → Pull Request 작성 (관련 Issue  연결)
+    - PR 양식 : 변경점, 안내 사항을 알려주며 review 요청
+    - Issue 양식 : `1. Description`, `2. Todo`, `3. Etc`
+4. PR 작성자가 code review 요청
+5. Review 가 끝나면 reviewer 가 `develop` 브랜치에 merge
+6. merge 된 작업이 있을 경우 pull
 
 ### 📃 API 명세
   
