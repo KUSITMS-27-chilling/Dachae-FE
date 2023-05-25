@@ -32,20 +32,15 @@ function MyTeacherCard() {
     const token = localStorage.getItem('access_token');
 
     const goTeacherDetail=(e:React.MouseEvent<HTMLDivElement>)=>{
-       //navigate(`/suggest/${lectureIdx}`);
-      //console.log(TeacherData)
-       //console.log(e.currentTarget)
-      
        const dataText = e.currentTarget.dataset.text!;
-       //console.log(dataText)
-    
        navigate(`/suggest/${dataText}`);
     }
   
 
     useEffect(() => {
-        getMyTeacher();
-      }, []);
+        if(token !== null) getMyTeacher();
+    }, []);
+
     const getMyTeacher=() =>{
         axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/mine`,
         {
@@ -57,7 +52,7 @@ function MyTeacherCard() {
             setTeacherData(response.data.data);
         })
         .catch((err) => console.log(err));
-      }
+    }
       
   return (
     <div>
