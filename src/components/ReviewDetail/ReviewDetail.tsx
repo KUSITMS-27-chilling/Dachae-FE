@@ -23,7 +23,7 @@ interface Program {
   week: number;
   programName: string;
   tags: string;
-  image: string;
+  image: string[];
   grade: number;
 };
 
@@ -96,7 +96,7 @@ function ReviewDetail({ reviewIdx }: { reviewIdx: number }) {
                   <div className='content-title'>{data.title}</div>
                   <div className='content-classname'>{data.programName}</div>
               </CardTitle>
-              <CardContent img={data ? data.image : ''}>
+              <CardContent img={data ? data.image[0] : ''}>
                   <div className='img'></div>
                   <div className='content-tag'>
                       <div className='content'>{data.content}</div>

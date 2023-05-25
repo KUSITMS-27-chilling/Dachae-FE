@@ -1,11 +1,11 @@
 import styled from "styled-components";
 export const CardForm = styled.div`
- position: relative;
- width: 920px;
- height: 523px;
- border-radius: 18px;
- box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
- margin: 20px;//확인하려고 그냥 넣음
+    position: relative;
+    width: 920px;
+    height: 523px;
+    border-radius: 18px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.25);
+    margin: 20px;//확인하려고 그냥 넣음
 `
 export const CardTop = styled.div<{ profile: string, gradeImg: string }>`
     position: absolute;
@@ -154,50 +154,54 @@ export const TogetherBtn = styled.div`
     text-align: center;
 `
 export const CurrentJoinPeople = styled.div`
-position: absolute;
-width: max-content;
-height: 114px;
-background: #FFFFFF;
-border: 2px solid #CBCBCB;
-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
-border-radius: 7px;
-margin-left: 593px;
-margin-top: 300px;
-padding-left:12px;
-padding-right: 8px;
-.current-join{
-font-weight: 400;
-font-size: 18px;
-line-height: 21px;
-letter-spacing: -0.05em;
-color: #7D7D7D;
-margin-top: 14px;
-display: flex;
-padding-right:12px;
-justify-content: center;
-}
-.num-color{
-    color: #39AFB0;
-}
-.user-profile{
+    position: absolute;
     width: max-content;
-    height: max-content;
-    margin-top: 13px;
-    //margin-left: 2px;
-    display: flex;
-    .user-name{
-     margin-right: 5px;
-     .name{
-  font-weight: 500;
-  font-size: 19px;
-  text-align: center;
-  color: #535353;
-     }
-    img{
-        margin-left: 7px;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
+    height: 114px;
+    background: #FFFFFF;
+    border: 2px solid #CBCBCB;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    margin-left: 593px;
+    margin-top: 300px;
+    padding-left:12px;
+    padding-right: 8px;
 
-    }}}
+    .current-join{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: -0.05em;
+        color: #7D7D7D;
+        margin-top: 14px;
+        display: flex;
+        padding-right:12px;
+        justify-content: center;
+    }
+
+    .num-color{
+        color: #39AFB0;
+    }
+
+    .user-profile{
+        width: max-content;
+        height: max-content;
+        margin-top: 13px;
+        display: flex;
+        .user-name{
+            margin-right: 5px;
+            .name{
+                font-weight: 500;
+                font-size: 19px;
+                text-align: center;
+                color: #535353;
+            }
+            img{
+                margin-left: 7px;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+
+            }
+        }
+    }
 `

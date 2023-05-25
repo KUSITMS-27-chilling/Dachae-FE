@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useRef ,useEffect} from "react";
 import axios from 'axios';
-import { loginState } from '../../recoil/user';
-import { useRecoilValue } from 'recoil';
+import { togetherToggle } from '../../recoil/together';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import{
   Modal1,
   ModalBtn,
@@ -28,12 +28,14 @@ import{
   }
 const Modal =({ region ,handleCloseModal}: Props)=> {
 
-    const [text, setText] = useState("");
-    const [title, setTitle] = useState("");
-    const [modal, setModal] = useState(false);
-    const [options1, setOptions1] = useState<Program[]>([]);
-    const [selectedOption1, setSelectedOption1] = useState<string>("");
-    const [programIdx, setProgramIdx] = useState<number>(0);
+  const [text, setText] = useState("");
+  const [title, setTitle] = useState("");
+  const [modal, setModal] = useState(false);
+  const [options1, setOptions1] = useState<Program[]>([]);
+  const [selectedOption1, setSelectedOption1] = useState<string>("");
+  const [programIdx, setProgramIdx] = useState<number>(0);
+  const toggle = useRecoilValue(togetherToggle);
+  const setToggle = useSetRecoilState(togetherToggle);
     
   const outside = useRef(null);
 
@@ -75,16 +77,13 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
       });
       setOptions1(programs);
       //setProgramIdx(response.data.programIdx);
-      console.log(programs);
-      
-    }
-  catch(e) {
-    console.log(e);
-  }}
-  fetchData();
+        
+      }
+    catch(e) {
+      console.log(e);
+    }}
+    fetchData();
   },  [region]);
-  console.log (region);
-
 
 
   const handleSubmit = async () => {
@@ -116,10 +115,24 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
           },
         }
       );
-      console.log(response.data);
+
+      console.log(response);
+
+      if(response) {
+        if(toggle == true) {
+          setToggle(false);
+          console.log('toggle: '+toggle);
+        }
+        else {
+          setToggle(true);
+          console.log('toggle: '+toggle);
+        }
+      }
+
     } catch (e) {
       console.log(e);
     }
+
     handleCloseModal();
     console.log({
       title: title,
@@ -129,6 +142,7 @@ const Modal =({ region ,handleCloseModal}: Props)=> {
       content: text,
       programIdx:tempIdx,
     });
+
   };
 
 
