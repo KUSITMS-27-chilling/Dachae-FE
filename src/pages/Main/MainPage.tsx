@@ -144,12 +144,12 @@ function MainPage() {
             </div>
           </MainMiddle>
         }
-        {
+        {/* {
           (programData.length > 0) &&
           programData.map((el: MainContentData, idx) => (
             <MainBodyContent key={idx} prop={el} />
           ))
-        }
+        } */}
         <Footer />
       </>
     )
