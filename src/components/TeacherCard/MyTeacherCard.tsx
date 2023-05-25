@@ -58,8 +58,8 @@ function MyTeacherCard() {
     <div>
       <ScrollContainer>
       <TeacherCard>
-      {TeacherData.map((data) => (
-      <TeacherCardBox key={data.lectureIdx} data-text ={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
+      {TeacherData.map((data, idx) => (
+      <TeacherCardBox key={idx} data-text ={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
         <CardTop>
             <div className='title'>{data.title}</div>
             <div className='catedory'>{data.category}</div>
