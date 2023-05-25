@@ -1,6 +1,8 @@
 # 💙 _Dachae, 다채_ 💙
 
-![메인 이미지](https://user-images.githubusercontent.com/50830078/231932498-d64d3a97-c17e-4a0e-9372-f624dfca7ef9.png)
+![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/84565fc9-1827-4a85-83c6-20bdedbf9e3d)
+![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/ba0a6b89-d8d3-4bdf-b416-dc0981be9406)
+
 
 ### ✨ 서비스 소개
 **_다시 한번, 배움을 통해 당신의 삶을 다채롭게_**
