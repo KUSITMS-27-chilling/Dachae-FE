@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HeaderImg= styled.div<{img:string[]}>`
-border: 1px solid black;
  width: 1156px;
  height: 352px;
  margin-top: 68px;

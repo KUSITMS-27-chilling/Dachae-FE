@@ -100,7 +100,7 @@ export const Line = styled.div`
 
 export const Popup = styled.div`
     width: 277px;
-    height: 150px;
+    height: 130px;
     left: 971px;
     top: 1282px;
     padding: 26px;
