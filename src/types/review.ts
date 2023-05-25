@@ -13,6 +13,7 @@ export interface ReviewData {
   detailPlace: string;
   reviewImg?: string[];
   detailOrCommu: detailOrCommu;
+  week: number;
 }
 
 export interface CommuReviewData {

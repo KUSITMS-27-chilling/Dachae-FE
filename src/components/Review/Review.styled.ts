@@ -82,6 +82,7 @@ export const ReviewInfo = styled.div`
   #review__info-title {
     width: max-content;
     height: 1.5rem;
+    max-width: 46.5rem;
     font-size: 20px;
     font-weight: 700;
     line-height: 1.5rem;
