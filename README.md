@@ -140,7 +140,7 @@ https://dachae.vercel.app/
 
 <br />
 
-### 🎨 로고 및 디자인 시스템
+## 🎨 로고 및 디자인 시스템
 
 ![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/60fe46d8-a132-4d2c-8cbb-2d73de87eb34)
 
@@ -148,7 +148,7 @@ https://dachae.vercel.app/
 
 
 
-### 💻 기술 스택
+## 💻 기술 스택
 
 **Front-End :** <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"/> <p>
 **Back-End :** <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white"/> <img src="https://img.shields.io/badge/Spring Security-6DB33F?style=flat-square&logo=Spring Security&logoColor=white"/> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=Swagger&logoColor=white"/> <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/> <p>
@@ -158,7 +158,7 @@ https://dachae.vercel.app/
 
 <br/>
   
-### 📑 커밋 컨벤션
+## 📑 커밋 컨벤션
   
 > Commit Message : [Type][Subject]
   
@@ -209,17 +209,17 @@ https://dachae.vercel.app/
 5. Review 가 끝나면 reviewer 가 `develop` 브랜치에 merge
 6. merge 된 작업이 있을 경우 pull
 
-### 📃 API 명세
+## 📃 API 명세
   
   넣어야함
 
   <br/>
   
-### 🔑 주요 기능 명세서
+## 🔑 주요 기능 명세서
   
   <br/>
   
-### 🔍 소프트웨어 아키텍쳐
+## 🔍 소프트웨어 아키텍쳐
 
 ![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/384ca6c5-a796-4ff6-bef3-569f3bba370a)
 
