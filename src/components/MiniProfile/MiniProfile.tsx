@@ -50,6 +50,22 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
     return tempStr;
   }
 
+  function checkStartGrade(standardNum: number): string {
+    if(standardNum < 0) return '';
+    if(standardNum <= 3) return `등급 ${standardNum}`;
+    return '최고 등급입니다!';
+  }
+
+  function checkEndGrade(standardNum: number): string {
+    if(standardNum >= 4) return '';
+    return `등급 ${standardNum + 1}`;
+  }
+
+  function returnProgress(grade: number): number {
+    if(grade >= 30) return 10;
+    return grade % 10;
+  }
+
   useEffect(() => {
     gradeHandler();
   }, [grade])
@@ -65,10 +81,10 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
             <LearningGradeBox>
               <div id="learning-grade__grade-top">
                 <LearningGradeBar>
-                  <progress id="learning-grade__progress-bar" value={grade % 10} max="10"/>
+                  <progress id="learning-grade__progress-bar" value={returnProgress(grade)} max="10"/>
                   <div id="learning-grade__level-text">
-                    <div id="learning-grade__low-level">등급 {standardNum}</div>
-                    <div id="learning-grade__high-level">등급 {standardNum+1}</div>
+                    <div id="learning-grade__low-level">{checkStartGrade(standardNum)}</div>
+                    <div id="learning-grade__high-level">{checkEndGrade(standardNum)}</div>
                   </div>
                 </LearningGradeBar>
                 <img id="learning-grade__vane-img" src={gradeImg} alt="grade-img" />

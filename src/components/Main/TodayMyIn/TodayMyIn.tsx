@@ -3,19 +3,20 @@ import {
   TodayTapBox,
   TodayBottom
 } from "../TodayMyIn/TodayMyIn.styled";
-import MainBodyTodayTap from "../TodayMyTap";
 import MiniProfile from "../../MiniProfile";
 import { loginState, userGrade } from "../../../recoil/user";
 import { useSetRecoilState } from "recoil";
 import profile_icon_light from '../../../assets/profile_icon_light.png';
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function TodayMyIn({ showPopup }: { showPopup: () => void }) {
   const setLogState = useSetRecoilState(loginState);
   const setUserGrade = useSetRecoilState(userGrade);
   const [favField, setFavField] = useState([]);
   const [userNick, setUserNick] = useState('');
+  const navigate = useNavigate();
 
   const logOut = () => {
     localStorage.removeItem('access_token');
@@ -39,6 +40,10 @@ function TodayMyIn({ showPopup }: { showPopup: () => void }) {
     }).catch((err) => console.log(err));
   }
 
+  function goMyPage() {
+    navigate('/mypage');
+  }
+
   useEffect(() => {
     getLgInfo();
   }, [])
@@ -56,7 +61,7 @@ function TodayMyIn({ showPopup }: { showPopup: () => void }) {
       <MiniProfile favField={favField} />
       <TodayBottom>
         <div className='TapBtn'>
-          <button onClick={showPopup}>마이페이지 바로가기</button>
+          <button onClick={goMyPage}>마이페이지 바로가기</button>
         </div>
       </TodayBottom>
     </div>

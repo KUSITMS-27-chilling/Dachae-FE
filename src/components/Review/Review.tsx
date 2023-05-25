@@ -17,7 +17,7 @@ function Review({ props }: ReviewProps) {
   const [count, setCount] = useState(0);
   const [viewContent, setViewContent] = useState('');
   const [overLength, setOverLength] = useState(false);
-  const { userImg, userNick, time, title, lecture, content, region, detailPlace, reviewImg, reviewIdx, detailOrCommu } = props;
+  const { userImg, userNick, time, title, lecture, content, region, detailPlace, reviewImg, reviewIdx, detailOrCommu, week } = props;
   
   function countImg() {
     if(reviewImg && (reviewImg?.length > 0)) {
@@ -59,7 +59,7 @@ function Review({ props }: ReviewProps) {
       </ReviewProfile>
       <ReviewText detailOrCommu={detailOrCommu} >
         <ReviewInfo>
-          <div id="review__info-title">{title}</div>
+          <div id="review__info-title">{`[${week}주차] ${title}`}</div>
           <div id="review__info-lecture">{lecture}</div>
         </ReviewInfo>
         <ReviewContent detailOrCommu={detailOrCommu} >
