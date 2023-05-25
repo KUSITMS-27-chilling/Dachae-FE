@@ -1,7 +1,6 @@
 # 💙 _Dachae, 다채_ 💙
 
 ![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/84565fc9-1827-4a85-83c6-20bdedbf9e3d)
-![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/ba0a6b89-d8d3-4bdf-b416-dc0981be9406)
 
 
 ### ✨ 서비스 소개
@@ -45,14 +44,14 @@ https://dachae.vercel.app/
  
  
  ✔ _**[근거 1] 5060 시니어의 사회 참여 욕구 증가**_
-![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/34982575-9258-41d2-b4cc-5323c9139baa)
+ <img src="https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/34982575-9258-41d2-b4cc-5323c9139baa" style="width: 750px;" />
 
 "2022년 액티브 시니어를 대상으로 한 여가열의 연구”에 따르면, 현재 시니어는 은퇴 후 다양한 여가를 즐기며 사회 활동에 적극 참여하는 세대로, 과거 시니어와는 다른 패러다임으로 등장"
 <br />
 
  ✔ [_**[근거 2] 시니어 세대의 웰에이징 니즈**_](https://academic.naver.com/article.naver?doc_id=948438019) <br />
  
- - 우리나라는 고령화의 진행속도가 급격하게 증가함에 따라, 단순 삶의 연장이 아닌, 정신적으로 건강한 삶을 찾아가는 심리 사회적 측면에 초점. 이에 따라 긍정적 노화의 과정을 의미하는 “웰에이징”의 개념이 새롭게 등장.<br />
+ - 우리나라는 고령화의 진행속도가 급격하게 증가함에 따라, 단순 삶의 연장이 아닌, **정신적으로 건강한 삶을 찾아가는 심리 사회적 측면**에 초점. 이에 따라 긍정적 노화의 과정을 의미하는 “**웰에이징**”의 개념이 새롭게 등장.<br />
  
  - 타인과 상호작용 및 자기개발을 위한 여가활동 및 사회활동 참여는, 타의나 비자발적이 아닌 자발적 · 지속적으로 이루어져야 효과가 더욱 증대<br />
 
@@ -67,7 +66,7 @@ https://dachae.vercel.app/
  ✔ _**[근거 4] 자체 리서치 결과**_
  <br/>
  ![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/049d6927-4f4b-4b25-9ef3-6b55f211a3e2)
-  **동네 배움터에 대한 인지율 비교적 낮은 편** <br />
+  - 동네 배움터에 대한 **인지율 비교적 낮은 편** <br />
   
   - 동네 배움터 프로그램에 참여할 의향 높음<br />
    
@@ -103,14 +102,14 @@ https://dachae.vercel.app/
   - 수강생 모집 시간이 오래 걸리고, 모으는 것 또한 쉽지 않음 <br/>
   - 기타 교육 기관이 수강생에게 원하는 프로그램을 저렴하게 제공하지만, 교육이 필요한 사람들에게 그러한 교육 정보를 제공할 맞춤형 채널이 부재함<br/>
 
-💡 **기존 서비스의 문제점 분석**<br/>
+💡 **문제 해결의 가치**<br/>
 
 ![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/962a9c15-50ed-4642-bac2-c371b21e3188)
 
 
 <br />
 
-### 📌 목적 및 필요성
+### 📜 서비스 타겟층
 <img src="https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/326713e8-eb72-42ed-a0f3-6745db0287e3" style="width: 750px;" />
 
 > “액티브 시니어” : 시간·경제적 여유를 가진 활발한 5060 세대
@@ -118,7 +117,7 @@ https://dachae.vercel.app/
 
 **타겟층 확장 계획**
 
-||1차 서비스 론칭|2차 서비스 론칭|추후 서비스 확장|
+|1차 서비스 론칭|2차 서비스 론칭|추후 서비스 확장|
 |--|:--|:--|
 |타겟층|서울에 사는 5060 세대|- 전국 유저로 확대 <br /> - 지식 공유에 활발한 전문가 집단|
 |기능|프로그램 검색 기능, 수강생 1:1 질문 기능|- 직접 프로그램을 열 수 있는 기능을 추가(전문가 풀 확대) <br /> - 1:1 멘토-멘티 기능 추가|
@@ -135,8 +134,8 @@ https://dachae.vercel.app/
 <br />
 
 ### 💰 비즈니스 모델 설계
+![비즈니스 모델](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/50830078/1661f8a1-7b8b-42e7-8d6d-c6e212f4b1d0)
 
-![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/3778f3ed-ae84-4c05-b2ce-f0428e0c5cd7)
 
 <br />
 
@@ -150,7 +149,7 @@ https://dachae.vercel.app/
 
 ## 💻 기술 스택
 
-**Front-End :** <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"/> <p>
+**Front-End :** <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=black"/> <img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=Vite&logoColor=white"/> <img src="https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=Axios&logoColor=white"/> <img src="https://img.shields.io/badge/Recoil-0075EB?style=flat-square&logo=Recoil&logoColor=white"/> <p>
 **Back-End :** <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white"/> <img src="https://img.shields.io/badge/Spring Security-6DB33F?style=flat-square&logo=Spring Security&logoColor=white"/> <img src="https://img.shields.io/badge/Swagger-85EA2D?style=flat-square&logo=Swagger&logoColor=white"/> <img src="https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=Postman&logoColor=white"/> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/> <p>
 **Infra :** <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=flat-square&logo=Amazon EC2&logoColor=white"/> <img src="https://img.shields.io/badge/Amazon S3-569A31?style=flat-square&logo=Amazon S3&logoColor=white"/> <img src="https://img.shields.io/badge/Amazon RDS-527FFF?style=flat-square&logo=Amazon RDS&logoColor=white"/> <p>
 **CI/CD :** <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=black"/> <img src="https://img.shields.io/badge/GitHub Actions-2088FF?style=flat-square&logo=GitHub Actions&logoColor=black"/> <p>
@@ -183,7 +182,7 @@ https://dachae.vercel.app/
 <br />
   
  
-### ⚙ Git workflow
+### 🌿 Git workflow
   
 > Front-end
   
@@ -197,7 +196,7 @@ https://dachae.vercel.app/
 5. Review 가 끝나면 reviewer 가 `develop` 브랜치에 merge<br/>
 6. merge 된 작업이 있을 경우 pull<br/>
   
->Back-end
+> Back-end
 
 1. `main` → `develop` 브랜치 분기
 2. `develop` → `{타입}/{기능이름}+(필요시)/{작업자이름}` 브랜치 분기하여 작업
