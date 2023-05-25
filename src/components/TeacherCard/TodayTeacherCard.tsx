@@ -66,7 +66,7 @@ function TodayTeacherCard() {
       }
   return (
     <div>
-    <ScrollContainer>
+    
     <TeacherCard>
     {TeacherData.map((data) => ( 
      <TeacherCardBox key={data.lectureIdx}  data-text ={data.lectureIdx} onClick={e => {goTeacherDetail(e)}}>
@@ -92,7 +92,7 @@ function TodayTeacherCard() {
     </TeacherCardBox>
     ))}
     </TeacherCard>
-    </ScrollContainer>  
+  
   </div>
   )
 }
