@@ -1,6 +1,8 @@
 # 💙 _Dachae, 다채_ 💙
 
-![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/84565fc9-1827-4a85-83c6-20bdedbf9e3d)
+![리드미 대표 이미지](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/50830078/e2d49e94-eb1f-4294-a1a4-dac4c83cfa42)
+ ![리드미 마지막 이미지](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/50830078/dcb7c4ba-eac8-48ce-a2ff-ca0b2010e33a)
+
 
 
 ### ✨ 서비스 소개
@@ -160,10 +162,16 @@ https://dachae.vercel.app/
 **Infra :** <img src="https://img.shields.io/badge/Amazon EC2-FF9900?style=flat-square&logo=Amazon EC2&logoColor=white"/> <img src="https://img.shields.io/badge/Amazon S3-569A31?style=flat-square&logo=Amazon S3&logoColor=white"/> <img src="https://img.shields.io/badge/Amazon RDS-527FFF?style=flat-square&logo=Amazon RDS&logoColor=white"/> <p>
 **CI/CD :** <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=black"/> <img src="https://img.shields.io/badge/GitHub Actions-2088FF?style=flat-square&logo=GitHub Actions&logoColor=black"/> <p>
 **DB :** <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=Redis&logoColor=black"/> <p>
-**Etc :** <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/> <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=Slack&logoColor=white"/> <p>
-
+**Etc :** <img src="https://img.shields.io/badge/Notion-000000?style=flat-square&logo=Notion&logoColor=white"/> <img src="https://img.shields.io/badge/Slack-4A154B?style=flat-square&logo=Slack&logoColor=white"/> <p> 
  
 <br/>
+ 
+ ## ⚙ 소프트웨어 아키텍쳐
+
+![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/384ca6c5-a796-4ff6-bef3-569f3bba370a)
+
+<br/>
+ 
   
 ## 📑 커밋 컨벤션
   
@@ -371,8 +379,4 @@ https://dachae.vercel.app/
  
   <br/>
   
-## ⚙ 소프트웨어 아키텍쳐
 
-![image](https://github.com/KUSITMS-27-chilling/Dachae-FE/assets/75175148/384ca6c5-a796-4ff6-bef3-569f3bba370a)
-
-<br/>
