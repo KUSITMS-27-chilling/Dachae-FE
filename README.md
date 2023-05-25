@@ -211,7 +211,88 @@ https://dachae.vercel.app/
 
 ## 📃 API 명세
   
-  넣어야함
+| 메소드 | URI | 설명 | 현재 구현 여부 |
+| --- | --- | --- | --- |
+| **POST** | /user/signup | 자체 회원가입 | ✔️ |
+| **POST** | /user/signup/oauth2 | Oauth2 회원가입 | ✔️ |
+| **GET** | /user/id/duplicate | 아이디 중복 체크 | ✔️ |
+| **GET** | /user/nick/duplicate | 닉네임 중복 체크 | ✔️ |
+| **POST** | /user/email | 인증 이메일 전송 | ✔️ |
+| **POST** | /user/login | 로그인 | ✔️ |
+| **POST** | /user/logout | 로그아웃 | ✔️ |
+| **POST** | /user/re-issue | 토큰 재발급 | ✔️ |
+| **PUT** | /user/signout | 탈퇴 |  |
+| **GET** | /user/grade | 유저 등급 조회 | ✔️ |
+| **GET** | /user/learning-info | 유저 배움 소식 조회 | ✔️ |
+| **GET** | /user/fav-regions | 유저 거주지 이외 관심지역 조회 | ✔️ |
+| **GET** | /user/region | 유저 거주지 조회 | ✔️ |
+| **GET** | /user/regions | 유저 관심 지역 및 거주지 조회 | ✔️ |
+| **PUT** | /user/fav-field | 유저 활동 분야 수정 | ✔️ |
+| **PUT** | /user/fav-regions | 유저 관심 지역 수정 | ✔️ |
+| **GET** | /user/info | 마이페이지 유저 정보 조회 | ✔️ |
+| **PUT** | /user/password | 유저 비밀번호 수정 |  |
+| **PUT** | /user/region | 유저 거주지 수정 |  |
+| **PUT** | /user/profile | 유저 프로필 수정 |  |
+| **PUT** | /user/phoneNumber | 유저 전화번호 수정 |  |
+| **PUT** | /user/nick | 유저 닉네임 수정 | ✔️ |
+| **GET** | /user/my-post | 마이페이지 유저 작성글 조회 | ✔️ |
+| **GET** | /user/participants | 마이페이지 유저 참여 횟수 조회 | ✔️ |
+| **GET** | /review/{region}/page | 후기 리스트 페이징 조회 | ✔️ |
+| **GET** | /review/{region}/page/{page} | 후기 리스트 페이징 조회 | ✔️ |
+| **GET** | /review/top | 인기 수강후기 top3 조회 | ✔️ |
+| **GET** | /review/mine | 나의 수강후기 | ✔️ |
+| **POST** | /review/post | 수강 후기 글 작성 | ✔️ |
+| **GET** | /review/{reviewIdx} | 수강 후기 상세조회 | ✔️ |
+| **PUT** | /review/{reviewIdx} | 수강 후기 글 수정 |  |
+| **DELETE** | /review/{reviewIdx} | 수강 후기 글 삭제 |  |
+| **GET** | /program | 모아보기 각 센터 프로그램 조회 | ✔️ |
+| **GET** | /program/{region} | 센터의 모든 프로그램 조회 | ✔️ |
+| **GET** | /program/new | 센터 새소식 조회 | ✔️ |
+| **GET** | /program/new/{region} | 센터 새소식 조회 | ✔️ |
+| **GET** | /program/{region}/page | 상세보기 각 센터 프로그램 조회 | ✔️ |
+| **GET** | /program/{region}/page/{page} | 상세보기 각 센터 프로그램 조회 | ✔️ |
+| **POST** | /listen/participant | 같이듣기 신청 | ✔️ |
+| **GET** | /listen/{listenIdx} | 같이듣기 게시글 상세 조회 | ✔️ |
+| **GET** | /listen/{region}/page | 같이듣기 게시글 페이징 조회 | ✔️ |
+| **GET** | /listen/{region}/page/{page} | 같이듣기 게시글 페이징 조회 | ✔️ |
+| **GET** | /listen/top | 인기 같이듣기 top3 조회 | ✔️ |
+| **GET** | /listen/mine | 내가 제안한 글 | ✔️ |
+| **POST** | /listen/post | 같이듣기 글 작성 | ✔️ |
+| **PUT** | /listen/{listenIdx} | 같이듣기 글 수정 |  |
+| **DELETE** | /listen/{listenIdx} | 같이듣기 글 삭제 |  |
+| **GET** | /lecture/{category}/page | 카테고리별 우리동네강사 페이징 조회 | ✔️ |
+| **GET** | /lecture/{category}/page/{page} | 카테고리별 우리동네강사 페이징 조회 | ✔️ |
+| **POST** | /lecture/post | 우리동네강사 강의 등록 |  |
+| **GET** | /lecture/{lectureIdx}/info | 우리동네강사 상세 기본 정보 조회 | ✔️ |
+| **GET** | /lecture/{lectureIdx}/image | 우리동네강사 상세 이미지 조회 | ✔️ |
+| **GET** | /lecture/{lectureIdx}/teacher | 우리동네강사 상세 강사 정보 조회 | ✔️ |
+| **PUT** | /lecture/{lectureIdx} | 우리동네강사 강의 수정 |  |
+| **DELETE** | /lecture/{lectureIdx} | 우리동네강사 강의 삭제 |  |
+| **GET** | /lecture/mine | 유저가 신청한 우리동네강사 조회 | ✔️ |
+| **GET** | /lecture/today | 오늘 올라온 우리동네강사 조회 | ✔️ |
+| **POST** | /lecture/{lectureIdx}/message | 수강신청 메시지 보내기 | ✔️ |
+| **GET** | /free/{freeBoardIdx} | 자유게시판 게시글 상세보기 | ✔️ |
+| **GET** | /free/{region}/page | 자유게시판 페이지 조회 | ✔️ |
+| **GET** | /free/{region}/page/{page}/{orderBy} | 자유게시판 페이지 조회 | ✔️ |
+| **GET** | /free/top | 자유게시판 인기글 조회 | ✔️ |
+| **POST** | /free/post | 자유게시판 게시글 작성 | ✔️ |
+| **PUT** | /free/{freeBoardIdx} | 자유게시판 게시글 수정 |  |
+| **DELETE** | /free/{freeBoardIdx} | 자유게시판 게시글 삭제 |  |
+| **GET** | /free/{freeBoardIdx}/comments | 자유게시판 댓글 조회 | ✔️ |
+| **POST** | /free/{freeBoardIdx}/comments | 자유게시판 댓글 작성 | ✔️ |
+| **PUT** | /free/{freeBoardIdx}/comments/{freeBoardCommentIdx} | 자유게시판 댓글 수정 |  |
+| **DELETE** | /free/{freeBoardIdx}/comments/{freeBoardCommentIdx} | 자유게시판 댓글 삭제 |  |
+| **GET** | /listen/{listenIdx}/comments | 같이듣기 댓글 조회 | ✔️ |
+| **POST** | /listen/{listenIdx}/comments | 같이듣기 댓글 작성 | ✔️ |
+| **PUT** | /listen/{listenIdx}/comments/{listenCommentIdx} | 같이듣기 댓글 수정 |  |
+| **DELETE** | /listen/{listenIdx}/comments/{listenCommentIdx} | 같이듣기 댓글 삭제 |  |
+| **GET** | /review/{reviewIdx}/comments | 수강후기 댓글 조회 | ✔️ |
+| **POST** | /review/{reviewIdx}/comments | 수강후기 댓글 작성 | ✔️ |
+| **PUT** | /listen/{reviewIdx}/comments/{reviewCommentIdx} | 수강후기 댓글 수정 |  |
+| **DELETE** | /listen/{reviewIdx}/comments/{reviewCommentIdx} | 수강후기 댓글 삭제 |  |
+| **GET** | /center/{region}/info | 센터 관심수 전화번호 조회 | ✔️ |
+| **GET** | /alarm | 알람 새소식 조회 | ✔️ |
+| **DELETE** | /alarm/{alarmIdx} | 알람 삭제 |  |
 
   <br/>
   
