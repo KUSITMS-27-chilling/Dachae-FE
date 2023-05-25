@@ -67,8 +67,8 @@ function MiniProfile({ favField }: { favField: Array<string>}) {
                 <LearningGradeBar>
                   <progress id="learning-grade__progress-bar" value={grade % 10} max="10"/>
                   <div id="learning-grade__level-text">
-                    <div id="learning-grade__low-level">기준 {standardNum}</div>
-                    <div id="learning-grade__high-level">기준 {standardNum+1}</div>
+                    <div id="learning-grade__low-level">등급 {standardNum}</div>
+                    <div id="learning-grade__high-level">등급 {standardNum+1}</div>
                   </div>
                 </LearningGradeBar>
                 <img id="learning-grade__vane-img" src={gradeImg} alt="grade-img" />

@@ -59,9 +59,9 @@ function Mypage() {
   const { gradeImg, standardNum, gradeHandler } = useGrade(grade);
   const [restNum, setRestNum] = useState(0);
 
-
   function setRest(grade: number) {
-    switch((grade / 2) % 4) {
+    console.log(grade);
+    switch((grade % 10) / 2) {
       case 0:
         setRestNum(5);
         break;
@@ -84,8 +84,8 @@ function Mypage() {
     getUser();
   }, []);
 
-  const getUser=() =>{
-    axios.get(`${import.meta.env.VITE_APP_HOST}/user/info`,
+  const getUser=async () =>{
+    await axios.get(`${import.meta.env.VITE_APP_HOST}/user/info`,
     {
         headers: {
           Authorization: `Bearer ${token}`

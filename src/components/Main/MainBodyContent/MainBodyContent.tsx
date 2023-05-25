@@ -90,22 +90,22 @@ function MainBodyContent({ prop }: MainContentProp) {
 									prop.programs && (
 										<>
 											<ProgramCard 
-												category={prop.programs[0].programCategory}
-												title={prop.programs[0].programName!}
-												btnClick={btnClick}
-												deadline={formatEndDate(prop.programs[0].programEnd!)}
+												category={prop.programs[0] ? prop.programs[0].programCategory : '기타'}
+												title={prop.programs[0] ? prop.programs[0].programName! : '프로그램'}
+												btnClick={prop.programs[0] ? () => window.open(prop.programs[0].programUrl, "_blank") : () => console.log('url 없음')}
+												deadline={prop.programs[0] ? formatEndDate(prop.programs[0].programEnd!) : ''}
 										></ProgramCard>
 										<ProgramCard
-												category={prop.programs[1].programCategory}
-												title={prop.programs[1].programName!}
-												btnClick={btnClick}
-												deadline={formatEndDate(prop.programs[1].programEnd!)}
+												category={prop.programs[1] ? prop.programs[1].programCategory : '기타'}
+												title={prop.programs[1] ? prop.programs[1].programName! : '프로그램'}
+												btnClick={prop.programs[1] ? () => window.open(prop.programs[1].programUrl, "_blank") : () => console.log('url 없음')}
+												deadline={prop.programs[1] ? formatEndDate(prop.programs[1].programEnd!) : ''}
 										></ProgramCard>
 										<ProgramCard 
-												category={prop.programs[2].programCategory}
-												title={prop.programs[2].programName!}
-												btnClick={btnClick}
-												deadline={formatEndDate(prop.programs[2].programEnd!)}
+												category={prop.programs[2] ? prop.programs[2].programCategory : '기타'}
+												title={prop.programs[2] ? prop.programs[2].programName! : '프로그램'}
+												btnClick={prop.programs[2] ? () => window.open(prop.programs[2].programUrl, "_blank") : () => console.log('url 없음')}
+												deadline={prop.programs[2] ? formatEndDate(prop.programs[2].programEnd!) : ''}
 										></ProgramCard>
 										</>
 									)
