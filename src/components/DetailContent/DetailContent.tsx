@@ -90,6 +90,7 @@ function DetailContent() {
             reviewIdx: response[key].reviewIdx,
             reviewImg: response[key].image,
             detailPlace: response[key].tags[1],
+            week: response[key].week,
             detailOrCommu: 'detail'
           }
           tempArr.push(object);

@@ -73,6 +73,7 @@ function CommuList () {
             reviewIdx: res[key].reviewIdx,
             detailPlace: res[key].tags[1],
             reviewImg: res[key].image,
+            week: res[key].week,
             detailOrCommu: 'community'
           }
           tempArr.push(tempEl);
