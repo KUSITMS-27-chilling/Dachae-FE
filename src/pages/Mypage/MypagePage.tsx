@@ -60,7 +60,10 @@ function Mypage() {
   const [restNum, setRestNum] = useState(0);
 
   function setRest(grade: number) {
-    console.log(grade);
+    if(grade >= 30) {
+      setRestNum(0);
+      return;
+    }
     switch((grade % 10) / 2) {
       case 0:
         setRestNum(5);
@@ -116,6 +119,11 @@ function Mypage() {
     .catch((err) => console.log(err));
   }
 
+  function returnProgress(grade: number): number {
+    if(grade >= 30) return 10;
+    return grade % 10;
+  }
+
   useEffect(() => {
     getUserparticipants();
   }, []);
@@ -165,7 +173,7 @@ function Mypage() {
               <div className='user-grade'>배움등급</div>
               <div id="learning-grade__grade-top">
                 <Contentflexgrade>
-                <progress id="learning-grade__progress-bar" value={grade % 10} max="10"/>
+                <progress id="learning-grade__progress-bar" value={returnProgress(grade)} max="10"/>
                   <div id="learning-grade__level-text">
                   <div id="learning-grade__low-level">다음 단계까지 글 {restNum}개 남았어요!</div>
                 </div>      

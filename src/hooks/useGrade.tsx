@@ -24,7 +24,7 @@ export default function useGrade(grade: number) {
       setStandardNum(3);
       return;
     }
-    else if((grade > 30)) {
+    else if((grade >= 30)) {
       setGradeImg(vane4);
       setStandardNum(4);
       return;
