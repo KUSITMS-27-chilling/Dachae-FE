@@ -95,7 +95,7 @@ function CenterModal({ closeModal }: { closeModal: () => void }) {
     let str = regions.join(',');
     str = str.slice(4);
 
-    axios.put(`${import.meta.env.VITE_APP_HOST}/user/regions`,
+    axios.put(`${import.meta.env.VITE_APP_HOST}/user/fav-regions`,
     {
       favRegion: str,
     },
