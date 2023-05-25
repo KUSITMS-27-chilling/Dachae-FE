@@ -35,7 +35,7 @@ function TogetherDetailPage() {
       <TogetherDetail listenIdx ={Number(listenIdx)}/>
       </ReviewDetailBox>
       <Comment>댓글 
-          <div className='num'>3</div>
+          <div className='num'>&nbsp;0</div>
       </Comment>
       <CommentWrite>
         <input type='text' placeholder='댓글을 남겨주세요'></input>

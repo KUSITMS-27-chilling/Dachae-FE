@@ -74,7 +74,7 @@ function DeToHeader () {
           {/* <CommuBest titleStr={popularData[0].title} ></CommuBest>
           <CommuBest titleStr={popularData[1].title}></CommuBest> */}
           {
-            popularData.map((el, idx) => (
+            popularData.slice(0, 2).map((el, idx) => (
               <CommuBest key={idx} titleStr={el.title} ></CommuBest>
             ))
           }

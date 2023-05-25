@@ -16,9 +16,12 @@ export const Content = styled.div`
   display: flex;
 `
 export const TodayTeacher = styled.div`
-
   width: 702px;
   height: 425px;
+  .buttonright{
+    display: flex;
+    justify-content: space-between;
+  }
 `
 export const MyTeacher = styled.div`
   width: 350px;
@@ -31,15 +34,30 @@ export const TodayTitle = styled.div`
 font-size: 21px;
 letter-spacing: -0.05em;
 `
+export const SlideButton = styled.div`
+cursor: pointer;
+width: 83px;
+height: 36px;
+display: flex;
+.carouselLeft{
+  margin-right: 12px;
+}
+img{
+  width: 35px;
+height: 35.7px;
+}
+
+`
 export const TodayCard = styled.div`
-  margin-top: 25px;
+  margin-top: 10px;
   height: 385px;
-  //border: 1px solid blue;
+
 `
 export const MyTeacherTitle = styled.div`
   font-weight: 700;
 font-size: 21px;
 letter-spacing: -0.05em;
+margin-bottom: 22px;
 `
 export const TeacherCard = styled.div`
 cursor: pointer;
