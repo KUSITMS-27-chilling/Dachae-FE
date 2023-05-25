@@ -98,7 +98,7 @@ function CommuMyPost() {
     <div>
       <CommuPostBox>
         <CommuMyContent>
-          {data.map((item, idx) => (
+          {data.slice(0, 2).map((item, idx) => (
             <div id='commu-my-post__content-box' key={idx}>
               <CommuMyTitle>{formatTitle(item.title)}</CommuMyTitle>
               <CommuMyDate>{item.updatedAt}</CommuMyDate>
