@@ -14,6 +14,8 @@ function StickyScroll() {
       setPopupVisible(!popupVisible);
     };
 
+    
+
     useEffect(() => {
       let timer: NodeJS.Timeout;
   
