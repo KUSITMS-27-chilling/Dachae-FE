@@ -42,9 +42,26 @@ function CategoryCard({ category}: Props) {
   
 
     useEffect(() => {
-        getMyTeacher();
+      const asyncGetPrograms = async () => {
+        
+        if(localStorage.getItem('access_token') !== null) await getMyTeacherLogin(localStorage.getItem('access_token')!);
+        else await getMyTeacher();
+      }
+  
+      asyncGetPrograms();
       }, []);
+
+
     const getMyTeacher=() =>{
+        axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${category}/page`)
+        .then((response) => {
+            setTeacherData(response.data.data.lectureInfos);
+            //console.log(response.data.data.lectureInfos);
+        })
+        .catch((err) => console.log(err));
+      }
+
+      const getMyTeacherLogin=(token: string) =>{
         axios.get(`${import.meta.env.VITE_APP_HOST}/lecture/${category}/page`,
         {
             headers: {

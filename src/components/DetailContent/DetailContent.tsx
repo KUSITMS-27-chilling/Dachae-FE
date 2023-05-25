@@ -3,6 +3,7 @@ import Together from "../Together";
 import Review from "../Review";
 import { DetailContentContainer } from "./DetailContent.styled";
 import { detailTabKind } from "../../recoil/detail";
+import { togetherToggle } from "../../recoil/together";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { ReviewData } from "../../types/review";
 import axios from "axios";
@@ -18,8 +19,31 @@ function DetailContent() {
   const detailTab = useRecoilValue(detailTabKind);
   const [togetherArr, setTogetherArr] = useState<TogetherData[]>([]);
   const [reviewArr, setReviewArr] = useState<ReviewData[]>([]);
+  const toggle = useRecoilValue(togetherToggle);
 
   const { region } = useParams();
+
+  function displayedAt(createdAt: string) {
+    const [y, mon, d, h, min] = createdAt.split('-').map(Number);
+    const start = new Date(y, mon - 1, d, h, min);
+    const end = new Date();
+    const difference = (end.getTime() - start.getTime());
+
+    const seconds = difference / 1000
+    if (seconds < 60) return `방금 전`
+    const minutes = seconds / 60
+    if (minutes < 60) return `${Math.floor(minutes)}분 전`
+    const hours = minutes / 60
+    if (hours < 24) return `${Math.floor(hours)}시간 전`
+    const days = hours / 24
+    if (days < 7) return `${Math.floor(days)}일 전`
+    const weeks = days / 7
+    if (weeks < 5) return `${Math.floor(weeks)}주 전`
+    const months = days / 30
+    if (months < 12) return `${Math.floor(months)}개월 전`
+    const years = days / 365
+    return `${Math.floor(years)}년 전`
+  }
 
   const getListenTogether = async () => {
     await axios.get(`${import.meta.env.VITE_APP_HOST}/listen/${region}/page`)
@@ -29,7 +53,7 @@ function DetailContent() {
         for(let key in response) {
           const object: TogetherData = {
             nickname: response[key].nickName,
-            time: '18시간 전',
+            time: displayedAt(response[key].createdAt),
             recruiting: response[key].recruiting,
             title: response[key].title,
             favFields: response[key].favFields,
@@ -58,7 +82,7 @@ function DetailContent() {
           const object: ReviewData = {
             userImg: response[key].profile,
             userNick: response[key].nickName,
-            time: '18시간 전',
+            time: displayedAt(response[key].createdAt),
             title: response[key].title,
             lecture: response[key].programName,
             content: response[key].content,
@@ -85,7 +109,7 @@ function DetailContent() {
       getReview();
       return;
     }
-  }, [detailTab]);
+  }, [detailTab, toggle]);
 
   return(
     <DetailContentContainer>

@@ -13,6 +13,10 @@ import{
 
 } from './TogetherDetail.styled'
 import img from '../../assets/profile_icon.png'
+import vane1 from '../../assets/vane1.png';
+import vane2 from '../../assets/vane2.png';
+import vane3 from '../../assets/vane3.png';
+import vane4 from '../../assets/vane4.png';
 
 interface Program {
     
@@ -25,13 +29,19 @@ interface Program {
     currentNum:number;
     goalNum:number;
     programName:string;
-    
+    participantsInfos:participantsInfo[];
+}
+interface participantsInfo {
+  profile:string;
+  nickName:string;
 }
 
 function TogetherDetail({ listenIdx }: { listenIdx: number }) {
     const [isMouseOver, setIsMouseOver] = useState(false);
     const [data, setData] = useState<Program>();
-    
+    const[apply, setApply] = useState(false);
+    const [gradeImg, setGradeImg] = useState(vane1);
+
     function handleMouseOver() {
         setIsMouseOver(true);
       }
@@ -57,6 +67,7 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
         )
         .then(response => {
           // console.log(response);
+          setApply(true);
         })
         .catch(e => {
           console.log(e);
@@ -73,19 +84,40 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
                     `${import.meta.env.VITE_APP_HOST}/listen/${listenIdx}`
                 );
                 setData(response.data.data);
+                setGrade(response.data.data.grade);
             } catch (e) {
                 console.log(e);
             }
         }
         fetchData();
-    },  [listenIdx]);
+    },  [listenIdx , apply]);
+
+    function setGrade(grade: number) {
+      if((grade >= 0) && (grade < 10)) {
+        setGradeImg(vane1);
+        return;
+      }
+      else if((grade >=10) && (grade < 20)) {
+        setGradeImg(vane2);
+        return;
+      }
+      else if((grade >= 20) && (grade < 30)) {
+        setGradeImg(vane3);
+        return;
+      }
+      else if((grade > 30)) {
+        setGradeImg(vane4);
+        return;
+      }
+    else return;
+  }
 
   return (
     <CardForm>
       {
         data && (
           <>
-                  <CardTop img={data ? data.profile : ''}>
+                  <CardTop profile={data ? data.profile : ''} gradeImg={gradeImg} >
         <div className='profile'></div>
             <div className='right'>
                 <div className='user-title'>
@@ -122,23 +154,15 @@ function TogetherDetail({ listenIdx }: { listenIdx: number }) {
         <CurrentJoinPeople>
           <div className='current-join'>
             <div className='num-color'>{data.currentNum}</div>
-            명이 함께하고 있어요</div>
+            명이 함께하고 있어요
+            </div>
           <div className='user-profile'>
-            <div className='user-name'>
-            <img className="Btn_3" alt="1" src={img} />
-            <div className='name'>김연수</div>
-            </div>
-            <div className='user-name'>
-            <img className="Btn_3" alt="1" src={img} />
-            <div className='name'>김연수</div>
-            </div>
-            
-            {/* {[...Array(data.currentNum)].map((_, index) => (
-      <div className='user-name' key={index}>
-        <img className="Btn_3" alt="1" src={img} />
-        <div className='name'>김연수</div>
-      </div>
-    ))} */}
+          {Array.from({ length: data.participantsInfos.length }).map((_, index) => (
+    <div className='user-name' key={index}>
+      <img className="Btn_3" src={data.participantsInfos[index] ? data.participantsInfos[index].profile : ''} />
+      <div className='name'>{data.participantsInfos[index].nickName}</div>
+    </div>
+  ))}
           </div>
         </CurrentJoinPeople>
       )}

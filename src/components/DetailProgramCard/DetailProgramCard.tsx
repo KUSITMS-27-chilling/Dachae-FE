@@ -15,16 +15,11 @@ interface Program {
 };
 
 function DetailProgramCard({ card }: { card: Program }) {
-  const { imgUrl, imgHandler } = useImage(card.category);
+  const { imgUrl, imgHandler } = useImage(true, card.category);
 
   useEffect(() => {
     imgHandler();
   }, [])
-
-  const btnClick = () => {
-    const absoluteUrl = new URL(`https://${card.url!}`, window.location.href).toString();
-    window.open(absoluteUrl, "_blank");
-  }
 
   return(
     <DetailProgramCardContainer>
@@ -35,7 +30,7 @@ function DetailProgramCard({ card }: { card: Program }) {
             <CardContent>
                 <div className='category'># {card.category}</div>
                 <Button>
-                  <div className='Btn' onClick={btnClick} >신청페이지 바로가기 &gt;</div>
+                  <div className='Btn' onClick={() => window.open(card.url, "_blank")} >신청페이지 바로가기 &gt;</div>
                 </Button>
             </CardContent>
         </div>

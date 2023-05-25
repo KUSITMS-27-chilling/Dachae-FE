@@ -170,7 +170,7 @@ function TeacherDetailPage() {
         <div className='subclasscontent'> {ClassData && ClassData.lectureContent}</div>
         <div className='subclasstitle'>강의 방식</div>
         <div className='subclasscontent'> {ClassData && ClassData.lectureMethod}</div>
-        <div className='subclasstitle'>필요한 장비</div>
+        <div className='subclasstitle'>준비물</div>
         <div className='subclasscontent'> {ClassData && ClassData.lectureRequired}</div>
         </Contentclass>
       </Contentleft>
